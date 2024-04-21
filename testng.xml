@@ -16,7 +16,7 @@
                     <include name="Verify_Collage_Multi_layoutswitch_Image"/>
                 </methods>
             </class>-->
-            <class name="testcases.LandingPageTest">
+            <class name="testcases.HomepageTest">
                 <methods><include name="Sign_up"/>
                     <include name="login"/>
                     <include name="Ill_Do_it"/>
@@ -27,14 +27,14 @@
             <methods><include name="Delete_user"/>
             </methods>
         </class>
-            <!--<class name="testcases.LandingPageTest">
+            <!--<class name="testcases.HomepageTest">
                 <methods><include name="Sign_up"/>
                     <include name="login"/>
                     <include name="Ill_Do_it"/>
                     <include name="Get_Started_onboarding"/>
                 </methods>
             </class>
-            <class name="testcases.testcases.ConnectivityTest">
+            <class name="Testcases.ConnectivityTest">
                 <methods><include name="Verify_Add_button"/>
                     <include name="Verify_Search_for_printer_popup"/>
                     <include name="Verify_Search_for_printer_list"/>

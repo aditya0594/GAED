@@ -5,7 +5,28 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="fbed16bb-bade-4def-845d-b7f89224c886" name="Changes" comment="appium setup 04-04-2024">
+      <change afterPath="$PROJECT_DIR$/Driver/chromedriver.exe" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/ExtentReportListener/MyITestListener.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/ExtentReportListener/extend_report_example.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/HP600AndMaintenanceRealeaseBuildDate.19.05.2022.apk" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/HP600AndMaintenanceRealeaseBuildDate.20.03.2022v2.84.2.apk" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/browserstack-plugin.log" beforeDir="false" afterPath="$PROJECT_DIR$/logs/browserstack-plugin.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/ExtentReportListener/ExtentReporterNG.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/androidpageobjectss/ConnectivityPageAndroid.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/androidpageobjectss/DeletePageAndroid.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Pageobjects/DeletePageAndroid.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/androidpageobjectss/GalleryPageAndroid.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Pageobjects/GalleryPageAndroid.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/androidpageobjectss/LandingPageAndroid.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Pageobjects/HomePage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/baseClass/ScreenBase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/baseClass/ScreenBase.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/baseClass/TestBase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/baseClass/TestBase.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/testcases/DeleteUserPageTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Testcases/DeleteUserPageTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/testcases/GalleryPageTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Testcases/GalleryPageTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/testcases/LandingPageTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Testcases/HomepageTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/testcases/testcases/ConnectivityTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/utils/CommonUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/utils/CommonUtils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/resources/config.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/resources/config.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testng.xml" beforeDir="false" afterPath="$PROJECT_DIR$/testng.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -45,58 +66,51 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/Aditya Pawar/IdeaProjects/HP_Sprocket&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;reference.projectsettings.compiler.javacompiler&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "last_opened_file_path": "C:/GAED",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "reference.projectsettings.compiler.javacompiler"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\GAED" />
       <recent name="C:\Users\Aditya Pawar\IdeaProjects\HP_Sprocket\app" />
       <recent name="C:\Users\Aditya Pawar\git\HP_Sprocket\HP_Sprocket\app" />
       <recent name="C:\Users\Aditya Pawar\git\HP_Sprocket\HP_Sprocket\src\main" />
       <recent name="C:\Users\Aditya Pawar\git\HP_Sprocket\HP_Sprocket" />
-      <recent name="C:\Users\Aditya Pawar\git\HP_Sprocket\HP_Sprocket\src\resources\app" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="ExtentReportListener" />
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="TestNG.GalleryPageTest">
-    <configuration name="C:/Users/Aditya Pawar/IdeaProjects/HP_Sprocket/testng.xml" type="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="HP_Sprocket" />
-      <shortenClasspath name="NONE" />
-      <useClassPathOnly />
-      <option name="SUITE_NAME" value="$PROJECT_DIR$/testng.xml" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="" />
-      <option name="GROUP_NAME" value="" />
-      <option name="TEST_OBJECT" value="SUITE" />
-      <option name="PARAMETERS" value="" />
-      <option name="OUTPUT_DIRECTORY" value="" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="moduleWithDependencies" />
-      </option>
-      <option name="PROPERTIES_FILE" value="" />
-      <properties />
-      <listeners />
+  <component name="RunManager" selected="TestNG.HomepageTest.Homepage (1)">
+    <configuration default="true" type="JetRunConfigurationType">
+      <module name="HP" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
+      <module name="HP" />
+      <option name="filePath" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <configuration name="Classexecution" type="TestNG">
-      <module name="HP_Sprocket" />
+      <module name="HP" />
       <shortenClasspath name="NONE" />
       <useClassPathOnly />
       <option name="SUITE_NAME" value="" />
       <option name="PACKAGE_NAME" value="testcases" />
-      <option name="MAIN_CLASS_NAME" value="testcases.LandingPageTest" />
+      <option name="MAIN_CLASS_NAME" value="testcases.HomepageTest" />
       <option name="METHOD_NAME" value="" />
       <option name="GROUP_NAME" value="" />
       <option name="TEST_OBJECT" value="METHOD" />
@@ -112,36 +126,8 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="DeleteUserPageTest.Delete_user" type="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="HP_Sprocket" />
-      <shortenClasspath name="NONE" />
-      <useClassPathOnly />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="testcases.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="SUITE_NAME" value="" />
-      <option name="PACKAGE_NAME" value="testcases" />
-      <option name="MAIN_CLASS_NAME" value="testcases.DeleteUserPageTest" />
-      <option name="METHOD_NAME" value="Delete_user" />
-      <option name="GROUP_NAME" value="" />
-      <option name="TEST_OBJECT" value="METHOD" />
-      <option name="PARAMETERS" value="" />
-      <option name="OUTPUT_DIRECTORY" value="" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="moduleWithDependencies" />
-      </option>
-      <option name="PROPERTIES_FILE" value="" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="GalleryPageTest" type="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="HP_Sprocket" />
+      <module name="HP" />
       <shortenClasspath name="NONE" />
       <useClassPathOnly />
       <extension name="coverage">
@@ -168,7 +154,7 @@
       </method>
     </configuration>
     <configuration name="GalleryPageTest.Gallery_verify_album" type="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="HP_Sprocket" />
+      <module name="HP" />
       <shortenClasspath name="NONE" />
       <useClassPathOnly />
       <extension name="coverage">
@@ -196,7 +182,7 @@
       </method>
     </configuration>
     <configuration name="GalleryPageTest.Gallery_verify_image" type="TestNG" nameIsGenerated="true">
-      <module name="HP_Sprocket" />
+      <module name="HP" />
       <shortenClasspath name="NONE" />
       <useClassPathOnly />
       <extension name="coverage">
@@ -223,8 +209,36 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="LandingPageTest.Sign_up" type="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="HP_Sprocket" />
+    <configuration name="HomepageTest.Homepage (1)" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="HP" />
+      <shortenClasspath name="NONE" />
+      <useClassPathOnly />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Testcases.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="SUITE_NAME" value="" />
+      <option name="PACKAGE_NAME" value="Testcases" />
+      <option name="MAIN_CLASS_NAME" value="Testcases.HomepageTest" />
+      <option name="METHOD_NAME" value="Homepage" />
+      <option name="GROUP_NAME" value="" />
+      <option name="TEST_OBJECT" value="METHOD" />
+      <option name="PARAMETERS" value="" />
+      <option name="OUTPUT_DIRECTORY" value="" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="moduleWithDependencies" />
+      </option>
+      <option name="PROPERTIES_FILE" value="" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="HomepageTest.Homepage" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="HP" />
       <shortenClasspath name="NONE" />
       <useClassPathOnly />
       <extension name="coverage">
@@ -235,7 +249,35 @@
       </extension>
       <option name="SUITE_NAME" value="" />
       <option name="PACKAGE_NAME" value="testcases" />
-      <option name="MAIN_CLASS_NAME" value="testcases.LandingPageTest" />
+      <option name="MAIN_CLASS_NAME" value="testcases.HomepageTest" />
+      <option name="METHOD_NAME" value="Homepage" />
+      <option name="GROUP_NAME" value="" />
+      <option name="TEST_OBJECT" value="METHOD" />
+      <option name="PARAMETERS" value="" />
+      <option name="OUTPUT_DIRECTORY" value="" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="moduleWithDependencies" />
+      </option>
+      <option name="PROPERTIES_FILE" value="" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="HomepageTest.Sign_up" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="HP" />
+      <shortenClasspath name="NONE" />
+      <useClassPathOnly />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="testcases.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="SUITE_NAME" value="" />
+      <option name="PACKAGE_NAME" value="testcases" />
+      <option name="MAIN_CLASS_NAME" value="testcases.HomepageTest" />
       <option name="METHOD_NAME" value="Sign_up" />
       <option name="GROUP_NAME" value="" />
       <option name="TEST_OBJECT" value="METHOD" />
@@ -252,7 +294,7 @@
       </method>
     </configuration>
     <configuration name="TestSuite " type="TestNG">
-      <module name="HP_Sprocket" />
+      <module name="HP" />
       <shortenClasspath name="NONE" />
       <useClassPathOnly />
       <option name="SUITE_NAME" value="" />
@@ -274,7 +316,7 @@
       </method>
     </configuration>
     <configuration name="&lt;default&gt;" type="TestNG">
-      <module name="HP_Sprocket" />
+      <module name="HP" />
       <shortenClasspath name="NONE" />
       <useClassPathOnly />
       <option name="SUITE_NAME" value="" />
@@ -316,7 +358,7 @@
       </method>
     </configuration>
     <configuration name="testcases" type="TestNG" nameIsGenerated="true">
-      <module name="HP_Sprocket" />
+      <module name="HP" />
       <shortenClasspath name="NONE" />
       <useClassPathOnly />
       <extension name="coverage">
@@ -351,19 +393,19 @@
       <item itemvalue="TestNG.testcases" />
       <item itemvalue="TestNG.&lt;default&gt;" />
       <item itemvalue="TestNG.Classexecution" />
+      <item itemvalue="TestNG.HomepageTest.Homepage" />
+      <item itemvalue="TestNG.HomepageTest.Homepage (1)" />
+      <item itemvalue="TestNG.HomepageTest.Sign_up" />
       <item itemvalue="TestNG.GalleryPageTest" />
       <item itemvalue="TestNG.GalleryPageTest.Gallery_verify_album" />
-      <item itemvalue="TestNG.C:/Users/Aditya Pawar/IdeaProjects/HP_Sprocket/testng.xml" />
-      <item itemvalue="TestNG.DeleteUserPageTest.Delete_user" />
-      <item itemvalue="TestNG.LandingPageTest.Sign_up" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="TestNG.HomepageTest.Homepage (1)" />
+        <item itemvalue="TestNG.HomepageTest.Homepage" />
+        <item itemvalue="TestNG.HomepageTest.Sign_up" />
         <item itemvalue="TestNG.GalleryPageTest" />
         <item itemvalue="TestNG.GalleryPageTest.Gallery_verify_album" />
-        <item itemvalue="TestNG.C:/Users/Aditya Pawar/IdeaProjects/HP_Sprocket/testng.xml" />
-        <item itemvalue="TestNG.DeleteUserPageTest.Delete_user" />
-        <item itemvalue="TestNG.LandingPageTest.Sign_up" />
       </list>
     </recent_temporary>
   </component>

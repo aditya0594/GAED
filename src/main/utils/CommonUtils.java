@@ -5,6 +5,7 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.time.Duration;
 import java.util.Properties;
 import java.util.concurrent.TimeUnit;
 
@@ -27,6 +28,7 @@ public class CommonUtils {
 
     public void setup(String platformName, String deviceName, String uri) throws MalformedURLException {
 
+/*
 
         System.out.println("Session is creating");
 		path = System.getProperty("user.dir");
@@ -39,25 +41,16 @@ public class CommonUtils {
         caps.setCapability("udid","RZ8NA1P2S8D");
         caps.setCapability(MobileCapabilityType.AUTOMATION_NAME,AutomationName.ANDROID_UIAUTOMATOR2);
         driver = new AndroidDriver<MobileElement>(new URL(uri), caps); //uri : http://127.0.0.1:4723/wd/hub
-        driver.manage().timeouts().implicitlyWait(3, TimeUnit.MINUTES);
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 
         // Hide the keyboard
         caps.setCapability("unicodeKeyboard", true);
         caps.setCapability("resetKeyboard", true);
     }
 
+*/
 
-    public static Properties read_properties() throws IOException {
 
-
-        File file = new File("src/resources/config.properties");
-        Properties prop = new Properties();
-        InputStreamReader is = new InputStreamReader(new FileInputStream(file));
-        prop.load(is);
-        return prop;
-    }
-    public static void main(String... args) throws IOException {
-        CommonUtils.read_properties();
     }
 
 }
