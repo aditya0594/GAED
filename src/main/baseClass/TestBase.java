@@ -66,9 +66,13 @@ public class TestBase {
         System.setProperty("webdriver.chrome.driver", "Driver/chromedriver.exe");
         ChromeOptions options = new ChromeOptions();
         driver = new ChromeDriver(options);
+        options.setExperimentalOption("w3c", false);
         //Implicitly wait
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
         driver.manage().window().maximize();
+        ExtentSparkReporter htmlReporter = new ExtentSparkReporter(System.getProperty("user.dir") + "/test-output/GEAD.html");
+        extent = new ExtentReports();
+        extent.attachReporter(htmlReporter);
       /*  WebDriverManager.chromedriver().driverVersion("121.0.6167.161").setup();
         ChromeOptions options = new ChromeOptions();
         driver = new ChromeDriver(options);*/
@@ -80,13 +84,6 @@ public class TestBase {
                 .pollingEvery(Duration.ofSeconds(1))
                 .ignoring(NoAlertPresentException.class);*/
 
-    }
-    @BeforeTest
-    public static void report(){
-
-        ExtentSparkReporter htmlReporter = new ExtentSparkReporter(System.getProperty("user.dir") + "/test-output/GEAD.html");
-        extent = new ExtentReports();
-        extent.attachReporter(htmlReporter);
     }
 
     public static Properties read_properties() throws IOException {
@@ -140,13 +137,13 @@ public void getResult(ITestResult result) throws Exception{
        driver.quit();
 	}
     @AfterTest
-    public void tearDown() throws InterruptedException {
-        Thread.sleep(3);
-        driver.quit();
+    public void endReport() {
+
+        extent.flush();
     }
     public static By waitForElement(By element) {
-        WebDriverWait w = new WebDriverWait(driver, Duration.ofSeconds(3));
-        w.until(ExpectedConditions.presenceOfElementLocated ((By) element));
+        WebDriverWait w = new WebDriverWait(driver, Duration.ofSeconds(10));
+        w.until(ExpectedConditions.visibilityOfElementLocated ((By) element));
         return element;
     }
 

@@ -3,6 +3,7 @@ package Pageobjects;
 import static org.testng.Assert.assertEquals;
 
 import java.io.IOException;
+import java.util.Map;
 import java.util.Properties;
 
 import ExtentReportListener.MyITestListener;
@@ -10,13 +11,17 @@ import baseClass.TestBase;
 import org.openqa.selenium.By;
 
 import baseClass.ScreenBase;
+import org.openqa.selenium.Keys;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.devtools.DevTools;
+import org.openqa.selenium.devtools.v118.log.Log;
+import org.openqa.selenium.devtools.v119.console.Console;
 import org.testng.Assert;
 import org.testng.annotations.Listeners;
 import utils.CommonUtils;
 
 
 public class HomePage extends TestBase {
-
 
     //hp sprocket
     By Full_Name = By.id("com.hp.impulse.sprocket:id/editTextFullname");
@@ -71,10 +76,10 @@ public class HomePage extends TestBase {
     private static
             String URL = "";
     String FIRSTNAME = "";
-    String USERNAME = "";
-    String PASSWORD = "";
+    String LASTNAME = "";
     String INEMAIL = "";
-    String INUPASSWORD = "";
+    String INFIRSTNAME = "";
+    String INLASTNAME = "";
     String EMAIL = "";
 
 
@@ -85,15 +90,12 @@ public class HomePage extends TestBase {
         try {
             Properties properties = TestBase.read_properties();
             URL = properties.getProperty("url");
-            FIRSTNAME = properties.getProperty("name");
+            FIRSTNAME = properties.getProperty("firstname");
+            LASTNAME = properties.getProperty("lastname");
             EMAIL = properties.getProperty("email");
-            PASSWORD = properties.getProperty("password");
+            INFIRSTNAME = (String) properties.get("invalidfirstname");
+            INLASTNAME = (String) properties.get("invalidlastname");
             INEMAIL = (String) properties.get("invalidemail");
-            INUPASSWORD = (String) properties.get("invalidpassword");
-            FIRSTNAME = (String) properties.get("name");
-            Month = (String) properties.get("Month");
-            DAY = (String) properties.get("Day");
-            YEAR = (String) properties.get("Year");
             // Name= (String) Properties.get("name");
         } catch (IOException e) {
             e.printStackTrace();
@@ -102,29 +104,122 @@ public class HomePage extends TestBase {
     public void homepage(){
         driver.get(URL);
         String hometitle = driver.getTitle();
-        Assert.assertEquals("GAE",hometitle);
+        Assert.assertEquals("GAED",hometitle);
+    }
+
+    By getSign_Up_Btn= By.xpath("//span[@class='cursor-pointer hidden lg:inline-block py-2 px-6 text-sm text-white border border-white font-medium rounded-full transition duration-200 group-hover:text-primary group-hover:border-primary']");
+    By signup_page_title = By.xpath("//h3[@class='py-2 xl:text-3xl text-black-900 font-semibold']");
+    By firstname = By.xpath("//input[@name='firstName']");
+    By lastname = By.xpath("//input[@name='lastName']");
+    By email = By.xpath("//input[@name='email']");
+    By agreementChk = By.xpath("//input[@name='tncCheck']");
+    By sentOTPbtn = By.xpath("//button[@type='submit']");
+    By invalidFistnameMesss = By.xpath("//*[@id=\"root\"]/div/div[2]/div/div/div/div/div[2]/div/div[2]/div/div/form/div[1]/div[1]/div/span");
+    By invalidLastnameMesss = By.xpath("//*[@id=\"root\"]/div/div[2]/div/div/div/div/div[2]/div/div[2]/div/div/form/div[1]/div[2]/div/span");
+    By invalidEmailMesss = By.xpath("//*[@id=\"root\"]/div/div[2]/div/div/div/div/div[2]/div/div[2]/div/div/form/div[2]/div/div/span");
+    By EmpFistnameMesss = By.xpath("//*[@id=\"root\"]/div/div[2]/div/div/div/div/div[2]/div/div[2]/div/div/form/div[1]/div[1]/div/span");
+    By EmpLastnameMesss = By.xpath("//*[@id=\"root\"]/div/div[2]/div/div/div/div/div[2]/div/div[2]/div/div/form/div[1]/div[2]/div/span");
+    By EmpEmailMesss = By.xpath("//*[@id=\"root\"]/div/div[2]/div/div/div/div/div[2]/div/div[2]/div/div/form/div[2]/div/div/span");
+   // By firstname = By.xpath("//input[@name='firstName']");
+
+    public void invalid_signup_field() {
+        driver.findElement(getSign_Up_Btn).click();
+        String Getsignuptitle = driver.findElement(signup_page_title).getText();
+        Assert.assertEquals("Let's get you an Account",Getsignuptitle);
+        driver.findElement(firstname).sendKeys(INFIRSTNAME);
+        waitForElement(invalidFistnameMesss);
+        String invalidfirstnameMess = driver.findElement(invalidFistnameMesss).getText();
+        Assert.assertEquals("Field cannot contain any special characters.",invalidfirstnameMess);
+        driver.findElement(firstname).sendKeys(Keys.TAB);
+        driver.findElement(lastname).sendKeys(INLASTNAME);
+        waitForElement(invalidFistnameMesss);
+        String invalidlastnameMess = driver.findElement(invalidLastnameMesss).getText();
+        Assert.assertEquals("Field cannot contain any special characters.",invalidlastnameMess);
+        driver.findElement(firstname).sendKeys(Keys.TAB);
+        driver.findElement(email).sendKeys(INEMAIL);
+        waitForElement(invalidFistnameMesss);
+        String invalidemailMess = driver.findElement(invalidEmailMesss).getText();
+        Assert.assertEquals("This looks like an invalid email (eg: abc@xyz.com)",invalidemailMess);
+        driver.findElement(firstname).sendKeys(Keys.TAB);
+    }
+    public void Empty_signup_field() {
+        driver.findElement(getSign_Up_Btn).click();
+        String Getsignuptitle = driver.findElement(signup_page_title).getText();
+        Assert.assertEquals("Let's get you an Account",Getsignuptitle);
+        driver.findElement(agreementChk).click();
+        driver.findElement(sentOTPbtn).click();
+        driver.findElement(firstname).sendKeys("");
+        waitForElement(invalidFistnameMesss);
+        String invalidfirstnameMess = driver.findElement(EmpFistnameMesss).getText();
+        Assert.assertEquals("Field is Required.",invalidfirstnameMess);
+        driver.findElement(firstname).sendKeys(Keys.TAB);
+        driver.findElement(lastname).sendKeys("");
+        waitForElement(invalidFistnameMesss);
+        String invalidlastnameMess = driver.findElement(EmpLastnameMesss).getText();
+        Assert.assertEquals("Field is Required.",invalidlastnameMess);
+        driver.findElement(firstname).sendKeys(Keys.TAB);
+        driver.findElement(email).sendKeys("");
+        waitForElement(invalidFistnameMesss);
+        String invalidemailMess = driver.findElement(EmpEmailMesss).getText();
+        Assert.assertEquals("Field is Required.",invalidemailMess);
+        driver.findElement(firstname).sendKeys(Keys.TAB);
+    }
+    public void Mailinator_tab() {
+        driver.findElement(By.cssSelector("body")).sendKeys(Keys.CONTROL + "t");
+        // Get the dynamic part from the variable
+        String dynamicPart = EMAIL;
+        // Navigate to the URL with the dynamic part
+        String url = "https://www.mailinator.com/v4/public/inboxes.jsp?to=" + dynamicPart;
+        driver.get(url);
+
 
     }
+    public void console_OTp() {
+        DevTools devTools = ((ChromeDriver) driver).getDevTools();
+        devTools.createSession();
+        devTools.send(Log.enable());
+        devTools.addListener(Log.entryAdded(), entry -> {
+            String text = (String) entry.getText();
+            if (text.contains("OTP:")) {
+                String otp = text.split("OTP:")[1].trim();
+                System.out.println("OTP: " + otp);
+            }
+        });
+
+    }
+
+
     public void Sign_up() {
-        driver.findElement(Full_Name).sendKeys(FIRSTNAME);
-        driver.findElement(Email).sendKeys(EMAIL);
-        driver.findElement(Password).sendKeys(PASSWORD);
-        driver.findElement(Sign_Up_Btn).click();
+        boolean signbtn = driver.findElement(getSign_Up_Btn).isDisplayed();
+        Assert.assertTrue(signbtn);
+        driver.findElement(getSign_Up_Btn).click();
+        String Getsignuptitle = driver.findElement(signup_page_title).getText();
+        Assert.assertEquals("Let's get you an Account",Getsignuptitle);
+        driver.findElement(firstname).sendKeys(FIRSTNAME);
+        driver.findElement(lastname).sendKeys(LASTNAME);
+        driver.findElement(email).sendKeys(EMAIL);
+        driver.findElement(agreementChk).click();
+        driver.findElement(sentOTPbtn).click();
+
     }
 
     public void verify_signup_disble_firstname() {
-        driver.findElement(Full_Name).sendKeys(" ");
-        driver.findElement(Email).sendKeys(EMAIL);
-        driver.findElement(Password).sendKeys(PASSWORD);
-        Assert.assertFalse((driver.findElement(Sign_Up_Btn)).isEnabled(), "OK button is disabled.");
-        System.out.println("OK button is disabled.");
+        boolean signbtn = driver.findElement(By.xpath("getSign_Up_Btn")).isDisplayed();
+        Assert.assertTrue(signbtn);
+        driver.findElement(By.xpath("getSign_Up_Btn")).click();
+        String Getsignuptitle = driver.findElement(signup_page_title).getText();
+        Assert.assertEquals("Let's get you an Account",Getsignuptitle);
+        driver.findElement(firstname).sendKeys(FIRSTNAME);
+        driver.findElement(lastname).sendKeys(LASTNAME);
+        driver.findElement(email).sendKeys(EMAIL);
+        driver.findElement(Sign_Up_Btn).click();
 
     }
 
     public void verify_signup_disble_email() {
         driver.findElement(Full_Name).sendKeys("aditya");
         driver.findElement(Email).sendKeys(" ");
-        driver.findElement(Password).sendKeys(PASSWORD);
+       // driver.findElement(Password).sendKeys(PASSWORD);
         Assert.assertFalse((driver.findElement(Sign_Up_Btn)).isEnabled(), "OK button is disabled.");
         System.out.println("OK button is disabled.");
 
@@ -142,7 +237,7 @@ public class HomePage extends TestBase {
     public void password_validation() {
         driver.findElement(Full_Name).sendKeys("aditya");
         driver.findElement(Email).sendKeys(EMAIL);
-        driver.findElement(Password).sendKeys(INUPASSWORD);
+       // driver.findElement(Password).sendKeys(INUPASSWORD);
         driver.findElement(Sign_Up_Btn).click();
         Assert.assertTrue(driver.findElement(Alert_OK_Btn).isDisplayed());
         driver.findElement(Alert_OK_Btn).click();
@@ -150,7 +245,7 @@ public class HomePage extends TestBase {
     }
 
     public void password_eye_btn() throws InterruptedException {
-        driver.findElement(Password).sendKeys(PASSWORD);
+       // driver.findElement(Password).sendKeys(PASSWORD);
         String pas = driver.findElement(Password).getText();
         System.out.println("Text of password" + pas);
         Thread.sleep(2000);
@@ -188,7 +283,7 @@ public class HomePage extends TestBase {
 
         driver.findElement(Already_Acct).click();
         driver.findElement(Login_email).sendKeys(INEMAIL);
-        driver.findElement(Login_password).sendKeys(PASSWORD);
+      //  driver.findElement(Login_password).sendKeys(PASSWORD);
         driver.findElement(Login_btn).click();
         driver.findElement(Alert_OK_Btn).click();
         String LErrormsg_Email =  driver.findElement(ErrormsgEmail).getText();
@@ -198,7 +293,7 @@ public class HomePage extends TestBase {
 
         driver.findElement(Already_Acct).click();
         driver.findElement(Login_email).sendKeys(EMAIL);
-        driver.findElement(Login_password).sendKeys(INUPASSWORD);
+       // driver.findElement(Login_password).sendKeys(INUPASSWORD);
         driver.findElement(Login_btn).click();
         String LErrormsg_Password =  driver.findElement(ErrormsgPassword).getText();
         Assert.assertEquals(LErrormsg_Password, "You have entered an invalid email address or password");
@@ -209,7 +304,7 @@ public class HomePage extends TestBase {
 
         driver.findElement(Already_Acct).click();
         driver.findElement(Login_email).sendKeys(EMAIL);
-        driver.findElement(Login_password).sendKeys(PASSWORD);
+      //  driver.findElement(Login_password).sendKeys(PASSWORD);
         driver.findElement(Login_btn).click();
         String my_sprocket = driver.findElement(My_sprocket).getText();
         Assert.assertEquals(my_sprocket, "my sprocket");
@@ -226,7 +321,7 @@ public class HomePage extends TestBase {
         //waitForElement(Already_Acct);
         driver.findElement(Already_Acct).click();
         driver.findElement(Login_email).sendKeys(EMAIL);
-        driver.findElement(Login_password).sendKeys(PASSWORD);
+       // driver.findElement(Login_password).sendKeys(PASSWORD);
         driver.findElement(Login_btn).click();
         driver.findElement(Explore_Sprocket).click();
     }

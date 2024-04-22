@@ -4,29 +4,29 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="fbed16bb-bade-4def-845d-b7f89224c886" name="Changes" comment="appium setup 04-04-2024">
-      <change afterPath="$PROJECT_DIR$/Driver/chromedriver.exe" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/ExtentReportListener/MyITestListener.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/ExtentReportListener/extend_report_example.java" afterDir="false" />
+    <list default="true" id="fbed16bb-bade-4def-845d-b7f89224c886" name="Changes" comment="Framework and homepage">
+      <change afterPath="$PROJECT_DIR$/test-output/GEAD.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/HP600AndMaintenanceRealeaseBuildDate.19.05.2022.apk" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/HP600AndMaintenanceRealeaseBuildDate.20.03.2022v2.84.2.apk" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/logs/browserstack-plugin.log" beforeDir="false" afterPath="$PROJECT_DIR$/logs/browserstack-plugin.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/ExtentReportListener/ExtentReporterNG.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/androidpageobjectss/ConnectivityPageAndroid.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/androidpageobjectss/DeletePageAndroid.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Pageobjects/DeletePageAndroid.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/androidpageobjectss/GalleryPageAndroid.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Pageobjects/GalleryPageAndroid.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/androidpageobjectss/LandingPageAndroid.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Pageobjects/HomePage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/baseClass/ScreenBase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/baseClass/ScreenBase.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/screenshot/First Layout is displayed23-May-2023__02_40_49pm.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/screenshot/First Layout is displayed23-May-2023__03_31_22pm.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/screenshot/First Layout is displayed23-May-2023__05_03_09pm.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/screenshot/Fourth Layout is displayed23-May-2023__02_41_01pm.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/screenshot/Fourth Layout is displayed23-May-2023__03_31_34pm.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/screenshot/Fourth Layout is displayed23-May-2023__05_03_22pm.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/screenshot/Second Layout is displayed23-May-2023__02_40_54pm.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/screenshot/Second Layout is displayed23-May-2023__03_31_27pm.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/screenshot/Second Layout is displayed23-May-2023__05_03_15pm.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/screenshot/Third Layout is displayed23-May-2023__02_40_58pm.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/screenshot/Third Layout is displayed23-May-2023__03_31_30pm.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/screenshot/Third Layout is displayed23-May-2023__05_03_18pm.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/screenshot/layout is visible23-May-2023__03_30_39pm.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/screenshot/layout is visible23-May-2023__05_02_23pm.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/Pageobjects/HomePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Pageobjects/HomePage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/Testcases/HomepageTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Testcases/HomepageTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/baseClass/TestBase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/baseClass/TestBase.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/testcases/DeleteUserPageTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Testcases/DeleteUserPageTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/testcases/GalleryPageTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Testcases/GalleryPageTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/testcases/LandingPageTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Testcases/HomepageTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/testcases/testcases/ConnectivityTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/utils/CommonUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/utils/CommonUtils.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/resources/config.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/resources/config.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/testng.xml" beforeDir="false" afterPath="$PROJECT_DIR$/testng.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -90,7 +90,7 @@
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="TestNG.HomepageTest.Homepage (1)">
+  <component name="RunManager" selected="TestNG.HomepageTest.Sign_up_OTP_fields">
     <configuration default="true" type="JetRunConfigurationType">
       <module name="HP" />
       <method v="2">
@@ -112,61 +112,6 @@
       <option name="PACKAGE_NAME" value="testcases" />
       <option name="MAIN_CLASS_NAME" value="testcases.HomepageTest" />
       <option name="METHOD_NAME" value="" />
-      <option name="GROUP_NAME" value="" />
-      <option name="TEST_OBJECT" value="METHOD" />
-      <option name="PARAMETERS" value="" />
-      <option name="OUTPUT_DIRECTORY" value="" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="moduleWithDependencies" />
-      </option>
-      <option name="PROPERTIES_FILE" value="" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="GalleryPageTest" type="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="HP" />
-      <shortenClasspath name="NONE" />
-      <useClassPathOnly />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="testcases.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="SUITE_NAME" value="" />
-      <option name="PACKAGE_NAME" value="testcases" />
-      <option name="MAIN_CLASS_NAME" value="testcases.GalleryPageTest" />
-      <option name="GROUP_NAME" value="" />
-      <option name="TEST_OBJECT" value="CLASS" />
-      <option name="PARAMETERS" value="" />
-      <option name="OUTPUT_DIRECTORY" value="" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="moduleWithDependencies" />
-      </option>
-      <option name="PROPERTIES_FILE" value="" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="GalleryPageTest.Gallery_verify_album" type="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="HP" />
-      <shortenClasspath name="NONE" />
-      <useClassPathOnly />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="testcases.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="SUITE_NAME" value="" />
-      <option name="PACKAGE_NAME" value="testcases" />
-      <option name="MAIN_CLASS_NAME" value="testcases.GalleryPageTest" />
-      <option name="METHOD_NAME" value="Gallery_verify_album" />
       <option name="GROUP_NAME" value="" />
       <option name="TEST_OBJECT" value="METHOD" />
       <option name="PARAMETERS" value="" />
@@ -209,7 +154,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="HomepageTest.Homepage (1)" type="TestNG" temporary="true" nameIsGenerated="true">
+    <configuration name="HomepageTest" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="HP" />
       <shortenClasspath name="NONE" />
       <useClassPathOnly />
@@ -222,7 +167,34 @@
       <option name="SUITE_NAME" value="" />
       <option name="PACKAGE_NAME" value="Testcases" />
       <option name="MAIN_CLASS_NAME" value="Testcases.HomepageTest" />
-      <option name="METHOD_NAME" value="Homepage" />
+      <option name="GROUP_NAME" value="" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <option name="PARAMETERS" value="" />
+      <option name="OUTPUT_DIRECTORY" value="" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="moduleWithDependencies" />
+      </option>
+      <option name="PROPERTIES_FILE" value="" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="HomepageTest.Sign_up_Newtab_fields" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="HP" />
+      <shortenClasspath name="NONE" />
+      <useClassPathOnly />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Testcases.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="SUITE_NAME" value="" />
+      <option name="PACKAGE_NAME" value="Testcases" />
+      <option name="MAIN_CLASS_NAME" value="Testcases.HomepageTest" />
+      <option name="METHOD_NAME" value="Sign_up_Newtab_fields" />
       <option name="GROUP_NAME" value="" />
       <option name="TEST_OBJECT" value="METHOD" />
       <option name="PARAMETERS" value="" />
@@ -237,20 +209,20 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="HomepageTest.Homepage" type="TestNG" temporary="true" nameIsGenerated="true">
+    <configuration name="HomepageTest.Sign_up_OTP_fields" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="HP" />
       <shortenClasspath name="NONE" />
       <useClassPathOnly />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="testcases.*" />
+          <option name="PATTERN" value="Testcases.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
       <option name="SUITE_NAME" value="" />
-      <option name="PACKAGE_NAME" value="testcases" />
-      <option name="MAIN_CLASS_NAME" value="testcases.HomepageTest" />
-      <option name="METHOD_NAME" value="Homepage" />
+      <option name="PACKAGE_NAME" value="Testcases" />
+      <option name="MAIN_CLASS_NAME" value="Testcases.HomepageTest" />
+      <option name="METHOD_NAME" value="Sign_up_OTP_fields" />
       <option name="GROUP_NAME" value="" />
       <option name="TEST_OBJECT" value="METHOD" />
       <option name="PARAMETERS" value="" />
@@ -265,20 +237,48 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="HomepageTest.Sign_up" type="TestNG" temporary="true" nameIsGenerated="true">
+    <configuration name="HomepageTest.Sign_up_emtpy_fields" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="HP" />
       <shortenClasspath name="NONE" />
       <useClassPathOnly />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="testcases.*" />
+          <option name="PATTERN" value="Testcases.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
       <option name="SUITE_NAME" value="" />
-      <option name="PACKAGE_NAME" value="testcases" />
-      <option name="MAIN_CLASS_NAME" value="testcases.HomepageTest" />
-      <option name="METHOD_NAME" value="Sign_up" />
+      <option name="PACKAGE_NAME" value="Testcases" />
+      <option name="MAIN_CLASS_NAME" value="Testcases.HomepageTest" />
+      <option name="METHOD_NAME" value="Sign_up_emtpy_fields" />
+      <option name="GROUP_NAME" value="" />
+      <option name="TEST_OBJECT" value="METHOD" />
+      <option name="PARAMETERS" value="" />
+      <option name="OUTPUT_DIRECTORY" value="" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="moduleWithDependencies" />
+      </option>
+      <option name="PROPERTIES_FILE" value="" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="HomepageTest.Sign_up_invaild_fields" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="HP" />
+      <shortenClasspath name="NONE" />
+      <useClassPathOnly />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Testcases.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="SUITE_NAME" value="" />
+      <option name="PACKAGE_NAME" value="Testcases" />
+      <option name="MAIN_CLASS_NAME" value="Testcases.HomepageTest" />
+      <option name="METHOD_NAME" value="Sign_up_invaild_fields" />
       <option name="GROUP_NAME" value="" />
       <option name="TEST_OBJECT" value="METHOD" />
       <option name="PARAMETERS" value="" />
@@ -393,19 +393,19 @@
       <item itemvalue="TestNG.testcases" />
       <item itemvalue="TestNG.&lt;default&gt;" />
       <item itemvalue="TestNG.Classexecution" />
-      <item itemvalue="TestNG.HomepageTest.Homepage" />
-      <item itemvalue="TestNG.HomepageTest.Homepage (1)" />
-      <item itemvalue="TestNG.HomepageTest.Sign_up" />
-      <item itemvalue="TestNG.GalleryPageTest" />
-      <item itemvalue="TestNG.GalleryPageTest.Gallery_verify_album" />
+      <item itemvalue="TestNG.HomepageTest" />
+      <item itemvalue="TestNG.HomepageTest.Sign_up_Newtab_fields" />
+      <item itemvalue="TestNG.HomepageTest.Sign_up_OTP_fields" />
+      <item itemvalue="TestNG.HomepageTest.Sign_up_emtpy_fields" />
+      <item itemvalue="TestNG.HomepageTest.Sign_up_invaild_fields" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="TestNG.HomepageTest.Homepage (1)" />
-        <item itemvalue="TestNG.HomepageTest.Homepage" />
-        <item itemvalue="TestNG.HomepageTest.Sign_up" />
-        <item itemvalue="TestNG.GalleryPageTest" />
-        <item itemvalue="TestNG.GalleryPageTest.Gallery_verify_album" />
+        <item itemvalue="TestNG.HomepageTest.Sign_up_OTP_fields" />
+        <item itemvalue="TestNG.HomepageTest.Sign_up_Newtab_fields" />
+        <item itemvalue="TestNG.HomepageTest" />
+        <item itemvalue="TestNG.HomepageTest.Sign_up_emtpy_fields" />
+        <item itemvalue="TestNG.HomepageTest.Sign_up_invaild_fields" />
       </list>
     </recent_temporary>
   </component>
@@ -509,7 +509,14 @@
       <option name="project" value="LOCAL" />
       <updated>1712230770502</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="Framework and homepage">
+      <created>1713702264636</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1713702264636</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -564,7 +571,8 @@
     <MESSAGE value="Connectivity STA AP commit 05-06-2023" />
     <MESSAGE value="appium setup 24-02-2024" />
     <MESSAGE value="appium setup 04-04-2024" />
-    <option name="LAST_COMMIT_MESSAGE" value="appium setup 04-04-2024" />
+    <MESSAGE value="Framework and homepage" />
+    <option name="LAST_COMMIT_MESSAGE" value="Framework and homepage" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
