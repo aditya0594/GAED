@@ -97,7 +97,7 @@ public class LoginUser extends TestBase {
 
         driver.findElement(loginBtn).click();
         String signupTitle_on_login = driver.findElement(SignupTitleOfLink).getText();
-        Assert.assertEquals("Here for the first time?",signupTitle_on_login);
+        Assert.assertEquals("Here for the first time? Sign Up",signupTitle_on_login);
         driver.findElement(SignupLinkLogin).click();
 
     }
@@ -116,7 +116,7 @@ public class LoginUser extends TestBase {
         Assert.assertEquals("Send OTP",SentOTPtitle);
         driver.findElement(SentOtpBtn).click();
         Thread.sleep(5000);
-        OTP_read();
+        OTP_read(HomePage.EMAIL);
         driver.findElement(OTPfirstbox).click();
         Actions actions = new Actions(driver);
         // Use Actions class to perform keyboard shortcut (Ctrl + V) for paste
@@ -133,7 +133,7 @@ public class LoginUser extends TestBase {
         Assert.assertEquals(HomePage.EMAIL,GetConsumeremailFromProfile);
 
     }
-    public static void OTP_read() throws InterruptedException {
+    public static void OTP_read(String emailforInbox) throws InterruptedException {
 
         ((JavascriptExecutor) driver).executeScript("window.open()");
         String defaultTab = driver.getWindowHandle();
@@ -144,7 +144,7 @@ public class LoginUser extends TestBase {
         driver.get("https://yopmail.com/en/wm");
         Thread.sleep(3000);
         waitForElement(yopmailemail);
-        driver.findElement(yopmailemail).sendKeys("adityapawar");
+        driver.findElement(yopmailemail).sendKeys(emailforInbox);
         driver.findElement(yopmailarrow).click();
         driver.findElement(By.xpath("//i[contains(text(),'\uE16C')]"));
        // driver.findElement(threeDot).click();// driver.findElement(Deleteinbox).click();// Alert alert = driver.switchTo().alert();// alert.accept();

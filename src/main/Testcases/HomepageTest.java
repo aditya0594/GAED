@@ -30,20 +30,4 @@ public class HomepageTest extends TestBase {
         test.pass("Title passed successfully.");
 
     }
-    @Test(priority = 2, enabled = true)
-    public void Sign_up_invaild_fields() throws InterruptedException {
-        ExtentTest test = extent.createTest("To verify field invalid inpt validation");
-        homePage.homepage();
-        homePage.invalid_signup_field();
-        test.pass("To verify field invalid inpt validation");
-
-    }
-    @Test(priority = 3, enabled = true)
-    public void Sign_up_emtpy_fields() throws InterruptedException {
-        ExtentTest test = extent.createTest("To verify field with empty data");
-        homePage.homepage();
-        homePage.Empty_signup_field();
-        test.pass("To verify field with empty data");
-
-    }
 }

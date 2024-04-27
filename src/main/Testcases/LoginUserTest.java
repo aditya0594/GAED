@@ -41,7 +41,7 @@ public class LoginUserTest extends TestBase {
         LoginUser.SignupLinkOnLogin();
         test.pass("To verify the signup link on the login page is clickable and navigate to singup page :  passed successfully.");
     }
-    @Test(priority = 4,enabled = false)
+    @Test(priority = 4,enabled = true)
     public void verifyLoginConsumer() throws InterruptedException {
         homePage.homepage();
         LoginUser.LoginConsumerSuceessful();

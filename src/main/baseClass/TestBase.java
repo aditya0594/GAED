@@ -1,8 +1,5 @@
 package baseClass;
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.IOException;
-import java.io.InputStreamReader;
+import java.io.*;
 import java.text.SimpleDateFormat;
 import java.time.Duration;
 import java.util.Date;
@@ -14,15 +11,16 @@ import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.Status;
 import com.aventstack.extentreports.reporter.ExtentSparkReporter;
 import org.apache.commons.io.FileUtils;
+import org.apache.commons.lang3.RandomStringUtils;
+import org.apache.poi.ss.usermodel.*;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import org.testng.ITestListener;
 import org.testng.ITestResult;
 import org.testng.annotations.*;
-import utils.CommonUtils;
 
 public class TestBase {
 
@@ -130,7 +128,8 @@ public void getResult(ITestResult result) throws Exception{
         test = extent.createTest(result.getName() + " - Test Case PASSED");
         test.log(Status.PASS, result.getName() + " - Test Case PASSED");
     }
-    driver.quit();
+
+   // driver.quit();
 }
 	@AfterSuite
 	public void tear() {
@@ -145,7 +144,55 @@ public void getResult(ITestResult result) throws Exception{
         w.until(ExpectedConditions.visibilityOfElementLocated ((By) element));
         return element;
     }
+    public static String randomEmail(){
+        String allowedChars = "123456789";
+        String email = "aditya" + RandomStringUtils.random(3, allowedChars) +"@yopmail.com";
+        return email;
+    }
+    public static String randomMobile(){
+        String allowedChars = "12345678";
+        String MobileNumber = RandomStringUtils.random(8, allowedChars);
+        return MobileNumber;
+    }
 
+    public static int getLastRowNumInColumn(Sheet sheet, int columnIndex) {
+        int lastRowNum = sheet.getLastRowNum();
+        for (int i = lastRowNum; i >= 0; i--) {
+            Row row = sheet.getRow(i);
+            if (row != null) {
+                Cell cell = row.getCell(columnIndex);
+                if (cell != null && !cell.getStringCellValue().isEmpty()) {
+                    return i;
+                }
+            }
+        }
+        return -1; // If no data found in the column
+    }
+    public static void write_excel(Integer num  ){
+        String filePath = "src/resources/Consumer_signup_ids.xlsx";
+        try (FileInputStream fis = new FileInputStream(filePath);
+             Workbook workbook = fis.available() > 0 ? WorkbookFactory.create(fis) : new XSSFWorkbook()) {
+            Sheet sheet = workbook.getSheetAt(0);
+            int lastRowNum = getLastRowNumInColumn(sheet, num);
+
+            // Generate random email
+            String randomEmail = randomEmail();
+
+            // Add data to the next row
+            Row row = sheet.createRow(lastRowNum + 1);
+            Cell cell = row.createCell(num);
+            cell.setCellValue(randomEmail);
+
+            // Write to file
+            try (FileOutputStream fos = new FileOutputStream(filePath)) {
+                workbook.write(fos);
+            }
+
+            System.out.println("Random Email written to Excel file successfully.");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
 
     public static void swipe(int startX, int startY,int endX,int endY) {
         JavascriptExecutor js = (JavascriptExecutor) driver;

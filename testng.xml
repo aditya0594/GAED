@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="All Test Suite">
+    <test verbose="2" preserve-order="true" name="C:/GAED">
+        <classes>
+            <class name="Testcases.HomepageTest">
+                <methods>
+                    <include name="Homepage"/>
+                    <include name="Sign_up_invaild_fields"/>
+                    <include name="Sign_up_emtpy_fields"/>
+                </methods>
+            </class>
+            <class name="Testcases.LoginUserTest">
+                <methods>
+                    <include name="VerifyInvalidEmail"/>
+                    <include name="VerifyEmptyEmail"/>
+                    <include name="VerifyEmptyNotExist"/>
+                    <include name="Verify_SignUp_Link_ontheLogin"/>
+                    <include name="verifyLoginConsumer"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

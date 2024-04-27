@@ -14,7 +14,7 @@ public class GalleryPageTest extends TestBase {
     @Test(priority = 1, enabled = true)
 
     public void Gallery_verify_album() throws InterruptedException {
-        LandingPage.get_started_screen_signup();
+       // LandingPage.get_started_screen_signup();
         GalleryPageAndroid.gallery_album_Scroll();
     }
 
