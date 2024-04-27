@@ -46,43 +46,4 @@ public class HomepageTest extends TestBase {
         test.pass("To verify field with empty data");
 
     }
-    @Test(priority = 3, enabled = true)
-    public void Sign_up_OTP_fields() throws InterruptedException {
-        ExtentTest test = extent.createTest("To verify field with empty data");
-        homePage.homepage();
-        Thread.sleep(5000);
-        homePage.Sign_up();
-        Thread.sleep(5000);
-
-        // Capture browser console logs
-        LogEntries logs = driver.manage().logs().get(LogType.BROWSER);
-
-        // Iterate through the log entries
-        for (LogEntry entry : logs) {
-            System.out.println(entry.getMessage());
-        }
-
-
-        test.pass("To verify field with empty data");
-
-    }
-    @Test(priority = 2, enabled = false)
-    public void login() throws InterruptedException {
-        homePage.login();
-        homePage.get_started_screen();
-        homePage.hamburger_Account_Setting();
-        homePage.verify_account_name();
-    }
-
-    @Test(priority = 3, enabled = false)
-    public void Ill_Do_it() throws InterruptedException {
-        homePage.ill_do_later();
-    }
-    @Test (priority = 4,enabled = false)
-    public void Get_Started_onboarding() throws InterruptedException {
-       // LandingPage.ill_do_later();
-        homePage.get_started_screen_AfterIlldoit_signup();
-    }
-
-
 }

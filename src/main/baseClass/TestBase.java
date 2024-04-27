@@ -66,7 +66,7 @@ public class TestBase {
         System.setProperty("webdriver.chrome.driver", "Driver/chromedriver.exe");
         ChromeOptions options = new ChromeOptions();
         driver = new ChromeDriver(options);
-        options.setExperimentalOption("w3c", false);
+
         //Implicitly wait
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
         driver.manage().window().maximize();
@@ -138,11 +138,10 @@ public void getResult(ITestResult result) throws Exception{
 	}
     @AfterTest
     public void endReport() {
-
         extent.flush();
     }
     public static By waitForElement(By element) {
-        WebDriverWait w = new WebDriverWait(driver, Duration.ofSeconds(10));
+        WebDriverWait w = new WebDriverWait(driver, Duration.ofSeconds(5));
         w.until(ExpectedConditions.visibilityOfElementLocated ((By) element));
         return element;
     }

@@ -73,23 +73,23 @@ public class HomePage extends TestBase {
     By Account_deleted= By.id("com.hp.impulse.sprocket:id/tv_alert");
 
 
-    private static
-            String URL = "";
-    String FIRSTNAME = "";
-    String LASTNAME = "";
-    String INEMAIL = "";
-    String INFIRSTNAME = "";
-    String INLASTNAME = "";
-    String EMAIL = "";
+    public static String URLS = "";
+    public static String FIRSTNAME = "";
+    public static String LASTNAME = "";
+    public static String INEMAIL = "";
+    public static String INFIRSTNAME = "";
+    public static String INLASTNAME = "";
+    public static String EMAIL = "";
 
 
     String Month = "";
     String DAY = "";
     String YEAR = "";
-    public HomePage() {
+
+    public  HomePage() {
         try {
             Properties properties = TestBase.read_properties();
-            URL = properties.getProperty("url");
+            URLS = properties.getProperty("url");
             FIRSTNAME = properties.getProperty("firstname");
             LASTNAME = properties.getProperty("lastname");
             EMAIL = properties.getProperty("email");
@@ -101,8 +101,9 @@ public class HomePage extends TestBase {
             e.printStackTrace();
         }
     }
+
     public void homepage(){
-        driver.get(URL);
+        driver.get(URLS);
         String hometitle = driver.getTitle();
         Assert.assertEquals("GAED",hometitle);
     }

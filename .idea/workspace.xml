@@ -4,29 +4,50 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="fbed16bb-bade-4def-845d-b7f89224c886" name="Changes" comment="Framework and homepage">
-      <change afterPath="$PROJECT_DIR$/test-output/GEAD.html" afterDir="false" />
+    <list default="true" id="fbed16bb-bade-4def-845d-b7f89224c886" name="Changes" comment="Framework and homepage 22-04-2024">
+      <change afterPath="$PROJECT_DIR$/Screenshots/verifyLoginConsumer20240425101946.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Screenshots/verifyLoginConsumer20240425102201.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Screenshots/verifyLoginConsumer20240425102851.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Screenshots/verifyLoginConsumer20240425103618.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Screenshots/verifyLoginConsumer20240425103716.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Screenshots/verifyLoginConsumer20240425103821.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Screenshots/verifyLoginConsumer20240425104041.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Screenshots/verifyLoginConsumer20240425104251.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Screenshots/verifyLoginConsumer20240425104454.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Screenshots/verifyLoginConsumer20240425121039.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Screenshots/verifyLoginConsumer20240425121201.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Screenshots/verifyLoginConsumer20240425122553.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Screenshots/verifyLoginConsumer20240425122642.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Screenshots/verifyLoginConsumer20240425122757.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Screenshots/verifyLoginConsumer20240425123511.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Screenshots/verifyLoginConsumer20240425123718.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Screenshots/verifyLoginConsumer20240425123906.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Screenshots/verifyLoginConsumer20240425124011.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Screenshots/verifyLoginConsumer20240425124305.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Screenshots/verifyLoginConsumer20240425124643.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Screenshots/verifyLoginConsumer20240425124843.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Screenshots/verifyLoginConsumer20240425125210.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Screenshots/verifyLoginConsumer20240425125333.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Screenshots/verifyLoginConsumer20240426012459.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Screenshots/verifyLoginConsumer20240426012629.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Screenshots/verifyLoginConsumer20240426014146.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Screenshots/verifyLoginConsumer20240426014314.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Screenshots/verifyLoginConsumer20240426123201.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Screenshots/verifyLoginConsumer20240426123325.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Screenshots/verifyLoginConsumer20240426125442.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Screenshots/verifyLoginConsumer20240426125752.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/Pageobjects/LoginUser.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/Testcases/LoginUserTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Driver/chromedriver.exe" beforeDir="false" afterPath="$PROJECT_DIR$/Driver/chromedriver.exe" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/logs/browserstack-plugin.log" beforeDir="false" afterPath="$PROJECT_DIR$/logs/browserstack-plugin.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/screenshot/First Layout is displayed23-May-2023__02_40_49pm.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/screenshot/First Layout is displayed23-May-2023__03_31_22pm.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/screenshot/First Layout is displayed23-May-2023__05_03_09pm.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/screenshot/Fourth Layout is displayed23-May-2023__02_41_01pm.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/screenshot/Fourth Layout is displayed23-May-2023__03_31_34pm.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/screenshot/Fourth Layout is displayed23-May-2023__05_03_22pm.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/screenshot/Second Layout is displayed23-May-2023__02_40_54pm.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/screenshot/Second Layout is displayed23-May-2023__03_31_27pm.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/screenshot/Second Layout is displayed23-May-2023__05_03_15pm.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/screenshot/Third Layout is displayed23-May-2023__02_40_58pm.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/screenshot/Third Layout is displayed23-May-2023__03_31_30pm.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/screenshot/Third Layout is displayed23-May-2023__05_03_18pm.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/screenshot/layout is visible23-May-2023__03_30_39pm.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/screenshot/layout is visible23-May-2023__05_02_23pm.png" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/Pageobjects/HomePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Pageobjects/HomePage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/Testcases/HomepageTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Testcases/HomepageTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/baseClass/TestBase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/baseClass/TestBase.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/resources/config.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/resources/config.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test-output/GEAD.html" beforeDir="false" afterPath="$PROJECT_DIR$/test-output/GEAD.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testng.xml" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -37,6 +58,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Class" />
+        <option value="AnnotationType" />
       </list>
     </option>
   </component>
@@ -70,42 +92,59 @@
   "keyToString": {
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "last_opened_file_path": "C:/GAED",
+    "last_opened_file_path": "C:/GAED/src/main",
     "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "reference.projectsettings.compiler.javacompiler"
+    "settings.editor.selected.configurable": "preferences.pluginManager"
   }
 }]]></component>
   <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="Runner" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\GAED\src\main" />
+      <recent name="C:\GAED\Driver" />
       <recent name="C:\GAED" />
       <recent name="C:\Users\Aditya Pawar\IdeaProjects\HP_Sprocket\app" />
       <recent name="C:\Users\Aditya Pawar\git\HP_Sprocket\HP_Sprocket\app" />
-      <recent name="C:\Users\Aditya Pawar\git\HP_Sprocket\HP_Sprocket\src\main" />
-      <recent name="C:\Users\Aditya Pawar\git\HP_Sprocket\HP_Sprocket" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="Runner" />
       <recent name="ExtentReportListener" />
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="TestNG.HomepageTest.Sign_up_OTP_fields">
+  <component name="RunManager" selected="TestNG.LoginUserTest.VerifyEmptyNotExist">
+    <configuration name="LoginUserTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Testcases.LoginUserTest" />
+      <module name="GAED" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Testcases.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration default="true" type="JetRunConfigurationType">
-      <module name="HP" />
+      <module name="GAED" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
-      <module name="HP" />
+      <module name="GAED" />
       <option name="filePath" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <configuration name="Classexecution" type="TestNG">
-      <module name="HP" />
+      <module name="GAED" />
       <shortenClasspath name="NONE" />
       <useClassPathOnly />
       <option name="SUITE_NAME" value="" />
@@ -127,7 +166,7 @@
       </method>
     </configuration>
     <configuration name="GalleryPageTest.Gallery_verify_image" type="TestNG" nameIsGenerated="true">
-      <module name="HP" />
+      <module name="GAED" />
       <shortenClasspath name="NONE" />
       <useClassPathOnly />
       <extension name="coverage">
@@ -154,8 +193,8 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="HomepageTest" type="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="HP" />
+    <configuration name="LoginUserTest.VerifyEmptyEmail" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="GAED" />
       <shortenClasspath name="NONE" />
       <useClassPathOnly />
       <extension name="coverage">
@@ -166,35 +205,8 @@
       </extension>
       <option name="SUITE_NAME" value="" />
       <option name="PACKAGE_NAME" value="Testcases" />
-      <option name="MAIN_CLASS_NAME" value="Testcases.HomepageTest" />
-      <option name="GROUP_NAME" value="" />
-      <option name="TEST_OBJECT" value="CLASS" />
-      <option name="PARAMETERS" value="" />
-      <option name="OUTPUT_DIRECTORY" value="" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="moduleWithDependencies" />
-      </option>
-      <option name="PROPERTIES_FILE" value="" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="HomepageTest.Sign_up_Newtab_fields" type="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="HP" />
-      <shortenClasspath name="NONE" />
-      <useClassPathOnly />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="Testcases.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="SUITE_NAME" value="" />
-      <option name="PACKAGE_NAME" value="Testcases" />
-      <option name="MAIN_CLASS_NAME" value="Testcases.HomepageTest" />
-      <option name="METHOD_NAME" value="Sign_up_Newtab_fields" />
+      <option name="MAIN_CLASS_NAME" value="Testcases.LoginUserTest" />
+      <option name="METHOD_NAME" value="VerifyEmptyEmail" />
       <option name="GROUP_NAME" value="" />
       <option name="TEST_OBJECT" value="METHOD" />
       <option name="PARAMETERS" value="" />
@@ -209,8 +221,8 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="HomepageTest.Sign_up_OTP_fields" type="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="HP" />
+    <configuration name="LoginUserTest.VerifyEmptyNotExist" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="GAED" />
       <shortenClasspath name="NONE" />
       <useClassPathOnly />
       <extension name="coverage">
@@ -221,8 +233,8 @@
       </extension>
       <option name="SUITE_NAME" value="" />
       <option name="PACKAGE_NAME" value="Testcases" />
-      <option name="MAIN_CLASS_NAME" value="Testcases.HomepageTest" />
-      <option name="METHOD_NAME" value="Sign_up_OTP_fields" />
+      <option name="MAIN_CLASS_NAME" value="Testcases.LoginUserTest" />
+      <option name="METHOD_NAME" value="VerifyEmptyNotExist" />
       <option name="GROUP_NAME" value="" />
       <option name="TEST_OBJECT" value="METHOD" />
       <option name="PARAMETERS" value="" />
@@ -237,8 +249,8 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="HomepageTest.Sign_up_emtpy_fields" type="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="HP" />
+    <configuration name="LoginUserTest.VerifyInvalidEmail" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="GAED" />
       <shortenClasspath name="NONE" />
       <useClassPathOnly />
       <extension name="coverage">
@@ -249,8 +261,8 @@
       </extension>
       <option name="SUITE_NAME" value="" />
       <option name="PACKAGE_NAME" value="Testcases" />
-      <option name="MAIN_CLASS_NAME" value="Testcases.HomepageTest" />
-      <option name="METHOD_NAME" value="Sign_up_emtpy_fields" />
+      <option name="MAIN_CLASS_NAME" value="Testcases.LoginUserTest" />
+      <option name="METHOD_NAME" value="VerifyInvalidEmail" />
       <option name="GROUP_NAME" value="" />
       <option name="TEST_OBJECT" value="METHOD" />
       <option name="PARAMETERS" value="" />
@@ -265,8 +277,8 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="HomepageTest.Sign_up_invaild_fields" type="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="HP" />
+    <configuration name="LoginUserTest.verifyLoginConsumer" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="GAED" />
       <shortenClasspath name="NONE" />
       <useClassPathOnly />
       <extension name="coverage">
@@ -277,8 +289,8 @@
       </extension>
       <option name="SUITE_NAME" value="" />
       <option name="PACKAGE_NAME" value="Testcases" />
-      <option name="MAIN_CLASS_NAME" value="Testcases.HomepageTest" />
-      <option name="METHOD_NAME" value="Sign_up_invaild_fields" />
+      <option name="MAIN_CLASS_NAME" value="Testcases.LoginUserTest" />
+      <option name="METHOD_NAME" value="verifyLoginConsumer" />
       <option name="GROUP_NAME" value="" />
       <option name="TEST_OBJECT" value="METHOD" />
       <option name="PARAMETERS" value="" />
@@ -294,7 +306,7 @@
       </method>
     </configuration>
     <configuration name="TestSuite " type="TestNG">
-      <module name="HP" />
+      <module name="GAED" />
       <shortenClasspath name="NONE" />
       <useClassPathOnly />
       <option name="SUITE_NAME" value="" />
@@ -316,7 +328,7 @@
       </method>
     </configuration>
     <configuration name="&lt;default&gt;" type="TestNG">
-      <module name="HP" />
+      <module name="GAED" />
       <shortenClasspath name="NONE" />
       <useClassPathOnly />
       <option name="SUITE_NAME" value="" />
@@ -358,7 +370,7 @@
       </method>
     </configuration>
     <configuration name="testcases" type="TestNG" nameIsGenerated="true">
-      <module name="HP" />
+      <module name="GAED" />
       <shortenClasspath name="NONE" />
       <useClassPathOnly />
       <extension name="coverage">
@@ -388,24 +400,24 @@
       </method>
     </configuration>
     <list>
+      <item itemvalue="Application.LoginUserTest" />
       <item itemvalue="TestNG.GalleryPageTest.Gallery_verify_image" />
       <item itemvalue="TestNG.TestSuite " />
       <item itemvalue="TestNG.testcases" />
       <item itemvalue="TestNG.&lt;default&gt;" />
       <item itemvalue="TestNG.Classexecution" />
-      <item itemvalue="TestNG.HomepageTest" />
-      <item itemvalue="TestNG.HomepageTest.Sign_up_Newtab_fields" />
-      <item itemvalue="TestNG.HomepageTest.Sign_up_OTP_fields" />
-      <item itemvalue="TestNG.HomepageTest.Sign_up_emtpy_fields" />
-      <item itemvalue="TestNG.HomepageTest.Sign_up_invaild_fields" />
+      <item itemvalue="TestNG.LoginUserTest.VerifyEmptyEmail" />
+      <item itemvalue="TestNG.LoginUserTest.VerifyEmptyNotExist" />
+      <item itemvalue="TestNG.LoginUserTest.VerifyInvalidEmail" />
+      <item itemvalue="TestNG.LoginUserTest.verifyLoginConsumer" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="TestNG.HomepageTest.Sign_up_OTP_fields" />
-        <item itemvalue="TestNG.HomepageTest.Sign_up_Newtab_fields" />
-        <item itemvalue="TestNG.HomepageTest" />
-        <item itemvalue="TestNG.HomepageTest.Sign_up_emtpy_fields" />
-        <item itemvalue="TestNG.HomepageTest.Sign_up_invaild_fields" />
+        <item itemvalue="TestNG.LoginUserTest.VerifyEmptyNotExist" />
+        <item itemvalue="TestNG.LoginUserTest.VerifyEmptyEmail" />
+        <item itemvalue="TestNG.LoginUserTest.VerifyInvalidEmail" />
+        <item itemvalue="Application.LoginUserTest" />
+        <item itemvalue="TestNG.LoginUserTest.verifyLoginConsumer" />
       </list>
     </recent_temporary>
   </component>
@@ -516,7 +528,14 @@
       <option name="project" value="LOCAL" />
       <updated>1713702264636</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="Framework and homepage 22-04-2024">
+      <created>1713762674496</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1713762674496</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -530,7 +549,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="origin/master" />
+                        <option value="origin/main" />
                       </list>
                     </value>
                   </entry>
@@ -572,20 +591,14 @@
     <MESSAGE value="appium setup 24-02-2024" />
     <MESSAGE value="appium setup 04-04-2024" />
     <MESSAGE value="Framework and homepage" />
-    <option name="LAST_COMMIT_MESSAGE" value="Framework and homepage" />
+    <MESSAGE value="Framework and homepage 22-04-2024" />
+    <option name="LAST_COMMIT_MESSAGE" value="Framework and homepage 22-04-2024" />
   </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <breakpoint enabled="true" type="java-exception">
-          <properties class="java.lang.NoClassDefFoundError" package="java.lang" />
-          <option name="timeStamp" value="1" />
-        </breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
     <watches-manager>
       <configuration name="TestNG">
         <watch expression="Connectivity" language="JAVA" />
+        <watch expression="this" />
       </configuration>
     </watches-manager>
   </component>
