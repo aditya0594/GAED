@@ -1,10 +1,9 @@
 package baseClass;
+import java.awt.*;
 import java.io.*;
 import java.text.SimpleDateFormat;
 import java.time.Duration;
-import java.util.Date;
-import java.util.HashMap;
-import java.util.Properties;
+import java.util.*;
 
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
@@ -15,8 +14,10 @@ import org.apache.commons.lang3.RandomStringUtils;
 import org.apache.poi.ss.usermodel.*;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.openqa.selenium.*;
+import org.openqa.selenium.Point;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.ITestResult;
@@ -27,42 +28,44 @@ public class TestBase {
     //public static AppiumDriver driver;
     //public AppiumDriverLocalService service;
     //public LandingPageAndroid LandingPage;
-    public static WebDriver driver ;
+    public static WebDriver driver;
     static ExtentSparkReporter spark;
     public static ExtentReports extent;
 
-/*    @Parameters("browser")
-    @BeforeSuite
+    /*    @Parameters("browser")
+        @BeforeSuite
 
-        public void Setup(String browser){
-            if(browser.equalsIgnoreCase("chrome")){
-                System.setProperty("webdriver.chrome.driver", "Driver/chromedriver.exe");
-                ChromeOptions options = new ChromeOptions();
-                driver = new ChromeDriver(options);
-            }
-            else if(browser.equalsIgnoreCase("firefox")){
-                driver = new FirefoxDriver();
-            }
-            else if (browser.equalsIgnoreCase("IE")){
-                driver = new InternetExplorerDriver();
-            }
-            else if (browser.equalsIgnoreCase("webdrivermanager")){
-                WebDriverManager.chromedriver().setup();
-                ChromeOptions options = new ChromeOptions();
-                driver = new ChromeDriver(options);
+            public void Setup(String browser){
+                if(browser.equalsIgnoreCase("chrome")){
+                    System.setProperty("webdriver.chrome.driver", "Driver/chromedriver.exe");
+                    ChromeOptions options = new ChromeOptions();
+                    driver = new ChromeDriver(options);
+                }
+                else if(browser.equalsIgnoreCase("firefox")){
+                    driver = new FirefoxDriver();
+                }
+                else if (browser.equalsIgnoreCase("IE")){
+                    driver = new InternetExplorerDriver();
+                }
+                else if (browser.equalsIgnoreCase("webdrivermanager")){
+                    WebDriverManager.chromedriver().setup();
+                    ChromeOptions options = new ChromeOptions();
+                    driver = new ChromeDriver(options);
 
-            }
-        // appium driver
-       *//* System.out.println("Setup TestCase");
+                }
+            // appium driver
+           *//* System.out.println("Setup TestCase");
         CommonUtils utils = new CommonUtils();
         utils.setup(AppConfigTags.ANDROID, AppConfigTags.MOTOROLA, Constants.ANDROID_URI);
         driver = utils.driver;*//*
     }*/
     @BeforeMethod
-    public void Setup(){
+    public void Setup() {
 
         System.setProperty("webdriver.chrome.driver", "Driver/chromedriver.exe");
         ChromeOptions options = new ChromeOptions();
+        options.setExperimentalOption("useAutomationExtension", false);
+        options.setExperimentalOption("excludeSwitches", Collections.singletonList("enable-automation"));
         driver = new ChromeDriver(options);
 
         //Implicitly wait
@@ -93,10 +96,12 @@ public class TestBase {
         prop.load(is);
         return prop;
     }
+
     public static void main(String... args) throws IOException {
         TestBase.read_properties();
     }
-//    @BeforeTest
+
+    //    @BeforeTest
 //    public void startapp() throws IOException {
 //    	pageObjectConfig();
 //        System.out.println("Setup TestCase");
@@ -106,50 +111,56 @@ public class TestBase {
 //        utils.setup(AppConfigTags.ANDROID, AppConfigTags.MOTOROLA, Constants.ANDROID_URI);
 //        driver = utils.driver;
 //    }
-@AfterMethod
-public void getResult(ITestResult result) throws Exception{
-    ExtentTest test;
-    if(result.getStatus() == ITestResult.FAILURE) {
-        // Executed when a test method fails
-        test = extent.createTest(result.getName() + " - Test Case Failed");
-        test.log(Status.FAIL, result.getName() + " - Test Case Failed");
-        test.log(Status.FAIL, result.getThrowable() + " - Test Case Failed");
+    @AfterMethod
+    public void getResult(ITestResult result) throws Exception {
+        ExtentTest test;
+        if (result.getStatus() == ITestResult.FAILURE) {
+            // Executed when a test method fails
+            test = extent.createTest(result.getName() + " - Test Case Failed");
+            test.log(Status.FAIL, result.getName() + " - Test Case Failed");
+            test.log(Status.FAIL, result.getThrowable() + " - Test Case Failed");
 
-        // Capture screenshot
-        String screenshotPath = getScreenShot(driver, result.getName());
-        test.fail("Test Case Failed Snapshot is below " + test.addScreenCaptureFromPath(screenshotPath));
+            // Capture screenshot
+            String screenshotPath = getScreenShot(driver, result.getName());
+            test.fail("Test Case Failed Snapshot is below " + test.addScreenCaptureFromPath(screenshotPath));
 
-    } else if(result.getStatus() == ITestResult.SKIP) {
-        // Executed when a test method is skipped
-        test = extent.createTest(result.getName() + " - Test Case Skipped");
-        test.log(Status.SKIP, result.getName() + " - Test Case Skipped");
-    } else if(result.getStatus() == ITestResult.SUCCESS) {
-        // Executed when a test method passes
-        test = extent.createTest(result.getName() + " - Test Case PASSED");
-        test.log(Status.PASS, result.getName() + " - Test Case PASSED");
+        } else if (result.getStatus() == ITestResult.SKIP) {
+            // Executed when a test method is skipped
+            test = extent.createTest(result.getName() + " - Test Case Skipped");
+            test.log(Status.SKIP, result.getName() + " - Test Case Skipped");
+        } else if (result.getStatus() == ITestResult.SUCCESS) {
+            // Executed when a test method passes
+            test = extent.createTest(result.getName() + " - Test Case PASSED");
+            test.log(Status.PASS, result.getName() + " - Test Case PASSED");
+        }
+
+        // driver.quit();
     }
 
-   // driver.quit();
-}
-	@AfterSuite
-	public void tear() {
-       driver.quit();
-	}
+    @AfterSuite
+    public void tear() {
+        driver.quit();
+    }
+
     @AfterTest
     public void endReport() {
         extent.flush();
     }
+
     public static By waitForElement(By element) {
         WebDriverWait w = new WebDriverWait(driver, Duration.ofSeconds(5));
-        w.until(ExpectedConditions.visibilityOfElementLocated ((By) element));
+        w.until(ExpectedConditions.visibilityOfElementLocated((By) element));
         return element;
     }
-    public static String randomEmail(){
+
+    public static String randomEmail() {
         String allowedChars = "123456789";
-        String email = "aditya" + RandomStringUtils.random(3, allowedChars) +"@yopmail.com";
+        String nameChars = "abcdefg";
+        String email = "adity" + RandomStringUtils.random(2, nameChars) + RandomStringUtils.random(3, allowedChars) + "@yopmail.com";
         return email;
     }
-    public static String randomMobile(){
+
+    public static String randomMobile() {
         String allowedChars = "12345678";
         String MobileNumber = RandomStringUtils.random(8, allowedChars);
         return MobileNumber;
@@ -168,7 +179,8 @@ public void getResult(ITestResult result) throws Exception{
         }
         return -1; // If no data found in the column
     }
-    public static void write_excel(Integer num  ){
+
+    public static void write_excel(Integer num) {
         String filePath = "src/resources/Consumer_signup_ids.xlsx";
         try (FileInputStream fis = new FileInputStream(filePath);
              Workbook workbook = fis.available() > 0 ? WorkbookFactory.create(fis) : new XSSFWorkbook()) {
@@ -193,8 +205,80 @@ public void getResult(ITestResult result) throws Exception{
             e.printStackTrace();
         }
     }
+    public static void moveMouseAround(WebDriver driver, WebElement element) {
+        // Get current location of the element
+        org.openqa.selenium.Point elementLocation = element.getLocation();
 
-    public static void swipe(int startX, int startY,int endX,int endY) {
+        // Get current location of the mouse pointer
+        PointerInfo pointerInfo = MouseInfo.getPointerInfo();
+        java.awt.Point mouseLocation = pointerInfo.getLocation();
+
+        // Calculate the distance between the element and the mouse pointer
+        int dx = (int) (elementLocation.getX() - mouseLocation.getX());
+        int dy = (int) (elementLocation.getY() - mouseLocation.getY());
+
+        // Calculate the number of steps for the mouse to move
+        int steps = 20; // You can adjust the number of steps for smoother or more abrupt movement
+
+        // Calculate the step sizes for x and y directions
+        double stepX = (double) dx / steps;
+        double stepY = (double) dy / steps;
+
+        // Create Actions object
+        Actions actions = new Actions(driver);
+
+        // Move the mouse to the element's location
+        actions.moveToElement(element).perform();
+
+        // Simulate human-like movement by moving the mouse pointer in steps
+        Random random = new Random();
+        for (int i = 0; i < steps; i++) {
+            // Calculate the next position of the mouse pointer
+            int nextX = (int) (mouseLocation.getX() + stepX + random.nextGaussian() * 2); // Add some randomness
+            int nextY = (int) (mouseLocation.getY() + stepY + random.nextGaussian() * 2); // Add some randomness
+
+            // Move the mouse to the next position
+            try {
+                Robot robot = new Robot();
+                robot.mouseMove(nextX, nextY);
+            } catch (AWTException e) {
+                e.printStackTrace();
+            }
+
+            // Pause for a short time to simulate human-like movement
+            try {
+                Thread.sleep(30 + random.nextInt(50)); // Randomize pause duration between steps
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+
+            // Update the current mouse location
+            mouseLocation.setLocation(nextX, nextY);
+        }
+
+        // Finally, move the mouse back to the element to ensure it stays focused
+        actions.moveToElement(element).perform();
+    }
+    public static void typeLikeAHuman(WebElement element, String text) {
+        // Iterate through each character in the text
+        for (int i = 0; i < text.length(); i++) {
+            // Get the current character
+            char c = text.charAt(i);
+
+            // Send the current character to the element
+            element.sendKeys(String.valueOf(c));
+
+            // Add a random delay between keystrokes to simulate human typing speed
+            try {
+                // Adjust the delay range as needed
+                Thread.sleep(50 + (int) (Math.random() * 50)); // Random delay between 50 to 100 milliseconds
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        }
+    }
+
+    public static void swipe(int startX, int startY, int endX, int endY) {
         JavascriptExecutor js = (JavascriptExecutor) driver;
         HashMap<String, Object> scrollObject = new HashMap<>();
         scrollObject.put("direction", "down"); // Optionally you can still provide a direction
@@ -206,7 +290,8 @@ public void getResult(ITestResult result) throws Exception{
         // Slide_touch_mobile(531, 51, 463, 1094);
 
     }
-    public static void swipeUp(int startX, int startY,int endX,int endY) {
+
+    public static void swipeUp(int startX, int startY, int endX, int endY) {
         JavascriptExecutor js = (JavascriptExecutor) driver;
         HashMap<String, Object> scrollObject = new HashMap<>();
         scrollObject.put("direction", "up"); // Optionally you can still provide a direction
@@ -227,12 +312,14 @@ public void getResult(ITestResult result) throws Exception{
         swipeObject.put("y", startY); // ending y-coordinate
         js.executeScript("mobile: touchAction", swipeObject);
     }
+
     public static void release(int startX, int startY) {
         JavascriptExecutor js = (JavascriptExecutor) driver;
         HashMap<String, Object> releaseObject = new HashMap<>();
         releaseObject.put("action", "release");
         js.executeScript("mobile: touchAction", releaseObject);
     }
+
     public static String getScreenShot(WebDriver driver, String screenshotName) throws IOException {
         String dateName = new SimpleDateFormat("yyyyMMddhhmmss").format(new Date());
         TakesScreenshot ts = (TakesScreenshot) driver;
@@ -243,15 +330,16 @@ public void getResult(ITestResult result) throws Exception{
         FileUtils.copyFile(source, finalDestination);
         return destination;
     }
-}
- /*   public void scroll_UIautomator(){
+
+    public void scroll_UIautomator() {
         String scrollableList = "new UiScrollable(new UiSelector().scrollable(true))";
         String scrollToText = ".scrollIntoView(new UiSelector().text(\"Your Element Text\"))";
         String scrollToEnd = ".scrollToEnd(1)";
         String command = scrollableList + scrollToText;
-        driver.findElement(AppiumBy.androidUIAutomator(command));
+        //driver.findElement(AppiumBy.androidUIAutomator(command));
 
-    }*/
+    }
+}
 
 /*    public static void Tap_screen (int startx, int starty)throws InterruptedException {
         TouchAction action = new  TouchAction(driver);

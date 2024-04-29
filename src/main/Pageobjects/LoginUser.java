@@ -116,7 +116,7 @@ public class LoginUser extends TestBase {
         Assert.assertEquals("Send OTP",SentOTPtitle);
         driver.findElement(SentOtpBtn).click();
         Thread.sleep(5000);
-        OTP_read(HomePage.EMAIL);
+        Logjn_OTP_read(HomePage.EMAIL);
         driver.findElement(OTPfirstbox).click();
         Actions actions = new Actions(driver);
         // Use Actions class to perform keyboard shortcut (Ctrl + V) for paste
@@ -133,28 +133,35 @@ public class LoginUser extends TestBase {
         Assert.assertEquals(HomePage.EMAIL,GetConsumeremailFromProfile);
 
     }
-    public static void OTP_read(String emailforInbox) throws InterruptedException {
+
+    public static void Logjn_OTP_read(String emailforInbox) throws InterruptedException {
 
         ((JavascriptExecutor) driver).executeScript("window.open()");
         String defaultTab = driver.getWindowHandle();
-        // Switch to the new tab
         driver.switchTo().window(driver.getWindowHandles().toArray()[1].toString());
 
-        // Navigate to the specified URL
+
+        // Simulate human-like interaction: Wait for a short duration
+        Thread.sleep(2000);
+
         driver.get("https://yopmail.com/en/wm");
         Thread.sleep(3000);
+        driver.findElement(By.xpath("/html/body/div")).click();
         waitForElement(yopmailemail);
-        driver.findElement(yopmailemail).sendKeys(emailforInbox);
+        WebElement emailInput = driver.findElement(yopmailemail);
+        typeLikeAHuman(emailInput, emailforInbox);
+        //driver.findElement(yopmailemail).sendKeys(emailforInbox);
         driver.findElement(yopmailarrow).click();
-        driver.findElement(By.xpath("//i[contains(text(),'\uE16C')]"));
-       // driver.findElement(threeDot).click();// driver.findElement(Deleteinbox).click();// Alert alert = driver.switchTo().alert();// alert.accept();
+
+        // Simulate human-like interaction: Mouse movement after clicking
+        moveMouseAround(driver, driver.findElement(By.xpath("//i[contains(text(),'\uE16C')]")));
+
         Thread.sleep(3000);
         driver.switchTo().frame("ifmail");
         String messageBody = driver.findElement(By.xpath("//*[@id=\"mail\"]")).getText();
         System.out.println(messageBody);
 
         String otpPattern = "\\b\\d{6}\\b"; // Regex pattern to match 6-digit numbers
-
         Pattern pattern = Pattern.compile(otpPattern);
         Matcher matcher = pattern.matcher(messageBody);
 
@@ -170,7 +177,7 @@ public class LoginUser extends TestBase {
         } else {
             System.out.println("No OTP found in the message.");
         }
+
         driver.switchTo().window(driver.getWindowHandles().toArray()[0].toString());
-        //driver.switchTo().window(defaultTab);
     }
 }
