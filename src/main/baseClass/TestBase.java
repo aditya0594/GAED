@@ -5,6 +5,7 @@ import java.text.SimpleDateFormat;
 import java.time.Duration;
 import java.util.*;
 
+import ExtentReportListener.MyITestListener;
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.Status;
@@ -23,12 +24,14 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.ITestResult;
 import org.testng.annotations.*;
 
+@Listeners(MyITestListener.class)
 public class TestBase {
 
     //public static AppiumDriver driver;
     //public AppiumDriverLocalService service;
     //public LandingPageAndroid LandingPage;
     public static WebDriver driver;
+    public static WebDriver newdriver;
     static ExtentSparkReporter spark;
     public static ExtentReports extent;
 
@@ -36,7 +39,7 @@ public class TestBase {
         @BeforeSuite
 
             public void Setup(String browser){
-                if(browser.equalsIgnoreCase("chrome")){
+                if(browser.newdriver("chrome")){
                     System.setProperty("webdriver.chrome.driver", "Driver/chromedriver.exe");
                     ChromeOptions options = new ChromeOptions();
                     driver = new ChromeDriver(options);
@@ -67,13 +70,9 @@ public class TestBase {
         options.setExperimentalOption("useAutomationExtension", false);
         options.setExperimentalOption("excludeSwitches", Collections.singletonList("enable-automation"));
         driver = new ChromeDriver(options);
-
         //Implicitly wait
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
         driver.manage().window().maximize();
-        ExtentSparkReporter htmlReporter = new ExtentSparkReporter(System.getProperty("user.dir") + "/test-output/GEAD.html");
-        extent = new ExtentReports();
-        extent.attachReporter(htmlReporter);
       /*  WebDriverManager.chromedriver().driverVersion("121.0.6167.161").setup();
         ChromeOptions options = new ChromeOptions();
         driver = new ChromeDriver(options);*/
@@ -85,6 +84,13 @@ public class TestBase {
                 .pollingEvery(Duration.ofSeconds(1))
                 .ignoring(NoAlertPresentException.class);*/
 
+    }
+    @BeforeTest
+    public void report(){
+
+        ExtentSparkReporter htmlReporter = new ExtentSparkReporter(System.getProperty("user.dir") + "/test-output/GAED_Testcase_report.html");
+        extent = new ExtentReports();
+        extent.attachReporter(htmlReporter);
     }
 
     public static Properties read_properties() throws IOException {
@@ -112,9 +118,9 @@ public class TestBase {
 //        driver = utils.driver;
 //    }
     @AfterMethod
-    public void getResult(ITestResult result) throws Exception {
+    public void getResult(ITestResult result) throws Exception{
         ExtentTest test;
-        if (result.getStatus() == ITestResult.FAILURE) {
+        if(result.getStatus() == ITestResult.FAILURE) {
             // Executed when a test method fails
             test = extent.createTest(result.getName() + " - Test Case Failed");
             test.log(Status.FAIL, result.getName() + " - Test Case Failed");
@@ -124,22 +130,22 @@ public class TestBase {
             String screenshotPath = getScreenShot(driver, result.getName());
             test.fail("Test Case Failed Snapshot is below " + test.addScreenCaptureFromPath(screenshotPath));
 
-        } else if (result.getStatus() == ITestResult.SKIP) {
+        } else if(result.getStatus() == ITestResult.SKIP) {
             // Executed when a test method is skipped
             test = extent.createTest(result.getName() + " - Test Case Skipped");
             test.log(Status.SKIP, result.getName() + " - Test Case Skipped");
-        } else if (result.getStatus() == ITestResult.SUCCESS) {
+        } else if(result.getStatus() == ITestResult.SUCCESS) {
             // Executed when a test method passes
             test = extent.createTest(result.getName() + " - Test Case PASSED");
             test.log(Status.PASS, result.getName() + " - Test Case PASSED");
         }
-
-        // driver.quit();
+        driver.quit();
     }
 
+
     @AfterSuite
-    public void tear() {
-        driver.quit();
+    public void tear(){
+        extent.flush();
     }
 
     @AfterTest
@@ -148,7 +154,7 @@ public class TestBase {
     }
 
     public static By waitForElement(By element) {
-        WebDriverWait w = new WebDriverWait(driver, Duration.ofSeconds(5));
+        WebDriverWait w = new WebDriverWait(driver, Duration.ofSeconds(10));
         w.until(ExpectedConditions.visibilityOfElementLocated((By) element));
         return element;
     }

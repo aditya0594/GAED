@@ -1,22 +1,22 @@
 package Pageobjects;
 
 import baseClass.TestBase;
-import org.bouncycastle.jcajce.provider.symmetric.Threefish;
 import org.openqa.selenium.*;
+import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.interactions.Actions;
 import org.testng.Assert;
 
 import java.awt.*;
 import java.awt.datatransfer.Clipboard;
 import java.awt.datatransfer.StringSelection;
-import java.util.HashMap;
-import java.util.List;
+import java.util.Set;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 
-public class LoginUser extends TestBase {
+public class LoginConsumer extends TestBase {
 
+    static Set<Cookie> cookies;
     static By loginBtn = By.xpath("//span[normalize-space()='Login']");
     static By loginPageVerify = By.xpath("//h3[contains(@class,'py-2 text-3xl text-gray-800 font-semibold')]");
     static By Loginemailtitle = By.xpath("//label[@class='block tracking-wide text-black-100 text-xs font-normal mb-2']");
@@ -102,6 +102,7 @@ public class LoginUser extends TestBase {
 
     }
 
+
     public static void LoginConsumerSuceessful() throws InterruptedException {
 
         String Loginbtntext =  driver.findElement(loginBtn).getText();
@@ -123,9 +124,10 @@ public class LoginUser extends TestBase {
         actions.keyDown(Keys.CONTROL).sendKeys("v").keyUp(Keys.CONTROL).build().perform();
         driver.findElement(VerifyEmailbtn).click();
         Thread.sleep(6000);
-        consumer_profile();
+
     }
-    public static void consumer_profile(){
+
+    public static void Veriy_consumer_profile(){
         waitForElement(ConsumerpProfileBtn);
         driver.findElement(ConsumerpProfileBtn).click();
         driver.findElement(ViewConsumerProfile).click();
@@ -133,8 +135,14 @@ public class LoginUser extends TestBase {
         Assert.assertEquals(HomePage.EMAIL,GetConsumeremailFromProfile);
 
     }
+    public static void verify_LoginConsumerSuceessful() throws InterruptedException {
 
-    public static void Logjn_OTP_read(String emailforInbox) throws InterruptedException {
+
+    }
+
+
+
+        public static void Logjn_OTP_read(String emailforInbox) throws InterruptedException {
 
         ((JavascriptExecutor) driver).executeScript("window.open()");
         String defaultTab = driver.getWindowHandle();

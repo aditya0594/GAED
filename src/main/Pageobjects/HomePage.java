@@ -5,13 +5,14 @@ import static org.testng.Assert.assertEquals;
 import java.io.IOException;
 import java.util.Map;
 import java.util.Properties;
-
-import ExtentReportListener.MyITestListener;
+import java.util.Set;
 import baseClass.TestBase;
 import org.openqa.selenium.By;
 
 import baseClass.ScreenBase;
+import org.openqa.selenium.Cookie;
 import org.openqa.selenium.Keys;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.devtools.DevTools;
 import org.openqa.selenium.devtools.v118.log.Log;
@@ -103,9 +104,10 @@ public class HomePage extends TestBase {
     }
 
     public void homepage() {
-        driver.get(URLS);
+        driver.get("http://gaed-qa-fe.s3-website.ap-south-1.amazonaws.com/");
         String hometitle = driver.getTitle();
         Assert.assertEquals("GAED", hometitle);
+
     }
 
     public void Mailinator_tab() {

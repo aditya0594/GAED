@@ -51,7 +51,7 @@ public class SignUp extends TestBase {
         driver.findElement(email).sendKeys(HomePage.INEMAIL);
         waitForElement(invalidFistnameMesss);
         String invalidemailMess = driver.findElement(invalidEmailMesss).getText();
-        Assert.assertEquals("This looks like an invalid email (eg: abc@xyz.com)",invalidemailMess);
+        Assert.assertEquals("This look like an invalid email (eg: abc@xyz.com)",invalidemailMess);
         driver.findElement(firstname).sendKeys(Keys.TAB);
     }
     public void Empty_signup_field() {
@@ -96,8 +96,7 @@ public class SignUp extends TestBase {
         driver.findElement(By.xpath("//span[normalize-space()='Check Inbox']")).click();
         driver.switchTo().window(driver.getWindowHandles().toArray()[0].toString());
         return EmailGenerateed;
-
-
+        
     }
     public static void signUp_OTP_read() throws InterruptedException {
 

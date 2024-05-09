@@ -18,7 +18,7 @@ import java.util.Optional;
 
 
 
-@Listeners(MyITestListener.class)
+
 public class HomepageTest extends TestBase {
 
     HomePage homePage = new HomePage();
