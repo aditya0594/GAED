@@ -159,7 +159,7 @@ public class SignUp extends TestBase {
         String ConsumerEmailFromYopmail = CreatRandomEmailyopmail();
 
         System.out.println(ConsumerEmailFromYopmail);
-        write_excel(1);
+        write_excel(1,0,randomEmail());
         driver.findElement(EmailField).sendKeys(ConsumerEmailFromYopmail);
         driver.findElement(agreementChk).click();
 

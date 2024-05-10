@@ -73,6 +73,20 @@ public class BuyAndSell extends TestBase {
         Assert.assertEquals("Field is Required.",ProjectbidsError);
 
     }
+    By ProectTitleField = By.xpath("//input[@name='projectTitle']");
+   // By proecttitleField = By.xpath("//input[@name='projectTitle']");
+    //By proecttitleField = By.xpath("//input[@name='projectTitle']");
+   // By proecttitleField = By.xpath("//input[@name='projectTitle']");
+
+    public void vaild_Stepper1_ProjectFields_button(){
+
+        driver.findElement(SellProjectButton).click();
+        String project_Name = ProjectTileText();
+        write_excel(0,1,ProjectTileText());
+        System.out.println("Project Name " + project_Name);
+
+
+    }
 
 
 

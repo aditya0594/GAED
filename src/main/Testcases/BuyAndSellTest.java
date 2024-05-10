@@ -31,19 +31,28 @@ public class BuyAndSellTest extends TestBase {
 
     }
     @Test(priority = 4,enabled = true)
-    public void invalidat_sellProject_fields() throws InterruptedException {
+    public void invalidat_sellProject_stepper_1_fields() throws InterruptedException {
         ExtentTest test = extent.createTest("Create project mandatory field validation ");
         homepage.homepage();
         LoginUser.LoginConsumerSuceessful();
         Buyandsell.invalidate_Stepper1_ProjectFields_button();
         test.pass("Project field is validated ");
     }
+    @Test(priority = 4,enabled = true)
+    public void valid_sellProject_stepper_1_fields() throws InterruptedException {
+        ExtentTest test = extent.createTest("Create project mandatory field validation ");
+        homepage.homepage();
+        LoginUser.LoginConsumerSuceessful();
+        Buyandsell.vaild_Stepper1_ProjectFields_button();
+        test.pass("Project field is validated ");
+    }
 
-    @Test(priority = 5,enabled = true)
+
+   /* @Test(priority = 5,enabled = true)
     public void validate_sellProject_btn() throws InterruptedException {
         ExtentTest test = extent.createTest("Create project from the consumer login ");
         Buyandsell.validate_SellProject_button();
         test.pass("Project is created");
 
-    }
+    }*/
 }

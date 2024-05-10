@@ -165,6 +165,12 @@ public class TestBase {
         String email = "adity" + RandomStringUtils.random(2, nameChars) + RandomStringUtils.random(3, allowedChars) + "@yopmail.com";
         return email;
     }
+    public static String ProjectTileText() {
+        String nameChars = "ABCD";
+        String Text = "Solar Project " + RandomStringUtils.random(2, nameChars);
+        return Text;
+    }
+
 
     public static String randomMobile() {
         String allowedChars = "12345678";
@@ -186,20 +192,20 @@ public class TestBase {
         return -1; // If no data found in the column
     }
 
-    public static void write_excel(Integer num) {
+    public static void write_excel(Integer num,int Sheet,String saveString) {
         String filePath = "src/resources/Consumer_signup_ids.xlsx";
         try (FileInputStream fis = new FileInputStream(filePath);
              Workbook workbook = fis.available() > 0 ? WorkbookFactory.create(fis) : new XSSFWorkbook()) {
-            Sheet sheet = workbook.getSheetAt(0);
+            Sheet sheet = workbook.getSheetAt(Sheet);
             int lastRowNum = getLastRowNumInColumn(sheet, num);
 
             // Generate random email
-            String randomEmail = randomEmail();
+
 
             // Add data to the next row
             Row row = sheet.createRow(lastRowNum + 1);
             Cell cell = row.createCell(num);
-            cell.setCellValue(randomEmail);
+            cell.setCellValue(saveString);
 
             // Write to file
             try (FileOutputStream fos = new FileOutputStream(filePath)) {
