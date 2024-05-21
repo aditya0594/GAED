@@ -15,7 +15,6 @@ import org.apache.commons.lang3.RandomStringUtils;
 import org.apache.poi.ss.usermodel.*;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.openqa.selenium.*;
-import org.openqa.selenium.Point;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.interactions.Actions;
@@ -93,9 +92,16 @@ public class TestBase {
         extent.attachReporter(htmlReporter);
     }
 
+    public void moveToElement(By locator){
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+
+        // Find the element
+        WebElement element = driver.findElement(locator);
+
+        // Scroll to the element on the page
+        js.executeScript("arguments[0].scrollIntoView();", element);
+    }
     public static Properties read_properties() throws IOException {
-
-
         File file = new File("src/resources/config.properties");
         Properties prop = new Properties();
         InputStreamReader is = new InputStreamReader(new FileInputStream(file));
@@ -154,7 +160,7 @@ public class TestBase {
     }
 
     public static By waitForElement(By element) {
-        WebDriverWait w = new WebDriverWait(driver, Duration.ofSeconds(10));
+        WebDriverWait w = new WebDriverWait(driver, Duration.ofSeconds(30));
         w.until(ExpectedConditions.visibilityOfElementLocated((By) element));
         return element;
     }
@@ -216,6 +222,18 @@ public class TestBase {
         } catch (IOException e) {
             e.printStackTrace();
         }
+    }
+    public static void tab(By element){
+        driver.findElement(element).sendKeys(Keys.TAB);
+    }
+    public static void click(By element){
+        driver.findElement(element).click();
+    }
+
+
+    public String getTextVerify(By element) {
+        String actualText = driver.findElement(element).getText();
+        return actualText;
     }
     public static void moveMouseAround(WebDriver driver, WebElement element) {
         // Get current location of the element

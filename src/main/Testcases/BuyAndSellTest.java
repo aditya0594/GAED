@@ -44,6 +44,7 @@ public class BuyAndSellTest extends TestBase {
         homepage.homepage();
         LoginUser.LoginConsumerSuceessful();
         Buyandsell.vaild_Stepper1_ProjectFields_button();
+        Buyandsell.vaild_Stepper2_ProjectFields_button();
         test.pass("Project field is validated ");
     }
 

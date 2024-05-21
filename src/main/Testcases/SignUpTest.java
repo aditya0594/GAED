@@ -7,9 +7,12 @@ import baseClass.TestBase;
 import com.aventstack.extentreports.ExtentTest;
 import org.testng.annotations.Test;
 
+import java.awt.*;
+
 public class SignUpTest extends TestBase {
     HomePage homePage = new HomePage();
     LoginConsumer Loginuser = new LoginConsumer();
+    Api_Call api_call = new Api_Call();
     SignUp Signup = new SignUp();
 
 
@@ -28,11 +31,13 @@ public class SignUpTest extends TestBase {
         test.pass("To verify the empty fields passed successfully.");
     }
     @Test(priority = 1,enabled = true)
-    public void Consumer_Sign_up() throws InterruptedException {
+    public void Consumer_Sign_up() throws InterruptedException, AWTException {
         ExtentTest test = extent.createTest("To verify the invalid email");
         homePage.homepage();
+
         Signup.consumer_Sign_up_Step_One();
-       // Signup.consumer_Sign_up_Step_Two();
+        Signup.consumer_Sign_up_Step_Two();
+        api_call.deleteUser();
         test.pass("To verify the invalid email passed successfully.");
     }
 }

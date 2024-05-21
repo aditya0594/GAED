@@ -86,21 +86,26 @@ public class HomePage extends TestBase {
     String Month = "";
     String DAY = "";
     String YEAR = "";
+    static Properties properties;
+
+    static {
+        try {
+            properties = TestBase.read_properties();
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
 
     public HomePage() {
-        try {
-            Properties properties = TestBase.read_properties();
-            URLS = properties.getProperty("url");
-            FIRSTNAME = properties.getProperty("firstname");
-            LASTNAME = properties.getProperty("lastname");
-            EMAIL = properties.getProperty("email");
-            INFIRSTNAME = (String) properties.get("invalidfirstname");
-            INLASTNAME = (String) properties.get("invalidlastname");
-            INEMAIL = (String) properties.get("invalidemail");
-            // Name= (String) Properties.get("name");
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+
+        URLS = properties.getProperty("url");
+        FIRSTNAME = properties.getProperty("firstname");
+        LASTNAME = properties.getProperty("lastname");
+        EMAIL = properties.getProperty("email");
+        INFIRSTNAME = (String) properties.get("invalidfirstname");
+        INLASTNAME = (String) properties.get("invalidlastname");
+        INEMAIL = (String) properties.get("invalidemail");
+        // Name= (String) Properties.get("name");
     }
 
     public void homepage() {
