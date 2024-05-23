@@ -2,12 +2,8 @@ package Pageobjects;
 
 import baseClass.TestBase;
 import org.openqa.selenium.*;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
-
-import static Pageobjects.LoginConsumer.cookies;
 
 public class BuyAndSell extends TestBase {
 
@@ -233,8 +229,11 @@ public class BuyAndSell extends TestBase {
 
 
     }
+    @Override
+    public String getTitle(){
 
-
+        return null;
+    }
 
 
 

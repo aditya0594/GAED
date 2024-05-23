@@ -1,5 +1,5 @@
 
-package Testcases;
+package Testcase;
 import ExtentReportListener.MyITestListener;
 import Pageobjects.HomePage;
 import com.aventstack.extentreports.ExtentTest;

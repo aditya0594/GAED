@@ -5,28 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="fbed16bb-bade-4def-845d-b7f89224c886" name="Changes" comment="Signup Page Completed 21-05-2024">
-      <change afterPath="$PROJECT_DIR$/src/main/Testcases/Api_Call.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/resources/FileUpload.exe" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/resources/image1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/resources/image2.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Screenshots/VerifyEmptyNotExist20240504120102.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Screenshots/VerifyInvalidEmail20240504120102.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Screenshots/VerifyInvalidEmail20240509033549.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Screenshots/verifyLoginConsumer20240504120418.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Screenshots/verifyLoginConsumer20240509020015.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/browserstack-plugin.log" beforeDir="false" afterPath="$PROJECT_DIR$/logs/browserstack-plugin.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/Pageobjects/BuyAndSell.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Pageobjects/BuyAndSell.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/Pageobjects/HomePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Pageobjects/HomePage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/Pageobjects/LoginConsumer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Pageobjects/LoginConsumer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/Pageobjects/SignUp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Pageobjects/SignUp.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/Testcases/BuyAndSellTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Testcases/BuyAndSellTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/Testcases/SignUpTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Testcases/SignUpTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/Testcases/Api_Call.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Testcases/Testcase/Api_Call.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/Testcases/BuyAndSellTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Testcases/Testcase/BuyAndSellTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/Testcases/DeleteUserPageTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Testcases/Testcase/DeleteUserPageTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/Testcases/GalleryPageTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Testcases/Testcase/GalleryPageTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/Testcases/HomepageTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Testcases/Testcase/HomepageTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/Testcases/LoginUserTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Testcases/Testcase/LoginUserTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/Testcases/SignUpTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Testcases/Testcase/SignUpTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/baseClass/TestBase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/baseClass/TestBase.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resources/Consumer_signup_ids.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/resources/Consumer_signup_ids.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resources/config.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/resources/config.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test-output/GAED_Testcase_report.html" beforeDir="false" afterPath="$PROJECT_DIR$/test-output/GAED_Testcase_report.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/testng.xml" beforeDir="false" afterPath="$PROJECT_DIR$/testng.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -39,6 +27,7 @@
       <list>
         <option value="AnnotationType" />
         <option value="Class" />
+        <option value="package-info" />
       </list>
     </option>
   </component>
@@ -98,11 +87,11 @@
   </component>
   <component name="RunManager" selected="TestNG.SignUpTest.Consumer_Sign_up">
     <configuration name="Api_Call" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Testcases.Api_Call" />
+      <option name="MAIN_CLASS_NAME" value="Testcases.Testcase.Api_Call" />
       <module name="GAED" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="Testcases.*" />
+          <option name="PATTERN" value="Testcases.Testcase.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -123,19 +112,19 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="BuyAndSellTest.valid_sellProject_stepper_1_fields (1)" type="TestNG" temporary="true" nameIsGenerated="true">
+    <configuration name="BuyAndSellTest.valid_sellProject_stepper_1_fields" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="GAED" />
       <shortenClasspath name="NONE" />
       <useClassPathOnly />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="Testcases.*" />
+          <option name="PATTERN" value="Testcases.Testcase.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
       <option name="SUITE_NAME" value="" />
       <option name="PACKAGE_NAME" value="Testcases" />
-      <option name="MAIN_CLASS_NAME" value="Testcases.BuyAndSellTest" />
+      <option name="MAIN_CLASS_NAME" value="Testcases.Testcase.BuyAndSellTest" />
       <option name="METHOD_NAME" value="valid_sellProject_stepper_1_fields" />
       <option name="GROUP_NAME" value="" />
       <option name="TEST_OBJECT" value="METHOD" />
@@ -200,13 +189,13 @@
       <useClassPathOnly />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="testcases.*" />
+          <option name="PATTERN" value="Testcases.Testcase.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
       <option name="SUITE_NAME" value="" />
       <option name="PACKAGE_NAME" value="testcases" />
-      <option name="MAIN_CLASS_NAME" value="testcases.GalleryPageTest" />
+      <option name="MAIN_CLASS_NAME" value="Testcases.Testcase.GalleryPageTest" />
       <option name="METHOD_NAME" value="Gallery_verify_image" />
       <option name="GROUP_NAME" value="" />
       <option name="TEST_OBJECT" value="METHOD" />
@@ -228,13 +217,13 @@
       <useClassPathOnly />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="Testcases.*" />
+          <option name="PATTERN" value="Testcases.Testcase.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
       <option name="SUITE_NAME" value="" />
       <option name="PACKAGE_NAME" value="Testcases" />
-      <option name="MAIN_CLASS_NAME" value="Testcases.SignUpTest" />
+      <option name="MAIN_CLASS_NAME" value="Testcases.Testcase.SignUpTest" />
       <option name="METHOD_NAME" value="Consumer_Sign_up" />
       <option name="GROUP_NAME" value="" />
       <option name="TEST_OBJECT" value="METHOD" />
@@ -522,7 +511,14 @@
       <option name="project" value="LOCAL" />
       <updated>1715332059412</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="Signup Page Completed 21-05-2024">
+      <created>1716284242564</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1716284242564</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">

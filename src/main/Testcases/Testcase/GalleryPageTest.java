@@ -1,4 +1,4 @@
-package testcases;
+package Testcases.Testcase;
 
 import Pageobjects.GalleryPageAndroid;
 import Pageobjects.HomePage;

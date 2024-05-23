@@ -1,4 +1,4 @@
-package Testcases;
+package Testcases.Testcase;
 
 import Pageobjects.HomePage;
 import Pageobjects.LoginConsumer;

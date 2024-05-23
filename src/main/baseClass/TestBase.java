@@ -101,6 +101,11 @@ public class TestBase {
         // Scroll to the element on the page
         js.executeScript("arguments[0].scrollIntoView();", element);
     }
+
+    public String getTitle() {
+        return driver.getTitle();
+    }
+
     public static Properties read_properties() throws IOException {
         File file = new File("src/resources/config.properties");
         Properties prop = new Properties();

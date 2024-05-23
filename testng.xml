@@ -3,8 +3,8 @@
 <suite name="All Test Suite">
     <test verbose="2" preserve-order="true" parallel="tests" thread-count="3" name="C:/GAED">
         <classes>
-            <class name= "Testcases.LoginUserTest"/>
-            <!--<class name="Testcases.HomepageTest"></class>-->
+            <class name= "Testcases.Testcase.LoginUserTest"/>
+            <!--<class name="Testcases.Testcase.HomepageTest"></class>-->
         </classes>
     </test>
 </suite>

@@ -1,4 +1,4 @@
-package Testcases;
+package Testcase;
 
 import Pageobjects.HomePage;
 import androidpageobjectss.DeletePageAndroid;
