@@ -4,25 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="fbed16bb-bade-4def-845d-b7f89224c886" name="Changes" comment="Login Page Completed 27-04-2024">
-      <change afterPath="$PROJECT_DIR$/src/main/Testcases/LoginUserTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/utils/utility.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Driver/chromedriver.exe" beforeDir="false" afterPath="$PROJECT_DIR$/Driver/chromedriver.exe" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/Pageobjects/HomePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Pageobjects/HomePage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/Pageobjects/LoginConsumer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Pageobjects/LoginConsumer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/Testcases/Testcase/Api_Call.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Testcases/Api_Call.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/Testcases/Testcase/BuyAndSellTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Testcases/BuyAndSellTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/Testcases/Testcase/DeleteUserPageTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Testcases/DeleteUserPageTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/Testcases/Testcase/GalleryPageTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Testcases/GalleryPageTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/Testcases/Testcase/HomepageTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Testcases/HomepageTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/Testcases/Testcase/LoginUserTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Testcases/LoginUserTest_1.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/Testcases/Testcase/SignUpTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Testcases/SignUpTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/baseClass/TestBase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/baseClass/TestBase.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resources/config.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/resources/config.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test-output/GAED_Testcase_report.html" beforeDir="false" afterPath="$PROJECT_DIR$/test-output/GAED_Testcase_report.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/testng.xml" beforeDir="false" afterPath="$PROJECT_DIR$/testng.xml" afterDir="false" />
+    <list default="true" id="fbed16bb-bade-4def-845d-b7f89224c886" name="Changes" comment="exact DATA DRIVEN ADDED">
+      <change afterPath="$PROJECT_DIR$/Screenshots/VerifyInvalidEmail20240618011803.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Screenshots/VerifyInvalidEmail20240618012222.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Screenshots/VerifyInvalidEmail20240618012722.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Screenshots/VerifyInvalidEmail20240618014159.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Screenshots/VerifyInvalidEmail20240618014416.png" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -546,7 +533,14 @@
       <option name="project" value="LOCAL" />
       <updated>1716284242564</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="exact DATA DRIVEN ADDED">
+      <created>1718655527702</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1718655527703</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -608,7 +602,8 @@
     <MESSAGE value="Signup Page Completed 10-05-2024" />
     <MESSAGE value="Signup Page Completed 11-05-2024" />
     <MESSAGE value="Signup Page Completed 21-05-2024" />
-    <option name="LAST_COMMIT_MESSAGE" value="Signup Page Completed 21-05-2024" />
+    <MESSAGE value="exact DATA DRIVEN ADDED" />
+    <option name="LAST_COMMIT_MESSAGE" value="exact DATA DRIVEN ADDED" />
   </component>
   <component name="XDebuggerManager">
     <watches-manager>
