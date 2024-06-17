@@ -17,11 +17,14 @@ import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.ITestResult;
 import org.testng.annotations.*;
+import utils.utility;
 
 @Listeners(MyITestListener.class)
 public class TestBase {
@@ -62,16 +65,31 @@ public class TestBase {
         driver = utils.driver;*//*
     }*/
     @BeforeMethod
-    public void Setup() {
+    public void Setup() throws IOException {
+        if(utility.property("browserName").toString().equalsIgnoreCase("chrome")){
+            System.setProperty("webdriver.chrome.driver", "Driver/chromedriver.exe");
+            ChromeOptions options = new ChromeOptions();
+            options.addArguments("--remote-allow-origins=*");
+            driver = new ChromeDriver(options);
+            //Implicitly wait
+            driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+            driver.manage().window().maximize();
+        } else if(utility.property("browserName").toString().equalsIgnoreCase("firefox")){
+            driver = new FirefoxDriver();
+        }
+        else if (utility.property("browserName").toString().equalsIgnoreCase("IE")){
+            driver = new InternetExplorerDriver();
+        }
+        else{
+            System.setProperty("webdriver.chrome.driver", "Driver/chromedriver.exe");
+            ChromeOptions options = new ChromeOptions();
+            driver = new ChromeDriver(options);
+            //Implicitly wait
+            driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+            driver.manage().window().maximize();
+        }
 
-        System.setProperty("webdriver.chrome.driver", "Driver/chromedriver.exe");
-        ChromeOptions options = new ChromeOptions();
-        options.setExperimentalOption("useAutomationExtension", false);
-        options.setExperimentalOption("excludeSwitches", Collections.singletonList("enable-automation"));
-        driver = new ChromeDriver(options);
-        //Implicitly wait
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
-        driver.manage().window().maximize();
+
       /*  WebDriverManager.chromedriver().driverVersion("121.0.6167.161").setup();
         ChromeOptions options = new ChromeOptions();
         driver = new ChromeDriver(options);*/
