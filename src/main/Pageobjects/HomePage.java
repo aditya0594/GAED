@@ -20,6 +20,7 @@ import org.openqa.selenium.devtools.v119.console.Console;
 import org.testng.Assert;
 import org.testng.annotations.Listeners;
 import utils.CommonUtils;
+import utils.utility;
 
 
 public class HomePage extends TestBase {
@@ -96,24 +97,25 @@ public class HomePage extends TestBase {
         }
     }
 
-    public HomePage() {
+    public HomePage() throws IOException {
 
-        URLS = properties.getProperty("url");
-        FIRSTNAME = properties.getProperty("firstname");
-        LASTNAME = properties.getProperty("lastname");
-        EMAIL = properties.getProperty("email");
-        INFIRSTNAME = (String) properties.get("invalidfirstname");
-        INLASTNAME = (String) properties.get("invalidlastname");
-        INEMAIL = (String) properties.get("invalidemail");
+        URLS = utility.property("url").toString();
+        FIRSTNAME = utility.property("firstname").toString(); //properties.getProperty("firstname");
+        LASTNAME = utility.property("lastname").toString(); //properties.getProperty("lastname");
+        EMAIL = utility.property("email").toString(); //properties.getProperty("email");
+        INFIRSTNAME = utility.property("invalidfirstname").toString();//(String) properties.get("invalidfirstname");
+        INLASTNAME =  utility.property("invalidlastname").toString();//properties.get("invalidlastname");
+        INEMAIL = utility.property("invalidemail").toString();//(String) properties.get("invalidemail");
         // Name= (String) Properties.get("name");
     }
 
     public void homepage() {
-        driver.get("http://gaed-qa-fe.s3-website.ap-south-1.amazonaws.com/");
+        driver.get(URLS);
         String hometitle = driver.getTitle();
         Assert.assertEquals("GAED", hometitle);
-
     }
+
+
 
     public void Mailinator_tab() {
         driver.findElement(By.cssSelector("body")).sendKeys(Keys.CONTROL + "t");

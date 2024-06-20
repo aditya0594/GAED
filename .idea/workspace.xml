@@ -4,12 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="fbed16bb-bade-4def-845d-b7f89224c886" name="Changes" comment="Signup Page Completed 24-05-2024">
-      <change afterPath="$PROJECT_DIR$/Screenshots/Consumer_Sign_up20240528125227.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/browserstack-plugin.log" beforeDir="false" afterPath="$PROJECT_DIR$/logs/browserstack-plugin.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/Pageobjects/LoginConsumer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Pageobjects/LoginConsumer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test-output/GAED_Testcase_report.html" beforeDir="false" afterPath="$PROJECT_DIR$/test-output/GAED_Testcase_report.html" afterDir="false" />
+    <list default="true" id="fbed16bb-bade-4def-845d-b7f89224c886" name="Changes" comment="exact DATA DRIVEN ADDED">
+      <change afterPath="$PROJECT_DIR$/Screenshots/VerifyInvalidEmail20240618011803.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Screenshots/VerifyInvalidEmail20240618012222.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Screenshots/VerifyInvalidEmail20240618012722.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Screenshots/VerifyInvalidEmail20240618014159.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Screenshots/VerifyInvalidEmail20240618014416.png" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -20,8 +20,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="AnnotationType" />
-        <option value="Class" />
         <option value="package-info" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -51,27 +51,27 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/GAED/src/resources&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "last_opened_file_path": "C:/Users/HM/IdeaProjects/GAED/Driver",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "preferences.pluginManager"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
       <recent name="Runner" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\HM\IdeaProjects\GAED\Driver" />
       <recent name="C:\GAED\src\resources" />
       <recent name="C:\GAED\src\main" />
       <recent name="C:\GAED\src\main\baseClass" />
       <recent name="C:\GAED\Driver" />
-      <recent name="C:\GAED" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="Runner" />
@@ -79,50 +79,16 @@
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="TestNG.SignUpTest.Consumer_Sign_up (1)">
-    <configuration name="Api_Call" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Testcases.Testcase.Api_Call" />
-      <module name="GAED" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="Testcases.Testcase.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="SignUp" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Pageobjects.SignUp" />
-      <module name="GAED" />
+  <component name="RunManager" selected="TestNG.LoginUserTest.VerifyInvalidEmail">
+    <configuration name="LoginConsumer" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Pageobjects.LoginConsumer" />
+      <module name="Practice_programs" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="Pageobjects.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="C:/GAED/testng.xml" type="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="GAED" />
-      <shortenClasspath name="NONE" />
-      <useClassPathOnly />
-      <option name="SUITE_NAME" value="$PROJECT_DIR$/testng.xml" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="" />
-      <option name="GROUP_NAME" value="" />
-      <option name="TEST_OBJECT" value="SUITE" />
-      <option name="PARAMETERS" value="" />
-      <option name="OUTPUT_DIRECTORY" value="" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="moduleWithDependencies" />
-      </option>
-      <option name="PROPERTIES_FILE" value="" />
-      <properties />
-      <listeners />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -155,13 +121,13 @@
       <useClassPathOnly />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="Testcases.Testcase.*" />
+          <option name="PATTERN" value="Testcases.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
       <option name="SUITE_NAME" value="" />
       <option name="PACKAGE_NAME" value="testcases" />
-      <option name="MAIN_CLASS_NAME" value="Testcases.Testcase.GalleryPageTest" />
+      <option name="MAIN_CLASS_NAME" value="Testcases.GalleryPageTest" />
       <option name="METHOD_NAME" value="Gallery_verify_image" />
       <option name="GROUP_NAME" value="" />
       <option name="TEST_OBJECT" value="METHOD" />
@@ -177,20 +143,75 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="SignUpTest.Consumer_Sign_up (1)" type="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="GAED" />
+    <configuration name="LoginUserTest_1" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="Practice_programs" />
       <shortenClasspath name="NONE" />
       <useClassPathOnly />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="Testcase.*" />
+          <option name="PATTERN" value="Testcases.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
       <option name="SUITE_NAME" value="" />
-      <option name="PACKAGE_NAME" value="Testcase" />
-      <option name="MAIN_CLASS_NAME" value="Testcase.SignUpTest" />
-      <option name="METHOD_NAME" value="Consumer_Sign_up" />
+      <option name="PACKAGE_NAME" value="Testcases" />
+      <option name="MAIN_CLASS_NAME" value="Testcases.LoginUserTest_1" />
+      <option name="GROUP_NAME" value="" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <option name="PARAMETERS" value="" />
+      <option name="OUTPUT_DIRECTORY" value="" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="moduleWithDependencies" />
+      </option>
+      <option name="PROPERTIES_FILE" value="" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="LoginUserTest_1.VerifyInvalidEmail" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="Practice_programs" />
+      <shortenClasspath name="NONE" />
+      <useClassPathOnly />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Testcases.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="SUITE_NAME" value="" />
+      <option name="PACKAGE_NAME" value="Testcases" />
+      <option name="MAIN_CLASS_NAME" value="Testcases.LoginUserTest_1" />
+      <option name="METHOD_NAME" value="VerifyInvalidEmail" />
+      <option name="GROUP_NAME" value="" />
+      <option name="TEST_OBJECT" value="METHOD" />
+      <option name="PARAMETERS" value="" />
+      <option name="OUTPUT_DIRECTORY" value="" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="moduleWithDependencies" />
+      </option>
+      <option name="PROPERTIES_FILE" value="" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="LoginUserTest.VerifyInvalidEmail" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="Practice_programs" />
+      <shortenClasspath name="NONE" />
+      <useClassPathOnly />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Testcases.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="SUITE_NAME" value="" />
+      <option name="PACKAGE_NAME" value="Testcases" />
+      <option name="MAIN_CLASS_NAME" value="Testcases.LoginUserTest" />
+      <option name="METHOD_NAME" value="VerifyInvalidEmail" />
       <option name="GROUP_NAME" value="" />
       <option name="TEST_OBJECT" value="METHOD" />
       <option name="PARAMETERS" value="" />
@@ -211,7 +232,7 @@
       <useClassPathOnly />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="Testcases.Testcase.*" />
+          <option name="PATTERN" value="Testcases.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -328,24 +349,24 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="Application.Api_Call" />
-      <item itemvalue="Application.SignUp" />
+      <item itemvalue="Application.LoginConsumer" />
       <item itemvalue="TestNG.GalleryPageTest.Gallery_verify_image" />
       <item itemvalue="TestNG.TestSuite " />
       <item itemvalue="TestNG.testcases" />
       <item itemvalue="TestNG.&lt;default&gt;" />
       <item itemvalue="TestNG.Classexecution" />
-      <item itemvalue="TestNG.SignUpTest.Consumer_Sign_up (1)" />
-      <item itemvalue="TestNG.C:/GAED/testng.xml" />
+      <item itemvalue="TestNG.LoginUserTest.VerifyInvalidEmail" />
+      <item itemvalue="TestNG.LoginUserTest_1" />
+      <item itemvalue="TestNG.LoginUserTest_1.VerifyInvalidEmail" />
       <item itemvalue="TestNG.SignUpTest.Consumer_Sign_up" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="TestNG.SignUpTest.Consumer_Sign_up (1)" />
+        <item itemvalue="TestNG.LoginUserTest.VerifyInvalidEmail" />
+        <item itemvalue="TestNG.LoginUserTest_1" />
+        <item itemvalue="TestNG.LoginUserTest_1.VerifyInvalidEmail" />
+        <item itemvalue="Application.LoginConsumer" />
         <item itemvalue="TestNG.SignUpTest.Consumer_Sign_up" />
-        <item itemvalue="Application.Api_Call" />
-        <item itemvalue="Application.SignUp" />
-        <item itemvalue="TestNG.C:/GAED/testng.xml" />
       </list>
     </recent_temporary>
   </component>
@@ -512,12 +533,12 @@
       <option name="project" value="LOCAL" />
       <updated>1716284242564</updated>
     </task>
-    <task id="LOCAL-00023" summary="Signup Page Completed 24-05-2024">
-      <created>1716491732303</created>
+    <task id="LOCAL-00023" summary="exact DATA DRIVEN ADDED">
+      <created>1718655527702</created>
       <option name="number" value="00023" />
       <option name="presentableId" value="LOCAL-00023" />
       <option name="project" value="LOCAL" />
-      <updated>1716491732303</updated>
+      <updated>1718655527703</updated>
     </task>
     <option name="localTasksCounter" value="24" />
     <servers />
@@ -581,8 +602,8 @@
     <MESSAGE value="Signup Page Completed 10-05-2024" />
     <MESSAGE value="Signup Page Completed 11-05-2024" />
     <MESSAGE value="Signup Page Completed 21-05-2024" />
-    <MESSAGE value="Signup Page Completed 24-05-2024" />
-    <option name="LAST_COMMIT_MESSAGE" value="Signup Page Completed 24-05-2024" />
+    <MESSAGE value="exact DATA DRIVEN ADDED" />
+    <option name="LAST_COMMIT_MESSAGE" value="exact DATA DRIVEN ADDED" />
   </component>
   <component name="XDebuggerManager">
     <watches-manager>

@@ -2,25 +2,29 @@ package Pageobjects;
 
 import baseClass.TestBase;
 import org.openqa.selenium.*;
-import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.interactions.Actions;
 import org.testng.Assert;
+import org.testng.reporters.EmailableReporter;
+import utils.utility;
 
 import java.awt.*;
 import java.awt.datatransfer.Clipboard;
 import java.awt.datatransfer.StringSelection;
+import java.io.IOException;
 import java.util.Set;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+import static utils.utility.AssertTextBtn;
 
-public class LoginConsumer extends TestBase {
+
+public class LoginConsumer extends TestBase{
 
     static Set<Cookie> cookies;
-    static By loginBtn = By.xpath("//span[normalize-space()='Login']");
-    static By loginPageVerify = By.xpath("//h3[@class='py-2 xs:text-2xl xl:text-3xl 3xl:text-4xl text-gray-800 font-semibold']");
+    static By loginBtn = By.xpath("//*[@class='cursor-pointer hidden lg:inline-block lg:ml-auto lg:mr-3 py-2 px-6 text-sm 3xl:text-lg text-white border border-transparent hover:border hover:border-white font-medium  rounded-full transition duration-200 group-hover:text-primary']");
+    static By loginPageVerify = By.xpath("//h3[contains(@class,'py-2 xs:text-2xl xl:text-3xl 3xl:text-4xl text-gray-800 font-semibold xs:text-center xsm:text-left')]");
     static By Loginemailtitle = By.xpath("//label[@class='block tracking-wide text-black-100 text-xs font-normal mb-2']");
-    static By LoginEmail = By.xpath("//input[@name='email']");
+    static By LoginEmail = By.xpath("//input[contains(@name,'email')]");
     static By SentOtpBtn = By.xpath("//button[@type='submit']");
 
     // YOPmail
@@ -46,7 +50,18 @@ public class LoginConsumer extends TestBase {
     //  static By SentOtpBtn = By.xpath("//span[@class='ml-3']");
     //  static By SentOtpBtn = By.xpath("//span[@class='ml-3']");
     //  static By SentOtpBtn = By.xpath("//span[@class='ml-3']");
+    String Email;
 
+    public void Login_Btn_home(){
+        driver.findElement(loginBtn).click();
+    }
+    public void Verify_login_Page(){
+        AssertTextBtn(loginPageVerify,"Welcome Back!");
+    }
+    public void Login_Email() throws IOException {
+        Email = utility.property("email").toString();
+        driver.findElement(LoginEmail).sendKeys(Email);
+    }
 
 
   public static void InvalidLoginInputs() throws InterruptedException {
