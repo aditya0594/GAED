@@ -4,18 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="fbed16bb-bade-4def-845d-b7f89224c886" name="Changes" comment="Signup Page Completed 21-05-2024">
+    <list default="true" id="fbed16bb-bade-4def-845d-b7f89224c886" name="Changes" comment="Signup Page Completed 24-05-2024">
+      <change afterPath="$PROJECT_DIR$/Screenshots/Consumer_Sign_up20240528125227.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/Pageobjects/BuyAndSell.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Pageobjects/BuyAndSell.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/Testcases/Api_Call.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Testcases/Testcase/Api_Call.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/Testcases/BuyAndSellTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Testcases/Testcase/BuyAndSellTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/Testcases/DeleteUserPageTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Testcases/Testcase/DeleteUserPageTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/Testcases/GalleryPageTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Testcases/Testcase/GalleryPageTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/Testcases/HomepageTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Testcases/Testcase/HomepageTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/Testcases/LoginUserTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Testcases/Testcase/LoginUserTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/Testcases/SignUpTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Testcases/Testcase/SignUpTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/baseClass/TestBase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/baseClass/TestBase.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/testng.xml" beforeDir="false" afterPath="$PROJECT_DIR$/testng.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/browserstack-plugin.log" beforeDir="false" afterPath="$PROJECT_DIR$/logs/browserstack-plugin.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/Pageobjects/LoginConsumer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Pageobjects/LoginConsumer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test-output/GAED_Testcase_report.html" beforeDir="false" afterPath="$PROJECT_DIR$/test-output/GAED_Testcase_report.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -85,7 +79,7 @@
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="TestNG.SignUpTest.Consumer_Sign_up">
+  <component name="RunManager" selected="TestNG.SignUpTest.Consumer_Sign_up (1)">
     <configuration name="Api_Call" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Testcases.Testcase.Api_Call" />
       <module name="GAED" />
@@ -108,34 +102,6 @@
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="BuyAndSellTest.valid_sellProject_stepper_1_fields" type="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="GAED" />
-      <shortenClasspath name="NONE" />
-      <useClassPathOnly />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="Testcases.Testcase.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="SUITE_NAME" value="" />
-      <option name="PACKAGE_NAME" value="Testcases" />
-      <option name="MAIN_CLASS_NAME" value="Testcases.Testcase.BuyAndSellTest" />
-      <option name="METHOD_NAME" value="valid_sellProject_stepper_1_fields" />
-      <option name="GROUP_NAME" value="" />
-      <option name="TEST_OBJECT" value="METHOD" />
-      <option name="PARAMETERS" value="" />
-      <option name="OUTPUT_DIRECTORY" value="" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="moduleWithDependencies" />
-      </option>
-      <option name="PROPERTIES_FILE" value="" />
-      <properties />
-      <listeners />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -197,6 +163,34 @@
       <option name="PACKAGE_NAME" value="testcases" />
       <option name="MAIN_CLASS_NAME" value="Testcases.Testcase.GalleryPageTest" />
       <option name="METHOD_NAME" value="Gallery_verify_image" />
+      <option name="GROUP_NAME" value="" />
+      <option name="TEST_OBJECT" value="METHOD" />
+      <option name="PARAMETERS" value="" />
+      <option name="OUTPUT_DIRECTORY" value="" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="moduleWithDependencies" />
+      </option>
+      <option name="PROPERTIES_FILE" value="" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SignUpTest.Consumer_Sign_up (1)" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="GAED" />
+      <shortenClasspath name="NONE" />
+      <useClassPathOnly />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Testcase.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="SUITE_NAME" value="" />
+      <option name="PACKAGE_NAME" value="Testcase" />
+      <option name="MAIN_CLASS_NAME" value="Testcase.SignUpTest" />
+      <option name="METHOD_NAME" value="Consumer_Sign_up" />
       <option name="GROUP_NAME" value="" />
       <option name="TEST_OBJECT" value="METHOD" />
       <option name="PARAMETERS" value="" />
@@ -341,17 +335,17 @@
       <item itemvalue="TestNG.testcases" />
       <item itemvalue="TestNG.&lt;default&gt;" />
       <item itemvalue="TestNG.Classexecution" />
+      <item itemvalue="TestNG.SignUpTest.Consumer_Sign_up (1)" />
       <item itemvalue="TestNG.C:/GAED/testng.xml" />
-      <item itemvalue="TestNG.BuyAndSellTest.valid_sellProject_stepper_1_fields (1)" />
       <item itemvalue="TestNG.SignUpTest.Consumer_Sign_up" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="TestNG.SignUpTest.Consumer_Sign_up (1)" />
         <item itemvalue="TestNG.SignUpTest.Consumer_Sign_up" />
         <item itemvalue="Application.Api_Call" />
         <item itemvalue="Application.SignUp" />
         <item itemvalue="TestNG.C:/GAED/testng.xml" />
-        <item itemvalue="TestNG.BuyAndSellTest.valid_sellProject_stepper_1_fields (1)" />
       </list>
     </recent_temporary>
   </component>
@@ -518,7 +512,14 @@
       <option name="project" value="LOCAL" />
       <updated>1716284242564</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="Signup Page Completed 24-05-2024">
+      <created>1716491732303</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1716491732303</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -580,7 +581,8 @@
     <MESSAGE value="Signup Page Completed 10-05-2024" />
     <MESSAGE value="Signup Page Completed 11-05-2024" />
     <MESSAGE value="Signup Page Completed 21-05-2024" />
-    <option name="LAST_COMMIT_MESSAGE" value="Signup Page Completed 21-05-2024" />
+    <MESSAGE value="Signup Page Completed 24-05-2024" />
+    <option name="LAST_COMMIT_MESSAGE" value="Signup Page Completed 24-05-2024" />
   </component>
   <component name="XDebuggerManager">
     <watches-manager>

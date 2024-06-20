@@ -185,7 +185,6 @@ public class LoginConsumer extends TestBase {
         } else {
             System.out.println("No OTP found in the message.");
         }
-
         driver.switchTo().window(driver.getWindowHandles().toArray()[0].toString());
     }
 }
