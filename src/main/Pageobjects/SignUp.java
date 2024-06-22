@@ -49,6 +49,8 @@ public class SignUp extends TestBase {
     static By yopmailarrow = By.xpath("//i[@class='material-icons-outlined f36']");
     // By firstname = By.xpath("//input[@name='firstName']");
 
+    public void getSign_up_btn (){
+    }
     public void invalid_signup_field() {
         driver.findElement(getSign_Up_Btn).click();
         String Getsignuptitle = driver.findElement(signup_page_title).getText();

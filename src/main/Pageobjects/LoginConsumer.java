@@ -4,8 +4,6 @@ import baseClass.TestBase;
 import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.Actions;
 import org.testng.Assert;
-import org.testng.reporters.EmailableReporter;
-import utils.utility;
 
 import java.awt.*;
 import java.awt.datatransfer.Clipboard;
@@ -52,16 +50,24 @@ public class LoginConsumer extends TestBase{
     //  static By SentOtpBtn = By.xpath("//span[@class='ml-3']");
     String Email;
 
+
     public void Login_Btn_home(){
         driver.findElement(loginBtn).click();
     }
     public void Verify_login_Page(){
         AssertTextBtn(loginPageVerify,"Welcome Back!");
     }
-    public void Login_Email() throws IOException {
-        Email = utility.property("email").toString();
-        driver.findElement(LoginEmail).sendKeys(Email);
+    public void Login_Email(String email) throws IOException {
+        //Email = utility.property("email").toString();
+        driver.findElement(LoginEmail).sendKeys(email);
     }
+    public void Login_Email_invaild(String email) throws IOException {
+        //Email = utility.property("email").toString();
+        driver.findElement(LoginEmail).sendKeys(email);
+    }
+
+
+
 
 
   public static void InvalidLoginInputs() throws InterruptedException {
@@ -76,7 +82,6 @@ public class LoginConsumer extends TestBase{
       driver.findElement(LoginEmail).sendKeys(HomePage.INEMAIL);
       String InvalidEmail  = driver.findElement(InvalidemailLoginMes).getText();
       Assert.assertEquals("This looks like an invalid email (eg: abc@xyz.com)",InvalidEmail);
-
   }
     public static void EmptyEmail() throws InterruptedException {
 
