@@ -91,15 +91,35 @@ public class LoginUserTest extends TestBase {
      utility.LoginData();
   }*/
 
-      @Test(priority = 1, enabled = true, dataProvider = "Loginuser",dataProviderClass = utility.class)
-    public void VerifyInvalidEmail(String usernameEmail, String password) throws IOException {
-        ExtentTest test = extent.createTest("To verify the invalid email");
-
+      @Test(priority = 1, enabled = true, dataProvider = "ValidLoginuser",dataProviderClass = utility.class)
+    public void VerifyEmail(String usernameEmail, String password) throws IOException, InterruptedException {
+        ExtentTest test = extent.createTest("To verify the valid email");
         System.out.println(usernameEmail + " " + password);
        homePage.homepage();
         login.Login_Btn_home();
         login.Verify_login_Page();
         login.Login_Email(usernameEmail);
+        login.sentOTPbtn();
+        login.Logjn_OTP_read(usernameEmail);
+        login.enterOTP();
+        login.verifyEmailbtn();
+        login.Veriyconsumerprofile(usernameEmail);
+
+
+        test.pass("To verify the valid email passed successfully.");
+    }
+    @Test(priority = 2, enabled = true, dataProvider = "InvalidLoginEmail",dataProviderClass = utility.class)
+    public void VerifyInvalidEmail(String usernameEmail, String password) throws IOException {
+        ExtentTest test = extent.createTest("To verify the invalid email");
+
+        System.out.println(usernameEmail + " " + password);
+        homePage.homepage();
+        login.Login_Btn_home();
+        login.Verify_login_Page();
+        login.Login_Email(usernameEmail);
+        login.sentOTPbtn();
+        login.invalid_validation();
+
         test.pass("To verify the invalid email passed successfully.");
     }
 

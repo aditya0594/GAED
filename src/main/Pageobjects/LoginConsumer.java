@@ -33,7 +33,7 @@ public class LoginConsumer extends TestBase{
    static By Message = By.xpath("//*[@id=\"mail\"]/div/div/table/tbody/tr[2]/td/p[1]");
     static By OTPfirstbox = By.xpath("//input[@aria-label='Please enter OTP character 1']");
     static By VerifyEmailbtn = By.xpath("//span[@class='ml-3']");
-   static By ConsumerpProfileBtn = By.xpath("//div[@class='MuiAvatar-root MuiAvatar-circular MuiAvatar-colorDefault css-1llrwy8']//*[name()='svg']");
+   static By ConsumerpProfileBtn = By.xpath("//div[@class='items-center hidden lg:flex']//div//button[@id='basic-button']");
    static By ViewConsumerProfile = By.xpath("//*[@id=\"basic-menu\"]/div[3]/ul/li[1]");
    static By VerifyConsumerEmail = By.xpath("//div[contains(text(),'"+ HomePage.EMAIL +"')]");
    static By InvalidemailLoginMes   = By.xpath("//span[@class='block my-2 text-xs font-normal text-red-500 ']");
@@ -61,16 +61,84 @@ public class LoginConsumer extends TestBase{
         //Email = utility.property("email").toString();
         driver.findElement(LoginEmail).sendKeys(email);
     }
-    public void Login_Email_invaild(String email) throws IOException {
-        //Email = utility.property("email").toString();
-        driver.findElement(LoginEmail).sendKeys(email);
+    public void invalid_validation(){
+        String element  = driver.findElement(InvalidemailLoginMes).getText();
+        Assert.assertEquals("This looks like an invalid email (eg: abc@xyz.com)",element);
+    }
+    public void sentOTPbtn() {
+        driver.findElement(SentOtpBtn).click();
+    }
+
+    public static void Logjn_OTP_read(String emailforInbox) throws InterruptedException {
+
+        ((JavascriptExecutor) driver).executeScript("window.open()");
+        String defaultTab = driver.getWindowHandle();
+        driver.switchTo().window(driver.getWindowHandles().toArray()[1].toString());
+
+
+        // Simulate human-like interaction: Wait for a short duration
+        Thread.sleep(2000);
+
+        driver.get("https://yopmail.com/en/wm");
+        Thread.sleep(3000);
+        driver.findElement(By.xpath("/html/body/div")).click();
+        waitForElement(yopmailemail);
+        WebElement emailInput = driver.findElement(yopmailemail);
+        typeLikeAHuman(emailInput, emailforInbox);
+        //driver.findElement(yopmailemail).sendKeys(emailforInbox);
+        driver.findElement(yopmailarrow).click();
+
+        // Simulate human-like interaction: Mouse movement after clicking
+        moveMouseAround(driver, driver.findElement(By.xpath("//i[contains(text(),'\uE16C')]")));
+
+        Thread.sleep(3000);
+        driver.switchTo().frame("ifmail");
+        String messageBody = driver.findElement(By.xpath("//*[@id=\"mail\"]")).getText();
+        System.out.println(messageBody);
+
+        String otpPattern = "\\b\\d{6}\\b"; // Regex pattern to match 6-digit numbers
+        Pattern pattern = Pattern.compile(otpPattern);
+        Matcher matcher = pattern.matcher(messageBody);
+
+        if (matcher.find()) {
+            String otp = matcher.group();
+            // Get the system clipboard
+            Clipboard clipboard = Toolkit.getDefaultToolkit().getSystemClipboard();
+            // Create a StringSelection object containing the OTP
+            StringSelection stringSelection = new StringSelection(otp);
+            // Set the StringSelection as the current contents of the clipboard
+            clipboard.setContents(stringSelection,null);
+            System.out.println("Extracted OTP: " + otp);
+        } else {
+            System.out.println("No OTP found in the message.");
+        }
+        driver.switchTo().window(driver.getWindowHandles().toArray()[0].toString());
+        Thread.sleep(2000);
+    }
+    public void enterOTP(){
+        driver.findElement(OTPfirstbox).click();
+        Actions actions = new Actions(driver);
+        // Use Actions class to perform keyboard shortcut (Ctrl + V) for paste
+        actions.keyDown(Keys.CONTROL).sendKeys("v").keyUp(Keys.CONTROL).build().perform();
+    }
+    public void verifyEmailbtn() throws InterruptedException {
+        driver.findElement(VerifyEmailbtn).click();
+        Thread.sleep(6000);
+    }
+    public static void Veriyconsumerprofile(String email) throws InterruptedException {
+        waitForElement(ConsumerpProfileBtn);
+        driver.findElement(ConsumerpProfileBtn).click();
+        waitForElement(ViewConsumerProfile);
+        driver.findElement(ViewConsumerProfile).click();
+        Thread.sleep(1000);
+        String GetConsumeremailFromProfile  = driver.findElement(VerifyConsumerEmail).getText();
+        Assert.assertEquals(email,GetConsumeremailFromProfile);
+
     }
 
 
 
-
-
-  public static void InvalidLoginInputs() throws InterruptedException {
+ /* public static void InvalidLoginInputs() throws InterruptedException {
 
       String Loginbtntext =  driver.findElement(loginBtn).getText();
       Assert.assertEquals("Login",Loginbtntext);
@@ -112,7 +180,7 @@ public class LoginConsumer extends TestBase{
         driver.findElement(SentOtpBtn).click();
         String EmailDoesNotExist = driver.findElement(EmaiDoesNotexistlMess).getText();
         Assert.assertEquals("This email is not signed up. Double-check or sign up for a new account.",EmailDoesNotExist);
-    }
+    }*/
     public static void SignupLinkOnLogin() throws InterruptedException {
 
         driver.findElement(loginBtn).click();
@@ -162,49 +230,5 @@ public class LoginConsumer extends TestBase{
 
 
 
-        public static void Logjn_OTP_read(String emailforInbox) throws InterruptedException {
 
-        ((JavascriptExecutor) driver).executeScript("window.open()");
-        String defaultTab = driver.getWindowHandle();
-        driver.switchTo().window(driver.getWindowHandles().toArray()[1].toString());
-
-
-        // Simulate human-like interaction: Wait for a short duration
-        Thread.sleep(2000);
-
-        driver.get("https://yopmail.com/en/wm");
-        Thread.sleep(3000);
-        driver.findElement(By.xpath("/html/body/div")).click();
-        waitForElement(yopmailemail);
-        WebElement emailInput = driver.findElement(yopmailemail);
-        typeLikeAHuman(emailInput, emailforInbox);
-        //driver.findElement(yopmailemail).sendKeys(emailforInbox);
-        driver.findElement(yopmailarrow).click();
-
-        // Simulate human-like interaction: Mouse movement after clicking
-        moveMouseAround(driver, driver.findElement(By.xpath("//i[contains(text(),'\uE16C')]")));
-
-        Thread.sleep(3000);
-        driver.switchTo().frame("ifmail");
-        String messageBody = driver.findElement(By.xpath("//*[@id=\"mail\"]")).getText();
-        System.out.println(messageBody);
-
-        String otpPattern = "\\b\\d{6}\\b"; // Regex pattern to match 6-digit numbers
-        Pattern pattern = Pattern.compile(otpPattern);
-        Matcher matcher = pattern.matcher(messageBody);
-
-        if (matcher.find()) {
-            String otp = matcher.group();
-            // Get the system clipboard
-            Clipboard clipboard = Toolkit.getDefaultToolkit().getSystemClipboard();
-            // Create a StringSelection object containing the OTP
-            StringSelection stringSelection = new StringSelection(otp);
-            // Set the StringSelection as the current contents of the clipboard
-            clipboard.setContents(stringSelection,null);
-            System.out.println("Extracted OTP: " + otp);
-        } else {
-            System.out.println("No OTP found in the message.");
-        }
-        driver.switchTo().window(driver.getWindowHandles().toArray()[0].toString());
-    }
 }
