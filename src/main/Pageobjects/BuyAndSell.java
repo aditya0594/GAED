@@ -12,7 +12,6 @@ public class BuyAndSell extends TestBase {
     By SellProjectButton =  By.xpath("//span[normalize-space()='Sell Project']");
     By HomeButton = By.xpath("//a[@class='text-sm text-white rounded-full py-2 p-4 hover:bg-white hover:text-primary']");
     public void validate_BuySell_buttons() throws InterruptedException {
-
         String  BuyandSelltitle =  driver.findElement(BuySelltab).getText();
         Assert.assertEquals("Buy/Sell",BuyandSelltitle);
         driver.findElement(BuySelltab).click();

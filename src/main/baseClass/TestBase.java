@@ -187,6 +187,12 @@ public class TestBase {
         w.until(ExpectedConditions.visibilityOfElementLocated((By) element));
         return element;
     }
+    public static By waitForElementToBeClickable(By element) {
+        WebDriverWait w = new WebDriverWait(driver, Duration.ofSeconds(30));
+        w.until(ExpectedConditions.elementToBeClickable((By) element));
+        return element;
+    }
+
 
     public static String randomEmail() {
         String allowedChars = "123456789";

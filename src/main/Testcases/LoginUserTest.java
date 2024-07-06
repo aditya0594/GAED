@@ -13,6 +13,7 @@ import org.apache.poi.xssf.usermodel.XSSFRow;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
+import utils.Dataprovider;
 import utils.utility;
 
 import java.io.FileInputStream;
@@ -91,8 +92,8 @@ public class LoginUserTest extends TestBase {
      utility.LoginData();
   }*/
 
-      @Test(priority = 1, enabled = true, dataProvider = "ValidLoginuser",dataProviderClass = utility.class)
-    public void VerifyEmail(String usernameEmail, String password) throws IOException, InterruptedException {
+      @Test(priority = 1, enabled = true, dataProvider = "ValidLoginEmail",dataProviderClass = Dataprovider.class)
+    public void Login_VerifyEmail(String usernameEmail, String password) throws IOException, InterruptedException {
         ExtentTest test = extent.createTest("To verify the valid email");
         System.out.println(usernameEmail + " " + password);
        homePage.homepage();
@@ -100,27 +101,33 @@ public class LoginUserTest extends TestBase {
         login.Verify_login_Page();
         login.Login_Email(usernameEmail);
         login.sentOTPbtn();
-        login.Logjn_OTP_read(usernameEmail);
+        login.Login_OTP_read(usernameEmail);
         login.enterOTP();
         login.verifyEmailbtn();
         login.Veriyconsumerprofile(usernameEmail);
-
-
         test.pass("To verify the valid email passed successfully.");
     }
-    @Test(priority = 2, enabled = true, dataProvider = "InvalidLoginEmail",dataProviderClass = utility.class)
-    public void VerifyInvalidEmail(String usernameEmail, String password) throws IOException {
+    @Test(priority = 2, enabled = true, dataProvider = "InvalidLoginEmail",dataProviderClass = Dataprovider.class)
+    public void Login_VerifyInvalidEmail(String usernameEmail, String password) throws IOException {
         ExtentTest test = extent.createTest("To verify the invalid email");
-
-        System.out.println(usernameEmail + " " + password);
+        System.out.println(usernameEmail);
         homePage.homepage();
         login.Login_Btn_home();
         login.Verify_login_Page();
         login.Login_Email(usernameEmail);
         login.sentOTPbtn();
         login.invalid_validation();
-
         test.pass("To verify the invalid email passed successfully.");
+    }
+    @Test(priority = 2, enabled = true)
+    public void Login_VerifyEmptyEmail() throws IOException {
+        ExtentTest test = extent.createTest("To verify the invalid email");
+        homePage.homepage();
+        login.Login_Btn_home();
+        login.Verify_login_Page();
+        login.sentOTPbtn();
+        login.Empty_invalid_validation();
+        test.pass("To verify the Email email passed successfully.");
     }
 
     /* @Test(priority = 2,enabled = true)

@@ -14,6 +14,7 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 import static utils.utility.AssertTextBtn;
+import static utils.utility.waitForElementToBeClickable;
 
 
 public class LoginConsumer extends TestBase{
@@ -33,11 +34,11 @@ public class LoginConsumer extends TestBase{
    static By Message = By.xpath("//*[@id=\"mail\"]/div/div/table/tbody/tr[2]/td/p[1]");
     static By OTPfirstbox = By.xpath("//input[@aria-label='Please enter OTP character 1']");
     static By VerifyEmailbtn = By.xpath("//span[@class='ml-3']");
-   static By ConsumerpProfileBtn = By.xpath("//div[@class='items-center hidden lg:flex']//div//button[@id='basic-button']");
-   static By ViewConsumerProfile = By.xpath("//*[@id=\"basic-menu\"]/div[3]/ul/li[1]");
+   static By ConsumerpProfileBtn = By.xpath("//button[@class='MuiButtonBase-root MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButton-colorPrimary MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButton-colorPrimary flex items-center space-x-1 css-1ujsas3']");
+   static By ViewConsumerProfile = By.xpath("(//*[@id=\"basic-menu\"]/div[3]/ul/li[1])[1]");
    static By VerifyConsumerEmail = By.xpath("//div[contains(text(),'"+ HomePage.EMAIL +"')]");
    static By InvalidemailLoginMes   = By.xpath("//span[@class='block my-2 text-xs font-normal text-red-500 ']");
-   static By EmptyEmailMess = By.xpath("//span[contains(@class,'block my-2 text-xs font-normal text-red-500')]");
+   static By EmptyEmailMess = By.xpath("//span[@class='block my-2 text-xs font-normal text-red-500 ']");
    static By EmaiDoesNotexistlMess = By.xpath("//span[@class='block my-2 text-xs font-normal text-red-500 ']");
 
 
@@ -52,6 +53,7 @@ public class LoginConsumer extends TestBase{
 
 
     public void Login_Btn_home(){
+
         driver.findElement(loginBtn).click();
     }
     public void Verify_login_Page(){
@@ -65,20 +67,20 @@ public class LoginConsumer extends TestBase{
         String element  = driver.findElement(InvalidemailLoginMes).getText();
         Assert.assertEquals("This looks like an invalid email (eg: abc@xyz.com)",element);
     }
+    public void Empty_invalid_validation(){
+        String element  = driver.findElement(EmptyEmailMess).getText();
+        Assert.assertEquals("Field is Required.",element);
+    }
     public void sentOTPbtn() {
         driver.findElement(SentOtpBtn).click();
     }
 
-    public static void Logjn_OTP_read(String emailforInbox) throws InterruptedException {
-
+    public static void Login_OTP_read(String emailforInbox) throws InterruptedException {
         ((JavascriptExecutor) driver).executeScript("window.open()");
         String defaultTab = driver.getWindowHandle();
         driver.switchTo().window(driver.getWindowHandles().toArray()[1].toString());
-
-
         // Simulate human-like interaction: Wait for a short duration
         Thread.sleep(2000);
-
         driver.get("https://yopmail.com/en/wm");
         Thread.sleep(3000);
         driver.findElement(By.xpath("/html/body/div")).click();
@@ -128,12 +130,16 @@ public class LoginConsumer extends TestBase{
     public static void Veriyconsumerprofile(String email) throws InterruptedException {
         waitForElement(ConsumerpProfileBtn);
         driver.findElement(ConsumerpProfileBtn).click();
-        waitForElement(ViewConsumerProfile);
-        driver.findElement(ViewConsumerProfile).click();
+        Thread.sleep(5000);
+        waitForElementToBeClickable(ViewConsumerProfile);
+        //driver.findElement(ViewConsumerProfile).click();
+        WebElement element = driver.findElement(By.xpath("(//*[@id='basic-menu']/div[3]/ul/li[1])[1]"));
+        // Click the element using JavaScript
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        js.executeScript("arguments[0].click();", element);
         Thread.sleep(1000);
-        String GetConsumeremailFromProfile  = driver.findElement(VerifyConsumerEmail).getText();
+        String GetConsumeremailFromProfile  = driver.findElement(By.xpath("//div[contains(text(),'"+email+"')]")).getText();
         Assert.assertEquals(email,GetConsumeremailFromProfile);
-
     }
 
 
@@ -192,7 +198,6 @@ public class LoginConsumer extends TestBase{
 
 
     public static void LoginConsumerSuceessful() throws InterruptedException {
-
         String Loginbtntext =  driver.findElement(loginBtn).getText();
         Assert.assertEquals("Login",Loginbtntext);
         driver.findElement(loginBtn).click();
@@ -205,14 +210,13 @@ public class LoginConsumer extends TestBase{
         Assert.assertEquals("Send OTP",SentOTPtitle);
         driver.findElement(SentOtpBtn).click();
         Thread.sleep(5000);
-        Logjn_OTP_read(HomePage.EMAIL);
+        Login_OTP_read(HomePage.EMAIL);
         driver.findElement(OTPfirstbox).click();
         Actions actions = new Actions(driver);
         // Use Actions class to perform keyboard shortcut (Ctrl + V) for paste
         actions.keyDown(Keys.CONTROL).sendKeys("v").keyUp(Keys.CONTROL).build().perform();
         driver.findElement(VerifyEmailbtn).click();
         Thread.sleep(6000);
-
     }
 
     public static void Veriy_consumer_profile(){
