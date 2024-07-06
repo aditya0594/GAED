@@ -21,6 +21,8 @@ import java.awt.datatransfer.Clipboard;
 import java.awt.datatransfer.StringSelection;
 import java.awt.event.KeyEvent;
 import java.io.IOException;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.Set;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -68,9 +70,38 @@ public class SignUp extends TestBase {
         driver.findElement(email).sendKeys(HomePage.INEMAIL);
         waitForElement(invalidFistnameMesss);
         String invalidemailMess = driver.findElement(invalidEmailMesss).getText();
-        Assert.assertEquals("This look like an invalid email (eg: abc@xyz.com)",invalidemailMess);
+        Assert.assertEquals("This looks like an invalid email (eg: abc@xyz.com)",invalidemailMess);
         driver.findElement(firstname).sendKeys(Keys.TAB);
     }
+    public void Error_message(By element, String actucalmessage){
+        String invalidfirstnameMess = driver.findElement(element).getText();
+        Assert.assertEquals(actucalmessage,invalidfirstnameMess);
+    }
+    public void verify_text(By element, String actucalmessage){
+        String invalidfirstnameMess = driver.findElement(element).getText();
+        Assert.assertEquals(actucalmessage,invalidfirstnameMess);
+
+    }
+    public void Error_message_Empty_field(By element){
+        String invalidfirstnameMess = driver.findElement(element).getText();
+        Assert.assertEquals("Field is Required.",invalidfirstnameMess);
+
+    }
+
+
+    public void signup_button(){
+        driver.findElement(getSign_Up_Btn).click();
+        verify_text(signup_page_title, "Let's get you an Account");
+    }
+    public void Empty_signup_field1(){
+        signup_button();
+        driver.findElement(agreementChk).click();
+        driver.findElement(sentOTPbtn).click();
+        Error_message_Empty_field(EmpFistnameMesss);
+        Error_message_Empty_field(EmpLastnameMesss);
+        Error_message_Empty_field(EmpEmailMesss);
+    }
+
     public void Empty_signup_field() {
         driver.findElement(getSign_Up_Btn).click();
         String Getsignuptitle = driver.findElement(signup_page_title).getText();
@@ -163,18 +194,17 @@ public class SignUp extends TestBase {
         driver.switchTo().window(driver.getWindowHandles().toArray()[0].toString());
     }
 
-    public void consumer_Sign_up_Step_One() throws InterruptedException {
+    public void consumer_Sign_up_Step_One(String fname, String lname,String ConsumerSignUpEmail) throws InterruptedException {
         boolean signbtn = driver.findElement(getSign_Up_Btn).isDisplayed();
         Assert.assertTrue(signbtn);
         driver.findElement(getSign_Up_Btn).click();
         String Getsignuptitle = driver.findElement(signup_page_title).getText();
         Assert.assertEquals("Let's get you an Account",Getsignuptitle);
-        driver.findElement(firstname).sendKeys(HomePage.FIRSTNAME);
-        driver.findElement(lastname).sendKeys(HomePage.LASTNAME);
-
-        ConsumerSignUpEmail = properties.getProperty("SignupId");
-
-
+        driver.findElement(firstname).sendKeys(fname);
+        driver.findElement(lastname).sendKeys(lname);
+        waitForElement(EmailField);
+       // ConsumerSignUpEmail = properties.getProperty("SignupId");
+        //adityapawarsignup@yopmail.com
         System.out.println(ConsumerSignUpEmail);
         driver.findElement(EmailField).sendKeys(ConsumerSignUpEmail);
         driver.findElement(agreementChk).click();
@@ -190,7 +220,6 @@ public class SignUp extends TestBase {
         actions.keyDown(Keys.CONTROL).sendKeys("v").keyUp(Keys.CONTROL).build().perform();
         Thread.sleep(5000);
         driver.findElement(SignupVerifyEmailbtn).click();
-
     }
     By MobileNumberField = By.xpath("//input[@value='+65']");
     By CalandorClick = By.xpath("//button[@type='button']");
@@ -202,12 +231,13 @@ public class SignUp extends TestBase {
     By ID_proof_value = By.id("react-select-31-input");
     By Address_proof = By.xpath("//*[@id='react-select-4-input']");
     By Address_proof_value = By.id("react-select-32-input");
-    public void consumer_Sign_up_Step_Two() throws InterruptedException, AWTException {
+    By Date_of_birth = By.xpath("//input[@placeholder='dd/mm/yyyy']");
+
+    public void consumer_Sign_up_Step_Two() throws InterruptedException, AWTException, IOException {
         waitForElement(MobileNumberField);
         driver.findElement(MobileNumberField).sendKeys(randomMobile());
 
         //Calendar
-        By Date_of_birth = By.xpath("//input[@placeholder='dd/mm/yyyy']");
         driver.findElement(Date_of_birth).click();
         Thread.sleep(1000);
         //month selection
@@ -242,13 +272,13 @@ public class SignUp extends TestBase {
        // driver.findElement(ID_proof).click();
         Thread.sleep(1000);
         driver.findElement(ID_proof).sendKeys("Aadhaar Card");
-        Thread.sleep(1000);
+        Thread.sleep(500);
         tab(ID_proof);
         tab(ID_proof);
 
-        Thread.sleep(1000);
+        Thread.sleep(500);
         driver.findElement(Address_proof).sendKeys("Bank Passbook with Address");
-        Thread.sleep(1000);
+        Thread.sleep(500);
         tab(Address_proof);
         tab(Address_proof);
 
@@ -262,9 +292,14 @@ public class SignUp extends TestBase {
 
 
         Clipboard clipboard1 = Toolkit.getDefaultToolkit().getSystemClipboard();
+        String path = System.getProperty("user.dir");
+        String relativePath = path+"src/resources/image1.jpg";
+        Path absolute = Paths.get(relativePath);
+        String absolutePath = absolute.toString();
+        System.out.println(absolutePath);
         // Create a StringSelection object containing the OTP
-
-        StringSelection stringSelection = new StringSelection("C:\\GAED\\src\\resources\\image1.jpg");
+        //String absoluteFilePath = Paths.get("src/resources/image1.jpg").toAbsolutePath().toString();
+        StringSelection stringSelection = new StringSelection(absolutePath);
         // Set the StringSelection as the current contents of the clipboard
         clipboard1.setContents(stringSelection,null);
 
@@ -287,7 +322,8 @@ public class SignUp extends TestBase {
        Clipboard clipboard2 = Toolkit.getDefaultToolkit().getSystemClipboard();
         // Create a StringSelection object containing the OTP
        // String image2 = "C:\\GAED\\src\\resources\\image1.jpg";
-      StringSelection stringSelection1 = new StringSelection("C:\\GAED\\src\\resources\\image1.jpg");
+
+      StringSelection stringSelection1 = new StringSelection(absolutePath);
         // Set the StringSelection as the current contents of the clipboard
         clipboard2.setContents(stringSelection1,null);
         Thread.sleep(1000);

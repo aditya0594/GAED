@@ -32,12 +32,42 @@ public class TestBase {
     //public static AppiumDriver driver;
     //public AppiumDriverLocalService service;
     //public LandingPageAndroid LandingPage;
-    public static WebDriver driver;
-    public static WebDriver newdriver;
-    static ExtentSparkReporter spark;
+    protected static WebDriver driver;
     public static ExtentReports extent;
 
-    /*    @Parameters("browser")
+    protected TestBase() {
+        // Private constructor to prevent instantiation
+    }
+
+    @BeforeMethod
+    public static WebDriver Setup() throws IOException {
+        if (driver == null) {
+            String browserName = utility.property("browserName").toString();
+            if (browserName.equalsIgnoreCase("chrome")) {
+                System.setProperty("webdriver.chrome.driver", "Driver/chromedriver.exe");
+                ChromeOptions options = new ChromeOptions();
+                options.addArguments("--remote-allow-origins=*");
+                driver = new ChromeDriver(options);
+                // Implicitly wait
+                driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+                driver.manage().window().maximize();
+            } else if (browserName.equalsIgnoreCase("firefox")) {
+                driver = new FirefoxDriver();
+            } else if (browserName.equalsIgnoreCase("IE")) {
+                driver = new InternetExplorerDriver();
+            } else {
+                System.setProperty("webdriver.chrome.driver", "Driver/chromedriver.exe");
+                ChromeOptions options = new ChromeOptions();
+                driver = new ChromeDriver(options);
+                // Implicitly wait
+                driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+                driver.manage().window().maximize();
+            }
+        }
+        return driver;
+    }
+
+  /*    @Parameters("browser")
         @BeforeSuite
 
             public void Setup(String browser){
@@ -64,44 +94,7 @@ public class TestBase {
         utils.setup(AppConfigTags.ANDROID, AppConfigTags.MOTOROLA, Constants.ANDROID_URI);
         driver = utils.driver;*//*
     }*/
-    @BeforeMethod
-    public void Setup() throws IOException {
-        if(utility.property("browserName").toString().equalsIgnoreCase("chrome")){
-            System.setProperty("webdriver.chrome.driver", "Driver/chromedriver.exe");
-            ChromeOptions options = new ChromeOptions();
-            options.addArguments("--remote-allow-origins=*");
-            driver = new ChromeDriver(options);
-            //Implicitly wait
-            driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
-            driver.manage().window().maximize();
-        } else if(utility.property("browserName").toString().equalsIgnoreCase("firefox")){
-            driver = new FirefoxDriver();
-        }
-        else if (utility.property("browserName").toString().equalsIgnoreCase("IE")){
-            driver = new InternetExplorerDriver();
-        }
-        else{
-            System.setProperty("webdriver.chrome.driver", "Driver/chromedriver.exe");
-            ChromeOptions options = new ChromeOptions();
-            driver = new ChromeDriver(options);
-            //Implicitly wait
-            driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
-            driver.manage().window().maximize();
-        }
 
-
-      /*  WebDriverManager.chromedriver().driverVersion("121.0.6167.161").setup();
-        ChromeOptions options = new ChromeOptions();
-        driver = new ChromeDriver(options);*/
-        //explicit wait
-       /* WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("")));*/
-
-        /*Wait<WebDriver> wait = new FluentWait<>(driver).withTimeout(Duration.ofSeconds(10))
-                .pollingEvery(Duration.ofSeconds(1))
-                .ignoring(NoAlertPresentException.class);*/
-
-    }
     @BeforeTest
     public void report(){
 
@@ -168,7 +161,10 @@ public class TestBase {
             test = extent.createTest(result.getName() + " - Test Case PASSED");
             test.log(Status.PASS, result.getName() + " - Test Case PASSED");
         }
-        driver.quit();
+        if (driver != null) {
+            driver.quit();
+            driver = null;
+        }
     }
 
 

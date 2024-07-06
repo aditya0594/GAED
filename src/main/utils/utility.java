@@ -7,21 +7,20 @@ import org.apache.poi.ss.usermodel.Sheet;
 import org.apache.poi.ss.usermodel.Workbook;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebElement;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.DataProvider;
 
 import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.time.Duration;
 import java.util.Properties;
 
-import static baseClass.TestBase.driver;
-
 public class utility extends TestBase {
+
 
     public static Object property(String key)throws IOException {
         FileInputStream file = new FileInputStream("src/resources/config.properties");
@@ -29,6 +28,25 @@ public class utility extends TestBase {
         prop.load(file);
         return prop.get(key);
     }
+    public static void click_javascript(By element){
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        js.executeScript("arguments[0].click();", element);
+    }
+    public void Error_message(By element, String actucalmessage){
+        String invalidfirstnameMess = driver.findElement(element).getText();
+        Assert.assertEquals(actucalmessage,invalidfirstnameMess);
+    }
+    public void verify_text(By element, String actucalmessage){
+        String invalidfirstnameMess = driver.findElement(element).getText();
+        Assert.assertEquals(actucalmessage,invalidfirstnameMess);
+
+    }
+    public void Error_message_Empty_field(By element){
+        String invalidfirstnameMess = driver.findElement(element).getText();
+        Assert.assertEquals("Field is Required.",invalidfirstnameMess);
+
+    }
+
     public static void AssertTextBtn(By element,String text){
         String btn = driver.findElement(element).getText();
         System.out.println("button text is : " + btn);

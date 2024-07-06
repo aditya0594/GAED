@@ -13,8 +13,7 @@ import java.util.Set;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-import static utils.utility.AssertTextBtn;
-import static utils.utility.waitForElementToBeClickable;
+import static utils.utility.*;
 
 
 public class LoginConsumer extends TestBase{
@@ -133,10 +132,9 @@ public class LoginConsumer extends TestBase{
         Thread.sleep(5000);
         waitForElementToBeClickable(ViewConsumerProfile);
         //driver.findElement(ViewConsumerProfile).click();
-        WebElement element = driver.findElement(By.xpath("(//*[@id='basic-menu']/div[3]/ul/li[1])[1]"));
+        By element = By.xpath("(//*[@id='basic-menu']/div[3]/ul/li[1])[1]");
         // Click the element using JavaScript
-        JavascriptExecutor js = (JavascriptExecutor) driver;
-        js.executeScript("arguments[0].click();", element);
+        click_javascript(element);
         Thread.sleep(1000);
         String GetConsumeremailFromProfile  = driver.findElement(By.xpath("//div[contains(text(),'"+email+"')]")).getText();
         Assert.assertEquals(email,GetConsumeremailFromProfile);
