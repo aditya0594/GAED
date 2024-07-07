@@ -111,6 +111,7 @@ public class HomePage extends TestBase {
 
     public void homepage() {
         driver.get(URLS);
+
         String hometitle = driver.getTitle();
         Assert.assertEquals("GAED", hometitle);
     }

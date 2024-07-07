@@ -47,9 +47,10 @@ public class TestBase {
                 System.setProperty("webdriver.chrome.driver", "Driver/chromedriver.exe");
                 ChromeOptions options = new ChromeOptions();
                 options.addArguments("--remote-allow-origins=*");
+                //options.addArguments("--headless");
                 driver = new ChromeDriver(options);
                 // Implicitly wait
-                driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+                driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
                 driver.manage().window().maximize();
             } else if (browserName.equalsIgnoreCase("firefox")) {
                 driver = new FirefoxDriver();

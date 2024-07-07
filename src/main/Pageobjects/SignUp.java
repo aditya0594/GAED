@@ -14,15 +14,19 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import java.awt.*;
 import java.awt.datatransfer.Clipboard;
 import java.awt.datatransfer.StringSelection;
 import java.awt.event.KeyEvent;
+import java.io.File;
 import java.io.IOException;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.time.Duration;
 import java.util.Set;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -30,6 +34,7 @@ import java.util.regex.Pattern;
 import static Pageobjects.HomePage.properties;
 import static org.hamcrest.CoreMatchers.equalTo;
 import static org.hamcrest.CoreMatchers.is;
+import static utils.utility.click_javascript;
 
 
 public class SignUp extends TestBase {
@@ -195,8 +200,9 @@ public class SignUp extends TestBase {
     }
 
     public void consumer_Sign_up_Step_One(String fname, String lname,String ConsumerSignUpEmail) throws InterruptedException {
-        boolean signbtn = driver.findElement(getSign_Up_Btn).isDisplayed();
-        Assert.assertTrue(signbtn);
+        Thread.sleep(2000);
+        String signbtn = driver.findElement(getSign_Up_Btn).getText();
+        Assert.assertEquals(signbtn,"Sign Up");
         driver.findElement(getSign_Up_Btn).click();
         String Getsignuptitle = driver.findElement(signup_page_title).getText();
         Assert.assertEquals("Let's get you an Account",Getsignuptitle);
@@ -276,11 +282,7 @@ public class SignUp extends TestBase {
         tab(ID_proof);
         tab(ID_proof);
 
-        Thread.sleep(500);
-        driver.findElement(Address_proof).sendKeys("Bank Passbook with Address");
-        Thread.sleep(500);
-        tab(Address_proof);
-        tab(Address_proof);
+
 
         By Address_Browse_btn = By.xpath("//label[@for='addressProofFile']//span[contains(text(),'Browse Files')]");
         By Id_Browse_btn = By.xpath("//label[@for='idProofFile']//span[contains(text(),'Browse Files')]");
@@ -293,17 +295,18 @@ public class SignUp extends TestBase {
 
         Clipboard clipboard1 = Toolkit.getDefaultToolkit().getSystemClipboard();
         String path = System.getProperty("user.dir");
-        String relativePath = path+"src/resources/image1.jpg";
-        Path absolute = Paths.get(relativePath);
-        String absolutePath = absolute.toString();
-        System.out.println(absolutePath);
+        String relativePath = path+"/src/resources/image1.jpg";
+        // Convert to Path object
+        Path convertedpath = Paths.get(relativePath);
+        String FinalPAth = convertedpath.toString();
         // Create a StringSelection object containing the OTP
-        //String absoluteFilePath = Paths.get("src/resources/image1.jpg").toAbsolutePath().toString();
-        StringSelection stringSelection = new StringSelection(absolutePath);
+        String absoluteFilePath = Paths.get("src/resources/image1.jpg").toAbsolutePath().toString();
+         StringSelection stringSelection = new StringSelection(FinalPAth);
         // Set the StringSelection as the current contents of the clipboard
         clipboard1.setContents(stringSelection,null);
 
         click(Id_Browse_btn);
+        Thread.sleep(1000);
 
         Robot robot = new Robot();
         // Press the CTRL key
@@ -317,20 +320,19 @@ public class SignUp extends TestBase {
         robot.keyPress(KeyEvent.VK_ENTER);
 
 
-        Thread.sleep(2000);
 
-       Clipboard clipboard2 = Toolkit.getDefaultToolkit().getSystemClipboard();
-        // Create a StringSelection object containing the OTP
-       // String image2 = "C:\\GAED\\src\\resources\\image1.jpg";
+        Thread.sleep(7000);
+        driver.findElement(Address_proof).sendKeys("Bank Passbook with Address");
+        Thread.sleep(5000);
+        tab(Address_proof);
+        tab(Address_proof);
 
-      StringSelection stringSelection1 = new StringSelection(absolutePath);
-        // Set the StringSelection as the current contents of the clipboard
-        clipboard2.setContents(stringSelection1,null);
-        Thread.sleep(1000);
-
-        click(Address_Browse_btn);
-
+        Clipboard clipboard2 = Toolkit.getDefaultToolkit().getSystemClipboard();
+        clipboard2.setContents(stringSelection,null);
         Robot robot1 = new Robot();
+        click(Address_Browse_btn);
+        Thread.sleep(7000);
+
         // Press the CTRL key
         robot1.keyPress(KeyEvent.VK_CONTROL);
         // Press the V key
@@ -340,6 +342,7 @@ public class SignUp extends TestBase {
         // Release the CTRL key
         robot1.keyRelease(KeyEvent.VK_CONTROL);
         robot1.keyPress(KeyEvent.VK_ENTER);
+
 
         Thread.sleep(5000);
         tab(Address_proof);

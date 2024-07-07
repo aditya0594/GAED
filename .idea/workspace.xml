@@ -5,26 +5,23 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="fbed16bb-bade-4def-845d-b7f89224c886" name="Changes" comment="Completed Login module with dataprivider 06-07-2024">
-      <change afterPath="$PROJECT_DIR$/New folder/image1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/New folder/image2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Screenshots/Consumer_Sign_up20240707011647.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Screenshots/Consumer_Sign_up20240707122744.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Screenshots/Consumer_Sign_up20240707122909.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Screenshots/Consumer_Sign_up20240707123142.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Screenshots/Login_VerifyEmptyEmail20240706072317.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Screenshots/Login_VerifyEmptyEmail20240706072414.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Screenshots/Verify_Empty_signup_fields20240706075718.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Screenshots/Verify_Empty_signup_fields20240706113306.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Screenshots/Verify_Invalid_Signup_Fields20240706113103.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Screenshots/Consumer_Sign_up20240707010741.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Screenshots/Consumer_Sign_up20240707010838.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Screenshots/Consumer_Sign_up20240707011058.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Screenshots/Consumer_Sign_up20240707011249.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Screenshots/Consumer_Sign_up20240707031347.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Screenshots/Consumer_Sign_up20240707031612.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Screenshots/Consumer_Sign_up20240707033419.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Screenshots/Consumer_Sign_up20240707034613.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Screenshots/Consumer_Sign_up20240707123957.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Screenshots/Consumer_Sign_up20240707124704.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Screenshots/Consumer_Sign_up20240707125333.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/Pageobjects/LoginConsumer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Pageobjects/LoginConsumer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/Pageobjects/HomePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Pageobjects/HomePage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/Pageobjects/SignUp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Pageobjects/SignUp.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/Testcases/Api_Call.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Testcases/Api_Call.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/Testcases/SignUpTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Testcases/SignUpTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/baseClass/TestBase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/baseClass/TestBase.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/utils/Dataprovider.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/utils/Dataprovider.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/utils/utility.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/utils/utility.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resources/ExcelFile.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/resources/ExcelFile.xlsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/resources/config.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/resources/config.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/test-output/GAED_Testcase_report.html" beforeDir="false" afterPath="$PROJECT_DIR$/test-output/GAED_Testcase_report.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -67,17 +64,17 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "last_opened_file_path": "C:/Users/HM/IdeaProjects/GAED/New folder",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "preferences.pluginManager"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/HM/IdeaProjects/GAED/New folder&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
       <recent name="Runner" />
@@ -146,34 +143,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="LoginUserTest.Login_VerifyEmail" type="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="Practice_programs" />
-      <shortenClasspath name="NONE" />
-      <useClassPathOnly />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="Testcases.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="SUITE_NAME" value="" />
-      <option name="PACKAGE_NAME" value="Testcases" />
-      <option name="MAIN_CLASS_NAME" value="Testcases.LoginUserTest" />
-      <option name="METHOD_NAME" value="Login_VerifyEmail" />
-      <option name="GROUP_NAME" value="" />
-      <option name="TEST_OBJECT" value="METHOD" />
-      <option name="PARAMETERS" value="" />
-      <option name="OUTPUT_DIRECTORY" value="" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="moduleWithDependencies" />
-      </option>
-      <option name="PROPERTIES_FILE" value="" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="SignUpTest.Consumer_Sign_up" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="Practice_programs" />
       <shortenClasspath name="NONE" />
@@ -188,34 +157,6 @@
       <option name="PACKAGE_NAME" value="Testcases" />
       <option name="MAIN_CLASS_NAME" value="Testcases.SignUpTest" />
       <option name="METHOD_NAME" value="Consumer_Sign_up" />
-      <option name="GROUP_NAME" value="" />
-      <option name="TEST_OBJECT" value="METHOD" />
-      <option name="PARAMETERS" value="" />
-      <option name="OUTPUT_DIRECTORY" value="" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="moduleWithDependencies" />
-      </option>
-      <option name="PROPERTIES_FILE" value="" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="SignUpTest.Signup_page_verify" type="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="Practice_programs" />
-      <shortenClasspath name="NONE" />
-      <useClassPathOnly />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="Testcases.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="SUITE_NAME" value="" />
-      <option name="PACKAGE_NAME" value="Testcases" />
-      <option name="MAIN_CLASS_NAME" value="Testcases.SignUpTest" />
-      <option name="METHOD_NAME" value="Signup_page_verify" />
       <option name="GROUP_NAME" value="" />
       <option name="TEST_OBJECT" value="METHOD" />
       <option name="PARAMETERS" value="" />
@@ -258,7 +199,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="SignUpTest.Verify_Invalid_Signup_Fields" type="TestNG" temporary="true" nameIsGenerated="true">
+    <configuration name="SignUpTest.deleuser (1)" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="Practice_programs" />
       <shortenClasspath name="NONE" />
       <useClassPathOnly />
@@ -271,7 +212,63 @@
       <option name="SUITE_NAME" value="" />
       <option name="PACKAGE_NAME" value="Testcases" />
       <option name="MAIN_CLASS_NAME" value="Testcases.SignUpTest" />
-      <option name="METHOD_NAME" value="Verify_Invalid_Signup_Fields" />
+      <option name="METHOD_NAME" value="deleuser" />
+      <option name="GROUP_NAME" value="" />
+      <option name="TEST_OBJECT" value="METHOD" />
+      <option name="PARAMETERS" value="" />
+      <option name="OUTPUT_DIRECTORY" value="" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="moduleWithDependencies" />
+      </option>
+      <option name="PROPERTIES_FILE" value="" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SignUpTest.deleuser (2)" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="Practice_programs" />
+      <shortenClasspath name="NONE" />
+      <useClassPathOnly />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Testcases.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="SUITE_NAME" value="" />
+      <option name="PACKAGE_NAME" value="Testcases" />
+      <option name="MAIN_CLASS_NAME" value="Testcases.SignUpTest" />
+      <option name="METHOD_NAME" value="deleuser" />
+      <option name="GROUP_NAME" value="" />
+      <option name="TEST_OBJECT" value="METHOD" />
+      <option name="PARAMETERS" value="" />
+      <option name="OUTPUT_DIRECTORY" value="" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="moduleWithDependencies" />
+      </option>
+      <option name="PROPERTIES_FILE" value="" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SignUpTest.deleuser" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="Practice_programs" />
+      <shortenClasspath name="NONE" />
+      <useClassPathOnly />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Testcases.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="SUITE_NAME" value="" />
+      <option name="PACKAGE_NAME" value="Testcases" />
+      <option name="MAIN_CLASS_NAME" value="Testcases.SignUpTest" />
+      <option name="METHOD_NAME" value="deleuser" />
       <option name="GROUP_NAME" value="" />
       <option name="TEST_OBJECT" value="METHOD" />
       <option name="PARAMETERS" value="" />
@@ -386,19 +383,19 @@
       <item itemvalue="TestNG.testcases" />
       <item itemvalue="TestNG.&lt;default&gt;" />
       <item itemvalue="TestNG.Classexecution" />
-      <item itemvalue="TestNG.LoginUserTest.Login_VerifyEmail" />
+      <item itemvalue="TestNG.SignUpTest.deleuser" />
+      <item itemvalue="TestNG.SignUpTest.deleuser (1)" />
+      <item itemvalue="TestNG.SignUpTest.deleuser (2)" />
       <item itemvalue="TestNG.SignUpTest.Consumer_Sign_up" />
-      <item itemvalue="TestNG.SignUpTest.Signup_page_verify" />
       <item itemvalue="TestNG.SignUpTest.Verify_Empty_signup_fields" />
-      <item itemvalue="TestNG.SignUpTest.Verify_Invalid_Signup_Fields" />
     </list>
     <recent_temporary>
       <list>
         <item itemvalue="TestNG.SignUpTest.Consumer_Sign_up" />
+        <item itemvalue="TestNG.SignUpTest.deleuser (2)" />
+        <item itemvalue="TestNG.SignUpTest.deleuser" />
+        <item itemvalue="TestNG.SignUpTest.deleuser (1)" />
         <item itemvalue="TestNG.SignUpTest.Verify_Empty_signup_fields" />
-        <item itemvalue="TestNG.SignUpTest.Signup_page_verify" />
-        <item itemvalue="TestNG.SignUpTest.Verify_Invalid_Signup_Fields" />
-        <item itemvalue="TestNG.LoginUserTest.Login_VerifyEmail" />
       </list>
     </recent_temporary>
   </component>
