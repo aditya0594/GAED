@@ -4,25 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="fbed16bb-bade-4def-845d-b7f89224c886" name="Changes" comment="Completed Login module with dataprivider 06-07-2024">
-      <change afterPath="$PROJECT_DIR$/Screenshots/Consumer_Sign_up20240707010741.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Screenshots/Consumer_Sign_up20240707010838.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Screenshots/Consumer_Sign_up20240707011058.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Screenshots/Consumer_Sign_up20240707011249.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Screenshots/Consumer_Sign_up20240707031347.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Screenshots/Consumer_Sign_up20240707031612.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Screenshots/Consumer_Sign_up20240707033419.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Screenshots/Consumer_Sign_up20240707034613.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Screenshots/Consumer_Sign_up20240707123957.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Screenshots/Consumer_Sign_up20240707124704.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Screenshots/Consumer_Sign_up20240707125333.png" afterDir="false" />
+    <list default="true" id="fbed16bb-bade-4def-845d-b7f89224c886" name="Changes" comment="Completed signup module with dataprivider 07-07-2024">
+      <change afterPath="$PROJECT_DIR$/.gitlab-ci.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/Pageobjects/HomePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Pageobjects/HomePage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/Pageobjects/SignUp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Pageobjects/SignUp.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/Testcases/SignUpTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Testcases/SignUpTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/baseClass/TestBase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/baseClass/TestBase.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resources/config.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/resources/config.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/utils/utility.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/utils/utility.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/test-output/GAED_Testcase_report.html" beforeDir="false" afterPath="$PROJECT_DIR$/test-output/GAED_Testcase_report.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testng.xml" beforeDir="false" afterPath="$PROJECT_DIR$/testng.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -68,7 +57,7 @@
   &quot;keyToString&quot;: {
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/HM/IdeaProjects/GAED/New folder&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/HM/IdeaProjects/GAED&quot;,
     &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
     &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
@@ -80,11 +69,11 @@
       <recent name="Runner" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\HM\IdeaProjects\GAED" />
       <recent name="C:\Users\HM\IdeaProjects\GAED\New folder" />
       <recent name="C:\Users\HM\IdeaProjects\GAED\src\resources" />
       <recent name="C:\GAED\src\resources" />
       <recent name="C:\Users\HM\IdeaProjects\GAED\Driver" />
-      <recent name="C:\GAED\src\main" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="Runner" />
@@ -576,7 +565,14 @@
       <option name="project" value="LOCAL" />
       <updated>1720275181016</updated>
     </task>
-    <option name="localTasksCounter" value="25" />
+    <task id="LOCAL-00025" summary="Completed signup module with dataprivider 07-07-2024">
+      <created>1720348997724</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1720348997724</updated>
+    </task>
+    <option name="localTasksCounter" value="26" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -640,7 +636,8 @@
     <MESSAGE value="Signup Page Completed 21-05-2024" />
     <MESSAGE value="exact DATA DRIVEN ADDED" />
     <MESSAGE value="Completed Login module with dataprivider 06-07-2024" />
-    <option name="LAST_COMMIT_MESSAGE" value="Completed Login module with dataprivider 06-07-2024" />
+    <MESSAGE value="Completed signup module with dataprivider 07-07-2024" />
+    <option name="LAST_COMMIT_MESSAGE" value="Completed signup module with dataprivider 07-07-2024" />
   </component>
   <component name="XDebuggerManager">
     <watches-manager>

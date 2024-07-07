@@ -154,6 +154,19 @@ public class utility extends TestBase {
                 return "";
         }
     }
-
+    /*<plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>3.0.0-M5</version> <!-- Or the latest version -->
+                <configuration>
+                    <suiteXmlFiles>
+                        <suiteXmlFile>testng.xml</suiteXmlFile>
+                    </suiteXmlFiles>
+                    <parallel>tests</parallel>
+                    <threadCount>3</threadCount> <!-- Number of threads for parallel execution -->
+                </configuration>
+            </plugin>
+        </plugins>*/
 
 }

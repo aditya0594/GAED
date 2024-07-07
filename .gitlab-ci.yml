@@ -1,0 +1,27 @@
+stages:
+  - test
+
+variables:
+  SELENIUM_SERVER_NAME: selenium-hub
+  SELENIUM_SERVER_URL: http://${SELENIUM_SERVER_NAME}:4444
+  DOCKER_HOST: tcp://docker:2375
+
+services:
+  - docker:20.10.16-dind
+
+test:
+  stage: test
+  image: docker/compose
+  before_script:
+    - docker-compose up -d selenium-hub chrome edge firefox
+    - sleep 10
+    - docker-compose run ping curl ${SELENIUM_SERVER_URL}/status
+  script:
+    - docker-compose run tests mvn clean test
+
+  artifacts:
+    when: always
+    name: "report"
+    paths:
+      - target/surefire-reports/**
+    expire_in: 7 days
