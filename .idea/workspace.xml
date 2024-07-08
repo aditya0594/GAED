@@ -81,7 +81,7 @@
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="TestNG.SignUpTest.Consumer_Sign_up">
+  <component name="RunManager" selected="TestNG.LoginUserTest.Login_VerifyEmptyEmail">
     <configuration name="Classexecution" type="TestNG">
       <module name="GAED" />
       <shortenClasspath name="NONE" />
@@ -132,8 +132,8 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="SignUpTest.Consumer_Sign_up" type="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="Practice_programs" />
+    <configuration name="LoginUserTest.Login_VerifyEmptyEmail" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="GAED" />
       <shortenClasspath name="NONE" />
       <useClassPathOnly />
       <extension name="coverage">
@@ -144,8 +144,8 @@
       </extension>
       <option name="SUITE_NAME" value="" />
       <option name="PACKAGE_NAME" value="Testcases" />
-      <option name="MAIN_CLASS_NAME" value="Testcases.SignUpTest" />
-      <option name="METHOD_NAME" value="Consumer_Sign_up" />
+      <option name="MAIN_CLASS_NAME" value="Testcases.LoginUserTest" />
+      <option name="METHOD_NAME" value="Login_VerifyEmptyEmail" />
       <option name="GROUP_NAME" value="" />
       <option name="TEST_OBJECT" value="METHOD" />
       <option name="PARAMETERS" value="" />
@@ -160,7 +160,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="SignUpTest.Verify_Empty_signup_fields" type="TestNG" temporary="true" nameIsGenerated="true">
+    <configuration name="SignUpTest.Consumer_Sign_up" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="Practice_programs" />
       <shortenClasspath name="NONE" />
       <useClassPathOnly />
@@ -173,7 +173,7 @@
       <option name="SUITE_NAME" value="" />
       <option name="PACKAGE_NAME" value="Testcases" />
       <option name="MAIN_CLASS_NAME" value="Testcases.SignUpTest" />
-      <option name="METHOD_NAME" value="Verify_Empty_signup_fields" />
+      <option name="METHOD_NAME" value="Consumer_Sign_up" />
       <option name="GROUP_NAME" value="" />
       <option name="TEST_OBJECT" value="METHOD" />
       <option name="PARAMETERS" value="" />
@@ -372,19 +372,19 @@
       <item itemvalue="TestNG.testcases" />
       <item itemvalue="TestNG.&lt;default&gt;" />
       <item itemvalue="TestNG.Classexecution" />
+      <item itemvalue="TestNG.LoginUserTest.Login_VerifyEmptyEmail" />
       <item itemvalue="TestNG.SignUpTest.deleuser" />
       <item itemvalue="TestNG.SignUpTest.deleuser (1)" />
       <item itemvalue="TestNG.SignUpTest.deleuser (2)" />
       <item itemvalue="TestNG.SignUpTest.Consumer_Sign_up" />
-      <item itemvalue="TestNG.SignUpTest.Verify_Empty_signup_fields" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="TestNG.LoginUserTest.Login_VerifyEmptyEmail" />
         <item itemvalue="TestNG.SignUpTest.Consumer_Sign_up" />
         <item itemvalue="TestNG.SignUpTest.deleuser (2)" />
         <item itemvalue="TestNG.SignUpTest.deleuser" />
         <item itemvalue="TestNG.SignUpTest.deleuser (1)" />
-        <item itemvalue="TestNG.SignUpTest.Verify_Empty_signup_fields" />
       </list>
     </recent_temporary>
   </component>
