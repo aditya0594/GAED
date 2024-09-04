@@ -119,7 +119,7 @@ public class LoginUserTest extends TestBase {
         login.invalid_validation();
         test.pass("To verify the invalid email passed successfully.");
     }
-    @Test(priority = 2, enabled = true)
+    @Test(priority = 3, enabled = true)
     public void Login_VerifyEmptyEmail() throws IOException {
         ExtentTest test = extent.createTest("To verify the invalid email");
         homePage.homepage();
@@ -129,6 +129,20 @@ public class LoginUserTest extends TestBase {
         login.Empty_invalid_validation();
         test.pass("To verify the Email email passed successfully.");
     }
+    @Test(priority = 4, enabled = true, dataProvider = "ValidLoginEmail",dataProviderClass = Dataprovider.class)
+    public void InvalidOTP(String usernameEmail, String password) throws IOException, InterruptedException {
+        ExtentTest test = extent.createTest("To verify the Invalid OTP message");
+        System.out.println(usernameEmail + " " + password);
+        homePage.homepage();
+        login.Login_Btn_home();
+        login.Verify_login_Page();
+        login.Login_Email(usernameEmail);
+        login.sentOTPbtn();
+        login.InvalidOTP();
+        login.verifyEmailbtn();
+        login.invalidOTP_message();
+    }
+
 
     /* @Test(priority = 2,enabled = true)
     public void VerifyEmptyEmail() throws InterruptedException {

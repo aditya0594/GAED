@@ -9,6 +9,7 @@ import java.awt.*;
 import java.awt.datatransfer.Clipboard;
 import java.awt.datatransfer.StringSelection;
 import java.io.IOException;
+import java.util.List;
 import java.util.Set;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -39,7 +40,7 @@ public class LoginConsumer extends TestBase{
    static By InvalidemailLoginMes   = By.xpath("//span[@class='block my-2 text-xs font-normal text-red-500 ']");
    static By EmptyEmailMess = By.xpath("//span[@class='block my-2 text-xs font-normal text-red-500 ']");
    static By EmaiDoesNotexistlMess = By.xpath("//span[@class='block my-2 text-xs font-normal text-red-500 ']");
-
+    static By InvalidOTPmessage = By.xpath("//span[@class='block my-2 text-sm font-normal text-red-500']");
 
   static By SignupLinkLogin = By.xpath("//span[@class='font-medium text-primary hover:underline cursor-pointer']");
   static By SignupTitleOfLink = By.xpath("//*[@id=\"root\"]/div/div[2]/div/div/div/div/div[2]/div/div/div/form/div[2]/div/p");
@@ -69,6 +70,10 @@ public class LoginConsumer extends TestBase{
     public void Empty_invalid_validation(){
         String element  = driver.findElement(EmptyEmailMess).getText();
         Assert.assertEquals("Field is Required.",element);
+    }
+    public void invalidOTP_message(){
+        String element  = driver.findElement(InvalidOTPmessage).getText();
+        Assert.assertEquals("Invalid OTP. Please try again.",element);
     }
     public void sentOTPbtn() {
         driver.findElement(SentOtpBtn).click();
@@ -122,20 +127,51 @@ public class LoginConsumer extends TestBase{
         // Use Actions class to perform keyboard shortcut (Ctrl + V) for paste
         actions.keyDown(Keys.CONTROL).sendKeys("v").keyUp(Keys.CONTROL).build().perform();
     }
+    public void InvalidOTP(){
+        String randomOTP = "123456";
+        Clipboard clipboard = Toolkit.getDefaultToolkit().getSystemClipboard();
+        // Create a StringSelection object containing the OTP
+        StringSelection stringSelection = new StringSelection(randomOTP);
+        // Set the StringSelection as the current contents of the clipboard
+        clipboard.setContents(stringSelection,null);
+        System.out.println("Extracted OTP: " + randomOTP);
+        driver.findElement(OTPfirstbox).click();
+        Actions actions = new Actions(driver);
+        // Use Actions class to perform keyboard shortcut (Ctrl + V) for paste
+        actions.keyDown(Keys.CONTROL).sendKeys("v").keyUp(Keys.CONTROL).build().perform();
+    }
     public void verifyEmailbtn() throws InterruptedException {
         driver.findElement(VerifyEmailbtn).click();
         Thread.sleep(6000);
     }
     public static void Veriyconsumerprofile(String email) throws InterruptedException {
-        waitForElement(ConsumerpProfileBtn);
-        driver.findElement(ConsumerpProfileBtn).click();
+       // waitForElement(ConsumerpProfileBtn);
+      //  driver.findElement(ConsumerpProfileBtn).click();
+
+        driver.findElement(By.xpath("//div[@class='border border-white rounded-full']")).click();
         Thread.sleep(5000);
-        waitForElementToBeClickable(ViewConsumerProfile);
-        //driver.findElement(ViewConsumerProfile).click();
-        By element = By.xpath("(//*[@id='basic-menu']/div[3]/ul/li[1])[1]");
-        // Click the element using JavaScript
-        click_javascript(element);
+
+        // Find all ul elements with the specified class
+        List<WebElement> ulElements = driver.findElements(By.xpath("//ul[@class='MuiList-root MuiList-padding MuiMenu-list css-r8u8y9']"));
+
+        // Check how many elements were found
+        System.out.println("Number of ul elements found: " + ulElements.size());
+
+        // Example: Interact with the first ul element
+        WebElement firstUl = ulElements.get(0);
+       // This is the same as using [1] in XPath
+        System.out.println("First ul element text: " + firstUl.getText());
+        driver.findElement(By.xpath("/html/body/div[3]/div[3]/ul/li[1]")).click();
+
+        // Example: Interact with the second ul element, if it exists
+       /* if (ulElements.size() > 1) {
+            WebElement secondUl = ulElements.get(1);  // This is the same as using [2] in XPath
+            System.out.println("Second ul element text: " + secondUl.getText());
+
+        }*/
+
         Thread.sleep(1000);
+
         String GetConsumeremailFromProfile  = driver.findElement(By.xpath("//div[contains(text(),'"+email+"')]")).getText();
         Assert.assertEquals(email,GetConsumeremailFromProfile);
     }

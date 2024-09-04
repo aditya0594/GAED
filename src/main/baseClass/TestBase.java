@@ -10,6 +10,7 @@ import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.Status;
 import com.aventstack.extentreports.reporter.ExtentSparkReporter;
+import io.github.bonigarcia.wdm.WebDriverManager;
 import org.apache.commons.io.FileUtils;
 import org.apache.commons.lang3.RandomStringUtils;
 import org.apache.poi.ss.usermodel.*;
@@ -44,7 +45,7 @@ public class TestBase {
         if (driver == null) {
             String browserName = utility.property("browserName").toString();
             if (browserName.equalsIgnoreCase("chrome")) {
-                System.setProperty("webdriver.chrome.driver", "Driver/chromedriver.exe");
+                WebDriverManager.chromedriver().setup();
                 ChromeOptions options = new ChromeOptions();
                 options.addArguments("--remote-allow-origins=*");
                 //options.addArguments("--headless");
@@ -53,11 +54,13 @@ public class TestBase {
                 driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
                 driver.manage().window().maximize();
             } else if (browserName.equalsIgnoreCase("firefox")) {
+                WebDriverManager.firefoxdriver().setup();
                 driver = new FirefoxDriver();
             } else if (browserName.equalsIgnoreCase("IE")) {
+                WebDriverManager.iedriver().setup();
                 driver = new InternetExplorerDriver();
             } else {
-                System.setProperty("webdriver.chrome.driver", "Driver/chromedriver.exe");
+                WebDriverManager.chromedriver().setup();
                 ChromeOptions options = new ChromeOptions();
                 driver = new ChromeDriver(options);
                 // Implicitly wait

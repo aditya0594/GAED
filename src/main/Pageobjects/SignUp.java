@@ -27,6 +27,7 @@ import java.io.IOException;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.time.Duration;
+import java.util.List;
 import java.util.Set;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -58,10 +59,13 @@ public class SignUp extends TestBase {
 
     public void getSign_up_btn (){
     }
-    public void invalid_signup_field() {
-        driver.findElement(getSign_Up_Btn).click();
+    public void validate_signup_page(){
         String Getsignuptitle = driver.findElement(signup_page_title).getText();
         Assert.assertEquals("Let's get you an Account",Getsignuptitle);
+    }
+    public void invalid_signup_field() {
+        driver.findElement(getSign_Up_Btn).click();
+        validate_signup_page();
         driver.findElement(firstname).sendKeys(HomePage.INFIRSTNAME);
         waitForElement(invalidFistnameMesss);
         String invalidfirstnameMess = driver.findElement(invalidFistnameMesss).getText();
@@ -78,6 +82,47 @@ public class SignUp extends TestBase {
         Assert.assertEquals("This looks like an invalid email (eg: abc@xyz.com)",invalidemailMess);
         driver.findElement(firstname).sendKeys(Keys.TAB);
     }
+    public static void addressDropdown(String addressInitials) throws InterruptedException {
+        driver.findElement(By.xpath("//input[@name='address']")).sendKeys(addressInitials); // sent the address initials
+
+        List<WebElement> suggestAddress = driver.findElements(By.xpath("//li[@class='text-sm font-normal text-black-900 px-3 py-2 cursor-pointer hover:bg-[#f6f6f6]']"));
+        //driver.findElements(By.xpath("//ul[@class='mt-2 border border-gray-300 shadow-md rounded-x1 rounded-bl-xl rounded-br-xl py-1 absolute mx-[2%] left-e top-full w-[96%] z-50 bg-white']/li"));
+
+        System.out.println("Number of ul elements found: " + suggestAddress.size());
+
+        // Example: Interact with the first ul element
+        WebElement firstUl = suggestAddress.get(0);
+        firstUl.click();
+        Thread.sleep(1000);
+
+
+        //class="mt-2 border border-gray-300 shadow-md rounded-x1 rounded-bl-xl rounded-br-xl py-1 absolute mx-[2%] left-e top-full w-[96%] z-50 bg-white"
+
+        // Find all ul elements with the specified class
+       /* List<WebElement> ulElements = driver.findElements(By.xpath("//ul[@class='MuiList-root MuiList-padding MuiMenu-list css-r8u8y9']"));
+
+        // Check how many elements were found
+        System.out.println("Number of ul elements found: " + ulElements.size());
+
+        // Example: Interact with the first ul element
+        WebElement firstUl = ulElements.get(0);
+        // This is the same as using [1] in XPath
+        System.out.println("First ul element text: " + firstUl.getText());
+        driver.findElement(By.xpath("/html/body/div[3]/div[3]/ul/li[1]")).click();
+
+        // Example: Interact with the second ul element, if it exists
+       *//* if (ulElements.size() > 1) {
+            WebElement secondUl = ulElements.get(1);  // This is the same as using [2] in XPath
+            System.out.println("Second ul element text: " + secondUl.getText());
+
+        }*//*
+
+        Thread.sleep(1000);
+
+        String GetConsumeremailFromProfile  = driver.findElement(By.xpath("//div[contains(text(),'"+email+"')]")).getText();
+        Assert.assertEquals(email,GetConsumeremailFromProfile);*/
+    }
+
     public void Error_message(By element, String actucalmessage){
         String invalidfirstnameMess = driver.findElement(element).getText();
         Assert.assertEquals(actucalmessage,invalidfirstnameMess);
@@ -239,6 +284,13 @@ public class SignUp extends TestBase {
     By Address_proof_value = By.id("react-select-32-input");
     By Date_of_birth = By.xpath("//input[@placeholder='dd/mm/yyyy']");
 
+    By Address_Browse_btn = By.xpath("//label[@for='addressProofFile']//span[contains(text(),'Browse Files')]");
+    By Id_Browse_btn = By.xpath("//label[@for='idProofFile']//span[contains(text(),'Browse Files')]");
+    By Stepper_two_submitBtn = By.xpath("//button[@class='mt-2 tracking-wide font-semibold bg-primary text-white w-full py-3 rounded-full transition-all duration-300 ease-in-out flex items-center justify-center focus:shadow-outline focus:outline-none']");
+    By Form_sumitted_message = By.xpath("//*[@class='xs:text-sm sm:text-base xl:text-xl font-normal text-black-900 text-center xs:px-10 xl:px-72 2xl:px-96 3xl:px-[500px] my-5']");
+    By Image_Address_Avaliable =  By.xpath("//span[@class=' truncate max-w-[90%] text-sm font-normal text-black-900']");
+    By Image1_ID_Avaliable =  By.xpath("//span[@class=' truncate max-w-[90%] text-sm font-normal text-black-900']");
+
     public void consumer_Sign_up_Step_Two() throws InterruptedException, AWTException, IOException {
         waitForElement(MobileNumberField);
         driver.findElement(MobileNumberField).sendKeys(randomMobile());
@@ -268,9 +320,9 @@ public class SignUp extends TestBase {
 
         driver.findElement(Address_field).click();
         Thread.sleep(2000);
-        driver.findElement(Address_field).sendKeys("MIHAN, Nagpur, Nagpur, Maharashtra, India");
+        addressDropdown("chatra");
         Thread.sleep(1000);
-        driver.findElement(proectAddressGoogleField).click();
+       // driver.findElement(proectAddressGoogleField).click();
         tab(Address_field);
 
         //button[@type='submit']
@@ -284,13 +336,6 @@ public class SignUp extends TestBase {
 
 
 
-        By Address_Browse_btn = By.xpath("//label[@for='addressProofFile']//span[contains(text(),'Browse Files')]");
-        By Id_Browse_btn = By.xpath("//label[@for='idProofFile']//span[contains(text(),'Browse Files')]");
-        By Stepper_two_submitBtn = By.xpath("//button[@class='mt-2 tracking-wide font-semibold bg-primary text-white w-full py-3 rounded-full transition-all duration-300 ease-in-out flex items-center justify-center focus:shadow-outline focus:outline-none']");
-        By Form_sumitted_message = By.xpath("//*[@class='xs:text-sm sm:text-base xl:text-xl font-normal text-black-900 text-center xs:px-10 xl:px-72 2xl:px-96 3xl:px-[500px] my-5']");
-        By Image_Address_Avaliable =  By.xpath("//span[@class=' truncate max-w-[90%] text-sm font-normal text-black-900']");
-        By Image1_ID_Avaliable =  By.xpath("//span[@class=' truncate max-w-[90%] text-sm font-normal text-black-900']");
-        Thread.sleep(1000);
 
 
         Clipboard clipboard1 = Toolkit.getDefaultToolkit().getSystemClipboard();
@@ -300,59 +345,29 @@ public class SignUp extends TestBase {
         Path convertedpath = Paths.get(relativePath);
         String FinalPAth = convertedpath.toString();
         // Create a StringSelection object containing the OTP
-        String absoluteFilePath = Paths.get("src/resources/image1.jpg").toAbsolutePath().toString();
          StringSelection stringSelection = new StringSelection(FinalPAth);
         // Set the StringSelection as the current contents of the clipboard
         clipboard1.setContents(stringSelection,null);
 
-        click(Id_Browse_btn);
+        WebElement IDfileInput = driver.findElement(By.xpath("//input[@id='idProofFile']"));
+        IDfileInput.sendKeys(FinalPAth);
+
+
+
         Thread.sleep(1000);
-
-        Robot robot = new Robot();
-        // Press the CTRL key
-        robot.keyPress(KeyEvent.VK_CONTROL);
-        // Press the V key
-        robot.keyPress(KeyEvent.VK_V);
-        // Release the V key
-        robot.keyRelease(KeyEvent.VK_V);
-        // Release the CTRL key
-        robot.keyRelease(KeyEvent.VK_CONTROL);
-        robot.keyPress(KeyEvent.VK_ENTER);
-
-
-
-        Thread.sleep(7000);
         driver.findElement(Address_proof).sendKeys("Bank Passbook with Address");
         Thread.sleep(5000);
         tab(Address_proof);
         tab(Address_proof);
 
-        Clipboard clipboard2 = Toolkit.getDefaultToolkit().getSystemClipboard();
-        clipboard2.setContents(stringSelection,null);
-        Robot robot1 = new Robot();
-        click(Address_Browse_btn);
-        Thread.sleep(7000);
+        WebElement AddressfileInput = driver.findElement(By.xpath("//input[@id='addressProofFile']"));
+        AddressfileInput.sendKeys(FinalPAth);
 
-        // Press the CTRL key
-        robot1.keyPress(KeyEvent.VK_CONTROL);
-        // Press the V key
-        robot1.keyPress(KeyEvent.VK_V);
-        // Release the V key
-        robot1.keyRelease(KeyEvent.VK_V);
-        // Release the CTRL key
-        robot1.keyRelease(KeyEvent.VK_CONTROL);
-        robot1.keyPress(KeyEvent.VK_ENTER);
-
-
-        Thread.sleep(5000);
-        tab(Address_proof);
-       // moveToElement(Stepper_two_submitBtn);
-        //waitForElement(Stepper_two_submitBtn);
 
         click(Stepper_two_submitBtn);
 
 
-        Thread.sleep(15000);
+        Thread.sleep(1000);
 
 
    /*     waitForElement(Form_sumitted_message);

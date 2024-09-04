@@ -8,13 +8,20 @@ import org.testng.Assert;
 public class BuyAndSell extends TestBase {
 
     LoginConsumer LoginUser = new LoginConsumer();
-     By BuySelltab =  By.xpath("//a[@class='text-sm text-primary bg-white rounded-full py-2 p-4 active']");
+    SignUp signup =  new SignUp();
+     By BuySelltab =  By.xpath("//a[@class='text-sm 3xl:text-lg text-white rounded-full py-2 p-4 cursor-pointer group-hover:text-primary']");
     By SellProjectButton =  By.xpath("//span[normalize-space()='Sell Project']");
     By HomeButton = By.xpath("//a[@class='text-sm text-white rounded-full py-2 p-4 hover:bg-white hover:text-primary']");
     public void validate_BuySell_buttons() throws InterruptedException {
         String  BuyandSelltitle =  driver.findElement(BuySelltab).getText();
         Assert.assertEquals("Buy/Sell",BuyandSelltitle);
         driver.findElement(BuySelltab).click();
+    }
+    public void VerifySellProject(){String  sellProjecttitle =  driver.findElement(SellProjectButton).getText();
+        Assert.assertEquals("Sell Project",sellProjecttitle);
+        driver.findElement(SellProjectButton).click();}
+    public void validate_BuySell_buttons_without_signin() throws InterruptedException {
+
         String  sellProjecttitle =  driver.findElement(SellProjectButton).getText();
         Assert.assertEquals("Sell Project",sellProjecttitle);
         driver.findElement(SellProjectButton).click();
@@ -90,9 +97,7 @@ public class BuyAndSell extends TestBase {
 
         driver.findElement(ProjectAddressField).click();
         Thread.sleep(2000);
-        driver.findElement(By.name("location")).sendKeys("MIHAN, Nagpur, Nagpur, Maharashtra, India");
-        Thread.sleep(1000);
-        driver.findElement(proectAddressGoogleField).click();
+        signup.addressDropdown("Chtra");
         Thread.sleep(1000);
         tab(ProjectAddressField);
         driver.findElement(Bid_Validity).sendKeys("90");

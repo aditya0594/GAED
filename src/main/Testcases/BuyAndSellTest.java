@@ -41,7 +41,7 @@ public class BuyAndSellTest extends TestBase {
         homepage.homepage();
         login.LoginConsumerSuceessful();
         Buyandsell.validate_next_saveAsDraft_back();
-        test.pass("Project field is validated ");
+        test.pass("Create project mandatory field validated");
 
     }
     @Test(priority = 4,enabled = true)
@@ -53,13 +53,13 @@ public class BuyAndSellTest extends TestBase {
         test.pass("Project field is validated ");
     }
     @Test(priority = 4,enabled = true)
-    public void valid_sellProject_stepper_1_fields() throws InterruptedException {
+    public void Create_Project() throws InterruptedException {
         ExtentTest test = extent.createTest("Create project mandatory field validation ");
         homepage.homepage();
         login.LoginConsumerSuceessful();
         Buyandsell.vaild_Stepper1_ProjectFields_button();
         Buyandsell.vaild_Stepper2_ProjectFields_button();
-        test.pass("Project field is validated ");
+        test.pass("Create project mandatory field validation ");
     }
 
 
