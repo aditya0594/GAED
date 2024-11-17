@@ -11,6 +11,8 @@ services:
 
 test:
   stage: test
+  tags:
+    - gaed
   image: docker/compose
   before_script:
     - docker-compose up -d selenium-hub chrome edge firefox

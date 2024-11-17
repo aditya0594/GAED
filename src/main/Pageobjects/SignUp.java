@@ -35,7 +35,7 @@ import java.util.regex.Pattern;
 import static Pageobjects.HomePage.properties;
 import static org.hamcrest.CoreMatchers.equalTo;
 import static org.hamcrest.CoreMatchers.is;
-import static utils.utility.click_javascript;
+import static utils.utility.*;
 
 
 public class SignUp extends TestBase {
@@ -55,6 +55,29 @@ public class SignUp extends TestBase {
     By EmpEmailMesss = By.xpath("//*[@id=\"root\"]/div/div[2]/div/div/div/div/div[2]/div/div[2]/div/div/form/div[2]/div/div/span");
     static By yopmailemail = By.xpath("//input[@id='login']");
     static By yopmailarrow = By.xpath("//i[@class='material-icons-outlined f36']");
+    By EmailField = By.xpath("//input[@name='email']");
+
+    By SignupVerifyEmailbtn = By.xpath("//button[@type='button']");
+    By firstOtpBlock = By.xpath("//*[@id='otp']/div/input[1]");
+    By MobileNumberField = By.xpath("//input[@value='+65']");
+    By CalandorClick = By.xpath("//button[@type='button']");
+    By Nationality_field = By.xpath("//*[@class='css-19bb58m']");
+    By Nationality_field_value = By.id("react-select-3-input");   //react-select-4-input in case shows error
+    By Address_field = By.xpath("//input[@name='address']");
+    By proectAddressGoogleField =  By.xpath("//body/div[@id='root']/div[@class='App']/div/div[@class='h-full']/div[@class='mx-auto']/div[@class='flex justify-center']/div[@class='w-full flex']/div[1]");
+    By ID_proof = By.xpath("//*[@id=\"react-select-3-input\"]");
+    By ID_proof_value = By.id("react-select-31-input");
+    By Address_proof = By.xpath("//*[@id='react-select-4-input']");
+    By Address_proof_value = By.id("react-select-32-input");
+    By Date_of_birth = By.xpath("//input[@placeholder='dd/mm/yyyy']");
+
+    By Address_Browse_btn = By.xpath("//label[@for='addressProofFile']//span[contains(text(),'Browse Files')]");
+    By Id_Browse_btn = By.xpath("//label[@for='idProofFile']//span[contains(text(),'Browse Files')]");
+    By Stepper_two_submitBtn = By.xpath("//button[@class='mt-2 tracking-wide font-semibold bg-primary text-white w-full py-3 rounded-full transition-all duration-300 ease-in-out flex items-center justify-center focus:shadow-outline focus:outline-none']");
+    By Form_sumitted_message = By.xpath("//*[@class='xs:text-sm sm:text-base xl:text-xl font-normal text-black-900 text-center xs:px-10 xl:px-72 2xl:px-96 3xl:px-[500px] my-5']");
+    By Image_Address_Avaliable =  By.xpath("//span[@class=' truncate max-w-[90%] text-sm font-normal text-black-900']");
+    By Image1_ID_Avaliable =  By.xpath("//span[@class=' truncate max-w-[90%] text-sm font-normal text-black-900']");
+
     // By firstname = By.xpath("//input[@name='firstName']");
 
     public void getSign_up_btn (){
@@ -174,9 +197,6 @@ public class SignUp extends TestBase {
         Assert.assertEquals("Field is Required.",invalidemailMess);
         driver.findElement(firstname).sendKeys(Keys.TAB);
     }
-    By EmailField = By.xpath("//input[@name='email']");
-    By SignupVerifyEmailbtn = By.xpath("//button[@type='button']");
-    By firstOtpBlock = By.xpath("//*[@id='otp']/div/input[1]");
 
     public static String CreatRandomEmailyopmail() throws InterruptedException {
 
@@ -243,10 +263,14 @@ public class SignUp extends TestBase {
 
         driver.switchTo().window(driver.getWindowHandles().toArray()[0].toString());
     }
-
+    By companycategory = By.xpath("//input[@id='react-select-3-input']");
+    By companyname = By.xpath("//input[@name='companyName']");
+    By companyUrl = By.xpath("//input[@name='companyUrl']");
+    By companyAddressField = By.xpath("//input[@name='address']");
     public void consumer_Sign_up_Step_One(String fname, String lname,String ConsumerSignUpEmail) throws InterruptedException {
         Thread.sleep(2000);
         String signbtn = driver.findElement(getSign_Up_Btn).getText();
+
         Assert.assertEquals(signbtn,"Sign Up");
         driver.findElement(getSign_Up_Btn).click();
         String Getsignuptitle = driver.findElement(signup_page_title).getText();
@@ -254,10 +278,32 @@ public class SignUp extends TestBase {
         driver.findElement(firstname).sendKeys(fname);
         driver.findElement(lastname).sendKeys(lname);
         waitForElement(EmailField);
+
        // ConsumerSignUpEmail = properties.getProperty("SignupId");
         //adityapawarsignup@yopmail.com
         System.out.println(ConsumerSignUpEmail);
         driver.findElement(EmailField).sendKeys(ConsumerSignUpEmail);
+
+//        driver.findElement(By.id("react-select-3-input")).sendKeys("Legal");
+//        tab(companycategory);
+//
+//        String companynamestring = "TestCompany" + generateRandomString(3);
+//        driver.findElement(companyname).sendKeys(companynamestring);
+//        tab(companyname);
+//
+//        driver.findElement(companyUrl).sendKeys("www"+companynamestring+".com");
+//        tab(companyUrl);
+
+
+//        driver.findElement(companyUrl).sendKeys("Legal");
+//        tab(companycategory);
+//        driver.findElement(companyname);
+
+//        driver.findElement(companyAddressField).click();
+//        By location = By.xpath("//input[@name='address']");
+//        googleAddress("chatra",location);
+//        tab(companyAddressField);
+
         driver.findElement(agreementChk).click();
         driver.findElement(sentOTPbtn).click();
         Thread.sleep(5000);
@@ -272,24 +318,7 @@ public class SignUp extends TestBase {
         Thread.sleep(5000);
         driver.findElement(SignupVerifyEmailbtn).click();
     }
-    By MobileNumberField = By.xpath("//input[@value='+65']");
-    By CalandorClick = By.xpath("//button[@type='button']");
-    By Nationality_field = By.xpath("//*[@class=' css-19bb58m']");
-    By Nationality_field_value = By.id("react-select-2-input");
-    By Address_field = By.xpath("//input[@name='address']");
-    By proectAddressGoogleField =  By.xpath("//body/div[@id='root']/div[@class='App']/div/div[@class='h-full']/div[@class='mx-auto']/div[@class='flex justify-center']/div[@class='w-full flex']/div[1]");
-    By ID_proof = By.xpath("//*[@id=\"react-select-3-input\"]");
-    By ID_proof_value = By.id("react-select-31-input");
-    By Address_proof = By.xpath("//*[@id='react-select-4-input']");
-    By Address_proof_value = By.id("react-select-32-input");
-    By Date_of_birth = By.xpath("//input[@placeholder='dd/mm/yyyy']");
 
-    By Address_Browse_btn = By.xpath("//label[@for='addressProofFile']//span[contains(text(),'Browse Files')]");
-    By Id_Browse_btn = By.xpath("//label[@for='idProofFile']//span[contains(text(),'Browse Files')]");
-    By Stepper_two_submitBtn = By.xpath("//button[@class='mt-2 tracking-wide font-semibold bg-primary text-white w-full py-3 rounded-full transition-all duration-300 ease-in-out flex items-center justify-center focus:shadow-outline focus:outline-none']");
-    By Form_sumitted_message = By.xpath("//*[@class='xs:text-sm sm:text-base xl:text-xl font-normal text-black-900 text-center xs:px-10 xl:px-72 2xl:px-96 3xl:px-[500px] my-5']");
-    By Image_Address_Avaliable =  By.xpath("//span[@class=' truncate max-w-[90%] text-sm font-normal text-black-900']");
-    By Image1_ID_Avaliable =  By.xpath("//span[@class=' truncate max-w-[90%] text-sm font-normal text-black-900']");
 
     public void consumer_Sign_up_Step_Two() throws InterruptedException, AWTException, IOException {
         waitForElement(MobileNumberField);
@@ -309,12 +338,12 @@ public class SignUp extends TestBase {
         select_year.selectByValue("1994");
         Thread.sleep(1000);
         //Day click
-        driver.findElement(By.xpath("//*[@class='react-datepicker__day react-datepicker__day--005']")).click();
-        Thread.sleep(1000);
+        driver.findElement(By.xpath("//div[contains(@class, 'react-datepicker__day react-datepicker__day--005 react-datepicker__day--keyboard-selected') or contains(@class, 'react-datepicker__day react-datepicker__day--005')]")).click();
+        Thread.sleep(2000);
 
         driver.findElement(Nationality_field).click();
         Thread.sleep(1000);
-        driver.findElement(Nationality_field_value).sendKeys("Indian");
+        driver.findElement(Nationality_field).sendKeys("Indian");
         Thread.sleep(1000);
         tab(Nationality_field_value);
 
@@ -335,23 +364,8 @@ public class SignUp extends TestBase {
         tab(ID_proof);
 
 
-
-
-
-        Clipboard clipboard1 = Toolkit.getDefaultToolkit().getSystemClipboard();
-        String path = System.getProperty("user.dir");
-        String relativePath = path+"/src/resources/image1.jpg";
-        // Convert to Path object
-        Path convertedpath = Paths.get(relativePath);
-        String FinalPAth = convertedpath.toString();
-        // Create a StringSelection object containing the OTP
-         StringSelection stringSelection = new StringSelection(FinalPAth);
-        // Set the StringSelection as the current contents of the clipboard
-        clipboard1.setContents(stringSelection,null);
-
-        WebElement IDfileInput = driver.findElement(By.xpath("//input[@id='idProofFile']"));
-        IDfileInput.sendKeys(FinalPAth);
-
+        By idBrowseBtn = By.xpath("//input[@id='idProofFile']");
+        uploadFiles("/src/resources/image1.jpg", idBrowseBtn);
 
 
         Thread.sleep(1000);
@@ -359,23 +373,11 @@ public class SignUp extends TestBase {
         Thread.sleep(5000);
         tab(Address_proof);
         tab(Address_proof);
-
-        WebElement AddressfileInput = driver.findElement(By.xpath("//input[@id='addressProofFile']"));
-        AddressfileInput.sendKeys(FinalPAth);
-
-
+        By AddressBrowseBtn = By.xpath("//input[@id='idProofFile']");
+        uploadFiles("/src/resources/image1.jpg", AddressBrowseBtn);
         click(Stepper_two_submitBtn);
-
-
         Thread.sleep(1000);
 
-
-   /*     waitForElement(Form_sumitted_message);
-        String ActualFormText = driver.findElement(Form_sumitted_message).getText();
-        String expectedString = "Thank you for submitting your KYC details! Your information has been received and is currently under review by the GAED Team. You will be able to access the platform once your KYC is approved. We appreciate your patience and cooperation. If you have any questions or need further assistance, please feel free to contact our support team via\"enquiries@gaed2.com\". Thank you for choosing GAED!";
-        Assert.assertEquals(ActualFormText,expectedString);
-
-        Thread.sleep(5000);*/
     }
 
 }

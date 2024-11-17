@@ -9,6 +9,7 @@ import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
@@ -16,7 +17,10 @@ import org.testng.annotations.DataProvider;
 
 import java.io.FileInputStream;
 import java.io.IOException;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.time.Duration;
+import java.util.List;
 import java.util.Properties;
 import java.util.Random;
 
@@ -46,6 +50,30 @@ public class utility extends TestBase {
         String invalidfirstnameMess = driver.findElement(element).getText();
         Assert.assertEquals("Field is Required.",invalidfirstnameMess);
 
+    }
+    public static void uploadFiles(String location, By locator){
+        String path = System.getProperty("user.dir");
+        String relativePath = path+location;
+        // Convert to Path object
+        Path convertedpath = Paths.get(relativePath);
+        String FinalPAth = convertedpath.toString();
+
+
+        WebElement IDfileInput = driver.findElement(locator);
+        IDfileInput.sendKeys(FinalPAth);
+    }
+    public static void googleAddress(String addressInitials,By locator) throws InterruptedException {
+        driver.findElement(locator).sendKeys(addressInitials); // sent the address initials
+
+        List<WebElement> suggestAddress = driver.findElements(By.xpath("//li[@class='text-sm font-normal text-black-900 px-3 py-2 cursor-pointer hover:bg-[#f6f6f6]']"));
+        //driver.findElements(By.xpath("//ul[@class='mt-2 border border-gray-300 shadow-md rounded-x1 rounded-bl-xl rounded-br-xl py-1 absolute mx-[2%] left-e top-full w-[96%] z-50 bg-white']/li"));
+
+        System.out.println("Number of ul elements found: " + suggestAddress.size());
+
+        // Example: Interact with the first ul element
+        WebElement firstUl = suggestAddress.get(0);
+        firstUl.click();
+        Thread.sleep(1000);
     }
 
 

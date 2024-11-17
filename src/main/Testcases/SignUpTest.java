@@ -36,7 +36,7 @@ public class SignUpTest extends TestBase {
         test.pass("To verify the empty fields passed successfully.");
     }
 
-    @Test(priority = 3,enabled = true, dataProvider = "Signupstep", dataProviderClass = Dataprovider.class)
+    @Test(priority = 4,enabled = true, dataProvider = "Signupstep", dataProviderClass = Dataprovider.class)
     public void Consumer_Sign_up(String fname, String lname, String ConsumerSignUpEmail) throws InterruptedException, AWTException, IOException {
         ExtentTest test = extent.createTest("To verify the invalid email");
         homePage.homepage();
@@ -45,5 +45,15 @@ public class SignUpTest extends TestBase {
         api_call.deleteUser();
         test.pass("To verify the invalid email passed successfully.");
     }
+
+    @Test(priority = 3,enabled = true, dataProvider = "Signupstep", dataProviderClass = Dataprovider.class)
+    public void deleteuser(String fname, String lname, String ConsumerSignUpEmail) throws InterruptedException, AWTException, IOException {
+        ExtentTest test = extent.createTest("To verify the invalid email");
+        //homePage.homepage();
+        api_call.deleteUser();
+        test.pass("To verify the invalid email passed successfully.");
+    }
+
+
 }
 ////body/div[@id='root']/div[@class='App']/div/div[@class='h-full']/div[@class='mx-auto']/div[@class='flex justify-center']/div[@class='w-full flex']/div[2]

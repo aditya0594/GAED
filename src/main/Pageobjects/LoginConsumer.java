@@ -145,14 +145,12 @@ public class LoginConsumer extends TestBase{
         Thread.sleep(6000);
     }
     public static void Veriyconsumerprofile(String email) throws InterruptedException {
-       // waitForElement(ConsumerpProfileBtn);
-      //  driver.findElement(ConsumerpProfileBtn).click();
 
         driver.findElement(By.xpath("//div[@class='border border-white rounded-full']")).click();
         Thread.sleep(5000);
 
         // Find all ul elements with the specified class
-        List<WebElement> ulElements = driver.findElements(By.xpath("//ul[@class='MuiList-root MuiList-padding MuiMenu-list css-r8u8y9']"));
+        List<WebElement> ulElements = driver.findElements(By.xpath("//li[text()='View consumer profile']"));
 
         // Check how many elements were found
         System.out.println("Number of ul elements found: " + ulElements.size());

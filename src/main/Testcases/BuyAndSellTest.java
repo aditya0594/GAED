@@ -13,7 +13,7 @@ import java.io.IOException;
 public class BuyAndSellTest extends TestBase {
     HomePage homepage = new HomePage();
     LoginConsumer login = new LoginConsumer();
-    BuyAndSell Buyandsell = new BuyAndSell();
+    BuyAndSell Buysell = new BuyAndSell();
 
 
     public BuyAndSellTest() throws IOException {
@@ -31,7 +31,7 @@ public class BuyAndSellTest extends TestBase {
         login.enterOTP();
         login.verifyEmailbtn();
         login.Veriyconsumerprofile(usernameEmail);
-        Buyandsell.validate_BuySell_buttons();
+        Buysell.validate_BuySell_buttons();
         test.pass("Consumer user able to click on the Buy and sell");
         //LoginUser.OTP_read();
     }
@@ -40,7 +40,7 @@ public class BuyAndSellTest extends TestBase {
         ExtentTest test = extent.createTest("Create project mandatory field validation ");
         homepage.homepage();
         login.LoginConsumerSuceessful();
-        Buyandsell.validate_next_saveAsDraft_back();
+        Buysell.validate_next_saveAsDraft_back();
         test.pass("Create project mandatory field validated");
 
     }
@@ -49,7 +49,7 @@ public class BuyAndSellTest extends TestBase {
         ExtentTest test = extent.createTest("Create project mandatory field validation ");
         homepage.homepage();
         login.LoginConsumerSuceessful();
-        Buyandsell.invalidate_Stepper1_ProjectFields_button();
+        Buysell.invalidate_Stepper1_ProjectFields_button();
         test.pass("Project field is validated ");
     }
     @Test(priority = 4,enabled = true)
@@ -57,9 +57,12 @@ public class BuyAndSellTest extends TestBase {
         ExtentTest test = extent.createTest("Create project mandatory field validation ");
         homepage.homepage();
         login.LoginConsumerSuceessful();
-        Buyandsell.vaild_Stepper1_ProjectFields_button();
-        Buyandsell.vaild_Stepper2_ProjectFields_button();
-        test.pass("Create project mandatory field validation ");
+        Buysell.vaild_Stepper1_ProjectFields_button();
+        Buysell.vaild_Stepper2_ProjectFields_button();
+        Buysell.vaild_Stepper3_ProjectFields_button();
+        Buysell.buysellprojectSubmitBtn();
+        Buysell.verifyCreated();
+        test.pass("Create project mandatory field validation");
     }
 
 
