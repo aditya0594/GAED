@@ -37,7 +37,8 @@ services:
       - "4442:4442"
       - "4443:4443"
       - "4444:4444"
-
+  ping:
+    image: alpine/curl
   tests:
     image: maven:3.8.6-openjdk-11
     working_dir: /src
