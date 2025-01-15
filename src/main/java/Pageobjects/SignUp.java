@@ -1,37 +1,47 @@
 package Pageobjects;
 
-
-
 import baseClass.TestBase;
-import org.apache.commons.io.FileUtils;
-import org.openqa.selenium.*;
+import com.google.gson.JsonObject;
+import com.google.gson.JsonParser;
+import org.apache.hc.client5.http.impl.classic.CloseableHttpClient;
+import org.apache.hc.client5.http.impl.classic.CloseableHttpResponse;
+import org.apache.hc.client5.http.impl.classic.HttpClients;
+import org.apache.hc.core5.http.io.entity.EntityUtils;
+import org.apache.http.client.methods.HttpGet;
+import org.hamcrest.MatcherAssert;
+import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.Keys;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
-import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
-import utils.utility;
-
 import java.awt.*;
 import java.awt.datatransfer.Clipboard;
 import java.awt.datatransfer.StringSelection;
+import java.awt.event.KeyEvent;
 import java.io.File;
 import java.io.IOException;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.time.Duration;
 import java.util.List;
+import java.util.Set;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+import static Pageobjects.HomePage.properties;
+import static org.hamcrest.CoreMatchers.equalTo;
 import static org.hamcrest.CoreMatchers.is;
+import static utils.utility.*;
 
 
 public class SignUp extends TestBase {
     String ConsumerSignUpEmail ="";
-    By getSign_Up_Btn= By.xpath("//*[contains(text(),'Sign Up')]");
-    By signup_page_title = By.xpath("//*[@class='py-2 xs:text-2xl xl:text-3xl 3xl:text-4xl text-black-900 font-semibold']");
+    By getSign_Up_Btn= By.xpath("//span[@class='cursor-pointer hidden lg:inline-block py-2 px-6 text-sm 3xl:text-lg text-white border border-white font-medium rounded-full transition duration-200 group-hover:text-primary group-hover:border-primary']");
+    By signup_page_title = By.xpath("//h3[@class='py-2 xs:text-2xl xl:text-3xl 3xl:text-4xl text-black-900 font-semibold']");
     By firstname = By.xpath("//input[@name='firstName']");
     By lastname = By.xpath("//input[@name='lastName']");
     By email = By.xpath("//input[@name='email']");
@@ -40,12 +50,34 @@ public class SignUp extends TestBase {
     By invalidFistnameMesss = By.xpath("//div[@class='w-full md:w-1/2 md:mb-0 xs:mb-3 px-3']//div//span[contains(@class,'block my-2 text-xs font-normal text-red-500')][normalize-space()='Field cannot contain any special characters.']");
     By invalidLastnameMesss = By.xpath("//div[@class='w-full md:w-1/2 px-3']//div//span[contains(@class,'block my-2 text-xs font-normal text-red-500')][normalize-space()='Field cannot contain any special characters.']");
     By invalidEmailMesss = By.xpath("//*[@id=\"root\"]/div/div[2]/div/div/div/div/div[2]/div/div[2]/div/div/form/div[2]/div/div/span");
-    By EmpFistnameMesss = By.xpath("(//*[@class='block my-2 text-xs font-normal text-red-500 '])[1]");
-    By EmpLastnameMesss = By.xpath("(//*[@class='block my-2 text-xs font-normal text-red-500 '])[2]");
-    By EmpEmailMesss = By.xpath("(//*[@class='block my-2 text-xs font-normal text-red-500 '])[3]");
+    By EmpFistnameMesss = By.xpath("//*[@id=\"root\"]/div/div[2]/div/div/div/div/div[2]/div/div[2]/div/div/form/div[1]/div[1]/div/span");
+    By EmpLastnameMesss = By.xpath("//*[@id=\"root\"]/div/div[2]/div/div/div/div/div[2]/div/div[2]/div/div/form/div[1]/div[2]/div/span");
+    By EmpEmailMesss = By.xpath("//*[@id=\"root\"]/div/div[2]/div/div/div/div/div[2]/div/div[2]/div/div/form/div[2]/div/div/span");
     static By yopmailemail = By.xpath("//input[@id='login']");
     static By yopmailarrow = By.xpath("//i[@class='material-icons-outlined f36']");
-    static By Go_to_website = By.xpath("//button[span[contains(text(),'Go to Website')]]");
+    By EmailField = By.xpath("//input[@name='email']");
+
+    By SignupVerifyEmailbtn = By.xpath("//button[@type='button']");
+    By firstOtpBlock = By.xpath("//*[@id='otp']/div/input[1]");
+    By MobileNumberField = By.xpath("//input[@value='+65']");
+    By CalandorClick = By.xpath("//button[@type='button']");
+    By Nationality_field = By.xpath("//*[@class='css-19bb58m']");
+    By Nationality_field_value = By.id("react-select-3-input");   //react-select-4-input in case shows error
+    By Address_field = By.xpath("//input[@name='address']");
+    By proectAddressGoogleField =  By.xpath("//body/div[@id='root']/div[@class='App']/div/div[@class='h-full']/div[@class='mx-auto']/div[@class='flex justify-center']/div[@class='w-full flex']/div[1]");
+    By ID_proof = By.xpath("//*[@id=\"react-select-3-input\"]");
+    By ID_proof_value = By.id("react-select-31-input");
+    By Address_proof = By.xpath("//*[@id='react-select-4-input']");
+    By Address_proof_value = By.id("react-select-32-input");
+    By Date_of_birth = By.xpath("//input[@placeholder='dd/mm/yyyy']");
+
+    By Address_Browse_btn = By.xpath("//label[@for='addressProofFile']//span[contains(text(),'Browse Files')]");
+    By Id_Browse_btn = By.xpath("//label[@for='idProofFile']//span[contains(text(),'Browse Files')]");
+    By Stepper_two_submitBtn = By.xpath("//button[@class='mt-2 tracking-wide font-semibold bg-primary text-white w-full py-3 rounded-full transition-all duration-300 ease-in-out flex items-center justify-center focus:shadow-outline focus:outline-none']");
+    By Form_sumitted_message = By.xpath("//*[@class='xs:text-sm sm:text-base xl:text-xl font-normal text-black-900 text-center xs:px-10 xl:px-72 2xl:px-96 3xl:px-[500px] my-5']");
+    By Image_Address_Avaliable =  By.xpath("//span[@class=' truncate max-w-[90%] text-sm font-normal text-black-900']");
+    By Image1_ID_Avaliable =  By.xpath("//span[@class=' truncate max-w-[90%] text-sm font-normal text-black-900']");
+
     // By firstname = By.xpath("//input[@name='firstName']");
 
     public void getSign_up_btn (){
@@ -53,41 +85,6 @@ public class SignUp extends TestBase {
     public void validate_signup_page(){
         String Getsignuptitle = driver.findElement(signup_page_title).getText();
         Assert.assertEquals("Let's get you an Account",Getsignuptitle);
-    }
-
-
-    public void consumer_Sign_up_Step_One(String fname, String lname) throws InterruptedException {
-        Thread.sleep(2000);
-        // String signbtn = driver.findElement(getSign_Up_Btn).getText();
-        //  Assert.assertEquals(signbtn,"Sign Up");
-        driver.findElement(getSign_Up_Btn).click();
-        String Getsignuptitle = driver.findElement(signup_page_title).getText();
-        Assert.assertEquals("Let's get you an Account",Getsignuptitle);
-        driver.findElement(firstname).sendKeys(fname);
-        driver.findElement(lastname).sendKeys(lname);
-        waitForElement(EmailField);
-        // ConsumerSignUpEmail = properties.getProperty("SignupId");
-        //adityapawarsignup@yopmail.com
-        ConsumerSignUpEmail = utility.randomEmailSignup();
-        System.out.println(ConsumerSignUpEmail);
-        driver.findElement(EmailField).sendKeys(ConsumerSignUpEmail);
-        driver.findElement(agreementChk).click();
-        driver.findElement(sentOTPbtn).click();
-        Thread.sleep(5000);
-
-        signUp_OTP_read(ConsumerSignUpEmail);
-
-        Thread.sleep(2000);
-        driver.findElement(firstOtpBlock).click();
-        Actions actions = new Actions(driver);
-        // Use Actions class to perform keyboard shortcut (Ctrl + V) for paste
-        actions.keyDown(Keys.CONTROL).sendKeys("v").keyUp(Keys.CONTROL).build().perform();
-        Thread.sleep(3000);
-        driver.findElement(SignupVerifyEmailbtn).click();
-        Thread.sleep(3000);
-        driver.navigate().refresh();
-        Thread.sleep(2000);
-
     }
     public void invalid_signup_field() {
         driver.findElement(getSign_Up_Btn).click();
@@ -108,9 +105,9 @@ public class SignUp extends TestBase {
         Assert.assertEquals("This looks like an invalid email (eg: abc@xyz.com)",invalidemailMess);
         driver.findElement(firstname).sendKeys(Keys.TAB);
     }
-    public void addressDropdown(String addressInitials,By xpathlocation) throws InterruptedException {
-        driver.findElement(xpathlocation).sendKeys(addressInitials); // sent the address initials
-//"//input[@name='location']"
+    public static void addressDropdown(String addressInitials) throws InterruptedException {
+        driver.findElement(By.xpath("//input[@name='address']")).sendKeys(addressInitials); // sent the address initials
+
         List<WebElement> suggestAddress = driver.findElements(By.xpath("//li[@class='text-sm font-normal text-black-900 px-3 py-2 cursor-pointer hover:bg-[#f6f6f6]']"));
         //driver.findElements(By.xpath("//ul[@class='mt-2 border border-gray-300 shadow-md rounded-x1 rounded-bl-xl rounded-br-xl py-1 absolute mx-[2%] left-e top-full w-[96%] z-50 bg-white']/li"));
 
@@ -169,7 +166,6 @@ public class SignUp extends TestBase {
         driver.findElement(getSign_Up_Btn).click();
         verify_text(signup_page_title, "Let's get you an Account");
     }
-
     public void Empty_signup_field1(){
         signup_button();
         driver.findElement(agreementChk).click();
@@ -201,9 +197,6 @@ public class SignUp extends TestBase {
         Assert.assertEquals("Field is Required.",invalidemailMess);
         driver.findElement(firstname).sendKeys(Keys.TAB);
     }
-    By EmailField = By.xpath("//input[@name='email']");
-    By SignupVerifyEmailbtn = By.xpath("//button[@type='button']");
-    By firstOtpBlock = By.xpath("//*[@id='otp']/div/input[1]");
 
     public static String CreatRandomEmailyopmail() throws InterruptedException {
 
@@ -233,12 +226,11 @@ public class SignUp extends TestBase {
         // Simulate human-like interaction: Wait for a short duration
         Thread.sleep(2000);
 
-        driver.get("https://yopmail.com/");
+        driver.get("https://yopmail.com/en/wm");
         Thread.sleep(3000);
         driver.findElement(By.xpath("/html/body/div")).click();
         waitForElement(yopmailemail);
         WebElement emailInput = driver.findElement(yopmailemail);
-        emailInput.clear();
         typeLikeAHuman(emailInput,signupEmail);
         //driver.findElement(yopmailemail).sendKeys(emailforInbox);
         driver.findElement(yopmailarrow).click();
@@ -269,54 +261,67 @@ public class SignUp extends TestBase {
             System.out.println("No OTP found in the message.");
         }
 
-       // driver.switchTo().window(driver.getWindowHandles().toArray()[0].toString());
-        driver.close();
+        driver.switchTo().window(driver.getWindowHandles().toArray()[0].toString());
+    }
+    By companycategory = By.xpath("//input[@id='react-select-3-input']");
+    By companyname = By.xpath("//input[@name='companyName']");
+    By companyUrl = By.xpath("//input[@name='companyUrl']");
+    By companyAddressField = By.xpath("//input[@name='address']");
+    public void consumer_Sign_up_Step_One(String fname, String lname,String ConsumerSignUpEmail) throws InterruptedException {
+        Thread.sleep(2000);
+        String signbtn = driver.findElement(getSign_Up_Btn).getText();
+        Assert.assertEquals(signbtn,"Sign Up");
+        driver.findElement(getSign_Up_Btn).click();
+        String Getsignuptitle = driver.findElement(signup_page_title).getText();
+        Assert.assertEquals("Let's get you an Account",Getsignuptitle);
+        driver.findElement(firstname).sendKeys(fname);
+        driver.findElement(lastname).sendKeys(lname);
+        waitForElement(EmailField);
 
-        // Switch back to the original tab
-        driver.switchTo().window(defaultTab);
+       // ConsumerSignUpEmail = properties.getProperty("SignupId");
+        //adityapawarsignup@yopmail.com
+        System.out.println(ConsumerSignUpEmail);
+        driver.findElement(EmailField).sendKeys(ConsumerSignUpEmail);
+
+//        driver.findElement(By.id("react-select-3-input")).sendKeys("Legal");
+//        tab(companycategory);
+//
+//        String companynamestring = "TestCompany" + generateRandomString(3);
+//        driver.findElement(companyname).sendKeys(companynamestring);
+//        tab(companyname);
+//
+//        driver.findElement(companyUrl).sendKeys("www"+companynamestring+".com");
+//        tab(companyUrl);
+
+
+//        driver.findElement(companyUrl).sendKeys("Legal");
+//        tab(companycategory);
+//        driver.findElement(companyname);
+
+//        driver.findElement(companyAddressField).click();
+//        By location = By.xpath("//input[@name='address']");
+//        googleAddress("chatra",location);
+//        tab(companyAddressField);
+
+        driver.findElement(agreementChk).click();
+        driver.findElement(sentOTPbtn).click();
+        Thread.sleep(5000);
+
+        signUp_OTP_read(ConsumerSignUpEmail);
+
+        Thread.sleep(2000);
+        driver.findElement(firstOtpBlock).click();
+        Actions actions = new Actions(driver);
+        // Use Actions class to perform keyboard shortcut (Ctrl + V) for paste
+        actions.keyDown(Keys.CONTROL).sendKeys("v").keyUp(Keys.CONTROL).build().perform();
+        Thread.sleep(5000);
+        driver.findElement(SignupVerifyEmailbtn).click();
     }
 
 
-    By MobileNumberField = By.xpath("//input[@type='tel' and @value='+65']");
-    By CalandorClick = By.xpath("//button[@type='button']");
-    By Nationality_field = By.xpath("(//div[@class='css-1xc3v61-indicatorContainer'])[1]");
-    By Nationality_field_value = By.xpath("//div[@class='css-1kf7eui-option']");
-    By Address_field = By.xpath("//input[@name='address']");
-    By proectAddressGoogleField =  By.xpath("//body/div[@id='root']/div[@class='App']/div/div[@class='h-full']/div[@class='mx-auto']/div[@class='flex justify-center']/div[@class='w-full flex']/div[1]");
-    By ID_proof = By.xpath("(//div[@class='css-hlgwow'])[2]");
-    By ID_proof_value = By.xpath("//input[@id='react-select-4-input']");
-    By Address_proof = By.xpath("(//div[@class='css-hlgwow'])[3]");
-    By Address_proof_value = By.xpath("//input[@id='react-select-5-input']"); //react-select-5-input
-    By Date_of_birth = By.xpath("//input[@placeholder='dd/mm/yyyy']");
-
-    By Address_Browse_btn = By.xpath("//label[@for='addressProofFile']//span[contains(text(),'Browse Files')]");
-    By Id_Browse_btn = By.xpath("//label[@for='idProofFile']//span[contains(text(),'Browse Files')]");
-    By Stepper_two_submitBtn = By.xpath("//button[@class='mt-2 tracking-wide font-semibold bg-primary text-white w-full py-3 rounded-full transition-all duration-300 ease-in-out flex items-center justify-center focus:shadow-outline focus:outline-none']");
-    By Form_sumitted_message = By.xpath("//*[@class='xs:text-sm sm:text-base xl:text-xl font-normal text-black-900 text-center xs:px-10 xl:px-72 2xl:px-96 3xl:px-[500px] my-5']");
-    By Image_Address_Avaliable =  By.xpath("//span[@class=' truncate max-w-[90%] text-sm font-normal text-black-900']");
-    By Image1_ID_Avaliable =  By.xpath("//span[@class=' truncate max-w-[90%] text-sm font-normal text-black-900']");
-
     public void consumer_Sign_up_Step_Two() throws InterruptedException, AWTException, IOException {
-        //waitForElement(MobileNumberField);
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(50));
-        wait.until(ExpectedConditions.visibilityOfElementLocated(MobileNumberField));
-        Thread.sleep(1000);
-       // WebElement element = driver.findElement(MobileNumberField);
-/*        System.out.println(driver.getPageSource());
-        JavascriptExecutor js = (JavascriptExecutor) driver;
-        js.executeScript("document.querySelector('input[value=\"+65\"][type=\"tel\"').value='6534567812';");
-        File srcFile = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
-        FileUtils.copyFile(srcFile, new File("screenshot for number.png"));*/
-
+        waitForElement(MobileNumberField);
         driver.findElement(MobileNumberField).sendKeys(randomMobile());
-//        WebElement mobileNumberField = driver.findElement(MobileNumberField);
-//        JavascriptExecutor js = (JavascriptExecutor) driver;
-//        mobileNumberField.click();
-//        Thread.sleep(2000);
-//        js.executeScript("arguments[0].value=arguments[1];", mobileNumberField, randomMobile());
-
-        // Simulate pressing Tab using JavaScript
-       // js.executeScript("arguments[0].dispatchEvent(new KeyboardEvent('keydown', {key: 'Tab'}));", mobileNumberField);
 
         //Calendar
         driver.findElement(Date_of_birth).click();
@@ -332,28 +337,18 @@ public class SignUp extends TestBase {
         select_year.selectByValue("1994");
         Thread.sleep(1000);
         //Day click
-        driver.findElement(By.xpath("//*[@class='react-datepicker__day react-datepicker__day--005']")).click();
+        driver.findElement(By.xpath("//div[contains(@class, 'react-datepicker__day react-datepicker__day--005 react-datepicker__day--keyboard-selected') or contains(@class, 'react-datepicker__day react-datepicker__day--005')]")).click();
+        Thread.sleep(2000);
+
+        driver.findElement(Nationality_field).click();
         Thread.sleep(1000);
-
-        utility.dropdown(Nationality_field,Nationality_field_value,"Indian");
-//        driver.findElement(Nationality_field).click();
-//        Thread.sleep(1000);
-//        List<WebElement> nationality = driver.findElements(Nationality_field_value);
-//        for(WebElement element : nationality){
-//            String text = element.getText();
-//            System.out.println("The nationality list : " + text );
-//            if(text.equals("Indian")){
-//                driver.findElement(Nationality_field_value).click();
-//            }
-//            break;
-//        }
-
-
+        driver.findElement(Nationality_field).sendKeys("Indian");
+        Thread.sleep(1000);
+        tab(Nationality_field_value);
 
         driver.findElement(Address_field).click();
         Thread.sleep(2000);
-        By projectAddress = By.xpath("//input[@name='address']");
-        addressDropdown("chatra",projectAddress);
+        addressDropdown("chatra");
         Thread.sleep(1000);
        // driver.findElement(proectAddressGoogleField).click();
         tab(Address_field);
@@ -362,54 +357,26 @@ public class SignUp extends TestBase {
         waitForElement(ID_proof);
        // driver.findElement(ID_proof).click();
         Thread.sleep(1000);
-        driver.findElement(ID_proof).click();
-        driver.findElement(ID_proof_value).sendKeys("Aadhaar Card");
+        driver.findElement(ID_proof).sendKeys("Aadhaar Card");
         Thread.sleep(500);
-        tab(ID_proof_value);
+        tab(ID_proof);
+        tab(ID_proof);
 
 
-
-
-
-
-        Clipboard clipboard1 = Toolkit.getDefaultToolkit().getSystemClipboard();
-        String path = System.getProperty("user.dir");
-        String relativePath = path+"/src/resources/image1.jpg";
-        // Convert to Path object
-        Path convertedpath = Paths.get(relativePath);
-        String FinalPAth = convertedpath.toString();
-        // Create a StringSelection object containing the OTP
-         StringSelection stringSelection = new StringSelection(FinalPAth);
-        // Set the StringSelection as the current contents of the clipboard
-        clipboard1.setContents(stringSelection,null);
-
-        WebElement IDfileInput = driver.findElement(By.xpath("//input[@id='idProofFile']"));
-        IDfileInput.sendKeys(FinalPAth);
-
+        By idBrowseBtn = By.xpath("//input[@id='idProofFile']");
+        uploadFiles("/src/resources/image1.jpg", idBrowseBtn);
 
 
         Thread.sleep(1000);
-        driver.findElement(Address_proof_value).sendKeys("Bank Passbook with Address");
+        driver.findElement(Address_proof).sendKeys("Bank Passbook with Address");
         Thread.sleep(5000);
-        tab(Address_proof_value);
-
-
-        WebElement AddressfileInput = driver.findElement(By.xpath("//input[@id='addressProofFile']"));
-        AddressfileInput.sendKeys(FinalPAth);
-
-
+        tab(Address_proof);
+        tab(Address_proof);
+        By AddressBrowseBtn = By.xpath("//input[@id='idProofFile']");
+        uploadFiles("/src/resources/image1.jpg", AddressBrowseBtn);
         click(Stepper_two_submitBtn);
+        Thread.sleep(1000);
 
-
-        Thread.sleep(5000);
-
-
-   /*     waitForElement(Form_sumitted_message);
-        String ActualFormText = driver.findElement(Form_sumitted_message).getText();
-        String expectedString = "Thank you for submitting your KYC details! Your information has been received and is currently under review by the GAED Team. You will be able to access the platform once your KYC is approved. We appreciate your patience and cooperation. If you have any questions or need further assistance, please feel free to contact our support team via\"enquiries@gaed2.com\". Thank you for choosing GAED!";
-        Assert.assertEquals(ActualFormText,expectedString);
-
-        Thread.sleep(5000);*/
     }
 
 }

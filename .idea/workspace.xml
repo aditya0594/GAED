@@ -4,8 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="fbed16bb-bade-4def-845d-b7f89224c886" name="Changes" comment="Added the Buy and sell project flow &#10;admin accept flow">
+    <list default="true" id="fbed16bb-bade-4def-845d-b7f89224c886" name="Changes" comment=" commited signup, login, homepage completed 04-09-2024">
+      <change afterPath="$PROJECT_DIR$/Screenshots/InvalidOTP20250115125144.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Screenshots/Login_VerifyEmail20250115125029.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Screenshots/Login_VerifyEmail20250115125342.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/logs/browserstack-plugin.log" beforeDir="false" afterPath="$PROJECT_DIR$/logs/browserstack-plugin.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/Pageobjects/SignUp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Pageobjects/SignUp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/Testcases/SignUpTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Testcases/SignUpTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/resources/ExcelFile.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/resources/ExcelFile.xlsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test-output/GAED_Testcase_report.html" beforeDir="false" afterPath="$PROJECT_DIR$/test-output/GAED_Testcase_report.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -24,7 +32,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="working" />
+        <entry key="$PROJECT_DIR$" value="main" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -51,7 +59,7 @@
   &quot;keyToString&quot;: {
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/GAED/src/test/java/resourses&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/GAED_branch&quot;,
     &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
     &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
@@ -63,14 +71,11 @@
       <recent name="Runner" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\GAED\src\test\java\resourses" />
-      <recent name="C:\GAED\src\test\java" />
       <recent name="C:\Users\HM\IdeaProjects\GAED" />
       <recent name="C:\Users\HM\IdeaProjects\GAED\New folder" />
       <recent name="C:\Users\HM\IdeaProjects\GAED\src\resources" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\GAED\src\test\java\resourses" />
+      <recent name="C:\GAED\src\resources" />
+      <recent name="C:\Users\HM\IdeaProjects\GAED\Driver" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="Runner" />
@@ -78,7 +83,20 @@
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="TestNG.BuyAndSellTest">
+  <component name="RunManager" selected="TestNG.SignUpTest.Consumer_Sign_up">
+    <configuration name="Api_Call" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Testcases.Api_Call" />
+      <module name="Selenium_Advanced" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Testcases.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration default="true" type="JetRunConfigurationType">
       <module name="GAED" />
       <method v="2">
@@ -88,117 +106,6 @@
     <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
       <module name="GAED" />
       <option name="filePath" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="BuyAndSellTest" type="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="Selenium_Advanced" />
-      <shortenClasspath name="NONE" />
-      <useClassPathOnly />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="Testcases.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="SUITE_NAME" value="" />
-      <option name="PACKAGE_NAME" value="Testcases" />
-      <option name="MAIN_CLASS_NAME" value="Testcases.BuyAndSellTest" />
-      <option name="GROUP_NAME" value="" />
-      <option name="TEST_OBJECT" value="CLASS" />
-      <option name="PARAMETERS" value="" />
-      <option name="OUTPUT_DIRECTORY" value="" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="moduleWithDependencies" />
-      </option>
-      <option name="PROPERTIES_FILE" value="" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="BuyAndSellTest.Accept_Project_In_Admin" type="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="Selenium_Advanced" />
-      <shortenClasspath name="NONE" />
-      <useClassPathOnly />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="Testcases.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="SUITE_NAME" value="" />
-      <option name="PACKAGE_NAME" value="Testcases" />
-      <option name="MAIN_CLASS_NAME" value="Testcases.BuyAndSellTest" />
-      <option name="METHOD_NAME" value="Accept_Project_In_Admin" />
-      <option name="GROUP_NAME" value="" />
-      <option name="TEST_OBJECT" value="METHOD" />
-      <option name="PARAMETERS" value="" />
-      <option name="OUTPUT_DIRECTORY" value="" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="moduleWithDependencies" />
-      </option>
-      <option name="PROPERTIES_FILE" value="" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="BuyAndSellTest.Create_Project" type="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="Selenium_Advanced" />
-      <shortenClasspath name="NONE" />
-      <useClassPathOnly />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="Testcases.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="SUITE_NAME" value="" />
-      <option name="PACKAGE_NAME" value="Testcases" />
-      <option name="MAIN_CLASS_NAME" value="Testcases.BuyAndSellTest" />
-      <option name="METHOD_NAME" value="Create_Project" />
-      <option name="GROUP_NAME" value="" />
-      <option name="TEST_OBJECT" value="METHOD" />
-      <option name="PARAMETERS" value="" />
-      <option name="OUTPUT_DIRECTORY" value="" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="moduleWithDependencies" />
-      </option>
-      <option name="PROPERTIES_FILE" value="" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="BuyAndSellTest.invalidat_sellProject_stepper_1_fields" type="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="Selenium_Advanced" />
-      <shortenClasspath name="NONE" />
-      <useClassPathOnly />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="Testcases.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="SUITE_NAME" value="" />
-      <option name="PACKAGE_NAME" value="Testcases" />
-      <option name="MAIN_CLASS_NAME" value="Testcases.BuyAndSellTest" />
-      <option name="METHOD_NAME" value="invalidat_sellProject_stepper_1_fields" />
-      <option name="GROUP_NAME" value="" />
-      <option name="TEST_OBJECT" value="METHOD" />
-      <option name="PARAMETERS" value="" />
-      <option name="OUTPUT_DIRECTORY" value="" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="moduleWithDependencies" />
-      </option>
-      <option name="PROPERTIES_FILE" value="" />
-      <properties />
-      <listeners />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -253,7 +160,62 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="SignUpTest.Consumer_Sign_up_and_Verify_by_admin" type="TestNG" temporary="true" nameIsGenerated="true">
+    <configuration name="LoginUserTest" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="Selenium_Advanced" />
+      <shortenClasspath name="NONE" />
+      <useClassPathOnly />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Testcases.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="SUITE_NAME" value="" />
+      <option name="PACKAGE_NAME" value="Testcases" />
+      <option name="MAIN_CLASS_NAME" value="Testcases.LoginUserTest" />
+      <option name="GROUP_NAME" value="" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <option name="PARAMETERS" value="" />
+      <option name="OUTPUT_DIRECTORY" value="" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="moduleWithDependencies" />
+      </option>
+      <option name="PROPERTIES_FILE" value="" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="LoginUserTest.Login_VerifyEmail" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="Selenium_Advanced" />
+      <shortenClasspath name="NONE" />
+      <useClassPathOnly />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Testcases.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="SUITE_NAME" value="" />
+      <option name="PACKAGE_NAME" value="Testcases" />
+      <option name="MAIN_CLASS_NAME" value="Testcases.LoginUserTest" />
+      <option name="METHOD_NAME" value="Login_VerifyEmail" />
+      <option name="GROUP_NAME" value="" />
+      <option name="TEST_OBJECT" value="METHOD" />
+      <option name="PARAMETERS" value="" />
+      <option name="OUTPUT_DIRECTORY" value="" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="moduleWithDependencies" />
+      </option>
+      <option name="PROPERTIES_FILE" value="" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SignUpTest.Consumer_Sign_up" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="Selenium_Advanced" />
       <shortenClasspath name="NONE" />
       <useClassPathOnly />
@@ -266,7 +228,35 @@
       <option name="SUITE_NAME" value="" />
       <option name="PACKAGE_NAME" value="Testcases" />
       <option name="MAIN_CLASS_NAME" value="Testcases.SignUpTest" />
-      <option name="METHOD_NAME" value="Consumer_Sign_up_and_Verify_by_admin" />
+      <option name="METHOD_NAME" value="Consumer_Sign_up" />
+      <option name="GROUP_NAME" value="" />
+      <option name="TEST_OBJECT" value="METHOD" />
+      <option name="PARAMETERS" value="" />
+      <option name="OUTPUT_DIRECTORY" value="" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="moduleWithDependencies" />
+      </option>
+      <option name="PROPERTIES_FILE" value="" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SignUpTest.deleteuser" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="Selenium_Advanced" />
+      <shortenClasspath name="NONE" />
+      <useClassPathOnly />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Testcases.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="SUITE_NAME" value="" />
+      <option name="PACKAGE_NAME" value="Testcases" />
+      <option name="MAIN_CLASS_NAME" value="Testcases.SignUpTest" />
+      <option name="METHOD_NAME" value="deleteuser" />
       <option name="GROUP_NAME" value="" />
       <option name="TEST_OBJECT" value="METHOD" />
       <option name="PARAMETERS" value="" />
@@ -291,27 +281,6 @@
       <option name="METHOD_NAME" value="" />
       <option name="GROUP_NAME" value="" />
       <option name="TEST_OBJECT" value="SUITE" />
-      <option name="PARAMETERS" value="" />
-      <option name="OUTPUT_DIRECTORY" value="" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="moduleWithDependencies" />
-      </option>
-      <option name="PROPERTIES_FILE" value="" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="Unnamed" type="TestNG" nameIsGenerated="true">
-      <module name="Selenium_Advanced" />
-      <shortenClasspath name="NONE" />
-      <useClassPathOnly />
-      <option name="SUITE_NAME" value="" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="" />
-      <option name="GROUP_NAME" value="" />
-      <option name="TEST_OBJECT" value="CLASS" />
       <option name="PARAMETERS" value="" />
       <option name="OUTPUT_DIRECTORY" value="" />
       <option name="TEST_SEARCH_SCOPE">
@@ -397,25 +366,24 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="TestNG.Unnamed" />
+      <item itemvalue="Application.Api_Call" />
       <item itemvalue="TestNG.GalleryPageTest.Gallery_verify_image" />
       <item itemvalue="TestNG.TestSuite " />
       <item itemvalue="TestNG.testcases" />
       <item itemvalue="TestNG.&lt;default&gt;" />
       <item itemvalue="TestNG.Classexecution" />
-      <item itemvalue="TestNG.BuyAndSellTest" />
-      <item itemvalue="TestNG.BuyAndSellTest.Accept_Project_In_Admin" />
-      <item itemvalue="TestNG.BuyAndSellTest.Create_Project" />
-      <item itemvalue="TestNG.BuyAndSellTest.invalidat_sellProject_stepper_1_fields" />
-      <item itemvalue="TestNG.SignUpTest.Consumer_Sign_up_and_Verify_by_admin" />
+      <item itemvalue="TestNG.SignUpTest.deleteuser" />
+      <item itemvalue="TestNG.LoginUserTest.Login_VerifyEmail" />
+      <item itemvalue="TestNG.LoginUserTest" />
+      <item itemvalue="TestNG.SignUpTest.Consumer_Sign_up" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="TestNG.BuyAndSellTest" />
-        <item itemvalue="TestNG.BuyAndSellTest.Accept_Project_In_Admin" />
-        <item itemvalue="TestNG.BuyAndSellTest.Create_Project" />
-        <item itemvalue="TestNG.BuyAndSellTest.invalidat_sellProject_stepper_1_fields" />
-        <item itemvalue="TestNG.SignUpTest.Consumer_Sign_up_and_Verify_by_admin" />
+        <item itemvalue="TestNG.SignUpTest.Consumer_Sign_up" />
+        <item itemvalue="Application.Api_Call" />
+        <item itemvalue="TestNG.SignUpTest.deleteuser" />
+        <item itemvalue="TestNG.LoginUserTest.Login_VerifyEmail" />
+        <item itemvalue="TestNG.LoginUserTest" />
       </list>
     </recent_temporary>
   </component>
@@ -427,6 +395,27 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1666076051325</updated>
+    </task>
+    <task id="LOCAL-00001" summary="first commit">
+      <created>1666076221252</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1666076221252</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Setup of project">
+      <created>1666092880518</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1666092880518</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Signup module">
+      <created>1666102106292</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1666102106292</updated>
     </task>
     <task id="LOCAL-00004" summary="signup login completed">
       <created>1668949573850</created>
@@ -582,196 +571,21 @@
       <option name="project" value="LOCAL" />
       <updated>1720348997724</updated>
     </task>
-    <task id="LOCAL-00026" summary="docker and git yml edited">
-      <created>1736964572420</created>
+    <task id="LOCAL-00026" summary=" commited signup, login, homepage completed 04-09-2024">
+      <created>1725468229536</created>
       <option name="number" value="00026" />
       <option name="presentableId" value="LOCAL-00026" />
       <option name="project" value="LOCAL" />
-      <updated>1736964572420</updated>
+      <updated>1725468229536</updated>
     </task>
-    <task id="LOCAL-00027" summary="docker and git yml edited pom edited">
-      <created>1736965405118</created>
+    <task id="LOCAL-00027" summary=" commited signup, login, homepage completed 04-09-2024">
+      <created>1731848611955</created>
       <option name="number" value="00027" />
       <option name="presentableId" value="LOCAL-00027" />
       <option name="project" value="LOCAL" />
-      <updated>1736965405118</updated>
+      <updated>1731848611955</updated>
     </task>
-    <task id="LOCAL-00028" summary="docker and git yml edited pom edited">
-      <created>1736966236899</created>
-      <option name="number" value="00028" />
-      <option name="presentableId" value="LOCAL-00028" />
-      <option name="project" value="LOCAL" />
-      <updated>1736966236899</updated>
-    </task>
-    <task id="LOCAL-00029" summary="docker and git yml edited pom edited">
-      <created>1736966506180</created>
-      <option name="number" value="00029" />
-      <option name="presentableId" value="LOCAL-00029" />
-      <option name="project" value="LOCAL" />
-      <updated>1736966506180</updated>
-    </task>
-    <task id="LOCAL-00030" summary="docker and git yml edited pom edited">
-      <created>1736966910765</created>
-      <option name="number" value="00030" />
-      <option name="presentableId" value="LOCAL-00030" />
-      <option name="project" value="LOCAL" />
-      <updated>1736966910765</updated>
-    </task>
-    <task id="LOCAL-00031" summary="docker and git yml edited pom edited">
-      <created>1737009913683</created>
-      <option name="number" value="00031" />
-      <option name="presentableId" value="LOCAL-00031" />
-      <option name="project" value="LOCAL" />
-      <updated>1737009913683</updated>
-    </task>
-    <task id="LOCAL-00032" summary="docker and git yml edited pom edited java folder moved">
-      <created>1737010454722</created>
-      <option name="number" value="00032" />
-      <option name="presentableId" value="LOCAL-00032" />
-      <option name="project" value="LOCAL" />
-      <updated>1737010454722</updated>
-    </task>
-    <task id="LOCAL-00033" summary="set up as per maven">
-      <created>1737011474925</created>
-      <option name="number" value="00033" />
-      <option name="presentableId" value="LOCAL-00033" />
-      <option name="project" value="LOCAL" />
-      <updated>1737011474925</updated>
-    </task>
-    <task id="LOCAL-00034" summary="set up as per maven">
-      <created>1737011732049</created>
-      <option name="number" value="00034" />
-      <option name="presentableId" value="LOCAL-00034" />
-      <option name="project" value="LOCAL" />
-      <updated>1737011732049</updated>
-    </task>
-    <task id="LOCAL-00035" summary="set up as per maven set all file">
-      <created>1737012396602</created>
-      <option name="number" value="00035" />
-      <option name="presentableId" value="LOCAL-00035" />
-      <option name="project" value="LOCAL" />
-      <updated>1737012396602</updated>
-    </task>
-    <task id="LOCAL-00036" summary="set up as per maven set all file">
-      <created>1737013465541</created>
-      <option name="number" value="00036" />
-      <option name="presentableId" value="LOCAL-00036" />
-      <option name="project" value="LOCAL" />
-      <updated>1737013465541</updated>
-    </task>
-    <task id="LOCAL-00037" summary="set up as per maven set all file">
-      <created>1737014019180</created>
-      <option name="number" value="00037" />
-      <option name="presentableId" value="LOCAL-00037" />
-      <option name="project" value="LOCAL" />
-      <updated>1737014019180</updated>
-    </task>
-    <task id="LOCAL-00038" summary="set up as per maven set all file">
-      <created>1737018896279</created>
-      <option name="number" value="00038" />
-      <option name="presentableId" value="LOCAL-00038" />
-      <option name="project" value="LOCAL" />
-      <updated>1737018896279</updated>
-    </task>
-    <task id="LOCAL-00039" summary="login signup and buyandsell running code">
-      <created>1737103519606</created>
-      <option name="number" value="00039" />
-      <option name="presentableId" value="LOCAL-00039" />
-      <option name="project" value="LOCAL" />
-      <updated>1737103519606</updated>
-    </task>
-    <task id="LOCAL-00040" summary="Fixed the issue for the scripts">
-      <created>1737128607697</created>
-      <option name="number" value="00040" />
-      <option name="presentableId" value="LOCAL-00040" />
-      <option name="project" value="LOCAL" />
-      <updated>1737128607697</updated>
-    </task>
-    <task id="LOCAL-00041" summary="Fixed the issue for the scripts">
-      <created>1737129167423</created>
-      <option name="number" value="00041" />
-      <option name="presentableId" value="LOCAL-00041" />
-      <option name="project" value="LOCAL" />
-      <updated>1737129167423</updated>
-    </task>
-    <task id="LOCAL-00042" summary="Fixed the issue for the scripts">
-      <created>1737129608806</created>
-      <option name="number" value="00042" />
-      <option name="presentableId" value="LOCAL-00042" />
-      <option name="project" value="LOCAL" />
-      <updated>1737129608806</updated>
-    </task>
-    <task id="LOCAL-00043" summary="Fixed the issue for the scripts">
-      <created>1737130099901</created>
-      <option name="number" value="00043" />
-      <option name="presentableId" value="LOCAL-00043" />
-      <option name="project" value="LOCAL" />
-      <updated>1737130099901</updated>
-    </task>
-    <task id="LOCAL-00044" summary="Fixed the issue for the scripts">
-      <created>1737130880931</created>
-      <option name="number" value="00044" />
-      <option name="presentableId" value="LOCAL-00044" />
-      <option name="project" value="LOCAL" />
-      <updated>1737130880931</updated>
-    </task>
-    <task id="LOCAL-00045" summary="Fixed the issue for the scripts">
-      <created>1737367206167</created>
-      <option name="number" value="00045" />
-      <option name="presentableId" value="LOCAL-00045" />
-      <option name="project" value="LOCAL" />
-      <updated>1737367206167</updated>
-    </task>
-    <task id="LOCAL-00046" summary="Fixed the issue for the scripts">
-      <created>1737367727257</created>
-      <option name="number" value="00046" />
-      <option name="presentableId" value="LOCAL-00046" />
-      <option name="project" value="LOCAL" />
-      <updated>1737367727257</updated>
-    </task>
-    <task id="LOCAL-00047" summary="Fixed the issue for the scripts">
-      <created>1737367894024</created>
-      <option name="number" value="00047" />
-      <option name="presentableId" value="LOCAL-00047" />
-      <option name="project" value="LOCAL" />
-      <updated>1737367894024</updated>
-    </task>
-    <task id="LOCAL-00048" summary="Fixed the issue for the scripts">
-      <created>1737368097709</created>
-      <option name="number" value="00048" />
-      <option name="presentableId" value="LOCAL-00048" />
-      <option name="project" value="LOCAL" />
-      <updated>1737368097709</updated>
-    </task>
-    <task id="LOCAL-00049" summary="Fixed the issue for the scripts">
-      <created>1737371063402</created>
-      <option name="number" value="00049" />
-      <option name="presentableId" value="LOCAL-00049" />
-      <option name="project" value="LOCAL" />
-      <updated>1737371063402</updated>
-    </task>
-    <task id="LOCAL-00050" summary="Fixed the issue for the scripts">
-      <created>1737375498541</created>
-      <option name="number" value="00050" />
-      <option name="presentableId" value="LOCAL-00050" />
-      <option name="project" value="LOCAL" />
-      <updated>1737375498544</updated>
-    </task>
-    <task id="LOCAL-00051" summary="Running chrome in non headless mode">
-      <created>1737375887261</created>
-      <option name="number" value="00051" />
-      <option name="presentableId" value="LOCAL-00051" />
-      <option name="project" value="LOCAL" />
-      <updated>1737375887261</updated>
-    </task>
-    <task id="LOCAL-00052" summary="Running chrome in non headless mode">
-      <created>1737394195139</created>
-      <option name="number" value="00052" />
-      <option name="presentableId" value="LOCAL-00052" />
-      <option name="project" value="LOCAL" />
-      <updated>1737394195139</updated>
-    </task>
-    <option name="localTasksCounter" value="53" />
+    <option name="localTasksCounter" value="28" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -785,7 +599,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="githubCICD/working" />
+                        <option value="origin/workingBranch" />
                       </list>
                     </value>
                   </entry>
@@ -814,6 +628,11 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <MESSAGE value="first commit" />
+    <MESSAGE value="Setup of project" />
+    <MESSAGE value="Signup module" />
+    <MESSAGE value="signup loagin completed" />
+    <MESSAGE value="signup login completed" />
     <MESSAGE value="22-12-2022 commit" />
     <MESSAGE value="Gallery page commit" />
     <MESSAGE value="Gallery page commit 24-04-2023" />
@@ -831,15 +650,8 @@
     <MESSAGE value="exact DATA DRIVEN ADDED" />
     <MESSAGE value="Completed Login module with dataprivider 06-07-2024" />
     <MESSAGE value="Completed signup module with dataprivider 07-07-2024" />
-    <MESSAGE value="docker and git yml edited" />
-    <MESSAGE value="docker and git yml edited pom edited" />
-    <MESSAGE value="docker and git yml edited pom edited java folder moved" />
-    <MESSAGE value="set up as per maven" />
-    <MESSAGE value="set up as per maven set all file" />
-    <MESSAGE value="login signup and buyandsell running code" />
-    <MESSAGE value="Fixed the issue for the scripts" />
-    <MESSAGE value="Running chrome in non headless mode" />
-    <option name="LAST_COMMIT_MESSAGE" value="Running chrome in non headless mode" />
+    <MESSAGE value=" commited signup, login, homepage completed 04-09-2024" />
+    <option name="LAST_COMMIT_MESSAGE" value=" commited signup, login, homepage completed 04-09-2024" />
   </component>
   <component name="XDebuggerManager">
     <watches-manager>
