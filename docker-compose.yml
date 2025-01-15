@@ -1,51 +1,56 @@
-version: "3"
-services:
-  chrome:
-    image: selenium/node-chrome:4.11.0-20230801
-    shm_size: 2gb
-    depends_on:
-      - selenium-hub
-    environment:
-      - SE_EVENT_BUS_HOST=${SELENIUM_SERVER_NAME}
-      - SE_EVENT_BUS_PUBLISH_PORT=4442
-      - SE_EVENT_BUS_SUBSCRIBE_PORT=4443
+name: Run Tests
 
-  firefox:
-    image: selenium/node-firefox:4.11.0-20230801
-    shm_size: 2gb
-    depends_on:
-      - selenium-hub
-    environment:
-      - SE_EVENT_BUS_HOST=${SELENIUM_SERVER_NAME}
-      - SE_EVENT_BUS_PUBLISH_PORT=4442
-      - SE_EVENT_BUS_SUBSCRIBE_PORT=4443
+on:
+  push:
+    branches:
+      - working
+  pull_request:
 
-  edge:
-    image: selenium/node-edge:4.11.0-20230801
-    shm_size: 2gb
-    depends_on:
-      - selenium-hub
-    environment:
-      - SE_EVENT_BUS_HOST=${SELENIUM_SERVER_NAME}
-      - SE_EVENT_BUS_PUBLISH_PORT=4442
-      - SE_EVENT_BUS_SUBSCRIBE_PORT=4443
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
 
-  selenium-hub:
-    image: selenium/hub:4.11.0-20230801
-    container_name: ${SELENIUM_SERVER_NAME}
-    ports:
-      - "4442:4442"
-      - "4443:4443"
-      - "4444:4444"
+    services:
+      selenium-hub:
+        image: selenium/hub:4.11.0-20230801
+        ports:
+          - 4444:4444
 
-  ping:
-    image: alpine/curl
+      chrome:
+        image: selenium/node-chrome:4.11.0-20230801
+        shm_size: 2gb
+        depends_on:
+          - selenium-hub
+        environment:
+          SE_EVENT_BUS_HOST: selenium-hub
+          SE_EVENT_BUS_PUBLISH_PORT: 4442
+          SE_EVENT_BUS_SUBSCRIBE_PORT: 4443
 
-  tests:
-    image: imagenarium/maven-jdk:20 #maven:3.6.3-jdk-11
-    working_dir: /app
-    volumes:
-      - ${CI_PROJECT_DIR}:/app
-    environment:
-      ENVIRONMENT: remote
-      SELENIUM_SERVER_URL: ${SELENIUM_SERVER_URL}
+      firefox:
+        image: selenium/node-firefox:4.11.0-20230801
+        shm_size: 2gb
+        depends_on:
+          - selenium-hub
+        environment:
+          SE_EVENT_BUS_HOST: selenium-hub
+          SE_EVENT_BUS_PUBLISH_PORT: 4442
+          SE_EVENT_BUS_SUBSCRIBE_PORT: 4443
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v3
+
+      - name: Set up Java
+        uses: actions/setup-java@v3
+        with:
+          distribution: temurin
+          java-version: 20
+
+      - name: Set up Maven
+        run: mvn -version
+
+      - name: Run Tests
+        run: |
+          mvn clean test
+        env:
+          SELENIUM_SERVER_URL: http://selenium-hub:4444

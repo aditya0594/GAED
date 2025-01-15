@@ -4,10 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="fbed16bb-bade-4def-845d-b7f89224c886" name="Changes" comment="docker and git yml edited">
+    <list default="true" id="fbed16bb-bade-4def-845d-b7f89224c886" name="Changes" comment="docker and git yml edited pom edited">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/testng.xml" beforeDir="false" afterPath="$PROJECT_DIR$/testng.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -77,7 +76,7 @@
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="TestNG.SignUpTest.Consumer_Sign_up">
+  <component name="RunManager" selected="TestNG.C:/GAED/testng.xml (1)">
     <configuration default="true" type="JetRunConfigurationType">
       <module name="GAED" />
       <method v="2">
@@ -107,6 +106,27 @@
       <option name="METHOD_NAME" value="invalidate_SellProject_buttons" />
       <option name="GROUP_NAME" value="" />
       <option name="TEST_OBJECT" value="METHOD" />
+      <option name="PARAMETERS" value="" />
+      <option name="OUTPUT_DIRECTORY" value="" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="moduleWithDependencies" />
+      </option>
+      <option name="PROPERTIES_FILE" value="" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="C:/GAED/testng.xml (1)" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="Selenium_Advanced" />
+      <shortenClasspath name="NONE" />
+      <useClassPathOnly />
+      <option name="SUITE_NAME" value="$PROJECT_DIR$/testng.xml" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="" />
+      <option name="GROUP_NAME" value="" />
+      <option name="TEST_OBJECT" value="SUITE" />
       <option name="PARAMETERS" value="" />
       <option name="OUTPUT_DIRECTORY" value="" />
       <option name="TEST_SEARCH_SCOPE">
@@ -176,34 +196,6 @@
       <option name="PACKAGE_NAME" value="testcases" />
       <option name="MAIN_CLASS_NAME" value="Testcases.GalleryPageTest" />
       <option name="METHOD_NAME" value="Gallery_verify_image" />
-      <option name="GROUP_NAME" value="" />
-      <option name="TEST_OBJECT" value="METHOD" />
-      <option name="PARAMETERS" value="" />
-      <option name="OUTPUT_DIRECTORY" value="" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="moduleWithDependencies" />
-      </option>
-      <option name="PROPERTIES_FILE" value="" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="HomepageTest.BuyandSellbutton" type="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="Practice_programs" />
-      <shortenClasspath name="NONE" />
-      <useClassPathOnly />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="Testcases.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="SUITE_NAME" value="" />
-      <option name="PACKAGE_NAME" value="Testcases" />
-      <option name="MAIN_CLASS_NAME" value="Testcases.HomepageTest" />
-      <option name="METHOD_NAME" value="BuyandSellbutton" />
       <option name="GROUP_NAME" value="" />
       <option name="TEST_OBJECT" value="METHOD" />
       <option name="PARAMETERS" value="" />
@@ -374,19 +366,19 @@
       <item itemvalue="TestNG.testcases" />
       <item itemvalue="TestNG.&lt;default&gt;" />
       <item itemvalue="TestNG.Classexecution" />
+      <item itemvalue="TestNG.C:/GAED/testng.xml (1)" />
       <item itemvalue="TestNG.BuyAndSellTest.invalidate_SellProject_buttons" />
       <item itemvalue="TestNG.C:/GAED/testng.xml" />
-      <item itemvalue="TestNG.HomepageTest.BuyandSellbutton" />
       <item itemvalue="TestNG.HomepageTest.BuyandSellbuttonVerify" />
       <item itemvalue="TestNG.SignUpTest.Consumer_Sign_up" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="TestNG.C:/GAED/testng.xml (1)" />
         <item itemvalue="TestNG.SignUpTest.Consumer_Sign_up" />
         <item itemvalue="TestNG.BuyAndSellTest.invalidate_SellProject_buttons" />
         <item itemvalue="TestNG.C:/GAED/testng.xml" />
         <item itemvalue="TestNG.HomepageTest.BuyandSellbuttonVerify" />
-        <item itemvalue="TestNG.HomepageTest.BuyandSellbutton" />
       </list>
     </recent_temporary>
   </component>
@@ -581,7 +573,14 @@
       <option name="project" value="LOCAL" />
       <updated>1736964572420</updated>
     </task>
-    <option name="localTasksCounter" value="27" />
+    <task id="LOCAL-00027" summary="docker and git yml edited pom edited">
+      <created>1736965405118</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1736965405118</updated>
+    </task>
+    <option name="localTasksCounter" value="28" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -595,7 +594,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="origin/main" />
+                        <option value="working" />
                       </list>
                     </value>
                   </entry>
@@ -647,7 +646,8 @@
     <MESSAGE value="Completed Login module with dataprivider 06-07-2024" />
     <MESSAGE value="Completed signup module with dataprivider 07-07-2024" />
     <MESSAGE value="docker and git yml edited" />
-    <option name="LAST_COMMIT_MESSAGE" value="docker and git yml edited" />
+    <MESSAGE value="docker and git yml edited pom edited" />
+    <option name="LAST_COMMIT_MESSAGE" value="docker and git yml edited pom edited" />
   </component>
   <component name="XDebuggerManager">
     <watches-manager>
