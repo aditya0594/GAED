@@ -4,31 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="fbed16bb-bade-4def-845d-b7f89224c886" name="Changes" comment="Completed signup module with dataprivider 07-07-2024">
-      <change afterPath="$PROJECT_DIR$/Screenshots/Login_VerifyEmail20240904010148.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Screenshots/Login_VerifyEmail20240904010233.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Screenshots/Login_VerifyEmail20240904011842.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Screenshots/Login_VerifyEmail20240904011941.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Screenshots/Login_VerifyEmail20240904012335.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Screenshots/Login_VerifyEmail20240904012438.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Screenshots/Login_VerifyEmail20240904020652.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Screenshots/Login_VerifyEmail20240904021013.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Screenshots/Login_VerifyEmail20240904021352.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Screenshots/Login_VerifyEmail20240904022246.png" afterDir="false" />
+    <list default="true" id="fbed16bb-bade-4def-845d-b7f89224c886" name="Changes" comment=" commited signup, login, homepage completed 04-09-2024">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/logs/browserstack-plugin.log" beforeDir="false" afterPath="$PROJECT_DIR$/logs/browserstack-plugin.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/Pageobjects/BuyAndSell.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Pageobjects/BuyAndSell.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/Pageobjects/LoginConsumer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Pageobjects/LoginConsumer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/Pageobjects/SignUp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Pageobjects/SignUp.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/Testcases/BuyAndSellTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Testcases/BuyAndSellTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/Testcases/HomepageTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Testcases/HomepageTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/Testcases/LoginUserTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Testcases/LoginUserTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/Testcases/SignUpTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Testcases/SignUpTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/baseClass/TestBase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/baseClass/TestBase.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/utils/utility.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/utils/utility.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resources/ExcelFile.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/resources/ExcelFile.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test-output/GAED_Testcase_report.html" beforeDir="false" afterPath="$PROJECT_DIR$/test-output/GAED_Testcase_report.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/testng.xml" beforeDir="false" afterPath="$PROJECT_DIR$/testng.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,7 +26,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="main" />
+        <entry key="$PROJECT_DIR$" value="working" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
