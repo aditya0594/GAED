@@ -270,7 +270,6 @@ public class SignUp extends TestBase {
     public void consumer_Sign_up_Step_One(String fname, String lname,String ConsumerSignUpEmail) throws InterruptedException {
         Thread.sleep(2000);
         String signbtn = driver.findElement(getSign_Up_Btn).getText();
-
         Assert.assertEquals(signbtn,"Sign Up");
         driver.findElement(getSign_Up_Btn).click();
         String Getsignuptitle = driver.findElement(signup_page_title).getText();

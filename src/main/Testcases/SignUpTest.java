@@ -23,14 +23,14 @@ public class SignUpTest extends TestBase {
 
     @Test(priority = 1,enabled = true)
     public void Signup_page_verify() throws InterruptedException {
-        ExtentTest test = extent.createTest("To verify the Signup Page");
+        ExtentTest test = extent.createTest("To verify the Signup Page on the signup button");
         homePage.homepage();
         signup.signup_button();
         test.pass("To verify the Signup Page passed successfully.");
     }
     @Test(priority = 2,enabled = true)
     public void Verify_Empty_signup_fields() throws InterruptedException {
-        ExtentTest test = extent.createTest("To verify the empty fields");
+        ExtentTest test = extent.createTest("To verify the signup with the empty fields");
         homePage.homepage();
         signup.Empty_signup_field1();
         test.pass("To verify the empty fields passed successfully.");
@@ -47,8 +47,8 @@ public class SignUpTest extends TestBase {
     }
 
     @Test(priority = 3,enabled = true, dataProvider = "Signupstep", dataProviderClass = Dataprovider.class)
-    public void deleteuser(String fname, String lname, String ConsumerSignUpEmail) throws InterruptedException, AWTException, IOException {
-        ExtentTest test = extent.createTest("To verify the invalid email");
+    public void deleteuser(String ConsumerSignUpEmail) throws InterruptedException, AWTException, IOException {
+        ExtentTest test = extent.createTest("To verify the delete email");
         //homePage.homepage();
         api_call.deleteUser();
         test.pass("To verify the invalid email passed successfully.");
