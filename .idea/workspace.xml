@@ -5,15 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="fbed16bb-bade-4def-845d-b7f89224c886" name="Changes" comment=" commited signup, login, homepage completed 04-09-2024">
-      <change afterPath="$PROJECT_DIR$/Screenshots/InvalidOTP20250115125144.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Screenshots/Login_VerifyEmail20250115125029.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Screenshots/Login_VerifyEmail20250115125342.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/logs/browserstack-plugin.log" beforeDir="false" afterPath="$PROJECT_DIR$/logs/browserstack-plugin.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/Pageobjects/SignUp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Pageobjects/SignUp.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/Testcases/SignUpTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Testcases/SignUpTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resources/ExcelFile.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/resources/ExcelFile.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test-output/GAED_Testcase_report.html" beforeDir="false" afterPath="$PROJECT_DIR$/test-output/GAED_Testcase_report.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -585,7 +577,14 @@
       <option name="project" value="LOCAL" />
       <updated>1731848611955</updated>
     </task>
-    <option name="localTasksCounter" value="28" />
+    <task id="LOCAL-00028" summary=" commited signup, login, homepage completed 04-09-2024">
+      <created>1736963997608</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1736963997608</updated>
+    </task>
+    <option name="localTasksCounter" value="29" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
