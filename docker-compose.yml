@@ -44,6 +44,9 @@ services:
     working_dir: /src
     volumes:
       - ${CI_PROJECT_DIR}:/src
+      - ./src/main:/app/src/main
+      - ./pom.xml:/app/pom.xml
+      - ./testng.xml:/app/testng.xml
     environment:
       ENVIRONMENT: remote
       SELENIUM_SERVER_URL: ${SELENIUM_SERVER_URL}
