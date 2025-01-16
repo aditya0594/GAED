@@ -46,6 +46,7 @@ public class TestBase {
     protected TestBase() {
         // Private constructor to prevent instantiation
     }
+    @Parameters("browserName")
     @BeforeMethod
     public static WebDriver Setup() throws IOException, URISyntaxException {
         if (driver == null) {
