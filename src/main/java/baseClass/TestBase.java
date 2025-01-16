@@ -51,13 +51,12 @@ public class TestBase {
     public static WebDriver Setup() throws IOException, URISyntaxException {
         if (driver == null) {
             String browserName = utility.property("browserName").toString();
+            System.out.println("The browser name is : " + browserName);
             String seleniumHubUrl = "http://selenium-hub:4444/wd/hub";
 
             if (browserName.equalsIgnoreCase("chrome")) {
                 ChromeOptions options = new ChromeOptions();
                 options.addArguments("--remote-allow-origins=*");
-
-
                 if (utility.property("runRemote").equals("true")) {
                     driver = new RemoteWebDriver(new URI(seleniumHubUrl).toURL(), options);
                 } else {
