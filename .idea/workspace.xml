@@ -4,12 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="fbed16bb-bade-4def-845d-b7f89224c886" name="Changes" comment="set up as per maven">
-      <change beforePath="$PROJECT_DIR$/logs/browserstack-plugin.log" beforeDir="false" afterPath="$PROJECT_DIR$/logs/browserstack-plugin.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/Testcases/BuyAndSellTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Testcases/BuyAndSellTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/Testcases/HomepageTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Testcases/HomepageTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/Testcases/LoginUserTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Testcases/LoginUserTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/Testcases/SignUpTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Testcases/SignUpTest.java" afterDir="false" />
+    <list default="true" id="fbed16bb-bade-4def-845d-b7f89224c886" name="Changes" comment="set up as per maven set all file">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/baseClass/TestBase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/baseClass/TestBase.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/resourse/testng.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/resourse/testng.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -641,7 +639,14 @@
       <option name="project" value="LOCAL" />
       <updated>1737011732049</updated>
     </task>
-    <option name="localTasksCounter" value="35" />
+    <task id="LOCAL-00035" summary="set up as per maven set all file">
+      <created>1737012396602</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1737012396602</updated>
+    </task>
+    <option name="localTasksCounter" value="36" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -684,7 +689,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Setup of project" />
     <MESSAGE value="Signup module" />
     <MESSAGE value="signup loagin completed" />
     <MESSAGE value="signup login completed" />
@@ -709,7 +713,8 @@
     <MESSAGE value="docker and git yml edited pom edited" />
     <MESSAGE value="docker and git yml edited pom edited java folder moved" />
     <MESSAGE value="set up as per maven" />
-    <option name="LAST_COMMIT_MESSAGE" value="set up as per maven" />
+    <MESSAGE value="set up as per maven set all file" />
+    <option name="LAST_COMMIT_MESSAGE" value="set up as per maven set all file" />
   </component>
   <component name="XDebuggerManager">
     <watches-manager>

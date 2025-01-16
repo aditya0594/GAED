@@ -2,6 +2,9 @@ package baseClass;
 
 import java.awt.*;
 import java.io.*;
+import java.net.URI;
+import java.net.URISyntaxException;
+import java.net.URL;
 import java.text.SimpleDateFormat;
 import java.time.Duration;
 import java.util.*;
@@ -20,8 +23,10 @@ import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.firefox.FirefoxOptions;
 import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.ITestResult;
@@ -41,37 +46,68 @@ public class TestBase {
     protected TestBase() {
         // Private constructor to prevent instantiation
     }
-
     @BeforeMethod
-    public static WebDriver Setup() throws IOException {
+    public static WebDriver Setup() throws IOException, URISyntaxException {
         if (driver == null) {
             String browserName = utility.property("browserName").toString();
+            String seleniumHubUrl = "http://selenium-hub:4444/wd/hub";
+
             if (browserName.equalsIgnoreCase("chrome")) {
-                WebDriverManager.chromedriver().setup();
                 ChromeOptions options = new ChromeOptions();
                 options.addArguments("--remote-allow-origins=*");
-                //options.addArguments("--headless");
-                driver = new ChromeDriver(options);
-                // Implicitly wait
-                driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
-                driver.manage().window().maximize();
+
+
+                if (utility.property("runRemote").equals("true")) {
+                    driver = new RemoteWebDriver(new URI(seleniumHubUrl).toURL(), options);
+                } else {
+                    WebDriverManager.chromedriver().setup();
+                    driver = new ChromeDriver(options);
+                }
             } else if (browserName.equalsIgnoreCase("firefox")) {
-                WebDriverManager.firefoxdriver().setup();
-                driver = new FirefoxDriver();
-            } else if (browserName.equalsIgnoreCase("IE")) {
-                WebDriverManager.iedriver().setup();
-                driver = new InternetExplorerDriver();
-            } else {
-                WebDriverManager.chromedriver().setup();
-                ChromeOptions options = new ChromeOptions();
-                driver = new ChromeDriver(options);
-                // Implicitly wait
-                driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
-                driver.manage().window().maximize();
+                FirefoxOptions options = new FirefoxOptions();
+
+                if (utility.property("runRemote").equals("true")) {
+                    driver = new RemoteWebDriver(new URL(seleniumHubUrl), options);
+                } else {
+                    WebDriverManager.firefoxdriver().setup();
+                    driver = new FirefoxDriver();
+                }
             }
+            driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
+            driver.manage().window().maximize();
         }
         return driver;
     }
+//    @BeforeMethod
+//    public static WebDriver Setup() throws IOException {
+//        if (driver == null) {
+//            String browserName = utility.property("browserName").toString();
+//            if (browserName.equalsIgnoreCase("chrome")) {
+//                WebDriverManager.chromedriver().setup();
+//                ChromeOptions options = new ChromeOptions();
+//                options.addArguments("--remote-allow-origins=*");
+//                //options.addArguments("--headless");
+//                driver = new ChromeDriver(options);
+//                // Implicitly wait
+//                driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
+//                driver.manage().window().maximize();
+//            } else if (browserName.equalsIgnoreCase("firefox")) {
+//                WebDriverManager.firefoxdriver().setup();
+//                driver = new FirefoxDriver();
+//            } else if (browserName.equalsIgnoreCase("IE")) {
+//                WebDriverManager.iedriver().setup();
+//                driver = new InternetExplorerDriver();
+//            } else {
+//                WebDriverManager.chromedriver().setup();
+//                ChromeOptions options = new ChromeOptions();
+//                driver = new ChromeDriver(options);
+//                // Implicitly wait
+//                driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+//                driver.manage().window().maximize();
+//            }
+//        }
+//        return driver;
+//    }
 
   /*    @Parameters("browser")
         @BeforeSuite
