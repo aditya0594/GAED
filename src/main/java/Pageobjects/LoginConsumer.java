@@ -15,7 +15,7 @@ import java.util.Set;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-import static java.utils.utility.*;
+import static utils.utility.AssertTextBtn;
 
 
 public class LoginConsumer extends TestBase {

@@ -5,13 +5,14 @@ import static org.testng.Assert.assertEquals;
 
 import java.io.IOException;
 import java.util.Properties;
-import java.utils.utility;
+
 
 import baseClass.TestBase;
 import org.openqa.selenium.By;
 
 import org.openqa.selenium.Keys;
 import org.testng.Assert;
+import utils.utility;
 
 
 public class HomePage extends TestBase {

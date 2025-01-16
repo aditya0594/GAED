@@ -26,7 +26,8 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.ITestResult;
 import org.testng.annotations.*;
-import java.utils.utility;
+import utils.utility;
+
 
 @Listeners(MyITestListener.class)
 public class TestBase {
