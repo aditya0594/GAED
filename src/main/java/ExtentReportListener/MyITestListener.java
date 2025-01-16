@@ -1,4 +1,4 @@
-package java.ExtentReportListener;
+package ExtentReportListener;
 
 
 import org.testng.ITest;

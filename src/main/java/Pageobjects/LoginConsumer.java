@@ -1,6 +1,7 @@
-package java.Pageobjects;
+package Pageobjects;
 
-import java.baseClass.TestBase;
+
+import baseClass.TestBase;
 import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.Actions;
 import org.testng.Assert;
@@ -17,7 +18,7 @@ import java.util.regex.Pattern;
 import static java.utils.utility.*;
 
 
-public class LoginConsumer extends TestBase{
+public class LoginConsumer extends TestBase {
 
     static Set<Cookie> cookies;
     static By loginBtn = By.xpath("//*[@class='cursor-pointer hidden lg:inline-block lg:ml-auto lg:mr-3 py-2 px-6 text-sm 3xl:text-lg text-white border border-transparent hover:border hover:border-white font-medium  rounded-full transition duration-200 group-hover:text-primary']");

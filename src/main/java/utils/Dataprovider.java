@@ -1,6 +1,7 @@
-package java.utils;
+package utils;
 
-import java.baseClass.TestBase;
+
+import baseClass.TestBase;
 import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.ss.usermodel.Sheet;

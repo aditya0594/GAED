@@ -1,6 +1,7 @@
-package java.Pageobjects;
+package Pageobjects;
 
-import java.baseClass.TestBase;
+
+import baseClass.TestBase;
 import org.openqa.selenium.*;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;

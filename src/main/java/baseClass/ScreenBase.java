@@ -1,4 +1,4 @@
-package java.baseClass;
+package baseClass;
 
 public class ScreenBase extends TestBase {
 

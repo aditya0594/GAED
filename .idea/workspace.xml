@@ -4,19 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="fbed16bb-bade-4def-845d-b7f89224c886" name="Changes" comment="docker and git yml edited pom edited">
+    <list default="true" id="fbed16bb-bade-4def-845d-b7f89224c886" name="Changes" comment="docker and git yml edited pom edited java folder moved">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/browserstack-plugin.log" beforeDir="false" afterPath="$PROJECT_DIR$/logs/browserstack-plugin.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/ExtentReportListener/MyITestListener.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/ExtentReportListener/extend_report_example.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/Pageobjects/BuyAndSell.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/Pageobjects/DeletePageAndroid.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/Pageobjects/GalleryPageAndroid.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/Pageobjects/HomePage.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/Pageobjects/LoginConsumer.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/Pageobjects/SignUp.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/baseClass/ScreenBase.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/baseClass/TestBase.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ExtentReportListener/MyITestListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ExtentReportListener/MyITestListener.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ExtentReportListener/extend_report_example.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ExtentReportListener/extend_report_example.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Pageobjects/BuyAndSell.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Pageobjects/BuyAndSell.java" afterDir="false" />
@@ -25,23 +15,20 @@
       <change beforePath="$PROJECT_DIR$/src/main/java/Pageobjects/HomePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Pageobjects/HomePage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Pageobjects/LoginConsumer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Pageobjects/LoginConsumer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Pageobjects/SignUp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Pageobjects/SignUp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/baseClass/ScreenBase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/baseClass/ScreenBase.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/baseClass/TestBase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/baseClass/TestBase.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/utils/AppConfigTags.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/utils/AppConfigTags.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/utils/CommonUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/utils/CommonUtils.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/utils/Constants.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/utils/Constants.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/utils/Dataprovider.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/utils/Dataprovider.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/utils/utility.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/utils/utility.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/utils/AppConfigTags.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/utils/CommonUtils.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/utils/Constants.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/utils/Dataprovider.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/utils/utility.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/Testcases/BuyAndSellTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Testcases/BuyAndSellTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/Testcases/DeleteUserPageTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Testcases/DeleteUserPageTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/Testcases/GalleryPageTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Testcases/GalleryPageTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/Testcases/HomepageTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Testcases/HomepageTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/Testcases/LoginUserTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Testcases/LoginUserTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/Testcases/SignUpTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Testcases/SignUpTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/testng.xml" beforeDir="false" afterPath="$PROJECT_DIR$/testng.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/resourses/testng.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/resourse/testng.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -646,7 +633,14 @@
       <option name="project" value="LOCAL" />
       <updated>1737009913683</updated>
     </task>
-    <option name="localTasksCounter" value="32" />
+    <task id="LOCAL-00032" summary="docker and git yml edited pom edited java folder moved">
+      <created>1737010454722</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1737010454722</updated>
+    </task>
+    <option name="localTasksCounter" value="33" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -713,7 +707,8 @@
     <MESSAGE value="Completed signup module with dataprivider 07-07-2024" />
     <MESSAGE value="docker and git yml edited" />
     <MESSAGE value="docker and git yml edited pom edited" />
-    <option name="LAST_COMMIT_MESSAGE" value="docker and git yml edited pom edited" />
+    <MESSAGE value="docker and git yml edited pom edited java folder moved" />
+    <option name="LAST_COMMIT_MESSAGE" value="docker and git yml edited pom edited java folder moved" />
   </component>
   <component name="XDebuggerManager">
     <watches-manager>

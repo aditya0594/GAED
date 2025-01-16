@@ -1,7 +1,8 @@
-package java.Pageobjects;
+package Pageobjects;
 
-import java.baseClass.TestBase;
 
+
+import baseClass.TestBase;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
