@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="All Test Suite">
+    <test verbose="2" preserve-order="true" name="GAED Test Cases">
+        <classes>
+            <class name="Testcases.HomepageTest">
+                <methods>
+                    <include name="Homepage"/>
+                    <include name="BuyandSellbuttonVerify"/>
+                </methods>
+            </class>
+            <class name="Testcases.SignUpTest">
+                <methods>
+                    <include name="Signup_page_verify"/>
+                    <include name="Verify_Empty_signup_fields"/>
+                    <include name="Consumer_Sign_up"/>
+                </methods>
+            </class>
+            <class name="Testcases.LoginUserTest">
+                <methods>
+                    <include name="Login_VerifyEmail"/>
+                    <include name="Login_VerifyInvalidEmail"/>
+                    <include name="Login_VerifyEmptyEmail"/>
+                    <include name="Collage_Btn_functionality"/>
+                    <include name="Collage_Img_functionality"/>
+                    <include name="Collage_multi_Img_functionality"/>
+                    <include name="Verify_Collage_Multi_layoutswitch_Image"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

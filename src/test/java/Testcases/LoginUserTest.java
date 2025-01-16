@@ -4,23 +4,10 @@ import Pageobjects.HomePage;
 import Pageobjects.LoginConsumer;
 import baseClass.TestBase;
 import com.aventstack.extentreports.ExtentTest;
-import org.apache.poi.ss.usermodel.Cell;
-import org.apache.poi.ss.usermodel.Row;
-import org.apache.poi.ss.usermodel.Sheet;
-import org.apache.poi.ss.usermodel.Workbook;
-import org.apache.poi.xssf.usermodel.XSSFCell;
-import org.apache.poi.xssf.usermodel.XSSFRow;
-import org.apache.poi.xssf.usermodel.XSSFWorkbook;
-import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 import utils.Dataprovider;
-import utils.utility;
 
-import java.io.FileInputStream;
 import java.io.IOException;
-
-import static baseClass.TestBase.extent;
-import static utils.utility.AssertTextBtn;
 
 public class LoginUserTest extends TestBase {
     HomePage homePage = new HomePage();
