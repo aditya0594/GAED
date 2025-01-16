@@ -9,7 +9,8 @@ import Pageobjects.SignUp;
 import baseClass.TestBase;
 import com.aventstack.extentreports.ExtentTest;
 import org.testng.annotations.Test;
-import java.utils.Dataprovider;
+import utils.Dataprovider;
+
 
 import java.awt.*;
 import java.io.IOException;
