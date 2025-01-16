@@ -1,65 +1,19 @@
-package utils;
+package java.utils;
 
-import baseClass.TestBase;
+import java.baseClass.TestBase;
 import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.ss.usermodel.Sheet;
 import org.apache.poi.ss.usermodel.Workbook;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
-import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
-import org.testng.Assert;
-import org.testng.annotations.DataProvider;
 
 import java.io.FileInputStream;
 import java.io.IOException;
-import java.time.Duration;
-import java.util.Properties;
-import java.util.Random;
 
-public class utility extends TestBase {
+public class Dataprovider extends TestBase {
 
 
-    public static Object property(String key)throws IOException {
-        FileInputStream file = new FileInputStream("src/resources/config.properties");
-        Properties prop = new Properties();
-        prop.load(file);
-        return prop.get(key);
-    }
-    public static void click_javascript(By element){
-        JavascriptExecutor js = (JavascriptExecutor) driver;
-        js.executeScript("arguments[0].click();", element);
-    }
-    public void Error_message(By element, String actucalmessage){
-        String invalidfirstnameMess = driver.findElement(element).getText();
-        Assert.assertEquals(actucalmessage,invalidfirstnameMess);
-    }
-    public void verify_text(By element, String actucalmessage){
-        String invalidfirstnameMess = driver.findElement(element).getText();
-        Assert.assertEquals(actucalmessage,invalidfirstnameMess);
-
-    }
-    public void Error_message_Empty_field(By element){
-        String invalidfirstnameMess = driver.findElement(element).getText();
-        Assert.assertEquals("Field is Required.",invalidfirstnameMess);
-
-    }
-
-
-    public static void AssertTextBtn(By element,String text){
-        String btn = driver.findElement(element).getText();
-        System.out.println("button text is : " + btn);
-        Assert.assertEquals(btn,text);
-    }
-    public static By waitForElement(By element) {
-        WebDriverWait w = new WebDriverWait(driver, Duration.ofSeconds(30));
-        w.until(ExpectedConditions.visibilityOfElementLocated((By) element));
-        return element;
-    }
-    @DataProvider(name = "ValidLoginEmail")
+    @org.testng.annotations.DataProvider(name = "ValidLoginEmail")
     public static Object[][] LoginData() throws IOException {
 
         FileInputStream fis = new FileInputStream("src/resources/ExcelFile.xlsx");
@@ -98,7 +52,7 @@ public class utility extends TestBase {
 
         return testData;
     }
-    @DataProvider(name = "InvalidLoginEmail")
+    @org.testng.annotations.DataProvider(name = "InvalidLoginEmail")
     public static Object[][] InvalidLoginEmail() throws IOException {
 
         FileInputStream fis = new FileInputStream("src/resources/ExcelFile.xlsx");
@@ -137,6 +91,54 @@ public class utility extends TestBase {
 
         return testData;
     }
+    @org.testng.annotations.DataProvider(name = "Signupstep")
+    public static Object[][] signupdata() throws IOException {
+
+        FileInputStream fis = new FileInputStream("src/resources/ExcelFile.xlsx");
+        Workbook workbook = new XSSFWorkbook(fis);
+        Sheet loginsheet = workbook.getSheet("signupdata");
+
+        int numberOfRows = loginsheet.getPhysicalNumberOfRows();
+        Object[][] testData = new Object[numberOfRows - 1][3]; //  to provide three columns (first name, last name, email).
+                                                                // Adjust for header row if present
+
+        for (int i = 1; i < numberOfRows; i++) { // Start from 1 to skip header row
+            Row row = loginsheet.getRow(i);
+
+            if (row != null) {
+                Cell fname = row.getCell(0);
+                Cell lname = row.getCell(1);
+                Cell ConsumerSignUpEmail = row.getCell(2);
+
+                if (fname != null) {
+                    testData[i - 1][0] = getCellValue(fname);
+                } else {
+                    testData[i - 1][0] = ""; // Handle null cell
+                }
+
+                if (lname != null) {
+                    testData[i - 1][1] = getCellValue(lname);
+                } else {
+                    testData[i - 1][1] = ""; // Handle null cell
+                }
+                if (ConsumerSignUpEmail != null) {
+                    testData[i - 1][2] = getCellValue(ConsumerSignUpEmail);
+                } else {
+                    testData[i - 1][2] = ""; // Handle null cell
+                }
+
+                System.out.println("Username fetched value: " + fname);
+                System.out.println("Password fetched value: " + lname);
+                System.out.println("Password fetched value: " + ConsumerSignUpEmail);
+            }
+        }
+
+        workbook.close();
+        fis.close();
+
+        return testData;
+    }
+
     private static String getCellValue(Cell cell) {
         if (cell == null) {
             return "";
@@ -156,19 +158,6 @@ public class utility extends TestBase {
                 return "";
         }
     }
-    /*<plugins>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-surefire-plugin</artifactId>
-                <version>3.0.0-M5</version> <!-- Or the latest version -->
-                <configuration>
-                    <suiteXmlFiles>
-                        <suiteXmlFile>testng.xml</suiteXmlFile>
-                    </suiteXmlFiles>
-                    <parallel>tests</parallel>
-                    <threadCount>3</threadCount> <!-- Number of threads for parallel execution -->
-                </configuration>
-            </plugin>
-        </plugins>*/
+
 
 }

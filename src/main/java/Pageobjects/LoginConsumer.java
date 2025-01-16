@@ -1,6 +1,6 @@
-package Pageobjects;
+package java.Pageobjects;
 
-import baseClass.TestBase;
+import java.baseClass.TestBase;
 import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.Actions;
 import org.testng.Assert;
@@ -14,7 +14,7 @@ import java.util.Set;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-import static utils.utility.*;
+import static java.utils.utility.*;
 
 
 public class LoginConsumer extends TestBase{

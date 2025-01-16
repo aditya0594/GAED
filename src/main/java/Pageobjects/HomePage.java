@@ -1,26 +1,16 @@
-package Pageobjects;
+package java.Pageobjects;
 
 import static org.testng.Assert.assertEquals;
 
+import java.baseClass.TestBase;
 import java.io.IOException;
-import java.util.Map;
 import java.util.Properties;
-import java.util.Set;
-import baseClass.TestBase;
+import java.utils.utility;
+
 import org.openqa.selenium.By;
 
-import baseClass.ScreenBase;
-import org.openqa.selenium.Cookie;
 import org.openqa.selenium.Keys;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.devtools.DevTools;
-import org.openqa.selenium.devtools.v118.log.Log;
-import org.openqa.selenium.devtools.v119.console.Console;
 import org.testng.Assert;
-import org.testng.annotations.Listeners;
-import utils.CommonUtils;
-import utils.utility;
 
 
 public class HomePage extends TestBase {

@@ -1,5 +1,5 @@
-package Pageobjects;
-import baseClass.TestBase;
+package java.Pageobjects;
+import java.baseClass.TestBase;
 import org.openqa.selenium.By;
 import org.testng.Assert;
 

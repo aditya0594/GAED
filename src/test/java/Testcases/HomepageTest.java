@@ -1,10 +1,10 @@
 
 package Testcases;
 
-import Pageobjects.BuyAndSell;
-import Pageobjects.HomePage;
-import Pageobjects.SignUp;
-import baseClass.TestBase;
+import java.Pageobjects.BuyAndSell;
+import java.Pageobjects.HomePage;
+import java.Pageobjects.SignUp;
+import java.baseClass.TestBase;
 import com.aventstack.extentreports.ExtentTest;
 import org.testng.annotations.Test;
 

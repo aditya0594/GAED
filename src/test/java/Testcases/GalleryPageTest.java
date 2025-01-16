@@ -1,9 +1,9 @@
 package Testcases;
 
-import Pageobjects.GalleryPageAndroid;
-import Pageobjects.HomePage;
-import androidpageobjectss.DeletePageAndroid;
-import baseClass.TestBase;
+import java.Pageobjects.GalleryPageAndroid;
+import java.Pageobjects.HomePage;
+import java.Pageobjects.DeletePageAndroid;
+import java.baseClass.TestBase;
 import org.testng.annotations.Test;
 
 import java.io.IOException;

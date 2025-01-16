@@ -1,4 +1,4 @@
-package utils;
+package java.utils;
 
 public class Constants {
 

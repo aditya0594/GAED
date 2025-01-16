@@ -1,8 +1,8 @@
 package Testcases;
 
-import Pageobjects.HomePage;
-import androidpageobjectss.DeletePageAndroid;
-import baseClass.TestBase;
+import java.Pageobjects.HomePage;
+import java.Pageobjects.DeletePageAndroid;
+import java.baseClass.TestBase;
 
 import java.io.IOException;
 

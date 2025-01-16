@@ -1,11 +1,11 @@
-package baseClass;
+package java.baseClass;
+import java.ExtentReportListener.MyITestListener;
 import java.awt.*;
 import java.io.*;
 import java.text.SimpleDateFormat;
 import java.time.Duration;
 import java.util.*;
 
-import ExtentReportListener.MyITestListener;
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.Status;
@@ -25,7 +25,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.ITestResult;
 import org.testng.annotations.*;
-import utils.utility;
+import java.utils.utility;
 
 @Listeners(MyITestListener.class)
 public class TestBase {

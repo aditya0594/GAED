@@ -1,12 +1,12 @@
 package Testcases;
 
-import Pageobjects.HomePage;
-import Pageobjects.LoginConsumer;
-import Pageobjects.SignUp;
-import baseClass.TestBase;
+import java.Pageobjects.HomePage;
+import java.Pageobjects.LoginConsumer;
+import java.Pageobjects.SignUp;
+import java.baseClass.TestBase;
 import com.aventstack.extentreports.ExtentTest;
 import org.testng.annotations.Test;
-import utils.Dataprovider;
+import java.utils.Dataprovider;
 
 import java.awt.*;
 import java.io.IOException;
