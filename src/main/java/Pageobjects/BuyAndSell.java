@@ -6,6 +6,12 @@ import org.openqa.selenium.*;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
 
+import java.awt.*;
+import java.awt.datatransfer.Clipboard;
+import java.awt.datatransfer.StringSelection;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+
 public class BuyAndSell extends TestBase {
 
     LoginConsumer LoginUser = new LoginConsumer();
@@ -75,7 +81,8 @@ public class BuyAndSell extends TestBase {
 
     }
     By ProjectTitleField = By.xpath("//input[@name='projectTitle']");
-    By projectTypeField = By.xpath("//div[@class=' css-19bb58m']");
+    By projectTypeField = By.xpath("//div[@class='css-19bb58m']");
+    By projectTypeFieldText = By.id("react-select-2-input");
     By ProjectAddressField = By.xpath("//input[@name='location']");
     By proectAddressGoogleField = By.xpath("//section[@class='px-4 xl:px-24 2xl:px-48 pt-8']//li[1]");
     By Bid_Validity = By.xpath("//input[@name='bidValidity']");
@@ -92,12 +99,12 @@ public class BuyAndSell extends TestBase {
 
         driver.findElement(projectTypeField).click();
         Thread.sleep(2000);
-        driver.findElement(By.id("react-select-2-input")).sendKeys("Solar");
-        tab(SendProjecttext);
+        driver.findElement(projectTypeFieldText).sendKeys("Solar"+ Keys.TAB);
+        tab(projectTypeFieldText);
         //driver.findElement(By.id("react-select-2-input")).sendKeys(Keys.TAB);
 
-        driver.findElement(ProjectAddressField).click();
-        Thread.sleep(2000);
+      // driver.findElement(ProjectAddressField).click();
+        //Thread.sleep(2000);
         signup.addressDropdown("Chtra");
         Thread.sleep(1000);
         tab(ProjectAddressField);
@@ -114,11 +121,11 @@ public class BuyAndSell extends TestBase {
 
     By Tenure_Age = By.xpath("//input[@name='tenureAge']");
     By Module_Specification = By.xpath("//div[contains(@class,'css-1klm6dm-control')]//div[contains(@class,'css-19bb58m')]");
-    By Module_Value_specification = By.id("react-select-6-input");
+    By Module_Value_specification = By.id("react-select-7-input");
     By Module_Brand = By.xpath("//input[@name='moduleBrand']");
     By Module_value_Brand = By.xpath("//input[@name='moduleBrand']");
     By Grid_Connection = By.xpath("//div[contains(@class,'css-1klm6dm-control')]//div[contains(@class,'css-19bb58m')]");
-    By Grid_value_Connection = By.id("react-select-7-input");
+    By Grid_value_Connection = By.id("react-select-8-input");
     By Current_Tenancy = By.xpath("//input[@name='currentTenancy']");
     //By AgreementType = By.xpath("//div[@class=' css-1klm6dm-control']//div[@class=' css-19bb58m']");
   //  By AgreementType = By.xpath("//div[@class=' css-1klm6dm-control']//div[@class=' css-19bb58m']");
@@ -193,29 +200,29 @@ public class BuyAndSell extends TestBase {
         WebElement yearDropdown = driver.findElement(By.xpath("//*[@class='react-datepicker__year-select']"));
         Select select_year = new Select(yearDropdown);
         select_year.selectByValue("1994");
-        Thread.sleep(1000);
+
         //Day click
-        driver.findElement(By.xpath("//div[@class='react-datepicker__day react-datepicker__day--013 react-datepicker__day--keyboard-selected']")).click();
-        Thread.sleep(1000);
+        driver.findElement(By.xpath("//div[contains(@class, 'react-datepicker__day react-datepicker__day--013') or contains(@class, 'react-datepicker__day react-datepicker__day--013 react-datepicker__day--selected')]")).click();
+
 
 
         //Temporary Occupation Permit
         By Temporary_Occupation_Permit = By.xpath("//span[@aria-label='Temporary Occupation Permit (TOP) Date refers to the date when the temporary occupation permit for the project was issued. Please enter the date in the specified format (MM/DD/YYYY).']//*[name()='svg']//*[name()='path' and contains(@d,'M148 288h-')]");
         driver.findElement(Temporary_Occupation_Permit).click();
-        Thread.sleep(5000);
-        //Year selection
+
+        //Date selection
         WebElement dateDropdown1 = driver.findElement(By.xpath("//*[@class='react-datepicker__month-select']"));
         Select select_date1 = new Select(dateDropdown1);
         select_date1.selectByValue("3");
-        Thread.sleep(10000);
+        Thread.sleep(1000);
         //Year selection
         WebElement yearDropdown1 = driver.findElement(By.xpath("//*[@class='react-datepicker__year-select']"));
         Select select_year1 = new Select(yearDropdown1);
         select_year1.selectByValue("1994");
-        Thread.sleep(10000);
+
         //Day click
-        driver.findElement(By.xpath("//div[@class='react-datepicker__day react-datepicker__day--013 react-datepicker__day--keyboard-selected']")).click();
-        Thread.sleep(10000);
+        driver.findElement(By.xpath("//div[contains(@class, 'react-datepicker__day react-datepicker__day--013') or contains(@class, 'react-datepicker__day react-datepicker__day--013 react-datepicker__day--selected')]")).click();
+
 
         By Selling_price = By.xpath("//*[@name='askingPrice']");
         Thread.sleep(1000);
@@ -230,7 +237,39 @@ public class BuyAndSell extends TestBase {
     By image_upload= By.xpath("//div[@class='flex flex-col items-center justify-center pt-5 pb-6']");
     public void vaild_Stepper3_ProjectFields_button() throws InterruptedException {
 
-        click(image_upload);
+        Thread.sleep(2000);
+        Clipboard clipboard1 = Toolkit.getDefaultToolkit().getSystemClipboard();
+        String path = System.getProperty("user.dir");
+        String relativePath = path+"/src/resources/image1.jpg";
+        // Convert to Path object
+        Path convertedpath = Paths.get(relativePath);
+        String FinalPAth = convertedpath.toString();
+        // Create a StringSelection object containing the OTP
+        StringSelection stringSelection = new StringSelection(FinalPAth);
+        // Set the StringSelection as the current contents of the clipboard
+        clipboard1.setContents(stringSelection,null);
+
+//        click(image_upload);
+//        WebElement IDfileInput = driver.findElement(By.xpath("//input[@id='document1File']"));
+//        IDfileInput.sendKeys(FinalPAth);
+
+
+
+        for(int i=0; i<=4;i++){
+            WebElement project_image = driver.findElement(By.xpath("//input[@id='dropzone-file']"));
+            project_image.sendKeys(FinalPAth);
+        }
+        Thread.sleep(2000);
+
+        By youtube_url= By.xpath("//input[@name='youtubeUrl']");
+        By youtube_url_submit= By.xpath("//*[contains(text(),'Submit')]");
+        By Project_Save= By.xpath("//span[@class='text-sm font-medium text-white']");
+
+        driver.findElement(youtube_url).sendKeys("https://www.youtube.com/watch?v=sYIGiuycD-k");
+        driver.findElement(youtube_url_submit).click();
+        driver.findElement(Project_Save).click();
+
+
 
 
     }

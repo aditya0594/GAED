@@ -9,6 +9,7 @@ import org.apache.poi.ss.usermodel.Workbook;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
@@ -17,6 +18,7 @@ import org.testng.annotations.DataProvider;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.time.Duration;
+import java.util.List;
 import java.util.Properties;
 
 public class utility extends TestBase {
@@ -32,6 +34,20 @@ public class utility extends TestBase {
         JavascriptExecutor js = (JavascriptExecutor) driver;
         js.executeScript("arguments[0].click();", element);
     }
+    public static void dropdown(By field_click, By textget, String TextToBeSelected ) throws InterruptedException {
+        driver.findElement(field_click).click();
+        Thread.sleep(1000);
+        List<WebElement> nationality = driver.findElements(textget);
+        for(WebElement element : nationality){
+            String text = element.getText();
+            System.out.println("The nationality list : " + text );
+            if(text.equals(TextToBeSelected)){
+                driver.findElement(textget).click();
+            }
+            break;
+        }
+    }
+
     public void Error_message(By element, String actucalmessage){
         String invalidfirstnameMess = driver.findElement(element).getText();
         Assert.assertEquals(actucalmessage,invalidfirstnameMess);

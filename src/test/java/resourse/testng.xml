@@ -28,6 +28,11 @@
                     <include name="Verify_Collage_Multi_layoutswitch_Image"/>
                 </methods>
             </class>
+            <class name="Testcases.BuyAndSellTest">
+                <methods>
+                    <include name="Create_Project"/>
+                </methods>
+            </class>
         </classes>
     </test>
 </suite>

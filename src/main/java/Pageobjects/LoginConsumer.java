@@ -153,7 +153,7 @@ public class LoginConsumer extends TestBase {
         Thread.sleep(5000);
 
         // Find all ul elements with the specified class
-        List<WebElement> ulElements = driver.findElements(By.xpath("//ul[@class='MuiList-root MuiList-padding MuiMenu-list css-r8u8y9']"));
+        List<WebElement> ulElements = driver.findElements(By.xpath("//li[@class='MuiButtonBase-root MuiMenuItem-root MuiMenuItem-gutters MuiMenuItem-root MuiMenuItem-gutters !text-sm !font-normal !text-black-100 css-5dycmn']"));
 
         // Check how many elements were found
         System.out.println("Number of ul elements found: " + ulElements.size());

@@ -43,9 +43,16 @@ public class SignUpTest extends TestBase {
     @Test(priority = 3,enabled = true, dataProvider = "Signupstep", dataProviderClass = Dataprovider.class)
     public void Consumer_Sign_up(String fname, String lname, String ConsumerSignUpEmail) throws InterruptedException, AWTException, IOException {
         ExtentTest test = extent.createTest("To verify the invalid email");
+        api_call.deleteUser();
         homePage.homepage();
         signup.consumer_Sign_up_Step_One(fname,lname,ConsumerSignUpEmail);
         signup.consumer_Sign_up_Step_Two();
+        api_call.deleteUser();
+        test.pass("To verify the invalid email passed successfully.");
+    }
+    @Test(priority = 3,enabled = true, dataProvider = "Signupstep", dataProviderClass = Dataprovider.class)
+    public void deleteuser(String fname, String lname, String ConsumerSignUpEmail) throws InterruptedException, AWTException, IOException {
+        ExtentTest test = extent.createTest("To verify the invalid email");
         api_call.deleteUser();
         test.pass("To verify the invalid email passed successfully.");
     }

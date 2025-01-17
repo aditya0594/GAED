@@ -10,6 +10,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
+import utils.utility;
+
 import java.awt.*;
 import java.awt.datatransfer.Clipboard;
 import java.awt.datatransfer.StringSelection;
@@ -67,8 +69,8 @@ public class SignUp extends TestBase {
         Assert.assertEquals("This looks like an invalid email (eg: abc@xyz.com)",invalidemailMess);
         driver.findElement(firstname).sendKeys(Keys.TAB);
     }
-    public static void addressDropdown(String addressInitials) throws InterruptedException {
-        driver.findElement(By.xpath("//input[@name='address']")).sendKeys(addressInitials); // sent the address initials
+    public void addressDropdown(String addressInitials) throws InterruptedException {
+        driver.findElement(By.xpath("//input[@name='location']")).sendKeys(addressInitials); // sent the address initials
 
         List<WebElement> suggestAddress = driver.findElements(By.xpath("//li[@class='text-sm font-normal text-black-900 px-3 py-2 cursor-pointer hover:bg-[#f6f6f6]']"));
         //driver.findElements(By.xpath("//ul[@class='mt-2 border border-gray-300 shadow-md rounded-x1 rounded-bl-xl rounded-br-xl py-1 absolute mx-[2%] left-e top-full w-[96%] z-50 bg-white']/li"));
@@ -259,14 +261,14 @@ public class SignUp extends TestBase {
     }
     By MobileNumberField = By.xpath("//input[@value='+65']");
     By CalandorClick = By.xpath("//button[@type='button']");
-    By Nationality_field = By.xpath("//*[@class=' css-19bb58m']");
-    By Nationality_field_value = By.id("react-select-2-input");
+    By Nationality_field = By.xpath("(//div[@class='css-1xc3v61-indicatorContainer'])[1]");
+    By Nationality_field_value = By.xpath("//div[@class='css-1kf7eui-option']");
     By Address_field = By.xpath("//input[@name='address']");
     By proectAddressGoogleField =  By.xpath("//body/div[@id='root']/div[@class='App']/div/div[@class='h-full']/div[@class='mx-auto']/div[@class='flex justify-center']/div[@class='w-full flex']/div[1]");
-    By ID_proof = By.xpath("//*[@id=\"react-select-3-input\"]");
-    By ID_proof_value = By.id("react-select-31-input");
-    By Address_proof = By.xpath("//*[@id='react-select-4-input']");
-    By Address_proof_value = By.id("react-select-32-input");
+    By ID_proof = By.xpath("(//div[@class='css-hlgwow'])[2]");
+    By ID_proof_value = By.xpath("//input[@id='react-select-4-input']");
+    By Address_proof = By.xpath("(//div[@class='css-hlgwow'])[3]");
+    By Address_proof_value = By.xpath("//input[@id='react-select-5-input']"); //react-select-5-input
     By Date_of_birth = By.xpath("//input[@placeholder='dd/mm/yyyy']");
 
     By Address_Browse_btn = By.xpath("//label[@for='addressProofFile']//span[contains(text(),'Browse Files')]");
@@ -297,11 +299,20 @@ public class SignUp extends TestBase {
         driver.findElement(By.xpath("//*[@class='react-datepicker__day react-datepicker__day--005']")).click();
         Thread.sleep(1000);
 
-        driver.findElement(Nationality_field).click();
-        Thread.sleep(1000);
-        driver.findElement(Nationality_field_value).sendKeys("Indian");
-        Thread.sleep(1000);
-        tab(Nationality_field_value);
+        utility.dropdown(Nationality_field,Nationality_field_value,"Indian");
+//        driver.findElement(Nationality_field).click();
+//        Thread.sleep(1000);
+//        List<WebElement> nationality = driver.findElements(Nationality_field_value);
+//        for(WebElement element : nationality){
+//            String text = element.getText();
+//            System.out.println("The nationality list : " + text );
+//            if(text.equals("Indian")){
+//                driver.findElement(Nationality_field_value).click();
+//            }
+//            break;
+//        }
+
+
 
         driver.findElement(Address_field).click();
         Thread.sleep(2000);
@@ -314,10 +325,11 @@ public class SignUp extends TestBase {
         waitForElement(ID_proof);
        // driver.findElement(ID_proof).click();
         Thread.sleep(1000);
-        driver.findElement(ID_proof).sendKeys("Aadhaar Card");
+        driver.findElement(ID_proof).click();
+        driver.findElement(ID_proof_value).sendKeys("Aadhaar Card");
         Thread.sleep(500);
-        tab(ID_proof);
-        tab(ID_proof);
+        tab(ID_proof_value);
+
 
 
 
@@ -340,10 +352,10 @@ public class SignUp extends TestBase {
 
 
         Thread.sleep(1000);
-        driver.findElement(Address_proof).sendKeys("Bank Passbook with Address");
+        driver.findElement(Address_proof_value).sendKeys("Bank Passbook with Address");
         Thread.sleep(5000);
-        tab(Address_proof);
-        tab(Address_proof);
+        tab(Address_proof_value);
+
 
         WebElement AddressfileInput = driver.findElement(By.xpath("//input[@id='addressProofFile']"));
         AddressfileInput.sendKeys(FinalPAth);
