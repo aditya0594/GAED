@@ -9,6 +9,9 @@ services:
       - SE_EVENT_BUS_HOST=${SELENIUM_SERVER_NAME}
       - SE_EVENT_BUS_PUBLISH_PORT=4442
       - SE_EVENT_BUS_SUBSCRIBE_PORT=4443
+    ports:
+      - "5900:5900"
+
 
   firefox:
     image: selenium/node-firefox:4.11.0-20230801
