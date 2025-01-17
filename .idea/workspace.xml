@@ -4,115 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="fbed16bb-bade-4def-845d-b7f89224c886" name="Changes" comment="login signup and buyandsell running code">
-      <change afterPath="$PROJECT_DIR$/Screenshots/Consumer_Sign_up20250117090058.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Screenshots/Create_Project20250117090201.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Screenshots/Login_VerifyEmail20250117085818.png" afterDir="false" />
+    <list default="true" id="fbed16bb-bade-4def-845d-b7f89224c886" name="Changes" comment="Fixed the issue for the scripts">
+      <change afterPath="$PROJECT_DIR$/Screenshots/Consumer_Sign_up20250117091145.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Screenshots/Login_VerifyEmail20250117090907.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Screenshots/Consumer_Sign_up20240528125227.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Screenshots/Consumer_Sign_up20240707010741.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Screenshots/Consumer_Sign_up20240707010838.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Screenshots/Consumer_Sign_up20240707011058.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Screenshots/Consumer_Sign_up20240707011249.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Screenshots/Consumer_Sign_up20240707011647.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Screenshots/Consumer_Sign_up20240707031347.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Screenshots/Consumer_Sign_up20240707031612.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Screenshots/Consumer_Sign_up20240707033419.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Screenshots/Consumer_Sign_up20240707034613.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Screenshots/Consumer_Sign_up20240707122744.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Screenshots/Consumer_Sign_up20240707122909.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Screenshots/Consumer_Sign_up20240707123142.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Screenshots/Consumer_Sign_up20240707123957.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Screenshots/Consumer_Sign_up20240707124704.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Screenshots/Consumer_Sign_up20240707125333.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Screenshots/Consumer_Sign_up20250116030056.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Screenshots/Consumer_Sign_up20250116033815.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Screenshots/Consumer_Sign_up20250116034132.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Screenshots/Consumer_Sign_up20250116034838.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Screenshots/Consumer_Sign_up20250116035046.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Screenshots/Consumer_Sign_up20250116035726.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Screenshots/Consumer_Sign_up20250116040050.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Screenshots/Consumer_Sign_up20250116041012.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Screenshots/Consumer_Sign_up20250116041207.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Screenshots/Consumer_Sign_up20250116041427.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Screenshots/Consumer_Sign_up20250116041645.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Screenshots/Consumer_Sign_up20250116041941.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Screenshots/Consumer_Sign_up20250116042634.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Screenshots/Consumer_Sign_up20250116053650.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Screenshots/Consumer_Sign_up20250116054122.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Screenshots/Consumer_Sign_up20250116054715.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Screenshots/Consumer_Sign_up20250116055404.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Screenshots/Create_Project20250116061552.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Screenshots/Create_Project20250116062406.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Screenshots/Create_Project20250116062653.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Screenshots/Create_Project20250116063110.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Screenshots/Create_Project20250116063509.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Screenshots/Create_Project20250116090709.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Screenshots/Create_Project20250116092101.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Screenshots/Create_Project20250116092649.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Screenshots/Create_Project20250116093043.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Screenshots/Create_Project20250116093303.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Screenshots/Create_Project20250116093508.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Screenshots/Create_Project20250116093935.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Screenshots/Create_Project20250116094216.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Screenshots/Create_Project20250116094758.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Screenshots/Create_Project20250116095110.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Screenshots/Create_Project20250117122829.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Screenshots/Create_Project20250117123219.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Screenshots/Create_Project20250117123749.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Screenshots/Login_VerifyEmail20240904010148.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Screenshots/Login_VerifyEmail20240904010233.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Screenshots/Login_VerifyEmail20240904011842.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Screenshots/Login_VerifyEmail20240904011941.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Screenshots/Login_VerifyEmail20240904012335.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Screenshots/Login_VerifyEmail20240904012438.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Screenshots/Login_VerifyEmail20240904020652.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Screenshots/Login_VerifyEmail20240904021013.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Screenshots/Login_VerifyEmail20240904021352.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Screenshots/Login_VerifyEmail20240904022246.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Screenshots/Login_VerifyEmail20250116030126.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Screenshots/Login_VerifyEmail20250116030357.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Screenshots/Login_VerifyEmail20250116030519.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Screenshots/Login_VerifyEmail20250116030901.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Screenshots/Login_VerifyEmail20250116031129.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Screenshots/Login_VerifyEmail20250116031438.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Screenshots/Login_VerifyEmptyEmail20240706072317.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Screenshots/Login_VerifyEmptyEmail20240706072414.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Screenshots/VerifyEmail20240706054815.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Screenshots/VerifyEmail20240706054854.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Screenshots/VerifyEmail20240706055612.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Screenshots/VerifyEmail20240706062119.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Screenshots/VerifyEmail20240706062147.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Screenshots/VerifyEmail20240706062928.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Screenshots/VerifyEmail20240706062950.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Screenshots/VerifyEmail20240706063546.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Screenshots/VerifyEmail20240706063939.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Screenshots/VerifyEmail20240706064711.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Screenshots/VerifyEmail20240706064823.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Screenshots/VerifyEmail20240706065238.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Screenshots/VerifyEmail20240706065851.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Screenshots/VerifyEmail20240706070316.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Screenshots/VerifyInvalidEmail20240618011803.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Screenshots/VerifyInvalidEmail20240618012222.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Screenshots/VerifyInvalidEmail20240618012722.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Screenshots/VerifyInvalidEmail20240618014159.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Screenshots/VerifyInvalidEmail20240618014416.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Screenshots/VerifyInvalidEmail20240621123829.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Screenshots/VerifyInvalidEmail20240621123841.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Screenshots/VerifyInvalidEmail20240621123854.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Screenshots/Verify_Empty_signup_fields20240706075718.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Screenshots/Verify_Empty_signup_fields20240706113306.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Screenshots/Verify_Invalid_Signup_Fields20240706113103.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Screenshots/deleteuser20250116033820.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/browserstack-plugin.log" beforeDir="false" afterPath="$PROJECT_DIR$/logs/browserstack-plugin.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Pageobjects/BuyAndSell.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Pageobjects/BuyAndSell.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Pageobjects/LoginConsumer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Pageobjects/LoginConsumer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Pageobjects/SignUp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Pageobjects/SignUp.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/baseClass/TestBase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/baseClass/TestBase.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resources/Consumer_signup_ids.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/resources/Consumer_signup_ids.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resources/config.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/resources/config.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/Testcases/LoginUserTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Testcases/LoginUserTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test-output/GAED_Testcase_report.html" beforeDir="false" afterPath="$PROJECT_DIR$/test-output/GAED_Testcase_report.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -780,7 +676,14 @@
       <option name="project" value="LOCAL" />
       <updated>1737103519606</updated>
     </task>
-    <option name="localTasksCounter" value="40" />
+    <task id="LOCAL-00040" summary="Fixed the issue for the scripts">
+      <created>1737128607697</created>
+      <option name="number" value="00040" />
+      <option name="presentableId" value="LOCAL-00040" />
+      <option name="project" value="LOCAL" />
+      <updated>1737128607697</updated>
+    </task>
+    <option name="localTasksCounter" value="41" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -823,7 +726,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="signup loagin completed" />
     <MESSAGE value="signup login completed" />
     <MESSAGE value="22-12-2022 commit" />
     <MESSAGE value="Gallery page commit" />
@@ -848,7 +750,8 @@
     <MESSAGE value="set up as per maven" />
     <MESSAGE value="set up as per maven set all file" />
     <MESSAGE value="login signup and buyandsell running code" />
-    <option name="LAST_COMMIT_MESSAGE" value="login signup and buyandsell running code" />
+    <MESSAGE value="Fixed the issue for the scripts" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixed the issue for the scripts" />
   </component>
   <component name="XDebuggerManager">
     <watches-manager>
