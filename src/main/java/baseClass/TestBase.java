@@ -56,6 +56,19 @@ public class TestBase {
 
             if (browserName.equalsIgnoreCase("chrome")) {
                 ChromeOptions options = new ChromeOptions();
+                // Check if headless mode should be enabled
+                if (utility.property("headless").equals("true")) {
+                    options.addArguments("--headless=new");
+                    options.addArguments("--disable-gpu");
+                    options.addArguments("--window-size=1920,1080");
+                    options.addArguments("--force-device-scale-factor=1.25");
+                    options.addArguments("--enable-features=NetworkService,NetworkServiceInProcess");
+                    options.addArguments("--disable-dev-shm-usage");
+                    options.addArguments("--no-sandbox");
+                    options.addArguments("--start-maximized");
+                    options.addArguments("user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/110.0.5481.178 Safari/537.36");
+
+                }
                 options.addArguments("--remote-allow-origins=*");
                 if (utility.property("runRemote").equals("true")) {
                     driver = new RemoteWebDriver(new URI(seleniumHubUrl).toURL(), options);
@@ -65,7 +78,10 @@ public class TestBase {
                 }
             } else if (browserName.equalsIgnoreCase("firefox")) {
                 FirefoxOptions options = new FirefoxOptions();
-
+                // Check if headless mode should be enabled
+                if (utility.property("headless").equals("true")) {
+                    options.addArguments("--headless");
+                }
                 if (utility.property("runRemote").equals("true")) {
                     driver = new RemoteWebDriver(new URL(seleniumHubUrl), options);
                 } else {

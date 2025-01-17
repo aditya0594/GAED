@@ -144,12 +144,13 @@ public class LoginConsumer extends TestBase {
     public void verifyEmailbtn() throws InterruptedException {
         driver.findElement(VerifyEmailbtn).click();
         Thread.sleep(6000);
+        driver.findElement(By.xpath("//*[@class='MuiButtonBase-root MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButton-colorPrimary MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButton-colorPrimary flex items-center space-x-1 css-iyey26']")).click();
     }
     public static void Veriyconsumerprofile(String email) throws InterruptedException {
        // waitForElement(ConsumerpProfileBtn);
       //  driver.findElement(ConsumerpProfileBtn).click();
-
-        driver.findElement(By.xpath("//div[@class='border border-white rounded-full']")).click();
+        //Thread.sleep(8000);
+       // driver.findElement(By.xpath("//*[@class='mr-2 w-5 h-5']")).click();
         Thread.sleep(5000);
 
         // Find all ul elements with the specified class

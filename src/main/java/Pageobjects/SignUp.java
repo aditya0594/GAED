@@ -69,9 +69,9 @@ public class SignUp extends TestBase {
         Assert.assertEquals("This looks like an invalid email (eg: abc@xyz.com)",invalidemailMess);
         driver.findElement(firstname).sendKeys(Keys.TAB);
     }
-    public void addressDropdown(String addressInitials) throws InterruptedException {
-        driver.findElement(By.xpath("//input[@name='location']")).sendKeys(addressInitials); // sent the address initials
-
+    public void addressDropdown(String addressInitials,By xpathlocation) throws InterruptedException {
+        driver.findElement(xpathlocation).sendKeys(addressInitials); // sent the address initials
+//"//input[@name='location']"
         List<WebElement> suggestAddress = driver.findElements(By.xpath("//li[@class='text-sm font-normal text-black-900 px-3 py-2 cursor-pointer hover:bg-[#f6f6f6]']"));
         //driver.findElements(By.xpath("//ul[@class='mt-2 border border-gray-300 shadow-md rounded-x1 rounded-bl-xl rounded-br-xl py-1 absolute mx-[2%] left-e top-full w-[96%] z-50 bg-white']/li"));
 
@@ -258,8 +258,9 @@ public class SignUp extends TestBase {
         actions.keyDown(Keys.CONTROL).sendKeys("v").keyUp(Keys.CONTROL).build().perform();
         Thread.sleep(5000);
         driver.findElement(SignupVerifyEmailbtn).click();
+        Thread.sleep(2000);
     }
-    By MobileNumberField = By.xpath("//input[@value='+65']");
+    By MobileNumberField = By.xpath("//input[@type='tel']");
     By CalandorClick = By.xpath("//button[@type='button']");
     By Nationality_field = By.xpath("(//div[@class='css-1xc3v61-indicatorContainer'])[1]");
     By Nationality_field_value = By.xpath("//div[@class='css-1kf7eui-option']");
@@ -280,6 +281,7 @@ public class SignUp extends TestBase {
 
     public void consumer_Sign_up_Step_Two() throws InterruptedException, AWTException, IOException {
         waitForElement(MobileNumberField);
+        Thread.sleep(2000);
         driver.findElement(MobileNumberField).sendKeys(randomMobile());
 
         //Calendar
@@ -316,7 +318,8 @@ public class SignUp extends TestBase {
 
         driver.findElement(Address_field).click();
         Thread.sleep(2000);
-        addressDropdown("chatra");
+        By projectAddress = By.xpath("//input[@name='address']");
+        addressDropdown("chatra",projectAddress);
         Thread.sleep(1000);
        // driver.findElement(proectAddressGoogleField).click();
         tab(Address_field);

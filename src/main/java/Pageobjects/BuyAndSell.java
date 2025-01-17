@@ -17,7 +17,7 @@ public class BuyAndSell extends TestBase {
     LoginConsumer LoginUser = new LoginConsumer();
     SignUp signup =  new SignUp();
      By BuySelltab =  By.xpath("//a[@class='text-sm 3xl:text-lg text-white rounded-full py-2 p-4 cursor-pointer group-hover:text-primary']");
-    By SellProjectButton =  By.xpath("//span[normalize-space()='Sell Project']");
+    By SellProjectButton =  By.xpath("//*[contains(text(),'Sell Project')]");
     By HomeButton = By.xpath("//a[@class='text-sm text-white rounded-full py-2 p-4 hover:bg-white hover:text-primary']");
     public void validate_BuySell_buttons() throws InterruptedException {
         String  BuyandSelltitle =  driver.findElement(BuySelltab).getText();
@@ -105,7 +105,8 @@ public class BuyAndSell extends TestBase {
 
       // driver.findElement(ProjectAddressField).click();
         //Thread.sleep(2000);
-        signup.addressDropdown("Chtra");
+        By addresslocation = By.xpath("//input[@name='location']");
+        signup.addressDropdown("Chtra",addresslocation);
         Thread.sleep(1000);
         tab(ProjectAddressField);
         driver.findElement(Bid_Validity).sendKeys("90");
@@ -268,6 +269,7 @@ public class BuyAndSell extends TestBase {
         driver.findElement(youtube_url).sendKeys("https://www.youtube.com/watch?v=sYIGiuycD-k");
         driver.findElement(youtube_url_submit).click();
         driver.findElement(Project_Save).click();
+        Thread.sleep(7000);
 
 
 

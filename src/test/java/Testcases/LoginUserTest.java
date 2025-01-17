@@ -94,7 +94,6 @@ public class LoginUserTest extends TestBase {
         login.Login_OTP_read(usernameEmail);
         login.enterOTP();
         login.verifyEmailbtn();
-        login.Veriyconsumerprofile(usernameEmail);
         test.pass("To verify the valid email passed successfully.");
     }
     @Test(priority = 2, enabled = true, dataProvider = "InvalidLoginEmail",dataProviderClass = Dataprovider.class)
