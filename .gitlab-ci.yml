@@ -11,17 +11,17 @@ services:
 
 test:
   stage: test
-  image: docker/compose
+  image: docker/compose:latest
   before_script:
-    - docker-compose up -d selenium-hub chrome edge firefox
-    - sleep 10
+    - docker-compose up -d selenium-hub chrome firefox edge
+    - sleep 15  # Allow services to initialize
     - docker-compose run ping curl ${SELENIUM_SERVER_URL}/status
   script:
     - docker-compose run tests mvn clean test
-
   artifacts:
     when: always
     name: "report"
     paths:
       - target/surefire-reports/**
+      - target/screenshots/**  # Include screenshots if applicable
     expire_in: 7 days

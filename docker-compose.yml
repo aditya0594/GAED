@@ -1,7 +1,15 @@
 version: "3"
 services:
+  selenium-hub:
+    image: selenium/hub:4.11.0-20230801
+    container_name: ${SELENIUM_SERVER_NAME}
+    ports:
+      - "4442:4442"
+      - "4443:4443"
+      - "4444:4444"
+
   chrome:
-    image: selenium/node-chrome:131.0-20250101
+    image: selenium/node-chrome-debug:4.11.0-20230801
     shm_size: 2gb
     depends_on:
       - selenium-hub
@@ -10,11 +18,12 @@ services:
       - SE_EVENT_BUS_PUBLISH_PORT=4442
       - SE_EVENT_BUS_SUBSCRIBE_PORT=4443
     ports:
-      - "5900:5900"
-
+      - "5900:5900"  # VNC port
+    volumes:
+      - /dev/shm:/dev/shm  # Avoid memory issues
 
   firefox:
-    image: selenium/node-firefox:4.11.0-20230801
+    image: selenium/node-firefox-debug:4.11.0-20230801
     shm_size: 2gb
     depends_on:
       - selenium-hub
@@ -22,6 +31,10 @@ services:
       - SE_EVENT_BUS_HOST=${SELENIUM_SERVER_NAME}
       - SE_EVENT_BUS_PUBLISH_PORT=4442
       - SE_EVENT_BUS_SUBSCRIBE_PORT=4443
+    ports:
+      - "5901:5900"  # VNC port for Firefox
+    volumes:
+      - /dev/shm:/dev/shm
 
   edge:
     image: selenium/node-edge:4.11.0-20230801
@@ -33,15 +46,9 @@ services:
       - SE_EVENT_BUS_PUBLISH_PORT=4442
       - SE_EVENT_BUS_SUBSCRIBE_PORT=4443
 
-  selenium-hub:
-    image: selenium/hub:4.11.0-20230801
-    container_name: ${SELENIUM_SERVER_NAME}
-    ports:
-      - "4442:4442"
-      - "4443:4443"
-      - "4444:4444"
   ping:
     image: alpine/curl
+
   tests:
     image: maven:3.8.6-openjdk-11
     working_dir: /src
