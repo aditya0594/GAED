@@ -1,15 +1,31 @@
 version: "3"
 services:
   selenium-hub:
-    image: selenium/hub:4.11.0-20230801
+    image: selenium/standalone-chrome
     container_name: ${SELENIUM_SERVER_NAME}
     ports:
-      - "4442:4442"
-      - "4443:4443"
-      - "4444:4444"
+      - "4442:4442"  # Event Bus publish port
+      - "4443:4443"  # Event Bus subscribe port
+      - "4444:4444"  # Selenium Hub port
 
   chrome:
-    image: selenium/node-chrome:131.0
+    image: selenium/node-chrome-debug:131.0  # Debug image with VNC support
+    shm_size: 4gb
+    depends_on:
+      - selenium-hub
+    environment:
+      - SE_EVENT_BUS_HOST=${SELENIUM_SERVER_NAME}
+      - SE_EVENT_BUS_PUBLISH_PORT=4442
+      - SE_EVENT_BUS_SUBSCRIBE_PORT=4443
+      - DISPLAY=:99  # Ensure display is set
+      - SE_OPTS=--no-sandbox --disable-dev-shm-usage
+    ports:
+      - "5900:5900"  # Expose VNC port for Chrome
+    volumes:
+      - /dev/shm:/dev/shm
+
+  firefox:
+    image: selenium/node-firefox-debug:latest  # Debug image with VNC support
     shm_size: 2gb
     depends_on:
       - selenium-hub
@@ -19,20 +35,7 @@ services:
       - SE_EVENT_BUS_SUBSCRIBE_PORT=4443
       - DISPLAY=:99  # Ensure display is set
     ports:
-      - "5900:5900"  # VNC port
-    volumes:
-      - /dev/shm:/dev/shm
-  firefox:
-    image: selenium/node-firefox-debug:latest
-    shm_size: 2gb
-    depends_on:
-      - selenium-hub
-    environment:
-      - SE_EVENT_BUS_HOST=${SELENIUM_SERVER_NAME}
-      - SE_EVENT_BUS_PUBLISH_PORT=4442
-      - SE_EVENT_BUS_SUBSCRIBE_PORT=4443
-    ports:
-      - "5901:5900"  # VNC port for Firefox
+      - "5901:5900"  # Expose VNC port for Firefox
     volumes:
       - /dev/shm:/dev/shm
 
@@ -45,6 +48,10 @@ services:
       - SE_EVENT_BUS_HOST=${SELENIUM_SERVER_NAME}
       - SE_EVENT_BUS_PUBLISH_PORT=4442
       - SE_EVENT_BUS_SUBSCRIBE_PORT=4443
+    ports:
+      - "5902:5900"  # Expose VNC port for Edge
+    volumes:
+      - /dev/shm:/dev/shm
 
   ping:
     image: alpine/curl

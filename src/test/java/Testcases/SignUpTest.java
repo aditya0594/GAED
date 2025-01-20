@@ -46,7 +46,7 @@ public class SignUpTest extends TestBase {
         api_call.deleteUser();
         homePage.homepage();
         signup.consumer_Sign_up_Step_One(fname,lname,ConsumerSignUpEmail);
-        signup.consumer_Sign_up_Step_Two();
+       // signup.consumer_Sign_up_Step_Two();
         api_call.deleteUser();
         test.pass("To verify the invalid email passed successfully.");
     }

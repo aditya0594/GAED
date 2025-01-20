@@ -3,10 +3,8 @@ package Pageobjects;
 
 
 import baseClass.TestBase;
-import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.Keys;
-import org.openqa.selenium.WebElement;
+import org.apache.commons.io.FileUtils;
+import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
@@ -15,6 +13,7 @@ import utils.utility;
 import java.awt.*;
 import java.awt.datatransfer.Clipboard;
 import java.awt.datatransfer.StringSelection;
+import java.io.File;
 import java.io.IOException;
 import java.nio.file.Path;
 import java.nio.file.Paths;
@@ -258,9 +257,20 @@ public class SignUp extends TestBase {
         actions.keyDown(Keys.CONTROL).sendKeys("v").keyUp(Keys.CONTROL).build().perform();
         Thread.sleep(5000);
         driver.findElement(SignupVerifyEmailbtn).click();
-        Thread.sleep(2000);
+        Thread.sleep(6000);
+        driver.get("http://gaed-qa-fe.s3-website.ap-south-1.amazonaws.com/signup");
+         WebElement nextPage1 = driver.findElement(By.xpath("//*[contains(text(), 'We need a few more details')]"));
+        WebElement nextPage = driver.findElement(By.xpath("//a[normalize-space()='2']"));
+        Actions actions1 = new Actions(driver);
+        actions1.doubleClick(nextPage).perform();
+        nextPage.getText();
+
+        System.out.println("This is page loaded : "+ nextPage1);
+
+
+
     }
-    By MobileNumberField = By.xpath("//*[@value='+65']");
+    By MobileNumberField = By.xpath("//input[@type='tel' and @value='+65']");
     By CalandorClick = By.xpath("//button[@type='button']");
     By Nationality_field = By.xpath("(//div[@class='css-1xc3v61-indicatorContainer'])[1]");
     By Nationality_field_value = By.xpath("//div[@class='css-1kf7eui-option']");
@@ -280,11 +290,18 @@ public class SignUp extends TestBase {
     By Image1_ID_Avaliable =  By.xpath("//span[@class=' truncate max-w-[90%] text-sm font-normal text-black-900']");
 
     public void consumer_Sign_up_Step_Two() throws InterruptedException, AWTException, IOException {
-        waitForElement(MobileNumberField);
-        Thread.sleep(2000);
-        System.out.println("this is mobile number field text : "+ driver.findElement(MobileNumberField).getText());
+        //waitForElement(MobileNumberField);
 
-        driver.findElement(MobileNumberField).sendKeys(randomMobile());
+        Thread.sleep(6000);
+       // WebElement element = driver.findElement(MobileNumberField);
+        System.out.println(driver.getPageSource());
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        js.executeScript("document.querySelector('input[value=\"+65\"][type=\"tel\"').value='12345678';");
+       // System.out.println("this is mobile number field text : "+ driver.findElement(MobileNumberField).getText());
+        File srcFile = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
+        FileUtils.copyFile(srcFile, new File("screenshot for number.png"));
+
+        //driver.findElement(MobileNumberField).sendKeys(randomMobile());
 //        WebElement mobileNumberField = driver.findElement(MobileNumberField);
 //        JavascriptExecutor js = (JavascriptExecutor) driver;
 //        mobileNumberField.click();
