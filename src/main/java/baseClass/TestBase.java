@@ -52,7 +52,7 @@ public class TestBase {
         if (driver == null) {
             String browserName = utility.property("browserName").toString();
             System.out.println("The browser name is : " + browserName);
-            String seleniumHubUrl = "http://localhost:4444/wd/hub";
+            String seleniumHubUrl = "http://selenium-hub:4444/wd/hub";
 
             if (browserName.equalsIgnoreCase("chrome")) {
                 ChromeOptions options = new ChromeOptions();
