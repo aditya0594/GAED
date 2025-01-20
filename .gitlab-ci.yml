@@ -25,3 +25,41 @@ test:
       - target/surefire-reports/**
       - target/screenshots/**  # Include screenshots if applicable
     expire_in: 7 days
+
+---
+
+name: Selenium Tests
+
+on: [push, pull_request]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest  # Use Linux runner
+
+    services:
+      selenium-hub:
+        image: selenium/hub:4.11.0-20230801
+        ports:
+          - 4444:4444
+          - 5900:5900  # VNC for Chrome debug
+
+      chrome:
+        image: selenium/node-chrome-debug:4.11.0-20230801
+        shm_size: 2gb
+        env:
+          SE_EVENT_BUS_HOST: selenium-hub
+          SE_EVENT_BUS_PUBLISH_PORT: 4442
+          SE_EVENT_BUS_SUBSCRIBE_PORT: 4443
+        ports:
+          - 5900:5900  # VNC to access GUI
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Set Up Docker Compose
+        run: docker-compose up -d
+
+      - name: Run Tests
+        run: |
+          mvn test -Dtest=YourTestClass -Dselenium.server.url=http://localhost:4444/wd/hub

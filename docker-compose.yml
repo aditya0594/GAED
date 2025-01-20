@@ -17,11 +17,11 @@ services:
       - SE_EVENT_BUS_HOST=${SELENIUM_SERVER_NAME}
       - SE_EVENT_BUS_PUBLISH_PORT=4442
       - SE_EVENT_BUS_SUBSCRIBE_PORT=4443
+      - DISPLAY=:99  # Ensure display is set
     ports:
       - "5900:5900"  # VNC port
     volumes:
-      - /dev/shm:/dev/shm  # Avoid memory issues
-
+      - /dev/shm:/dev/shm
   firefox:
     image: selenium/node-firefox-debug:4.11.0-20230801
     shm_size: 2gb

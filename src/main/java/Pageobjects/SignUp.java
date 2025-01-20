@@ -260,7 +260,7 @@ public class SignUp extends TestBase {
         driver.findElement(SignupVerifyEmailbtn).click();
         Thread.sleep(2000);
     }
-    By MobileNumberField = By.xpath("//input[@type='tel']");
+    By MobileNumberField = By.xpath("//*[@value='+65']");
     By CalandorClick = By.xpath("//button[@type='button']");
     By Nationality_field = By.xpath("(//div[@class='css-1xc3v61-indicatorContainer'])[1]");
     By Nationality_field_value = By.xpath("//div[@class='css-1kf7eui-option']");
@@ -282,7 +282,17 @@ public class SignUp extends TestBase {
     public void consumer_Sign_up_Step_Two() throws InterruptedException, AWTException, IOException {
         waitForElement(MobileNumberField);
         Thread.sleep(2000);
+        System.out.println("this is mobile number field text : "+ driver.findElement(MobileNumberField).getText());
+
         driver.findElement(MobileNumberField).sendKeys(randomMobile());
+//        WebElement mobileNumberField = driver.findElement(MobileNumberField);
+//        JavascriptExecutor js = (JavascriptExecutor) driver;
+//        mobileNumberField.click();
+//        Thread.sleep(2000);
+//        js.executeScript("arguments[0].value=arguments[1];", mobileNumberField, randomMobile());
+
+        // Simulate pressing Tab using JavaScript
+       // js.executeScript("arguments[0].dispatchEvent(new KeyboardEvent('keydown', {key: 'Tab'}));", mobileNumberField);
 
         //Calendar
         driver.findElement(Date_of_birth).click();
@@ -367,7 +377,7 @@ public class SignUp extends TestBase {
         click(Stepper_two_submitBtn);
 
 
-        Thread.sleep(1000);
+        Thread.sleep(5000);
 
 
    /*     waitForElement(Form_sumitted_message);

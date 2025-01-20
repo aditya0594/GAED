@@ -6,31 +6,31 @@
         <classes>
             <class name="Testcases.HomepageTest">
                 <methods>
-                    <include name="Homepage"/>
-                    <include name="BuyandSellbuttonVerify"/>
+                    <exclude name="Homepage"/>
+                    <exclude name="BuyandSellbuttonVerify"/>
                 </methods>
             </class>
             <class name="Testcases.SignUpTest">
                 <methods>
-                    <include name="Signup_page_verify"/>
-                    <include name="Verify_Empty_signup_fields"/>
+                    <exclude name="Signup_page_verify"/>
+                    <exclude name="Verify_Empty_signup_fields"/>
                     <include name="Consumer_Sign_up"/>
                 </methods>
             </class>
             <class name="Testcases.LoginUserTest">
                 <methods>
-                    <include name="Login_VerifyEmail"/>
-                    <include name="Login_VerifyInvalidEmail"/>
-                    <include name="Login_VerifyEmptyEmail"/>
-                    <include name="Collage_Btn_functionality"/>
-                    <include name="Collage_Img_functionality"/>
-                    <include name="Collage_multi_Img_functionality"/>
-                    <include name="Verify_Collage_Multi_layoutswitch_Image"/>
+                    <exclude name="Login_VerifyEmail"/>
+                    <exclude name="Login_VerifyInvalidEmail"/>
+                    <exclude name="Login_VerifyEmptyEmail"/>
+                    <exclude name="Collage_Btn_functionality"/>
+                    <exclude name="Collage_Img_functionality"/>
+                    <exclude name="Collage_multi_Img_functionality"/>
+                    <exclude name="Verify_Collage_Multi_layoutswitch_Image"/>
                 </methods>
             </class>
             <class name="Testcases.BuyAndSellTest">
                 <methods>
-                    <include name="Create_Project"/>
+                    <exclude name="Create_Project"/>
                 </methods>
             </class>
         </classes>

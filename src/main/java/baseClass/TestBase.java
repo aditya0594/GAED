@@ -52,12 +52,13 @@ public class TestBase {
         if (driver == null) {
             String browserName = utility.property("browserName").toString();
             System.out.println("The browser name is : " + browserName);
-            String seleniumHubUrl = "http://selenium-hub:4444/wd/hub";
+            String seleniumHubUrl = "http://localhost:4444/wd/hub";
 
             if (browserName.equalsIgnoreCase("chrome")) {
                 ChromeOptions options = new ChromeOptions();
                 // Check if headless mode should be enabled
                 if (utility.property("headless").equals("true")) {
+                    options.addArguments("--start-maximized");
                     options.addArguments("--headless=new");
                     options.addArguments("--disable-gpu");
                     options.addArguments("--window-size=1920,1080");
@@ -65,7 +66,6 @@ public class TestBase {
                     options.addArguments("--enable-features=NetworkService,NetworkServiceInProcess");
                     options.addArguments("--disable-dev-shm-usage");
                     options.addArguments("--no-sandbox");
-                    options.addArguments("--start-maximized");
                     options.addArguments("user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/110.0.5481.178 Safari/537.36");
 
                 }
@@ -262,7 +262,7 @@ public class TestBase {
 
 
     public static String randomMobile() {
-        String allowedChars = "12345678";
+        String allowedChars = "1234567889";
         String MobileNumber = RandomStringUtils.random(8, allowedChars);
         return MobileNumber;
     }

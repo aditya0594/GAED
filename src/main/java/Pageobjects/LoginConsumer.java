@@ -144,7 +144,10 @@ public class LoginConsumer extends TestBase {
     public void verifyEmailbtn() throws InterruptedException {
         driver.findElement(VerifyEmailbtn).click();
         Thread.sleep(6000);
-        driver.findElement(By.xpath("//*[@class='MuiButtonBase-root MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButton-colorPrimary MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButton-colorPrimary flex items-center space-x-1 css-iyey26']")).click();
+        WebElement element = driver.findElement(By.xpath("//*[@class='MuiButtonBase-root MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButton-colorPrimary MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButton-colorPrimary flex items-center space-x-1 css-iyey26']"));
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        js.executeScript("arguments[0].click();", element);
+        //driver.findElement(By.xpath("//*[@class='MuiButtonBase-root MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButton-colorPrimary MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButton-colorPrimary flex items-center space-x-1 css-iyey26']")).click();
     }
     public static void Veriyconsumerprofile(String email) throws InterruptedException {
        // waitForElement(ConsumerpProfileBtn);
