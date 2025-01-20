@@ -23,7 +23,7 @@ services:
     volumes:
       - /dev/shm:/dev/shm
   firefox:
-    image: selenium/node-firefox-debug:4.11.0-20230801
+    image: selenium/node-firefox-debug:latest
     shm_size: 2gb
     depends_on:
       - selenium-hub
