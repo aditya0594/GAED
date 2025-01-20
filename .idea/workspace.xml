@@ -5,6 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="fbed16bb-bade-4def-845d-b7f89224c886" name="Changes" comment="Fixed the issue for the scripts">
+      <change beforePath="$PROJECT_DIR$/.gitlab-ci.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.gitlab-ci.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -400,13 +401,6 @@
       <option name="presentableId" value="Default" />
       <updated>1666076051325</updated>
     </task>
-    <task id="LOCAL-00001" summary="first commit">
-      <created>1666076221252</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1666076221252</updated>
-    </task>
     <task id="LOCAL-00002" summary="Setup of project">
       <created>1666092880518</created>
       <option name="number" value="00002" />
@@ -743,7 +737,14 @@
       <option name="project" value="LOCAL" />
       <updated>1737371063402</updated>
     </task>
-    <option name="localTasksCounter" value="50" />
+    <task id="LOCAL-00050" summary="Fixed the issue for the scripts">
+      <created>1737375498541</created>
+      <option name="number" value="00050" />
+      <option name="presentableId" value="LOCAL-00050" />
+      <option name="project" value="LOCAL" />
+      <updated>1737375498544</updated>
+    </task>
+    <option name="localTasksCounter" value="51" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
