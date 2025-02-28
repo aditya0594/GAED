@@ -20,6 +20,7 @@ import java.io.IOException;
 import java.time.Duration;
 import java.util.List;
 import java.util.Properties;
+import java.util.UUID;
 
 public class utility extends TestBase {
 
@@ -33,6 +34,10 @@ public class utility extends TestBase {
     public static void click_javascript(By element){
         JavascriptExecutor js = (JavascriptExecutor) driver;
         js.executeScript("arguments[0].click();", element);
+    }
+    public static void scrollToElement(By element){
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        js.executeScript("arguments[0].scrollIntoView(true);",element);
     }
     public static void dropdown(By field_click, By textget, String TextToBeSelected ) throws InterruptedException {
         driver.findElement(field_click).click();
@@ -171,6 +176,20 @@ public class utility extends TestBase {
                 return "";
         }
     }
+
+
+
+        public static String randomEmailSignup() {
+            String randomEmail = "aditya" + UUID.randomUUID().toString().substring(0, 8) + "@yopmail.com";
+            System.out.println("Generated Email: " + randomEmail);
+            return randomEmail;
+        }
+      public static void click(By element) {
+      driver.findElement(element).click();
+        }
+    }
+
+
     /*<plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
@@ -178,7 +197,7 @@ public class utility extends TestBase {
                 <version>3.0.0-M5</version> <!-- Or the latest version -->
                 <configuration>
                     <suiteXmlFiles>
-                        <suiteXmlFile>testng.xml</suiteXmlFile>
+                        <suiteXmlFile>testng_old.xml</suiteXmlFile>
                     </suiteXmlFiles>
                     <parallel>tests</parallel>
                     <threadCount>3</threadCount> <!-- Number of threads for parallel execution -->
@@ -186,4 +205,4 @@ public class utility extends TestBase {
             </plugin>
         </plugins>*/
 
-}
+

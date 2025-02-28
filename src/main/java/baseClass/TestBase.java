@@ -379,6 +379,7 @@ public class TestBase {
             char c = text.charAt(i);
 
             // Send the current character to the element
+
             element.sendKeys(String.valueOf(c));
 
             // Add a random delay between keystrokes to simulate human typing speed

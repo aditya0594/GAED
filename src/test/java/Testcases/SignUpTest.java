@@ -3,6 +3,7 @@ package Testcases;
 
 
 
+import Pageobjects.SSO_Admin;
 import Pageobjects.HomePage;
 import Pageobjects.LoginConsumer;
 import Pageobjects.SignUp;
@@ -20,17 +21,17 @@ public class SignUpTest extends TestBase {
     LoginConsumer Loginuser = new LoginConsumer();
     Api_Call api_call = new Api_Call();
     SignUp signup = new SignUp();
+    SSO_Admin adminlogin = new SSO_Admin();
 
     public SignUpTest() throws IOException {
     }
-
 
     @Test(priority = 1,enabled = true)
     public void Signup_page_verify() throws InterruptedException {
         ExtentTest test = extent.createTest("To verify the Signup Page");
         homePage.homepage();
         signup.signup_button();
-        test.pass("To verify the Signup Page passed successfully.");
+        test.pass("To verify the Signup Page opened successfully.");
     }
     @Test(priority = 2,enabled = true)
     public void Verify_Empty_signup_fields() throws InterruptedException {
@@ -41,19 +42,23 @@ public class SignUpTest extends TestBase {
     }
 
     @Test(priority = 3,enabled = true, dataProvider = "Signupstep", dataProviderClass = Dataprovider.class)
-    public void Consumer_Sign_up(String fname, String lname, String ConsumerSignUpEmail) throws InterruptedException, AWTException, IOException {
+    public void Consumer_Sign_up_and_Verify_by_admin(String fname, String lname,String ConsumerSignUpEmail ) throws InterruptedException, AWTException, IOException {
         ExtentTest test = extent.createTest("To verify the invalid email");
-        api_call.deleteUser();
+        //api_call.deleteUser();
         homePage.homepage();
-        signup.consumer_Sign_up_Step_One(fname,lname,ConsumerSignUpEmail);
-       // signup.consumer_Sign_up_Step_Two();
-        api_call.deleteUser();
+        signup.consumer_Sign_up_Step_One(fname,lname);
+        Thread.sleep(2000);
+        adminlogin.AdminLogin_VerifyConsumer();
         test.pass("To verify the invalid email passed successfully.");
     }
-    @Test(priority = 3,enabled = true, dataProvider = "Signupstep", dataProviderClass = Dataprovider.class)
-    public void deleteuser(String fname, String lname, String ConsumerSignUpEmail) throws InterruptedException, AWTException, IOException {
+    @Test(priority = 4,enabled = true, dataProvider = "Signupstep", dataProviderClass = Dataprovider.class)
+    public void Consumer_Sign_up_and_OnHold_by_admin(String fname, String lname,String ConsumerSignUpEmail ) throws InterruptedException, AWTException, IOException {
         ExtentTest test = extent.createTest("To verify the invalid email");
-        api_call.deleteUser();
+        //api_call.deleteUser();
+        homePage.homepage();
+        signup.consumer_Sign_up_Step_One(fname,lname);
+        Thread.sleep(2000);
+        adminlogin.AdminLogin_OnHoldConsumer();
         test.pass("To verify the invalid email passed successfully.");
     }
 }

@@ -56,7 +56,7 @@ services:
       - ${CI_PROJECT_DIR}:/src
       - ./src/main:/app/src/main
       - ./pom.xml:/app/pom.xml
-      - ./testng.xml:/app/testng.xml
+      - ./testng_old.xml:/app/testng_old.xml
     environment:
       ENVIRONMENT: remote
       SELENIUM_SERVER_URL: ${SELENIUM_SERVER_URL}

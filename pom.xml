@@ -130,6 +130,7 @@
             <version>5.2.1</version>
         </dependency>
 
+
         <!-- Hamcrest for assertions -->
         <dependency>
             <groupId>org.hamcrest</groupId>

@@ -6,7 +6,10 @@ import baseClass.TestBase;
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.ExpectedCondition;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import utils.utility;
 
@@ -17,6 +20,7 @@ import java.io.File;
 import java.io.IOException;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.time.Duration;
 import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -26,8 +30,8 @@ import static org.hamcrest.CoreMatchers.is;
 
 public class SignUp extends TestBase {
     String ConsumerSignUpEmail ="";
-    By getSign_Up_Btn= By.xpath("//span[@class='cursor-pointer hidden lg:inline-block py-2 px-6 text-sm 3xl:text-lg text-white border border-white font-medium rounded-full transition duration-200 group-hover:text-primary group-hover:border-primary']");
-    By signup_page_title = By.xpath("//h3[@class='py-2 xs:text-2xl xl:text-3xl 3xl:text-4xl text-black-900 font-semibold']");
+    By getSign_Up_Btn= By.xpath("//*[contains(text(),'Sign Up')]");
+    By signup_page_title = By.xpath("//*[@class='py-2 xs:text-2xl xl:text-3xl 3xl:text-4xl text-black-900 font-semibold']");
     By firstname = By.xpath("//input[@name='firstName']");
     By lastname = By.xpath("//input[@name='lastName']");
     By email = By.xpath("//input[@name='email']");
@@ -36,11 +40,12 @@ public class SignUp extends TestBase {
     By invalidFistnameMesss = By.xpath("//div[@class='w-full md:w-1/2 md:mb-0 xs:mb-3 px-3']//div//span[contains(@class,'block my-2 text-xs font-normal text-red-500')][normalize-space()='Field cannot contain any special characters.']");
     By invalidLastnameMesss = By.xpath("//div[@class='w-full md:w-1/2 px-3']//div//span[contains(@class,'block my-2 text-xs font-normal text-red-500')][normalize-space()='Field cannot contain any special characters.']");
     By invalidEmailMesss = By.xpath("//*[@id=\"root\"]/div/div[2]/div/div/div/div/div[2]/div/div[2]/div/div/form/div[2]/div/div/span");
-    By EmpFistnameMesss = By.xpath("//*[@id=\"root\"]/div/div[2]/div/div/div/div/div[2]/div/div[2]/div/div/form/div[1]/div[1]/div/span");
-    By EmpLastnameMesss = By.xpath("//*[@id=\"root\"]/div/div[2]/div/div/div/div/div[2]/div/div[2]/div/div/form/div[1]/div[2]/div/span");
-    By EmpEmailMesss = By.xpath("//*[@id=\"root\"]/div/div[2]/div/div/div/div/div[2]/div/div[2]/div/div/form/div[2]/div/div/span");
+    By EmpFistnameMesss = By.xpath("(//*[@class='block my-2 text-xs font-normal text-red-500 '])[1]");
+    By EmpLastnameMesss = By.xpath("(//*[@class='block my-2 text-xs font-normal text-red-500 '])[2]");
+    By EmpEmailMesss = By.xpath("(//*[@class='block my-2 text-xs font-normal text-red-500 '])[3]");
     static By yopmailemail = By.xpath("//input[@id='login']");
     static By yopmailarrow = By.xpath("//i[@class='material-icons-outlined f36']");
+    static By Go_to_website = By.xpath("//button[span[contains(text(),'Go to Website')]]");
     // By firstname = By.xpath("//input[@name='firstName']");
 
     public void getSign_up_btn (){
@@ -48,6 +53,41 @@ public class SignUp extends TestBase {
     public void validate_signup_page(){
         String Getsignuptitle = driver.findElement(signup_page_title).getText();
         Assert.assertEquals("Let's get you an Account",Getsignuptitle);
+    }
+
+
+    public void consumer_Sign_up_Step_One(String fname, String lname) throws InterruptedException {
+        Thread.sleep(2000);
+        // String signbtn = driver.findElement(getSign_Up_Btn).getText();
+        //  Assert.assertEquals(signbtn,"Sign Up");
+        driver.findElement(getSign_Up_Btn).click();
+        String Getsignuptitle = driver.findElement(signup_page_title).getText();
+        Assert.assertEquals("Let's get you an Account",Getsignuptitle);
+        driver.findElement(firstname).sendKeys(fname);
+        driver.findElement(lastname).sendKeys(lname);
+        waitForElement(EmailField);
+        // ConsumerSignUpEmail = properties.getProperty("SignupId");
+        //adityapawarsignup@yopmail.com
+        ConsumerSignUpEmail = utility.randomEmailSignup();
+        System.out.println(ConsumerSignUpEmail);
+        driver.findElement(EmailField).sendKeys(ConsumerSignUpEmail);
+        driver.findElement(agreementChk).click();
+        driver.findElement(sentOTPbtn).click();
+        Thread.sleep(5000);
+
+        signUp_OTP_read(ConsumerSignUpEmail);
+
+        Thread.sleep(2000);
+        driver.findElement(firstOtpBlock).click();
+        Actions actions = new Actions(driver);
+        // Use Actions class to perform keyboard shortcut (Ctrl + V) for paste
+        actions.keyDown(Keys.CONTROL).sendKeys("v").keyUp(Keys.CONTROL).build().perform();
+        Thread.sleep(3000);
+        driver.findElement(SignupVerifyEmailbtn).click();
+        Thread.sleep(3000);
+        driver.navigate().refresh();
+        Thread.sleep(2000);
+
     }
     public void invalid_signup_field() {
         driver.findElement(getSign_Up_Btn).click();
@@ -129,6 +169,7 @@ public class SignUp extends TestBase {
         driver.findElement(getSign_Up_Btn).click();
         verify_text(signup_page_title, "Let's get you an Account");
     }
+
     public void Empty_signup_field1(){
         signup_button();
         driver.findElement(agreementChk).click();
@@ -192,11 +233,12 @@ public class SignUp extends TestBase {
         // Simulate human-like interaction: Wait for a short duration
         Thread.sleep(2000);
 
-        driver.get("https://yopmail.com/en/wm");
+        driver.get("https://yopmail.com/");
         Thread.sleep(3000);
         driver.findElement(By.xpath("/html/body/div")).click();
         waitForElement(yopmailemail);
         WebElement emailInput = driver.findElement(yopmailemail);
+        emailInput.clear();
         typeLikeAHuman(emailInput,signupEmail);
         //driver.findElement(yopmailemail).sendKeys(emailforInbox);
         driver.findElement(yopmailarrow).click();
@@ -227,49 +269,14 @@ public class SignUp extends TestBase {
             System.out.println("No OTP found in the message.");
         }
 
-        driver.switchTo().window(driver.getWindowHandles().toArray()[0].toString());
+       // driver.switchTo().window(driver.getWindowHandles().toArray()[0].toString());
+        driver.close();
+
+        // Switch back to the original tab
+        driver.switchTo().window(defaultTab);
     }
 
-    public void consumer_Sign_up_Step_One(String fname, String lname,String ConsumerSignUpEmail) throws InterruptedException {
-        Thread.sleep(2000);
-        String signbtn = driver.findElement(getSign_Up_Btn).getText();
-        Assert.assertEquals(signbtn,"Sign Up");
-        driver.findElement(getSign_Up_Btn).click();
-        String Getsignuptitle = driver.findElement(signup_page_title).getText();
-        Assert.assertEquals("Let's get you an Account",Getsignuptitle);
-        driver.findElement(firstname).sendKeys(fname);
-        driver.findElement(lastname).sendKeys(lname);
-        waitForElement(EmailField);
-       // ConsumerSignUpEmail = properties.getProperty("SignupId");
-        //adityapawarsignup@yopmail.com
-        System.out.println(ConsumerSignUpEmail);
-        driver.findElement(EmailField).sendKeys(ConsumerSignUpEmail);
-        driver.findElement(agreementChk).click();
-        driver.findElement(sentOTPbtn).click();
-        Thread.sleep(5000);
 
-        signUp_OTP_read(ConsumerSignUpEmail);
-
-        Thread.sleep(2000);
-        driver.findElement(firstOtpBlock).click();
-        Actions actions = new Actions(driver);
-        // Use Actions class to perform keyboard shortcut (Ctrl + V) for paste
-        actions.keyDown(Keys.CONTROL).sendKeys("v").keyUp(Keys.CONTROL).build().perform();
-        Thread.sleep(5000);
-        driver.findElement(SignupVerifyEmailbtn).click();
-        Thread.sleep(6000);
-        driver.get("http://gaed-qa-fe.s3-website.ap-south-1.amazonaws.com/signup");
-         WebElement nextPage1 = driver.findElement(By.xpath("//*[contains(text(), 'We need a few more details')]"));
-        WebElement nextPage = driver.findElement(By.xpath("//a[normalize-space()='2']"));
-        Actions actions1 = new Actions(driver);
-        actions1.doubleClick(nextPage).perform();
-        nextPage.getText();
-
-        System.out.println("This is page loaded : "+ nextPage1);
-
-
-
-    }
     By MobileNumberField = By.xpath("//input[@type='tel' and @value='+65']");
     By CalandorClick = By.xpath("//button[@type='button']");
     By Nationality_field = By.xpath("(//div[@class='css-1xc3v61-indicatorContainer'])[1]");
@@ -291,17 +298,17 @@ public class SignUp extends TestBase {
 
     public void consumer_Sign_up_Step_Two() throws InterruptedException, AWTException, IOException {
         //waitForElement(MobileNumberField);
-
-        Thread.sleep(6000);
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(50));
+        wait.until(ExpectedConditions.visibilityOfElementLocated(MobileNumberField));
+        Thread.sleep(1000);
        // WebElement element = driver.findElement(MobileNumberField);
-        System.out.println(driver.getPageSource());
+/*        System.out.println(driver.getPageSource());
         JavascriptExecutor js = (JavascriptExecutor) driver;
-        js.executeScript("document.querySelector('input[value=\"+65\"][type=\"tel\"').value='12345678';");
-       // System.out.println("this is mobile number field text : "+ driver.findElement(MobileNumberField).getText());
+        js.executeScript("document.querySelector('input[value=\"+65\"][type=\"tel\"').value='6534567812';");
         File srcFile = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
-        FileUtils.copyFile(srcFile, new File("screenshot for number.png"));
+        FileUtils.copyFile(srcFile, new File("screenshot for number.png"));*/
 
-        //driver.findElement(MobileNumberField).sendKeys(randomMobile());
+        driver.findElement(MobileNumberField).sendKeys(randomMobile());
 //        WebElement mobileNumberField = driver.findElement(MobileNumberField);
 //        JavascriptExecutor js = (JavascriptExecutor) driver;
 //        mobileNumberField.click();

@@ -17,11 +17,11 @@ public class BuyAndSell extends TestBase {
     LoginConsumer LoginUser = new LoginConsumer();
     SignUp signup =  new SignUp();
      By BuySelltab =  By.xpath("//a[@class='text-sm 3xl:text-lg text-white rounded-full py-2 p-4 cursor-pointer group-hover:text-primary']");
-    By SellProjectButton =  By.xpath("//*[contains(text(),'Sell Project')]");
+    By SellProjectButton =  By.xpath("(//*[normalize-space()='Sell Project'])[2]");
     By HomeButton = By.xpath("//a[@class='text-sm text-white rounded-full py-2 p-4 hover:bg-white hover:text-primary']");
     public void validate_BuySell_buttons() throws InterruptedException {
         String  BuyandSelltitle =  driver.findElement(BuySelltab).getText();
-        Assert.assertEquals("Buy/Sell",BuyandSelltitle);
+        Assert.assertEquals("Platforms",BuyandSelltitle);
         driver.findElement(BuySelltab).click();
     }
     public void VerifySellProject(){String  sellProjecttitle =  driver.findElement(SellProjectButton).getText();
@@ -42,13 +42,14 @@ public class BuyAndSell extends TestBase {
     By SaveAsDraftbtn = By.xpath("//span[normalize-space()='Save as draft']");
     By Backbtn = By.xpath("//span[normalize-space()='Back']");
     By ProjectpageTitle = By.xpath("//span[@class='bg-white absolute left-0 top-6 pr-8']");
-    By invalidProjectTileFieldtext = By.xpath("//body/div[@id='root']/div[@class='App']/div/div/div/section[@class='px-4 xl:px-24 2xl:px-48 pt-8']/div[@class='flex mt-1 flex-col']/form/div/div[@class='h-full']/div[@class='mb-6']/div/div[@class='grid grid-cols-4 gap-4 mb-5']/div[1]/div[1]/span[1]");
-    By invalidProjectTypeFieldtext = By.xpath("//body/div[@id='root']/div[@class='App']/div/div/div/section[@class='px-4 xl:px-24 2xl:px-48 pt-8']/div[@class='flex mt-1 flex-col']/form/div/div[@class='h-full']/div[@class='mb-6']/div/div[@class='grid grid-cols-4 gap-4 mb-5']/div[2]/div[1]/span[1]");
-    By invalidProjectAddressFieldtext = By.xpath("//body/div[@id='root']/div[@class='App']/div/div/div/section[@class='px-4 xl:px-24 2xl:px-48 pt-8']/div[@class='flex mt-1 flex-col']/form/div/div[@class='h-full']/div[@class='mb-6']/div/div[@class='grid grid-cols-4 gap-4 mb-5']/div[3]/div[1]/span[1]");
-    By invalidProjectBidsFieldtext = By.xpath("//body/div[@id='root']/div[@class='App']/div/div/div/section[@class='px-4 xl:px-24 2xl:px-48 pt-8']/div[@class='flex mt-1 flex-col']/form/div/div[@class='h-full']/div[@class='mb-6']/div/div[@class='grid grid-cols-4 gap-4 mb-5']/div[4]/div[1]/span[1]");
+    By invalidProjectTileFieldtext = By.xpath("(//span[normalize-space()='Field is Required.'])[1]");
+    By invalidProjectTypeFieldtext = By.xpath("(//span[normalize-space()='Field is Required.'])[2]");
+    By invalidProjectAddressFieldtext = By.xpath("(//span[normalize-space()='Field is Required.'])[3]");
+    By invalidProjectBidsFieldtext = By.xpath("(//span[normalize-space()='Field is Required.'])[4]");
     By ProjectTileField = By.xpath("//span[@class='bg-white absolute left-0 top-6 pr-8']");
-    public void  validate_next_saveAsDraft_back(){
-
+    public void  validate_next_saveAsDraft_back_btn() throws InterruptedException {
+        Thread.sleep(3000);
+        waitForElement(SellProjectButton);
         driver.findElement(SellProjectButton).click();
         boolean nextbtn = driver.findElement(NextBtn).isDisplayed();
         Assert.assertTrue(nextbtn);
@@ -60,8 +61,9 @@ public class BuyAndSell extends TestBase {
         Assert.assertTrue(backbtn);
 
     }
-    public void invalidate_Stepper1_ProjectFields_button(){
-
+    public void invalidate_Stepper1_ProjectFields_button() throws InterruptedException{
+        Thread.sleep(3000);
+        waitForElement(SellProjectButton);
         driver.findElement(SellProjectButton).click();
        driver.findElement(NextBtn).click();
        String projectDetailsTitle = driver.findElement(ProjectpageTitle).getText();
@@ -87,12 +89,13 @@ public class BuyAndSell extends TestBase {
     By proectAddressGoogleField = By.xpath("//section[@class='px-4 xl:px-24 2xl:px-48 pt-8']//li[1]");
     By Bid_Validity = By.xpath("//input[@name='bidValidity']");
     By SendProjecttext = By.id("react-select-2-input");
-
+    String project_Name;
 
     public void vaild_Stepper1_ProjectFields_button() throws InterruptedException {
-
+        Thread.sleep(3000);
+        waitForElement(SellProjectButton);
         driver.findElement(SellProjectButton).click();
-        String project_Name = ProjectTileText();
+         project_Name = ProjectTileText();
         write_excel(0,1,project_Name);
         System.out.println("Project Name " + project_Name);
         driver.findElement(ProjectTitleField).sendKeys(project_Name);
@@ -236,6 +239,8 @@ public class BuyAndSell extends TestBase {
 
     }
     By image_upload= By.xpath("//div[@class='flex flex-col items-center justify-center pt-5 pb-6']");
+    By BuysellProjectSuccessfully= By.xpath("//h2[normalize-space()='Form submitted successfully!']");
+    By SuccessfullyOKayBtn= By.xpath("//span[normalize-space()='Okay']");
     public void vaild_Stepper3_ProjectFields_button() throws InterruptedException {
 
         Thread.sleep(2000);
@@ -256,7 +261,7 @@ public class BuyAndSell extends TestBase {
 
 
 
-        for(int i=0; i<=4;i++){
+        for(int i=1; i<=4;i++){
             WebElement project_image = driver.findElement(By.xpath("//input[@id='dropzone-file']"));
             project_image.sendKeys(FinalPAth);
         }
@@ -264,20 +269,19 @@ public class BuyAndSell extends TestBase {
 
         By youtube_url= By.xpath("//input[@name='youtubeUrl']");
         By youtube_url_submit= By.xpath("//*[contains(text(),'Submit')]");
-        By Project_Save= By.xpath("//span[@class='text-sm font-medium text-white']");
+        By Project_Save= By.xpath("//span[normalize-space()='Save']");
 
         driver.findElement(youtube_url).sendKeys("https://www.youtube.com/watch?v=sYIGiuycD-k");
         driver.findElement(youtube_url_submit).click();
+        Thread.sleep(2000);
         driver.findElement(Project_Save).click();
-        Thread.sleep(7000);
-
-
-
-
+        Thread.sleep(10000);
+        waitForElement(BuysellProjectSuccessfully);
+        click(SuccessfullyOKayBtn);
     }
+
     @Override
     public String getTitle(){
-
         return null;
     }
 

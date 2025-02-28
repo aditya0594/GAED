@@ -14,6 +14,7 @@ import java.util.List;
 import java.util.Set;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+import java.util.stream.Stream;
 
 import static utils.utility.AssertTextBtn;
 
@@ -34,7 +35,7 @@ public class LoginConsumer extends TestBase {
    static By Deleteinbox = By.xpath("//i[contains(text(),'')]");
    static By Message = By.xpath("//*[@id=\"mail\"]/div/div/table/tbody/tr[2]/td/p[1]");
     static By OTPfirstbox = By.xpath("//input[@aria-label='Please enter OTP character 1']");
-    static By VerifyEmailbtn = By.xpath("//span[@class='ml-3']");
+    static By VerifyEmailbtn = By.xpath("//button[@type='button']");
    static By ConsumerpProfileBtn = By.xpath("//button[@class='MuiButtonBase-root MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButton-colorPrimary MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButton-colorPrimary flex items-center space-x-1 css-1ujsas3']");
    static By ViewConsumerProfile = By.xpath("(//*[@id=\"basic-menu\"]/div[3]/ul/li[1])[1]");
    static By VerifyConsumerEmail = By.xpath("//div[contains(text(),'"+ HomePage.EMAIL +"')]");
@@ -81,9 +82,20 @@ public class LoginConsumer extends TestBase {
     }
 
     public static void Login_OTP_read(String emailforInbox) throws InterruptedException {
+        String previousTab = driver.getWindowHandle();
+
         ((JavascriptExecutor) driver).executeScript("window.open()");
-        String defaultTab = driver.getWindowHandle();
-        driver.switchTo().window(driver.getWindowHandles().toArray()[1].toString());
+        Thread.sleep(2000);
+
+        // Switch to new tab (latest opened)
+        Set<String> windowHandles = driver.getWindowHandles();
+        for (String handle : windowHandles) {
+            if (!handle.equals(previousTab)) {
+                driver.switchTo().window(handle);
+                break;
+            }
+        }
+
         // Simulate human-like interaction: Wait for a short duration
         Thread.sleep(2000);
         driver.get("https://yopmail.com/en/wm");
@@ -91,6 +103,7 @@ public class LoginConsumer extends TestBase {
         driver.findElement(By.xpath("/html/body/div")).click();
         waitForElement(yopmailemail);
         WebElement emailInput = driver.findElement(yopmailemail);
+        emailInput.clear();
         typeLikeAHuman(emailInput, emailforInbox);
         //driver.findElement(yopmailemail).sendKeys(emailforInbox);
         driver.findElement(yopmailarrow).click();
@@ -119,7 +132,8 @@ public class LoginConsumer extends TestBase {
         } else {
             System.out.println("No OTP found in the message.");
         }
-        driver.switchTo().window(driver.getWindowHandles().toArray()[0].toString());
+        driver.close();
+        driver.switchTo().window(previousTab);
         Thread.sleep(2000);
     }
     public void enterOTP(){
@@ -143,10 +157,10 @@ public class LoginConsumer extends TestBase {
     }
     public void verifyEmailbtn() throws InterruptedException {
         driver.findElement(VerifyEmailbtn).click();
-        Thread.sleep(6000);
+       /* Thread.sleep(6000);
         WebElement element = driver.findElement(By.xpath("//*[@class='MuiButtonBase-root MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButton-colorPrimary MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButton-colorPrimary flex items-center space-x-1 css-iyey26']"));
         JavascriptExecutor js = (JavascriptExecutor) driver;
-        js.executeScript("arguments[0].click();", element);
+        js.executeScript("arguments[0].click();", element);*/
         //driver.findElement(By.xpath("//*[@class='MuiButtonBase-root MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButton-colorPrimary MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButton-colorPrimary flex items-center space-x-1 css-iyey26']")).click();
     }
     public static void Veriyconsumerprofile(String email) throws InterruptedException {
@@ -235,7 +249,7 @@ public class LoginConsumer extends TestBase {
 
     }
 
-
+    static By Marketplace = By.xpath("//*[@class='absolute bottom-5 w-full text-center text-white text-2xl font-semibold  ']");
     public static void LoginConsumerSuceessful() throws InterruptedException {
         String Loginbtntext =  driver.findElement(loginBtn).getText();
         Assert.assertEquals("Login",Loginbtntext);
@@ -255,8 +269,38 @@ public class LoginConsumer extends TestBase {
         // Use Actions class to perform keyboard shortcut (Ctrl + V) for paste
         actions.keyDown(Keys.CONTROL).sendKeys("v").keyUp(Keys.CONTROL).build().perform();
         driver.findElement(VerifyEmailbtn).click();
-        Thread.sleep(6000);
+        Thread.sleep(4000);
+        waitForElement(Marketplace);
+        click(Marketplace);
     }
+    static By ProfileBtn = By.xpath("//*[@class='w-5 h-5 text-white group-hover:text-primary']");
+    static By Logout = By.xpath("//*[@class='w-5 h-5 text-white group-hover:text-primary']");
+
+    public static void consumerLogout(String option) throws InterruptedException {
+        Thread.sleep(2000);
+        click(ProfileBtn);
+        Thread.sleep(2000);
+        waitForElement(Logout);
+        List<WebElement> optionsList = driver.findElements(By.xpath("//ul[@class='MuiList-root MuiList-padding MuiMenu-list css-ubifyk']/li"));
+        for (WebElement w : optionsList) {
+        // Trim and compare text
+            if (w.getText().trim().equals(option)) {
+                try {
+                    w.click();
+                } catch (Exception e) {
+                    // Use JavaScript Click as a fallback
+                    ((JavascriptExecutor) driver).executeScript("arguments[0].click();", w);
+                }
+                break; // Stop looping after clicking "Logout"
+            }
+        }
+        driver.navigate().refresh();
+        //driver.switchTo().window(driver.getWindowHandles().toArray()[0].toString()).close();
+        Thread.sleep(2000);
+
+    }
+
+
 
     public static void Veriy_consumer_profile(){
         waitForElement(ConsumerpProfileBtn);

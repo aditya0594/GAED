@@ -116,7 +116,7 @@ public class LoginUserTest extends TestBase {
         login.Verify_login_Page();
         login.sentOTPbtn();
         login.Empty_invalid_validation();
-        test.pass("To verify the Email email passed successfully.");
+        test.pass("To verify the Email passed successfully.");
     }
     @Test(priority = 4, enabled = true, dataProvider = "ValidLoginEmail",dataProviderClass = Dataprovider.class)
     public void InvalidOTP(String usernameEmail, String password) throws IOException, InterruptedException {
