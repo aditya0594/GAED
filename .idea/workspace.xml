@@ -4,8 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="fbed16bb-bade-4def-845d-b7f89224c886" name="Changes" comment="Added the Buy and sell project flow &#10;admin accept flow">
-      <change beforePath="$PROJECT_DIR$/logs/browserstack-plugin.log" beforeDir="false" afterPath="$PROJECT_DIR$/logs/browserstack-plugin.log" afterDir="false" />
+    <list default="true" id="fbed16bb-bade-4def-845d-b7f89224c886" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Pageobjects/MarketPlaceAdmin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Pageobjects/MarketPlaceAdmin.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/resources/Consumer_signup_ids.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/resources/Consumer_signup_ids.xlsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/Testcases/DeleteUserPageTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/Testcases/GalleryPageTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test-output/GAED_Testcase_report.html" beforeDir="false" afterPath="$PROJECT_DIR$/test-output/GAED_Testcase_report.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testng.xml" beforeDir="false" afterPath="$PROJECT_DIR$/testng.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -78,7 +84,7 @@
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="TestNG.BuyAndSellTest">
+  <component name="RunManager" selected="TestNG.C:/GAED/testng.xml">
     <configuration default="true" type="JetRunConfigurationType">
       <module name="GAED" />
       <method v="2">
@@ -203,6 +209,27 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="C:/GAED/testng.xml" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="Selenium_Advanced" />
+      <shortenClasspath name="NONE" />
+      <useClassPathOnly />
+      <option name="SUITE_NAME" value="$PROJECT_DIR$/testng.xml" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="" />
+      <option name="GROUP_NAME" value="" />
+      <option name="TEST_OBJECT" value="SUITE" />
+      <option name="PARAMETERS" value="" />
+      <option name="OUTPUT_DIRECTORY" value="" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="moduleWithDependencies" />
+      </option>
+      <option name="PROPERTIES_FILE" value="" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="Classexecution" type="TestNG">
       <module name="GAED" />
       <shortenClasspath name="NONE" />
@@ -239,34 +266,6 @@
       <option name="PACKAGE_NAME" value="testcases" />
       <option name="MAIN_CLASS_NAME" value="Testcases.GalleryPageTest" />
       <option name="METHOD_NAME" value="Gallery_verify_image" />
-      <option name="GROUP_NAME" value="" />
-      <option name="TEST_OBJECT" value="METHOD" />
-      <option name="PARAMETERS" value="" />
-      <option name="OUTPUT_DIRECTORY" value="" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="moduleWithDependencies" />
-      </option>
-      <option name="PROPERTIES_FILE" value="" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="SignUpTest.Consumer_Sign_up_and_Verify_by_admin" type="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="Selenium_Advanced" />
-      <shortenClasspath name="NONE" />
-      <useClassPathOnly />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="Testcases.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="SUITE_NAME" value="" />
-      <option name="PACKAGE_NAME" value="Testcases" />
-      <option name="MAIN_CLASS_NAME" value="Testcases.SignUpTest" />
-      <option name="METHOD_NAME" value="Consumer_Sign_up_and_Verify_by_admin" />
       <option name="GROUP_NAME" value="" />
       <option name="TEST_OBJECT" value="METHOD" />
       <option name="PARAMETERS" value="" />
@@ -403,19 +402,19 @@
       <item itemvalue="TestNG.testcases" />
       <item itemvalue="TestNG.&lt;default&gt;" />
       <item itemvalue="TestNG.Classexecution" />
+      <item itemvalue="TestNG.C:/GAED/testng.xml" />
       <item itemvalue="TestNG.BuyAndSellTest" />
       <item itemvalue="TestNG.BuyAndSellTest.Accept_Project_In_Admin" />
       <item itemvalue="TestNG.BuyAndSellTest.Create_Project" />
       <item itemvalue="TestNG.BuyAndSellTest.invalidat_sellProject_stepper_1_fields" />
-      <item itemvalue="TestNG.SignUpTest.Consumer_Sign_up_and_Verify_by_admin" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="TestNG.C:/GAED/testng.xml" />
         <item itemvalue="TestNG.BuyAndSellTest" />
         <item itemvalue="TestNG.BuyAndSellTest.Accept_Project_In_Admin" />
         <item itemvalue="TestNG.BuyAndSellTest.Create_Project" />
         <item itemvalue="TestNG.BuyAndSellTest.invalidat_sellProject_stepper_1_fields" />
-        <item itemvalue="TestNG.SignUpTest.Consumer_Sign_up_and_Verify_by_admin" />
       </list>
     </recent_temporary>
   </component>
@@ -785,7 +784,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="githubCICD/working" />
+                        <option value="workingBranch" />
                       </list>
                     </value>
                   </entry>

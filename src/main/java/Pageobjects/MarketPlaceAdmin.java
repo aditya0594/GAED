@@ -69,6 +69,7 @@ public class MarketPlaceAdmin extends TestBase {
         String created_project_name = buyAndSell.project_Name;*/
 //        System.out.println("Project name is which is created : " + created_project_name);
 //        Assert.assertEquals(Projectname,created_project_name);
+        Thread.sleep(2000);
         driver.findElement(StatusDropdown).sendKeys("Publish" + Keys.TAB);
 
        // utility.scrollToElement(SubmitBtn);
