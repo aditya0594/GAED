@@ -5,8 +5,34 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="fbed16bb-bade-4def-845d-b7f89224c886" name="Changes" comment="Set all the file and testng.xml">
+      <change afterPath="$PROJECT_DIR$/Screenshots/Create_Project20250307082356.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Screenshots/Create_Project20250307082657.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Screenshots/Create_Project20250307083442.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Screenshots/Create_Project20250307083700.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Screenshots/Create_Project20250307083845.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Screenshots/Create_Project20250307084426.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Screenshots/Create_Project20250307084624.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Screenshots/Create_Project20250307085536.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Screenshots/InvalidOTP20250308014510.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Screenshots/InvalidOTP20250308121040.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Screenshots/otp20250307092651.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Screenshots/otp20250307093514.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Screenshots/otp20250308010503.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Screenshots/otp20250308010548.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Screenshots/otp20250308124216.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Screenshots/otp20250308124521.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Screenshots/otp20250308125107.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Screenshots/otp20250308125911.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Pageobjects/LoginConsumer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Pageobjects/LoginConsumer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Pageobjects/MarketPlaceAdmin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Pageobjects/MarketPlaceAdmin.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Pageobjects/Projects.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Pageobjects/Projects.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/utils/utility.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/utils/utility.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/Testcases/BuyAndSellTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Testcases/BuyAndSellTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/Testcases/LoginUserTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Testcases/LoginUserTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/Testcases/ProjectsTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Testcases/ProjectsTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test-output/GAED_Testcase_report.html" beforeDir="false" afterPath="$PROJECT_DIR$/test-output/GAED_Testcase_report.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -48,17 +74,18 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/GAED/src/test/java/resourses&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "last_opened_file_path": "C:/GAED/src/test/java/resourses",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "run.code.analysis.last.selected.profile": "pProject Default",
+    "settings.editor.selected.configurable": "preferences.pluginManager"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
       <recent name="Runner" />
@@ -79,7 +106,7 @@
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="TestNG.SignUpTest">
+  <component name="RunManager" selected="TestNG.BuyAndSellTest">
     <configuration default="true" type="JetRunConfigurationType">
       <module name="GAED" />
       <method v="2">
@@ -93,34 +120,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="BuyAndSellTest (1)" type="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="Selenium_Advanced" />
-      <shortenClasspath name="NONE" />
-      <useClassPathOnly />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="Testcases.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="SUITE_NAME" value="" />
-      <option name="PACKAGE_NAME" value="Testcases" />
-      <option name="MAIN_CLASS_NAME" value="Testcases.BuyAndSellTest" />
-      <option name="GROUP_NAME" value="" />
-      <option name="TEST_OBJECT" value="CLASS" />
-      <option name="PARAMETERS" value="" />
-      <option name="OUTPUT_DIRECTORY" value="" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="moduleWithDependencies" />
-      </option>
-      <option name="PROPERTIES_FILE" value="" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="BuyAndSellTest (2)" type="TestNG" temporary="true" nameIsGenerated="true">
+    <configuration name="BuyAndSellTest" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="Selenium_Advanced" />
       <shortenClasspath name="NONE" />
       <useClassPathOnly />
@@ -225,7 +225,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="SignUpTest" type="TestNG" temporary="true" nameIsGenerated="true">
+    <configuration name="LoginUserTest (1)" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="Selenium_Advanced" />
       <shortenClasspath name="NONE" />
       <useClassPathOnly />
@@ -237,7 +237,7 @@
       </extension>
       <option name="SUITE_NAME" value="" />
       <option name="PACKAGE_NAME" value="Testcases" />
-      <option name="MAIN_CLASS_NAME" value="Testcases.SignUpTest" />
+      <option name="MAIN_CLASS_NAME" value="Testcases.LoginUserTest" />
       <option name="GROUP_NAME" value="" />
       <option name="TEST_OBJECT" value="CLASS" />
       <option name="PARAMETERS" value="" />
@@ -252,7 +252,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="SignUpTest.Consumer_Sign_up_and_Verify_by_admin" type="TestNG" temporary="true" nameIsGenerated="true">
+    <configuration name="LoginUserTest" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="Selenium_Advanced" />
       <shortenClasspath name="NONE" />
       <useClassPathOnly />
@@ -264,8 +264,35 @@
       </extension>
       <option name="SUITE_NAME" value="" />
       <option name="PACKAGE_NAME" value="Testcases" />
-      <option name="MAIN_CLASS_NAME" value="Testcases.SignUpTest" />
-      <option name="METHOD_NAME" value="Consumer_Sign_up_and_Verify_by_admin" />
+      <option name="MAIN_CLASS_NAME" value="Testcases.LoginUserTest" />
+      <option name="GROUP_NAME" value="" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <option name="PARAMETERS" value="" />
+      <option name="OUTPUT_DIRECTORY" value="" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="moduleWithDependencies" />
+      </option>
+      <option name="PROPERTIES_FILE" value="" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="LoginUserTest.InvalidOTP" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="Selenium_Advanced" />
+      <shortenClasspath name="NONE" />
+      <useClassPathOnly />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Testcases.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="SUITE_NAME" value="" />
+      <option name="PACKAGE_NAME" value="Testcases" />
+      <option name="MAIN_CLASS_NAME" value="Testcases.LoginUserTest" />
+      <option name="METHOD_NAME" value="InvalidOTP" />
       <option name="GROUP_NAME" value="" />
       <option name="TEST_OBJECT" value="METHOD" />
       <option name="PARAMETERS" value="" />
@@ -402,19 +429,19 @@
       <item itemvalue="TestNG.testcases" />
       <item itemvalue="TestNG.&lt;default&gt;" />
       <item itemvalue="TestNG.Classexecution" />
-      <item itemvalue="TestNG.BuyAndSellTest (1)" />
-      <item itemvalue="TestNG.BuyAndSellTest (2)" />
-      <item itemvalue="TestNG.SignUpTest" />
+      <item itemvalue="TestNG.LoginUserTest" />
+      <item itemvalue="TestNG.LoginUserTest (1)" />
+      <item itemvalue="TestNG.LoginUserTest.InvalidOTP" />
+      <item itemvalue="TestNG.BuyAndSellTest" />
       <item itemvalue="TestNG.BuyAndSellTest.Accept_Project_In_Admin" />
-      <item itemvalue="TestNG.SignUpTest.Consumer_Sign_up_and_Verify_by_admin" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="TestNG.SignUpTest" />
-        <item itemvalue="TestNG.BuyAndSellTest (1)" />
-        <item itemvalue="TestNG.BuyAndSellTest (2)" />
+        <item itemvalue="TestNG.BuyAndSellTest" />
         <item itemvalue="TestNG.BuyAndSellTest.Accept_Project_In_Admin" />
-        <item itemvalue="TestNG.SignUpTest.Consumer_Sign_up_and_Verify_by_admin" />
+        <item itemvalue="TestNG.LoginUserTest.InvalidOTP" />
+        <item itemvalue="TestNG.LoginUserTest (1)" />
+        <item itemvalue="TestNG.LoginUserTest" />
       </list>
     </recent_temporary>
   </component>
@@ -426,13 +453,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1666076051325</updated>
-    </task>
-    <task id="LOCAL-00006" summary="Gallery page commit">
-      <created>1681222750493</created>
-      <option name="number" value="00006" />
-      <option name="presentableId" value="LOCAL-00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1681222750493</updated>
     </task>
     <task id="LOCAL-00007" summary="Gallery page commit 24-04-2023">
       <created>1682339156474</created>
@@ -770,7 +790,14 @@
       <option name="project" value="LOCAL" />
       <updated>1741332037699</updated>
     </task>
-    <option name="localTasksCounter" value="55" />
+    <task id="LOCAL-00055" summary="Set all the file and testng.xml">
+      <created>1741341824460</created>
+      <option name="number" value="00055" />
+      <option name="presentableId" value="LOCAL-00055" />
+      <option name="project" value="LOCAL" />
+      <updated>1741341824460</updated>
+    </task>
+    <option name="localTasksCounter" value="56" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">

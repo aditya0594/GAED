@@ -71,7 +71,6 @@ public class BuyAndSellTest extends TestBase {
         Buyandsell.vaild_Stepper3_ProjectFields_button();
         Thread.sleep(3000);
         login.consumerLogout("Logout");
-        //marketadmin.marketAdminhomepage();
         marketadmin.marketAdminLogin();
         marketadmin.Admin_buyandSell_publish();
 
