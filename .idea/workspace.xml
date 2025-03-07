@@ -4,14 +4,19 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="fbed16bb-bade-4def-845d-b7f89224c886" name="Changes" comment="">
+    <list default="true" id="fbed16bb-bade-4def-845d-b7f89224c886" name="Changes" comment="Set all the file and testng.xml">
+      <change afterPath="$PROJECT_DIR$/Screenshots/Accept_Project_In_Admin20250306022734.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Screenshots/Accept_Project_In_Admin20250306031242.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Screenshots/Accept_Project_In_Admin20250306032326.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Pageobjects/Projects.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/Testcases/ProjectsTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Pageobjects/MarketPlaceAdmin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Pageobjects/MarketPlaceAdmin.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Pageobjects/SSO_Admin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Pageobjects/SSO_Admin.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/baseClass/TestBase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/baseClass/TestBase.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/resources/Consumer_signup_ids.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/resources/Consumer_signup_ids.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/Testcases/DeleteUserPageTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/Testcases/GalleryPageTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/Testcases/BuyAndSellTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Testcases/BuyAndSellTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/test-output/GAED_Testcase_report.html" beforeDir="false" afterPath="$PROJECT_DIR$/test-output/GAED_Testcase_report.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/testng.xml" beforeDir="false" afterPath="$PROJECT_DIR$/testng.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -84,7 +89,7 @@
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="TestNG.C:/GAED/testng.xml">
+  <component name="RunManager" selected="TestNG.SignUpTest">
     <configuration default="true" type="JetRunConfigurationType">
       <module name="GAED" />
       <method v="2">
@@ -98,7 +103,34 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="BuyAndSellTest" type="TestNG" temporary="true" nameIsGenerated="true">
+    <configuration name="BuyAndSellTest (1)" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="Selenium_Advanced" />
+      <shortenClasspath name="NONE" />
+      <useClassPathOnly />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Testcases.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="SUITE_NAME" value="" />
+      <option name="PACKAGE_NAME" value="Testcases" />
+      <option name="MAIN_CLASS_NAME" value="Testcases.BuyAndSellTest" />
+      <option name="GROUP_NAME" value="" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <option name="PARAMETERS" value="" />
+      <option name="OUTPUT_DIRECTORY" value="" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="moduleWithDependencies" />
+      </option>
+      <option name="PROPERTIES_FILE" value="" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="BuyAndSellTest (2)" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="Selenium_Advanced" />
       <shortenClasspath name="NONE" />
       <useClassPathOnly />
@@ -153,83 +185,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="BuyAndSellTest.Create_Project" type="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="Selenium_Advanced" />
-      <shortenClasspath name="NONE" />
-      <useClassPathOnly />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="Testcases.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="SUITE_NAME" value="" />
-      <option name="PACKAGE_NAME" value="Testcases" />
-      <option name="MAIN_CLASS_NAME" value="Testcases.BuyAndSellTest" />
-      <option name="METHOD_NAME" value="Create_Project" />
-      <option name="GROUP_NAME" value="" />
-      <option name="TEST_OBJECT" value="METHOD" />
-      <option name="PARAMETERS" value="" />
-      <option name="OUTPUT_DIRECTORY" value="" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="moduleWithDependencies" />
-      </option>
-      <option name="PROPERTIES_FILE" value="" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="BuyAndSellTest.invalidat_sellProject_stepper_1_fields" type="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="Selenium_Advanced" />
-      <shortenClasspath name="NONE" />
-      <useClassPathOnly />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="Testcases.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="SUITE_NAME" value="" />
-      <option name="PACKAGE_NAME" value="Testcases" />
-      <option name="MAIN_CLASS_NAME" value="Testcases.BuyAndSellTest" />
-      <option name="METHOD_NAME" value="invalidat_sellProject_stepper_1_fields" />
-      <option name="GROUP_NAME" value="" />
-      <option name="TEST_OBJECT" value="METHOD" />
-      <option name="PARAMETERS" value="" />
-      <option name="OUTPUT_DIRECTORY" value="" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="moduleWithDependencies" />
-      </option>
-      <option name="PROPERTIES_FILE" value="" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="C:/GAED/testng.xml" type="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="Selenium_Advanced" />
-      <shortenClasspath name="NONE" />
-      <useClassPathOnly />
-      <option name="SUITE_NAME" value="$PROJECT_DIR$/testng.xml" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="" />
-      <option name="GROUP_NAME" value="" />
-      <option name="TEST_OBJECT" value="SUITE" />
-      <option name="PARAMETERS" value="" />
-      <option name="OUTPUT_DIRECTORY" value="" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="moduleWithDependencies" />
-      </option>
-      <option name="PROPERTIES_FILE" value="" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="Classexecution" type="TestNG">
       <module name="GAED" />
       <shortenClasspath name="NONE" />
@@ -266,6 +221,61 @@
       <option name="PACKAGE_NAME" value="testcases" />
       <option name="MAIN_CLASS_NAME" value="Testcases.GalleryPageTest" />
       <option name="METHOD_NAME" value="Gallery_verify_image" />
+      <option name="GROUP_NAME" value="" />
+      <option name="TEST_OBJECT" value="METHOD" />
+      <option name="PARAMETERS" value="" />
+      <option name="OUTPUT_DIRECTORY" value="" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="moduleWithDependencies" />
+      </option>
+      <option name="PROPERTIES_FILE" value="" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SignUpTest" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="Selenium_Advanced" />
+      <shortenClasspath name="NONE" />
+      <useClassPathOnly />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Testcases.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="SUITE_NAME" value="" />
+      <option name="PACKAGE_NAME" value="Testcases" />
+      <option name="MAIN_CLASS_NAME" value="Testcases.SignUpTest" />
+      <option name="GROUP_NAME" value="" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <option name="PARAMETERS" value="" />
+      <option name="OUTPUT_DIRECTORY" value="" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="moduleWithDependencies" />
+      </option>
+      <option name="PROPERTIES_FILE" value="" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SignUpTest.Consumer_Sign_up_and_Verify_by_admin" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="Selenium_Advanced" />
+      <shortenClasspath name="NONE" />
+      <useClassPathOnly />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Testcases.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="SUITE_NAME" value="" />
+      <option name="PACKAGE_NAME" value="Testcases" />
+      <option name="MAIN_CLASS_NAME" value="Testcases.SignUpTest" />
+      <option name="METHOD_NAME" value="Consumer_Sign_up_and_Verify_by_admin" />
       <option name="GROUP_NAME" value="" />
       <option name="TEST_OBJECT" value="METHOD" />
       <option name="PARAMETERS" value="" />
@@ -402,19 +412,19 @@
       <item itemvalue="TestNG.testcases" />
       <item itemvalue="TestNG.&lt;default&gt;" />
       <item itemvalue="TestNG.Classexecution" />
-      <item itemvalue="TestNG.C:/GAED/testng.xml" />
-      <item itemvalue="TestNG.BuyAndSellTest" />
+      <item itemvalue="TestNG.BuyAndSellTest (1)" />
+      <item itemvalue="TestNG.BuyAndSellTest (2)" />
+      <item itemvalue="TestNG.SignUpTest" />
       <item itemvalue="TestNG.BuyAndSellTest.Accept_Project_In_Admin" />
-      <item itemvalue="TestNG.BuyAndSellTest.Create_Project" />
-      <item itemvalue="TestNG.BuyAndSellTest.invalidat_sellProject_stepper_1_fields" />
+      <item itemvalue="TestNG.SignUpTest.Consumer_Sign_up_and_Verify_by_admin" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="TestNG.C:/GAED/testng.xml" />
-        <item itemvalue="TestNG.BuyAndSellTest" />
+        <item itemvalue="TestNG.SignUpTest" />
+        <item itemvalue="TestNG.BuyAndSellTest (1)" />
+        <item itemvalue="TestNG.BuyAndSellTest (2)" />
         <item itemvalue="TestNG.BuyAndSellTest.Accept_Project_In_Admin" />
-        <item itemvalue="TestNG.BuyAndSellTest.Create_Project" />
-        <item itemvalue="TestNG.BuyAndSellTest.invalidat_sellProject_stepper_1_fields" />
+        <item itemvalue="TestNG.SignUpTest.Consumer_Sign_up_and_Verify_by_admin" />
       </list>
     </recent_temporary>
   </component>
@@ -426,13 +436,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1666076051325</updated>
-    </task>
-    <task id="LOCAL-00004" summary="signup login completed">
-      <created>1668949573850</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1668949573850</updated>
     </task>
     <task id="LOCAL-00005" summary="22-12-2022 commit">
       <created>1671709413843</created>
@@ -770,7 +773,14 @@
       <option name="project" value="LOCAL" />
       <updated>1737394195139</updated>
     </task>
-    <option name="localTasksCounter" value="53" />
+    <task id="LOCAL-00053" summary="Set all the file and testng.xml">
+      <created>1740823899019</created>
+      <option name="number" value="00053" />
+      <option name="presentableId" value="LOCAL-00053" />
+      <option name="project" value="LOCAL" />
+      <updated>1740823899021</updated>
+    </task>
+    <option name="localTasksCounter" value="54" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -813,7 +823,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="22-12-2022 commit" />
     <MESSAGE value="Gallery page commit" />
     <MESSAGE value="Gallery page commit 24-04-2023" />
     <MESSAGE value="arranged commit 23-05-2023" />
@@ -838,7 +847,8 @@
     <MESSAGE value="login signup and buyandsell running code" />
     <MESSAGE value="Fixed the issue for the scripts" />
     <MESSAGE value="Running chrome in non headless mode" />
-    <option name="LAST_COMMIT_MESSAGE" value="Running chrome in non headless mode" />
+    <MESSAGE value="Set all the file and testng.xml" />
+    <option name="LAST_COMMIT_MESSAGE" value="Set all the file and testng.xml" />
   </component>
   <component name="XDebuggerManager">
     <watches-manager>

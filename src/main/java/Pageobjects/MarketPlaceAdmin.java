@@ -36,11 +36,11 @@ public class MarketPlaceAdmin extends TestBase {
     By OnHoldReasons = By.xpath("//textarea[@placeholder='Kindly specify the reason here']");
     By OnHoldReasonBtn = By.xpath("//button[normalize-space()='Submit']");
     //textarea[@placeholder='Kindly specify the reason here']
-    public void marketAdminhomepage() throws IOException {
-
+    public void marketAdminhomepage() throws IOException, InterruptedException {
+        Thread.sleep(2000);
         driver.navigate().to("https://marketplace.qa.gaedkeeper.com/admin/login");
         driver.switchTo().window(driver.getWindowHandles().toArray()[1].toString()).close();
-        driver.switchTo().window(driver.getWindowHandles().toArray()[0].toString());
+      //  driver.switchTo().window(driver.getWindowHandles().toArray()[0].toString());
     }
     public void marketAdminLogin() throws InterruptedException {
         driver.navigate().to(AdminUrl);

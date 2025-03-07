@@ -23,6 +23,7 @@ public class SSO_Admin extends TestBase {
 
     By Email23 = By.xpath("//input[@name='email']");
     By ViewBtn = By.xpath("//*[@class='cursor-pointer hover:underline']");
+    //By ViewBtn = By.xpath("//*[@d='M0 0h24v24H0V0z']");
     By VerifyUserBtn = By.xpath("//span[normalize-space()='Verify User']");
     By checkboxMarkertplace = By.xpath("(//input[@class='PrivateSwitchBase-input css-j8yymo'])[1]");
     By checkboxAssessment = By.xpath("(//input[@class='PrivateSwitchBase-input css-j8yymo'])[2]");
@@ -80,7 +81,7 @@ public class SSO_Admin extends TestBase {
         actions.keyDown(Keys.CONTROL).sendKeys("v").keyUp(Keys.CONTROL).build().perform();
         Thread.sleep(5000);
         click(LoginBtn);
-        Thread.sleep(1000);
+        Thread.sleep(5000);
         click(ViewBtn);
         //verify the user
         click(VerifyUserBtn);
