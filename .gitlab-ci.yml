@@ -11,18 +11,19 @@ services:
 
 test:
   stage: test
-  image: docker/compose:latest
+  tags:
+    - gaed
+  image: docker/compose
   before_script:
-    - docker-compose up -d selenium-hub chrome firefox edge
-    - sleep 15  # Allow services to initialize
+    - docker-compose up -d selenium-hub chrome edge firefox
+    - sleep 10
     - docker-compose run ping curl ${SELENIUM_SERVER_URL}/status
-    - docker-compose exec chrome Xvfb :99 -screen 0 1920x1080x24 &
   script:
-    - docker-compose run tests mvn clean test -Dchrome.options="--headless=false"
+    - docker-compose run tests mvn clean test
+
   artifacts:
     when: always
     name: "report"
     paths:
       - target/surefire-reports/**
-      - target/screenshots/**  # Include screenshots if applicable
     expire_in: 7 days

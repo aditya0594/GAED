@@ -1,6 +1,5 @@
 package utils;
 
-
 import baseClass.TestBase;
 import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.Row;
@@ -9,7 +8,7 @@ import org.apache.poi.ss.usermodel.Workbook;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.Keys;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -18,10 +17,12 @@ import org.testng.annotations.DataProvider;
 
 import java.io.FileInputStream;
 import java.io.IOException;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.time.Duration;
 import java.util.List;
 import java.util.Properties;
-import java.util.UUID;
+import java.util.Random;
 
 public class utility extends TestBase {
 
@@ -36,28 +37,6 @@ public class utility extends TestBase {
         JavascriptExecutor js = (JavascriptExecutor) driver;
         js.executeScript("arguments[0].click();", element);
     }
-    public static void scrollToElement(By element){
-        JavascriptExecutor js = (JavascriptExecutor) driver;
-        js.executeScript("arguments[0].scrollIntoView(true);",element);
-    }
-    public static void dropdownWithText(By xpathOfDropdown, String value){
-        driver.findElement(xpathOfDropdown).sendKeys(value);
-        driver.findElement(xpathOfDropdown).sendKeys(Keys.TAB);
-    }
-    public static void dropdown(By field_click, By textget, String TextToBeSelected ) throws InterruptedException {
-        driver.findElement(field_click).click();
-        Thread.sleep(1000);
-        List<WebElement> nationality = driver.findElements(textget);
-        for(WebElement element : nationality){
-            String text = element.getText();
-            System.out.println("The nationality list : " + text );
-            if(text.equals(TextToBeSelected)){
-                driver.findElement(textget).click();
-            }
-            break;
-        }
-    }
-
     public void Error_message(By element, String actucalmessage){
         String invalidfirstnameMess = driver.findElement(element).getText();
         Assert.assertEquals(actucalmessage,invalidfirstnameMess);
@@ -71,6 +50,30 @@ public class utility extends TestBase {
         String invalidfirstnameMess = driver.findElement(element).getText();
         Assert.assertEquals("Field is Required.",invalidfirstnameMess);
 
+    }
+    public static void uploadFiles(String location, By locator){
+        String path = System.getProperty("user.dir");
+        String relativePath = path+location;
+        // Convert to Path object
+        Path convertedpath = Paths.get(relativePath);
+        String FinalPAth = convertedpath.toString();
+
+
+        WebElement IDfileInput = driver.findElement(locator);
+        IDfileInput.sendKeys(FinalPAth);
+    }
+    public static void googleAddress(String addressInitials,By locator) throws InterruptedException {
+        driver.findElement(locator).sendKeys(addressInitials); // sent the address initials
+
+        List<WebElement> suggestAddress = driver.findElements(By.xpath("//li[@class='text-sm font-normal text-black-900 px-3 py-2 cursor-pointer hover:bg-[#f6f6f6]']"));
+        //driver.findElements(By.xpath("//ul[@class='mt-2 border border-gray-300 shadow-md rounded-x1 rounded-bl-xl rounded-br-xl py-1 absolute mx-[2%] left-e top-full w-[96%] z-50 bg-white']/li"));
+
+        System.out.println("Number of ul elements found: " + suggestAddress.size());
+
+        // Example: Interact with the first ul element
+        WebElement firstUl = suggestAddress.get(0);
+        firstUl.click();
+        Thread.sleep(1000);
     }
 
 
@@ -181,20 +184,6 @@ public class utility extends TestBase {
                 return "";
         }
     }
-
-
-
-        public static String randomEmailSignup() {
-            String randomEmail = "aditya" + UUID.randomUUID().toString().substring(0, 8) + "@yopmail.com";
-            System.out.println("Generated Email: " + randomEmail);
-            return randomEmail;
-        }
-      public static void click(By element) {
-      driver.findElement(element).click();
-        }
-    }
-
-
     /*<plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
@@ -202,7 +191,7 @@ public class utility extends TestBase {
                 <version>3.0.0-M5</version> <!-- Or the latest version -->
                 <configuration>
                     <suiteXmlFiles>
-                        <suiteXmlFile>testng_old.xml</suiteXmlFile>
+                        <suiteXmlFile>testng.xml</suiteXmlFile>
                     </suiteXmlFiles>
                     <parallel>tests</parallel>
                     <threadCount>3</threadCount> <!-- Number of threads for parallel execution -->
@@ -210,4 +199,4 @@ public class utility extends TestBase {
             </plugin>
         </plugins>*/
 
-
+}

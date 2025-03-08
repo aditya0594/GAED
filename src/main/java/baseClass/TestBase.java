@@ -247,7 +247,6 @@ public class TestBase {
         return element;
     }
 
-
     public static String randomEmail() {
         String allowedChars = "123456789";
         String nameChars = "abcdefg";
@@ -265,6 +264,20 @@ public class TestBase {
         String allowedChars = "1234567889";
         String MobileNumber = RandomStringUtils.random(8, allowedChars);
         return MobileNumber;
+    }
+    public static String generateRandomString(int length) {
+        // Define the characters allowed in the random string
+        String characters = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+        StringBuilder randomString = new StringBuilder(length);
+        Random random = new Random();
+
+        // Loop to generate each character randomly
+        for (int i = 0; i < length; i++) {
+            int index = random.nextInt(characters.length());
+            randomString.append(characters.charAt(index));
+        }
+
+        return randomString.toString();
     }
 
     public static int getLastRowNumInColumn(Sheet sheet, int columnIndex) {

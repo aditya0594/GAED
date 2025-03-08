@@ -1,15 +1,7 @@
 package Pageobjects;
 
-
 import baseClass.TestBase;
-import com.google.gson.JsonObject;
-import com.google.gson.JsonParser;
 import org.openqa.selenium.*;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.devtools.DevTools;
-import org.openqa.selenium.devtools.v132.network.Network;
-import org.openqa.selenium.devtools.v132.network.model.RequestId;
-import org.openqa.selenium.devtools.v132.network.model.Response;
 import org.openqa.selenium.interactions.Actions;
 import org.testng.Assert;
 
@@ -18,16 +10,14 @@ import java.awt.datatransfer.Clipboard;
 import java.awt.datatransfer.StringSelection;
 import java.io.IOException;
 import java.util.List;
-import java.util.Optional;
 import java.util.Set;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
-import java.util.stream.Stream;
 
-import static utils.utility.AssertTextBtn;
+import static utils.utility.*;
 
 
-public class LoginConsumer extends TestBase {
+public class LoginConsumer extends TestBase{
 
     static Set<Cookie> cookies;
     static By loginBtn = By.xpath("//*[@class='cursor-pointer hidden lg:inline-block lg:ml-auto lg:mr-3 py-2 px-6 text-sm 3xl:text-lg text-white border border-transparent hover:border hover:border-white font-medium  rounded-full transition duration-200 group-hover:text-primary']");
@@ -43,14 +33,14 @@ public class LoginConsumer extends TestBase {
    static By Deleteinbox = By.xpath("//i[contains(text(),'')]");
    static By Message = By.xpath("//*[@id=\"mail\"]/div/div/table/tbody/tr[2]/td/p[1]");
     static By OTPfirstbox = By.xpath("//input[@aria-label='Please enter OTP character 1']");
-    static By VerifyEmailbtn = By.xpath("//button[@type='button']");
+    static By VerifyEmailbtn = By.xpath("//span[@class='ml-3']");
    static By ConsumerpProfileBtn = By.xpath("//button[@class='MuiButtonBase-root MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButton-colorPrimary MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButton-colorPrimary flex items-center space-x-1 css-1ujsas3']");
    static By ViewConsumerProfile = By.xpath("(//*[@id=\"basic-menu\"]/div[3]/ul/li[1])[1]");
    static By VerifyConsumerEmail = By.xpath("//div[contains(text(),'"+ HomePage.EMAIL +"')]");
    static By InvalidemailLoginMes   = By.xpath("//span[@class='block my-2 text-xs font-normal text-red-500 ']");
    static By EmptyEmailMess = By.xpath("//span[@class='block my-2 text-xs font-normal text-red-500 ']");
    static By EmaiDoesNotexistlMess = By.xpath("//span[@class='block my-2 text-xs font-normal text-red-500 ']");
-    static By InvalidOTPmessage = By.xpath("//span[normalize-space()='Invalid OTP. Please try again.']");
+    static By InvalidOTPmessage = By.xpath("//span[@class='block my-2 text-sm font-normal text-red-500']");
 
   static By SignupLinkLogin = By.xpath("//span[@class='font-medium text-primary hover:underline cursor-pointer']");
   static By SignupTitleOfLink = By.xpath("//*[@id=\"root\"]/div/div[2]/div/div/div/div/div[2]/div/div/div/form/div[2]/div/p");
@@ -87,68 +77,12 @@ public class LoginConsumer extends TestBase {
     }
     public void sentOTPbtn() {
         driver.findElement(SentOtpBtn).click();
-        DevTools devTools = ((ChromeDriver) driver).getDevTools();
-        devTools.createSession();
-        devTools.send(Network.enable(Optional.empty(), Optional.empty(), Optional.empty()));
-
-        // **Print All Network Responses (Debugging)**
-        devTools.addListener(Network.responseReceived(), response -> {
-            RequestId requestId = response.getRequestId();
-            Response res = response.getResponse();
-
-            // **Print ALL API responses**
-            System.out.println("Network Response URL: " + res.getUrl());
-
-            // **Check if the OTP API request is being captured**
-            if (res.getUrl().contains("/send-otp")) {  // Change URL based on actual API
-                System.out.println("Captured OTP API Response: " + res.getUrl());
-
-                Optional<Network.GetResponseBodyResponse> responseBody =
-                        Optional.ofNullable(devTools.send(Network.getResponseBody(requestId)));
-
-                if (responseBody.isPresent()) {
-                    String body = responseBody.get().getBody();
-                    System.out.println("Full Response: " + body);
-
-                    // **Parse JSON and extract OTP**
-                    JsonObject jsonObject = JsonParser.parseString(body).getAsJsonObject();
-                    if (jsonObject.has("data")) {
-                        JsonObject data = jsonObject.getAsJsonObject("data");
-                        if (data.has("code")) {
-                            String extractedOTP = data.get("code").getAsString();
-                            System.out.println("Extracted OTP: " + extractedOTP);
-                            Clipboard clipboard = Toolkit.getDefaultToolkit().getSystemClipboard();
-                            // Create a StringSelection object containing the OTP
-                            StringSelection stringSelection = new StringSelection(extractedOTP);
-                            // Set the StringSelection as the current contents of the clipboard
-                            clipboard.setContents(stringSelection,null);
-
-                        } else {
-                            System.out.println("OTP field 'code' not found in response!");
-                        }
-                    } else {
-                        System.out.println("Response does not contain 'data' object!");
-                    }
-                }
-            }
-        });
     }
 
     public static void Login_OTP_read(String emailforInbox) throws InterruptedException {
-        String previousTab = driver.getWindowHandle();
-
         ((JavascriptExecutor) driver).executeScript("window.open()");
-        Thread.sleep(2000);
-
-        // Switch to new tab (latest opened)
-        Set<String> windowHandles = driver.getWindowHandles();
-        for (String handle : windowHandles) {
-            if (!handle.equals(previousTab)) {
-                driver.switchTo().window(handle);
-                break;
-            }
-        }
-
+        String defaultTab = driver.getWindowHandle();
+        driver.switchTo().window(driver.getWindowHandles().toArray()[1].toString());
         // Simulate human-like interaction: Wait for a short duration
         Thread.sleep(2000);
         driver.get("https://yopmail.com/en/wm");
@@ -156,7 +90,6 @@ public class LoginConsumer extends TestBase {
         driver.findElement(By.xpath("/html/body/div")).click();
         waitForElement(yopmailemail);
         WebElement emailInput = driver.findElement(yopmailemail);
-        emailInput.clear();
         typeLikeAHuman(emailInput, emailforInbox);
         //driver.findElement(yopmailemail).sendKeys(emailforInbox);
         driver.findElement(yopmailarrow).click();
@@ -185,8 +118,7 @@ public class LoginConsumer extends TestBase {
         } else {
             System.out.println("No OTP found in the message.");
         }
-        driver.close();
-        driver.switchTo().window(previousTab);
+        driver.switchTo().window(driver.getWindowHandles().toArray()[0].toString());
         Thread.sleep(2000);
     }
     public void enterOTP(){
@@ -210,21 +142,15 @@ public class LoginConsumer extends TestBase {
     }
     public void verifyEmailbtn() throws InterruptedException {
         driver.findElement(VerifyEmailbtn).click();
-       /* Thread.sleep(6000);
-        WebElement element = driver.findElement(By.xpath("//*[@class='MuiButtonBase-root MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButton-colorPrimary MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButton-colorPrimary flex items-center space-x-1 css-iyey26']"));
-        JavascriptExecutor js = (JavascriptExecutor) driver;
-        js.executeScript("arguments[0].click();", element);*/
-        //driver.findElement(By.xpath("//*[@class='MuiButtonBase-root MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButton-colorPrimary MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButton-colorPrimary flex items-center space-x-1 css-iyey26']")).click();
+        Thread.sleep(6000);
     }
     public static void Veriyconsumerprofile(String email) throws InterruptedException {
-       // waitForElement(ConsumerpProfileBtn);
-      //  driver.findElement(ConsumerpProfileBtn).click();
-        //Thread.sleep(8000);
-       // driver.findElement(By.xpath("//*[@class='mr-2 w-5 h-5']")).click();
+
+        driver.findElement(By.xpath("//div[@class='border border-white rounded-full']")).click();
         Thread.sleep(5000);
 
         // Find all ul elements with the specified class
-        List<WebElement> ulElements = driver.findElements(By.xpath("//li[@class='MuiButtonBase-root MuiMenuItem-root MuiMenuItem-gutters MuiMenuItem-root MuiMenuItem-gutters !text-sm !font-normal !text-black-100 css-5dycmn']"));
+        List<WebElement> ulElements = driver.findElements(By.xpath("//li[text()='View consumer profile']"));
 
         // Check how many elements were found
         System.out.println("Number of ul elements found: " + ulElements.size());
@@ -302,8 +228,8 @@ public class LoginConsumer extends TestBase {
 
     }
 
-    static By Marketplace = By.xpath("//*[@class='absolute bottom-5 w-full text-center text-white text-2xl font-semibold  ']");
-    /*public static void LoginConsumerSuceessful() throws InterruptedException {
+
+    public static void LoginConsumerSuceessful() throws InterruptedException {
         String Loginbtntext =  driver.findElement(loginBtn).getText();
         Assert.assertEquals("Login",Loginbtntext);
         driver.findElement(loginBtn).click();
@@ -322,116 +248,8 @@ public class LoginConsumer extends TestBase {
         // Use Actions class to perform keyboard shortcut (Ctrl + V) for paste
         actions.keyDown(Keys.CONTROL).sendKeys("v").keyUp(Keys.CONTROL).build().perform();
         driver.findElement(VerifyEmailbtn).click();
-        Thread.sleep(3000);
-        waitForElement(Marketplace);
-        click(Marketplace);
-        Thread.sleep(3000);
+        Thread.sleep(6000);
     }
-*/
-    public static void LoginConsumerSuceessful() throws InterruptedException {
-        String Loginbtntext =  driver.findElement(loginBtn).getText();
-        Assert.assertEquals("Login",Loginbtntext);
-        driver.findElement(loginBtn).click();
-        String verifyLoginpage  = driver.findElement(loginPageVerify).getText();
-        Assert.assertEquals("Welcome Back!",verifyLoginpage);
-        String LoginemailTitle  = driver.findElement(Loginemailtitle).getText();
-        Assert.assertEquals("Email Address*",LoginemailTitle);
-        driver.findElement(LoginEmail).sendKeys(HomePage.EMAIL);
-        String SentOTPtitle  = driver.findElement(SentOtpBtn).getText();
-        Assert.assertEquals("Send OTP",SentOTPtitle);
-
-
-        Thread.sleep(2000);
-        // **Start DevTools for Capturing OTP**
-        DevTools devTools = ((ChromeDriver) driver).getDevTools();
-        devTools.createSession();
-        devTools.send(Network.enable(Optional.empty(), Optional.empty(), Optional.empty()));
-
-        // **Print All Network Responses (Debugging)**
-        devTools.addListener(Network.responseReceived(), response -> {
-            RequestId requestId = response.getRequestId();
-            Response res = response.getResponse();
-
-            // **Print ALL API responses**
-            System.out.println("Network Response URL: " + res.getUrl());
-
-            // **Check if the OTP API request is being captured**
-            if (res.getUrl().contains("/send-otp")) {  // Change URL based on actual API
-                System.out.println("Captured OTP API Response: " + res.getUrl());
-
-                Optional<Network.GetResponseBodyResponse> responseBody =
-                        Optional.ofNullable(devTools.send(Network.getResponseBody(requestId)));
-
-                if (responseBody.isPresent()) {
-                    String body = responseBody.get().getBody();
-                    System.out.println("Full Response: " + body);
-
-                    // **Parse JSON and extract OTP**
-                    JsonObject jsonObject = JsonParser.parseString(body).getAsJsonObject();
-                    if (jsonObject.has("data")) {
-                        JsonObject data = jsonObject.getAsJsonObject("data");
-                        if (data.has("code")) {
-                            String extractedOTP = data.get("code").getAsString();
-                            System.out.println("Extracted OTP: " + extractedOTP);
-                            Clipboard clipboard = Toolkit.getDefaultToolkit().getSystemClipboard();
-                            // Create a StringSelection object containing the OTP
-                            StringSelection stringSelection = new StringSelection(extractedOTP);
-                            // Set the StringSelection as the current contents of the clipboard
-                            clipboard.setContents(stringSelection,null);
-
-                        } else {
-                            System.out.println("OTP field 'code' not found in response!");
-                        }
-                    } else {
-                        System.out.println("Response does not contain 'data' object!");
-                    }
-                }
-            }
-        });
-        driver.findElement(SentOtpBtn).click();
-        // **Wait for some time to allow capturing**
-        Thread.sleep(2000);
-        driver.findElement(OTPfirstbox).click();
-        Actions actions = new Actions(driver);
-        // Use Actions class to perform keyboard shortcut (Ctrl + V) for paste
-        actions.keyDown(Keys.CONTROL).sendKeys("v").keyUp(Keys.CONTROL).build().perform();
-        driver.findElement(VerifyEmailbtn).click();
-        Thread.sleep(2000);
-        waitForElement(Marketplace);
-        click(Marketplace);
-        Thread.sleep(3000);
-
-
-
-    }
-    static By ProfileBtn = By.xpath("//*[@class='w-5 h-5 text-white group-hover:text-primary']");
-    static By Logout = By.xpath("//*[@class='w-5 h-5 text-white group-hover:text-primary']");
-
-    public static void consumerLogout(String option) throws InterruptedException {
-        Thread.sleep(2000);
-        click(ProfileBtn);
-        Thread.sleep(2000);
-        waitForElement(Logout);
-        List<WebElement> optionsList = driver.findElements(By.xpath("//ul[@class='MuiList-root MuiList-padding MuiMenu-list css-ubifyk']/li"));
-        for (WebElement w : optionsList) {
-        // Trim and compare text
-            if (w.getText().trim().equals(option)) {
-                try {
-                    w.click();
-                } catch (Exception e) {
-                    // Use JavaScript Click as a fallback
-                    ((JavascriptExecutor) driver).executeScript("arguments[0].click();", w);
-                }
-                break; // Stop looping after clicking "Logout"
-            }
-        }
-        driver.navigate().refresh();
-        //driver.switchTo().window(driver.getWindowHandles().toArray()[0].toString()).close();
-        Thread.sleep(2000);
-
-    }
-
-
 
     public static void Veriy_consumer_profile(){
         waitForElement(ConsumerpProfileBtn);
