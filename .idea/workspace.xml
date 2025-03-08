@@ -4,64 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="fbed16bb-bade-4def-845d-b7f89224c886" name="Changes" comment="setup devTools for the OTP">
-      <change afterPath="$PROJECT_DIR$/Screenshots/Accept_Project_In_Admin20250308092112.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Screenshots/Accept_Project_In_Admin20250309125024.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Screenshots/Consumer_Sign_up_and_OnHold_by_admin20250308092511.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Screenshots/Consumer_Sign_up_and_Verify_by_admin20250308042034.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Screenshots/Consumer_Sign_up_and_Verify_by_admin20250308042225.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Screenshots/Consumer_Sign_up_and_Verify_by_admin20250308043108.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Screenshots/Consumer_Sign_up_and_Verify_by_admin20250308043358.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Screenshots/Consumer_Sign_up_and_Verify_by_admin20250308043624.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Screenshots/Consumer_Sign_up_and_Verify_by_admin20250308044245.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Screenshots/Consumer_Sign_up_and_Verify_by_admin20250308044453.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Screenshots/Consumer_Sign_up_and_Verify_by_admin20250308050350.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Screenshots/Consumer_Sign_up_and_Verify_by_admin20250308050920.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Screenshots/Consumer_Sign_up_and_Verify_by_admin20250308054319.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Screenshots/Consumer_Sign_up_and_Verify_by_admin20250308054542.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Screenshots/Consumer_Sign_up_and_Verify_by_admin20250308090148.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Screenshots/Consumer_Sign_up_and_Verify_by_admin20250308090327.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Screenshots/Consumer_Sign_up_and_Verify_by_admin20250308092400.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Screenshots/get_title20250308095826.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Screenshots/image_present20250308095830.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/testn_old_1g.xml" afterDir="false" />
+    <list default="true" id="fbed16bb-bade-4def-845d-b7f89224c886" name="Changes" comment="setep devTool and testng xml and the container">
+      <change beforePath="$PROJECT_DIR$/.gitlab-ci.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.gitlab-ci.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Screenshots/Accept_Project_In_Admin20250306022734.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Screenshots/Accept_Project_In_Admin20250306031242.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Screenshots/Accept_Project_In_Admin20250306032326.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Screenshots/Accept_Project_In_Admin20250308015025.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Screenshots/Create_Project20250307082356.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Screenshots/Create_Project20250307082657.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Screenshots/Create_Project20250307083442.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Screenshots/Create_Project20250307083700.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Screenshots/Create_Project20250307083845.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Screenshots/Create_Project20250307084426.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Screenshots/Create_Project20250307084624.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Screenshots/Create_Project20250307085536.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Screenshots/InvalidOTP20250308014510.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Screenshots/InvalidOTP20250308121040.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Screenshots/otp20250307092651.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Screenshots/otp20250307093514.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Screenshots/otp20250308010503.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Screenshots/otp20250308010548.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Screenshots/otp20250308124216.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Screenshots/otp20250308124521.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Screenshots/otp20250308125107.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Screenshots/otp20250308125911.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ExtentReportListener/extend_report_example.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ExtentReportListener/extend_report_example.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Pageobjects/LoginConsumer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Pageobjects/LoginConsumer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Pageobjects/MarketPlaceAdmin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Pageobjects/MarketPlaceAdmin.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Pageobjects/SSO_Admin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Pageobjects/SSO_Admin.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Pageobjects/SignUp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Pageobjects/SignUp.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/baseClass/TestBase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/baseClass/TestBase.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resources/Consumer_signup_ids.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/resources/Consumer_signup_ids.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/Testcases/BuyAndSellTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Testcases/BuyAndSellTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/Testcases/LoginAdminTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Testcases/LoginAdminTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/Testcases/LoginUserTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Testcases/LoginUserTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/Testcases/ProjectsTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Testcases/ProjectsTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/Testcases/SignUpTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Testcases/SignUpTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test-output/GAED_Testcase_report.html" beforeDir="false" afterPath="$PROJECT_DIR$/test-output/GAED_Testcase_report.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/testng.xml" beforeDir="false" afterPath="$PROJECT_DIR$/testng.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -474,13 +420,6 @@
       <option name="presentableId" value="Default" />
       <updated>1666076051325</updated>
     </task>
-    <task id="LOCAL-00009" summary="arranged commit 23-05-2023">
-      <created>1684850456303</created>
-      <option name="number" value="00009" />
-      <option name="presentableId" value="LOCAL-00009" />
-      <option name="project" value="LOCAL" />
-      <updated>1684850456303</updated>
-    </task>
     <task id="LOCAL-00010" summary="Connectivity STA AP commit 05-06-2023">
       <created>1685949309485</created>
       <option name="number" value="00010" />
@@ -817,7 +756,14 @@
       <option name="project" value="LOCAL" />
       <updated>1741421607758</updated>
     </task>
-    <option name="localTasksCounter" value="58" />
+    <task id="LOCAL-00058" summary="setep devTool and testng xml and the container">
+      <created>1741463443336</created>
+      <option name="number" value="00058" />
+      <option name="presentableId" value="LOCAL-00058" />
+      <option name="project" value="LOCAL" />
+      <updated>1741463443337</updated>
+    </task>
+    <option name="localTasksCounter" value="59" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -860,7 +806,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Gallery page commit 24-04-2023" />
     <MESSAGE value="arranged commit 23-05-2023" />
     <MESSAGE value="Connectivity STA AP commit 05-06-2023" />
     <MESSAGE value="appium setup 24-02-2024" />
@@ -885,7 +830,8 @@
     <MESSAGE value="Running chrome in non headless mode" />
     <MESSAGE value="Set all the file and testng.xml" />
     <MESSAGE value="setup devTools for the OTP" />
-    <option name="LAST_COMMIT_MESSAGE" value="setup devTools for the OTP" />
+    <MESSAGE value="setep devTool and testng xml and the container" />
+    <option name="LAST_COMMIT_MESSAGE" value="setep devTool and testng xml and the container" />
   </component>
   <component name="XDebuggerManager">
     <watches-manager>

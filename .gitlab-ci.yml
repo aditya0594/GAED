@@ -3,37 +3,24 @@ stages:
   - test
 
 variables:
-  SELENIUM_SERVER_NAME: selenium-hub
-  SELENIUM_SERVER_URL: http://${SELENIUM_SERVER_NAME}:4444
-  DOCKER_HOST: tcp://docker:2375
-  RDP_PASSWORD: "P@ssword123"
+    SELENIUM_SERVER_URL: http://selenium:4444/wd/hub
+    RDP_PASSWORD: "P@ssword123"
 
 services:
   - docker:20.10.16-dind
 
 build:
   stage: build
-  image: docker/compose:latest
   script:
-    - docker-compose up -d selenium-hub chrome
-    - sleep 20
-    - docker exec chrome Xvfb :99 -screen 0 1920x1080x24 &
-    - docker exec chrome x11vnc -forever -create &
-    - echo "VNC Access: vnc://localhost:5900"
+    - docker-compose up -d
 
-run-selenium-tests:
+run_tests:
   stage: test
-  image: maven:3.8.6-openjdk-11
   script:
-    - mvn clean test -Dchrome.options="--headless=false"
-    - cp -r target/surefire-reports target/screenshots target/videos .
+    - docker exec -i windows-container powershell -Command "Start-Process 'C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe'"
+    - docker exec -i selenium-chrome /bin/sh -c "java -jar selenium-server-standalone.jar"
+    - docker exec -i windows-container powershell -Command "cd C:\\tests && mvn clean test"
 
 artifacts:
   paths:
-    - target/surefire-reports/**
-    - target/screenshots/**
-    - target/videos/**
-  expire_in: 7 days
-
-after_script:
-  - docker-compose down
+    - test-output/
