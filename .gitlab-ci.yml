@@ -1,37 +1,40 @@
-### .gitlab-ci.yml
-image: mcr.microsoft.com/windows/servercore:ltsc2022
-
 stages:
   - build
   - test
 
 variables:
-  SELENIUM_SERVER_URL: http://selenium:4444/wd/hub
+  DOCKER_DRIVER: overlay2
   RDP_PASSWORD: "P@ssword123"
 
-before_script:
-  - echo "Installing Docker CLI..."
-  - curl -fsSL https://get.docker.com -o get-docker.sh
-  - sh get-docker.sh
-  - dockerd-entrypoint.sh &
-  - sleep 20
+services:
+  - docker:20.10.16-dind
 
 build:
   stage: build
   script:
+    - echo "Starting Docker Daemon..."
+    - dockerd-entrypoint.sh &
+    - sleep 20
     - echo "Starting Windows Container with GUI..."
-    - docker network create selenium-network
-    - docker run -d --name selenium-hub --network=selenium-network -p 4444:4444 selenium/hub:latest
-    - docker run -d --name chrome-node --network=selenium-network -e HUB_HOST=selenium-hub -p 5900:5900 selenium/node-chrome:latest
-    - docker run -d --name windows-container --network=selenium-network --rm -p 3389:3389 mcr.microsoft.com/windows/servercore:ltsc2022
-    - echo "Containers are now running."
+    - docker run -d --name windows-container --rm -p 3389:3389 mcr.microsoft.com/windows/servercore:ltsc2022
+    - sleep 30
+  tags:
+    - docker
+  artifacts:
+    paths:
+      - target/
 
 test:
   stage: test
   script:
+    - echo "Installing Maven..."
+    - apt-get update && apt-get install -y maven
     - echo "Running Selenium Test Cases..."
-    - docker exec -i windows-container powershell -Command "cd C:\\tests && mvn clean test"
-    - echo "Test execution completed."
+    - mvn clean test
+  tags:
+    - docker
   artifacts:
     paths:
-      - C:/tests/target/surefire-reports/
+      - target/surefire-reports/
+      - target/screenshots/
+  when: always
