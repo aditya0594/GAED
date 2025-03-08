@@ -11,12 +11,15 @@ import org.openqa.selenium.devtools.v132.network.Network;
 import org.openqa.selenium.devtools.v132.network.model.RequestId;
 import org.openqa.selenium.devtools.v132.network.model.Response;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 
 import java.awt.*;
 import java.awt.datatransfer.Clipboard;
 import java.awt.datatransfer.StringSelection;
 import java.io.IOException;
+import java.time.Duration;
 import java.util.List;
 import java.util.Optional;
 import java.util.Set;
@@ -50,7 +53,7 @@ public class LoginConsumer extends TestBase {
    static By InvalidemailLoginMes   = By.xpath("//span[@class='block my-2 text-xs font-normal text-red-500 ']");
    static By EmptyEmailMess = By.xpath("//span[@class='block my-2 text-xs font-normal text-red-500 ']");
    static By EmaiDoesNotexistlMess = By.xpath("//span[@class='block my-2 text-xs font-normal text-red-500 ']");
-    static By InvalidOTPmessage = By.xpath("//span[normalize-space()='Invalid OTP. Please try again.']");
+    static By InvalidOTPmessage = By.xpath("//*[contains(text(),'Invalid OTP. Please try again.')]");
 
   static By SignupLinkLogin = By.xpath("//span[@class='font-medium text-primary hover:underline cursor-pointer']");
   static By SignupTitleOfLink = By.xpath("//*[@id=\"root\"]/div/div[2]/div/div/div/div/div[2]/div/div/div/form/div[2]/div/p");
@@ -81,9 +84,33 @@ public class LoginConsumer extends TestBase {
         String element  = driver.findElement(EmptyEmailMess).getText();
         Assert.assertEquals("Field is Required.",element);
     }
-    public void invalidOTP_message(){
-        String element  = driver.findElement(InvalidOTPmessage).getText();
-        Assert.assertEquals("Invalid OTP. Please try again.",element);
+    public void invalidOTP_message() throws InterruptedException {
+        Thread.sleep(2000);
+        // ✅ Use JavaScript to force visibility
+
+        //By.xpath("//div[contains(@class,'flex text-sm font-medium') and contains(@class,'text-gray-400') and contains(@class,'mb-10')]//span[contains(@class,'text-red-500')]")
+        new WebDriverWait(driver, Duration.ofSeconds(20)).until(
+                webDriver -> ((JavascriptExecutor) webDriver)
+                        .executeScript("return document.readyState").equals("complete")
+        );
+
+        // ✅ Use the new accurate XPath for error message
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        WebElement errorMessage = wait.until(ExpectedConditions.visibilityOfElementLocated(
+                By.xpath("//div[contains(@class,'flex text-sm font-medium') and contains(@class,'text-gray-400') and contains(@class,'mb-10')]//span[contains(@class,'text-red-500')]")
+        ));
+
+        // ✅ Force the element visible (if hidden)
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        js.executeScript("arguments[0].style.display='block';", errorMessage);
+
+        // waitForElement(InvalidOTPmessage);
+        String element1  = driver.findElement(InvalidOTPmessage).getText();
+        Assert.assertEquals("Invalid OTP. Please try again.",element1);
+    }
+    public void setOTPbuttonSimple(){
+        waitForElement(SentOtpBtn);
+        driver.findElement(SentOtpBtn).click();
     }
     public void sentOTPbtn() {
         driver.findElement(SentOtpBtn).click();
@@ -108,7 +135,7 @@ public class LoginConsumer extends TestBase {
 
                 if (responseBody.isPresent()) {
                     String body = responseBody.get().getBody();
-                    System.out.println("Full Response: " + body);
+                   // System.out.println("Full Response: " + body);
 
                     // **Parse JSON and extract OTP**
                     JsonObject jsonObject = JsonParser.parseString(body).getAsJsonObject();

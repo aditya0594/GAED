@@ -126,7 +126,9 @@ public class MarketPlaceAdmin extends TestBase {
 //        System.out.println("Project name is which is created : " + created_project_name);
 //        Assert.assertEquals(Projectname,created_project_name);
         Thread.sleep(2000);
-        driver.findElement(StatusDropdown).sendKeys("Publish" + Keys.TAB);
+        driver.findElement(StatusDropdown).sendKeys("Publish");
+        Thread.sleep(2000);
+        driver.findElement(StatusDropdown).sendKeys(Keys.TAB);
 
        // utility.scrollToElement(SubmitBtn);
         Thread.sleep(2000);

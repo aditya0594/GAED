@@ -42,6 +42,7 @@ public class ProjectsTest extends TestBase {
         ExtentTest test = extent.createTest("Create project mandatory field validation ");
         homepage.homepage();
         login.LoginConsumerSuceessful();
+        test.pass("Create project mandatory field validation ");
         // Get the DevTools session
         // **Start DevTools in Parallel (Capture OTP)**
         /*DevTools devTools = ((ChromeDriver) driver).getDevTools();

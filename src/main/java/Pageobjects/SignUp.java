@@ -3,8 +3,15 @@ package Pageobjects;
 
 
 import baseClass.TestBase;
+import com.google.gson.JsonObject;
+import com.google.gson.JsonParser;
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.*;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.devtools.DevTools;
+import org.openqa.selenium.devtools.v132.network.Network;
+import org.openqa.selenium.devtools.v132.network.model.RequestId;
+import org.openqa.selenium.devtools.v132.network.model.Response;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -22,6 +29,7 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.time.Duration;
 import java.util.List;
+import java.util.Optional;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -72,11 +80,55 @@ public class SignUp extends TestBase {
         System.out.println(ConsumerSignUpEmail);
         driver.findElement(EmailField).sendKeys(ConsumerSignUpEmail);
         driver.findElement(agreementChk).click();
+        Thread.sleep(2000);
+
+       // signUp_OTP_read(ConsumerSignUpEmail);
+        DevTools devTools = ((ChromeDriver) driver).getDevTools();
+        devTools.createSession();
+        devTools.send(Network.enable(Optional.empty(), Optional.empty(), Optional.empty()));
+
+        // **Print All Network Responses (Debugging)**
+        devTools.addListener(Network.responseReceived(), response -> {
+            RequestId requestId = response.getRequestId();
+            Response res = response.getResponse();
+
+            // **Print ALL API responses**
+            //System.out.println("Network Response URL: " + res.getUrl());
+
+            // **Check if the OTP API request is being captured**
+            if (res.getUrl().contains("/send-otp")) {  // Change URL based on actual API
+                System.out.println("Captured OTP API Response: " + res.getUrl());
+
+                Optional<Network.GetResponseBodyResponse> responseBody =
+                        Optional.ofNullable(devTools.send(Network.getResponseBody(requestId)));
+
+                if (responseBody.isPresent()) {
+                    String body = responseBody.get().getBody();
+                  //  System.out.println("Full Response: " + body);
+
+                    // **Parse JSON and extract OTP**
+                    JsonObject jsonObject = JsonParser.parseString(body).getAsJsonObject();
+                    if (jsonObject.has("data")) {
+                        JsonObject data = jsonObject.getAsJsonObject("data");
+                        if (data.has("code")) {
+                            String extractedOTP = data.get("code").getAsString();
+                            System.out.println("Extracted OTP: " + extractedOTP);
+                            Clipboard clipboard = Toolkit.getDefaultToolkit().getSystemClipboard();
+                            // Create a StringSelection object containing the OTP
+                            StringSelection stringSelection = new StringSelection(extractedOTP);
+                            // Set the StringSelection as the current contents of the clipboard
+                            clipboard.setContents(stringSelection,null);
+
+                        } else {
+                            System.out.println("OTP field 'code' not found in response!");
+                        }
+                    } else {
+                        System.out.println("Response does not contain 'data' object!");
+                    }
+                }
+            }
+        });
         driver.findElement(sentOTPbtn).click();
-        Thread.sleep(5000);
-
-        signUp_OTP_read(ConsumerSignUpEmail);
-
         Thread.sleep(2000);
         driver.findElement(firstOtpBlock).click();
         Actions actions = new Actions(driver);

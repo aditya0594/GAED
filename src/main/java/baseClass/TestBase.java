@@ -42,6 +42,7 @@ public class TestBase {
     //public LandingPageAndroid LandingPage;
     protected static WebDriver driver;
     public static ExtentReports extent;
+    public static ExtentTest test;
 
     protected TestBase() {
         // Private constructor to prevent instantiation
@@ -67,7 +68,8 @@ public class TestBase {
                     options.addArguments("--disable-dev-shm-usage");
                     options.addArguments("--no-sandbox");
                     options.addArguments("user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/110.0.5481.178 Safari/537.36");
-
+                    options.setExperimentalOption("excludeSwitches", new String[]{"enable-automation"});
+                    options.setExperimentalOption("useAutomationExtension", false);
                 }
                 options.addArguments("--remote-allow-origins=*");
                 if (utility.property("runRemote").equals("true")) {
@@ -81,6 +83,7 @@ public class TestBase {
                 // Check if headless mode should be enabled
                 if (utility.property("headless").equals("true")) {
                     options.addArguments("--headless");
+                    options.addArguments("--window-size=1920,1080");
                 }
                 if (utility.property("runRemote").equals("true")) {
                     driver = new RemoteWebDriver(new URL(seleniumHubUrl), options);
@@ -152,10 +155,14 @@ public class TestBase {
         utils.setup(AppConfigTags.ANDROID, AppConfigTags.MOTOROLA, Constants.ANDROID_URI);
         driver = utils.driver;*//*
     }*/
+  @BeforeMethod
+  public void createTestReport(ITestResult result) {
+      test = extent.createTest(result.getMethod().getMethodName());
+      test.log(Status.INFO, "Test Started: " + result.getMethod().getMethodName());
+  }
 
-    @BeforeTest
+   @BeforeTest
     public void report(){
-
         ExtentSparkReporter htmlReporter = new ExtentSparkReporter(System.getProperty("user.dir") + "/test-output/GAED_Testcase_report.html");
         extent = new ExtentReports();
         extent.attachReporter(htmlReporter);
@@ -169,6 +176,27 @@ public class TestBase {
 
         // Scroll to the element on the page
         js.executeScript("arguments[0].scrollIntoView();", element);
+    }
+    @AfterMethod
+    public void getResult(ITestResult result) throws Exception {
+        if (result.getStatus() == ITestResult.FAILURE) {
+            test.log(Status.FAIL, "Test Case Failed: " + result.getName());
+            test.log(Status.FAIL, "Reason: " + result.getThrowable());
+
+            String screenshotPath = getScreenShot(driver, result.getName());
+            test.fail("Screenshot of Failure").addScreenCaptureFromPath("Screenshots");
+        }
+        else if (result.getStatus() == ITestResult.SUCCESS) {
+            test.log(Status.PASS, "Test Case Passed: " + result.getName());
+        }
+        else if (result.getStatus() == ITestResult.SKIP) {
+            test.log(Status.SKIP, "Test Case Skipped: " + result.getName());
+        }
+
+        if (driver != null) {
+            driver.quit();
+            driver = null;
+        }
     }
 
     public String getTitle() {
@@ -187,18 +215,8 @@ public class TestBase {
         TestBase.read_properties();
     }
 
-    //    @BeforeTest
-//    public void startapp() throws IOException {
-//    	pageObjectConfig();
-//        System.out.println("Setup TestCase");
-//
-//        CommonUtils utils = new CommonUtils();
-//
-//        utils.setup(AppConfigTags.ANDROID, AppConfigTags.MOTOROLA, Constants.ANDROID_URI);
-//        driver = utils.driver;
-//    }
-    @AfterMethod
-    public void getResult(ITestResult result) throws Exception{
+
+    /*public void getResult(ITestResult result) throws Exception{
         ExtentTest test;
         if(result.getStatus() == ITestResult.FAILURE) {
             // Executed when a test method fails
@@ -224,17 +242,17 @@ public class TestBase {
             driver = null;
         }
     }
-
+*/
 
     @AfterSuite
     public void tear(){
         extent.flush();
     }
 
-    @AfterTest
+  /*  @AfterTest
     public void endReport() {
         extent.flush();
-    }
+    }*/
 
     public static By waitForElement(By element) {
         WebDriverWait w = new WebDriverWait(driver, Duration.ofSeconds(30));

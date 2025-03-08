@@ -17,6 +17,6 @@ public class LoginAdminTest extends TestBase {
         ExtentTest test = extent.createTest("To verify the vaild email");
         admin.Adminhomepage();
         admin.AdminLogin_with_validData();
-       test.pass("Admin login to portal p");
+       test.pass("Admin login to portal is passed");
     }
 }

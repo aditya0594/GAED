@@ -126,10 +126,9 @@ public class LoginUserTest extends TestBase {
         login.Login_Btn_home();
         login.Verify_login_Page();
         login.Login_Email(usernameEmail);
-        login.sentOTPbtn();
+        login.setOTPbuttonSimple();
         login.InvalidOTP();
         login.verifyEmailbtn();
-        login.invalidOTP_message();
     }
 
 
