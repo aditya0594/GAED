@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="fbed16bb-bade-4def-845d-b7f89224c886" name="Changes" comment="" />
+    <list default="true" id="fbed16bb-bade-4def-845d-b7f89224c886" name="Changes" comment="setup devTools for the OTP" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -425,13 +425,6 @@
       <option name="presentableId" value="Default" />
       <updated>1666076051325</updated>
     </task>
-    <task id="LOCAL-00007" summary="Gallery page commit 24-04-2023">
-      <created>1682339156474</created>
-      <option name="number" value="00007" />
-      <option name="presentableId" value="LOCAL-00007" />
-      <option name="project" value="LOCAL" />
-      <updated>1682339156474</updated>
-    </task>
     <task id="LOCAL-00008" summary="arranged commit 23-05-2023">
       <created>1684850359340</created>
       <option name="number" value="00008" />
@@ -768,7 +761,14 @@
       <option name="project" value="LOCAL" />
       <updated>1741341824460</updated>
     </task>
-    <option name="localTasksCounter" value="56" />
+    <task id="LOCAL-00056" summary="setup devTools for the OTP">
+      <created>1741421220701</created>
+      <option name="number" value="00056" />
+      <option name="presentableId" value="LOCAL-00056" />
+      <option name="project" value="LOCAL" />
+      <updated>1741421220701</updated>
+    </task>
+    <option name="localTasksCounter" value="57" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -811,7 +811,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Gallery page commit" />
     <MESSAGE value="Gallery page commit 24-04-2023" />
     <MESSAGE value="arranged commit 23-05-2023" />
     <MESSAGE value="Connectivity STA AP commit 05-06-2023" />
@@ -836,7 +835,8 @@
     <MESSAGE value="Fixed the issue for the scripts" />
     <MESSAGE value="Running chrome in non headless mode" />
     <MESSAGE value="Set all the file and testng.xml" />
-    <option name="LAST_COMMIT_MESSAGE" value="Set all the file and testng.xml" />
+    <MESSAGE value="setup devTools for the OTP" />
+    <option name="LAST_COMMIT_MESSAGE" value="setup devTools for the OTP" />
   </component>
   <component name="XDebuggerManager">
     <watches-manager>
