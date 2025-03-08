@@ -1,3 +1,6 @@
+### .gitlab-ci.yml
+image: mcr.microsoft.com/windows/servercore:ltsc2022
+
 stages:
   - build
   - test
@@ -6,11 +9,10 @@ variables:
   SELENIUM_SERVER_URL: http://selenium:4444/wd/hub
   RDP_PASSWORD: "P@ssword123"
 
-services:
-  - docker:20.10.16-dind
-
 before_script:
-  - echo "Starting Docker Daemon..."
+  - echo "Installing Docker CLI..."
+  - curl -fsSL https://get.docker.com -o get-docker.sh
+  - sh get-docker.sh
   - dockerd-entrypoint.sh &
   - sleep 20
 
