@@ -1,0 +1,1727 @@
+Index: src/test/java/Testcases/GalleryPageTest.java
+===================================================================
+diff --git a/src/test/java/Testcases/GalleryPageTest.java b/src/test/java/Testcases/GalleryPageTest.java
+deleted file mode 100644
+--- a/src/test/java/Testcases/GalleryPageTest.java	(revision fbf75c8d306db284b1ebf702a4bf5461e53ee2e9)
++++ /dev/null	(revision fbf75c8d306db284b1ebf702a4bf5461e53ee2e9)
+@@ -1,63 +0,0 @@
+-package Testcases;
+-
+-
+-import Pageobjects.DeletePageAndroid;
+-import Pageobjects.GalleryPageAndroid;
+-import Pageobjects.HomePage;
+-import baseClass.TestBase;
+-import org.testng.annotations.Test;
+-
+-import java.io.IOException;
+-
+-public class GalleryPageTest extends TestBase {
+-    HomePage LandingPage= new HomePage();
+-    DeletePageAndroid DeletePage = new DeletePageAndroid();
+-
+-    public GalleryPageTest() throws IOException {
+-    }
+-
+-
+-    @Test(priority = 1, enabled = true)
+-
+-    public void Gallery_verify_album() throws InterruptedException {
+-       // LandingPage.get_started_screen_signup();
+-        GalleryPageAndroid.gallery_album_Scroll();
+-    }
+-
+-  /*  @Test(priority = 2, enabled = true)
+-    public void Gallery_verify_image() throws InterruptedException {
+-        LandingPage.get_started_screen_signup();
+-        GalleryPageAndroid.gallery_images();
+-    }
+-    @Test(priority = 3, enabled = true)
+-    public void Verify_Select_Functionality() throws InterruptedException {
+-        LandingPage.get_started_screen_signup();
+-        GalleryPageAndroid.Select_Func();
+-    }
+-    @Test(priority = 4, enabled = true)
+-    public void Verify_Select_Clear() throws InterruptedException {
+-        LandingPage.get_started_screen_signup();
+-        GalleryPageAndroid.Select_Clear_func();
+-    }
+-    @Test(priority = 5, enabled = true)
+-    public void Collage_Btn_functionality() throws InterruptedException {
+-        LandingPage.get_started_screen_signup();
+-        GalleryPageAndroid.Verify_Collage_btn();
+-    }
+-    @Test(priority = 6, enabled = true)
+-    public void Collage_Img_functionality() throws InterruptedException {
+-        LandingPage.get_started_screen_signup();
+-        GalleryPageAndroid.Verify_Collage_Image();
+-    }
+-    @Test(priority =7, enabled = true)
+-    public void Collage_multi_Img_functionality() throws InterruptedException, IOException {
+-        LandingPage.get_started_screen_signup();
+-        GalleryPageAndroid.Verify_Collage_Multi_Image();
+-    }
+-    @Test(priority =8, enabled = true)
+-    public void Verify_Collage_Multi_layoutswitch_Image() throws InterruptedException, IOException {
+-        LandingPage.get_started_screen_signup();
+-        GalleryPageAndroid.Verify_Collage_Multi_layout_switch_Image();
+-    }
+-*/
+-}
+Index: src/test/java/Testcases/DeleteUserPageTest.java
+===================================================================
+diff --git a/src/test/java/Testcases/DeleteUserPageTest.java b/src/test/java/Testcases/DeleteUserPageTest.java
+deleted file mode 100644
+--- a/src/test/java/Testcases/DeleteUserPageTest.java	(revision fbf75c8d306db284b1ebf702a4bf5461e53ee2e9)
++++ /dev/null	(revision fbf75c8d306db284b1ebf702a4bf5461e53ee2e9)
+@@ -1,18 +0,0 @@
+-package Testcases;
+-
+-
+-
+-import Pageobjects.DeletePageAndroid;
+-import Pageobjects.HomePage;
+-import baseClass.TestBase;
+-
+-import java.io.IOException;
+-
+-public class DeleteUserPageTest extends TestBase {
+-
+-    HomePage LandingPage= new HomePage();
+-    DeletePageAndroid DeletePage = new DeletePageAndroid();
+-
+-    public DeleteUserPageTest() throws IOException {
+-    }
+-}
+Index: src/test/java/Testcases/BuyAndSellTest.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package Testcases;\r\n\r\nimport Pageobjects.*;\r\nimport baseClass.TestBase;\r\nimport com.aventstack.extentreports.ExtentTest;\r\nimport org.testng.annotations.Test;\r\n\r\n\r\nimport java.io.IOException;\r\n\r\npublic class BuyAndSellTest extends TestBase {\r\n    HomePage homepage = new HomePage();\r\n    LoginConsumer login = new LoginConsumer();\r\n    BuyAndSell Buyandsell = new BuyAndSell();\r\n    SSO_Admin admin = new SSO_Admin();\r\n    MarketPlaceAdmin marketadmin = new MarketPlaceAdmin();\r\n\r\n    public BuyAndSellTest() throws IOException {\r\n    }\r\n\r\n//    @Test(priority = 1, enabled = true, dataProvider = \"ValidLoginEmail\",dataProviderClass = Dataprovider.class)\r\n//    public void validate_buyandsell_btn(String usernameEmail) throws InterruptedException, IOException {\r\n//        ExtentTest test = extent.createTest(\"Click on the Buy and sell in the consumer and\");\r\n//        homepage.homepage();\r\n//        login.Login_Btn_home();\r\n//        login.Verify_login_Page();\r\n//        login.Login_Email(usernameEmail);\r\n//        login.sentOTPbtn();\r\n//        login.Login_OTP_read(usernameEmail);\r\n//        login.enterOTP();\r\n//        login.verifyEmailbtn();\r\n//        login.Veriyconsumerprofile(usernameEmail);\r\n//        Buyandsell.validate_BuySell_buttons();\r\n//        test.pass(\"Consumer user able to click on the Buy and sell\");\r\n//        //LoginUser.OTP_read();\r\n//    }\r\n    @Test(priority = 1,enabled = true)\r\n    public void invalidate_SellProject_buttons() throws InterruptedException {\r\n        ExtentTest test = extent.createTest(\"Create project mandatory field validation \");\r\n        homepage.homepage();\r\n        login.LoginConsumerSuceessful();\r\n        Buyandsell.validate_next_saveAsDraft_back_btn();\r\n        test.pass(\"Create project mandatory field validated\");\r\n\r\n    }\r\n    @Test(priority = 2,enabled = true)\r\n    public void invalidat_sellProject_stepper_1_fields() throws InterruptedException {\r\n        ExtentTest test = extent.createTest(\"Create project mandatory field validation \");\r\n        homepage.homepage();\r\n        login.LoginConsumerSuceessful();\r\n        Buyandsell.invalidate_Stepper1_ProjectFields_button();\r\n        test.pass(\"Project field is validated \");\r\n    }\r\n    @Test(priority = 3,enabled = true)\r\n    public void Create_Project() throws InterruptedException {\r\n        ExtentTest test = extent.createTest(\"Create project mandatory field validation \");\r\n        homepage.homepage();\r\n        login.LoginConsumerSuceessful();\r\n        Buyandsell.vaild_Stepper1_ProjectFields_button();\r\n        Buyandsell.vaild_Stepper2_ProjectFields_button();\r\n        Buyandsell.vaild_Stepper3_ProjectFields_button();\r\n        test.pass(\"Create project mandatory field validation \");\r\n    }\r\n    @Test(priority = 3,enabled = true)\r\n    public void Accept_Project_In_Admin() throws InterruptedException, IOException {\r\n        ExtentTest test = extent.createTest(\"Create project mandatory field validation \");\r\n        homepage.homepage();\r\n        login.LoginConsumerSuceessful();\r\n        Buyandsell.vaild_Stepper1_ProjectFields_button();\r\n        Buyandsell.vaild_Stepper2_ProjectFields_button();\r\n        Buyandsell.vaild_Stepper3_ProjectFields_button();\r\n        Thread.sleep(3000);\r\n        login.consumerLogout(\"Logout\");\r\n        marketadmin.marketAdminhomepage();\r\n        marketadmin.marketAdminLogin();\r\n        marketadmin.Admin_buyandSell_publish();\r\n\r\n//        homepage.homepage();\r\n//        login.LoginConsumerSuceessful();\r\n//        Buyandsell.vaild_Stepper1_ProjectFields_button();\r\n//        Buyandsell.vaild_Stepper2_ProjectFields_button();\r\n//        Buyandsell.vaild_Stepper3_ProjectFields_button();\r\n        test.pass(\"Create project mandatory field validation \");\r\n    }\r\n\r\n\r\n   /* @Test(priority = 5,enabled = true)\r\n    public void validate_sellProject_btn() throws InterruptedException {\r\n        ExtentTest test = extent.createTest(\"Create project from the consumer login \");\r\n        Buyandsell.validate_SellProject_button();\r\n        test.pass(\"Project is created\");\r\n\r\n    }*/\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/test/java/Testcases/BuyAndSellTest.java b/src/test/java/Testcases/BuyAndSellTest.java
+--- a/src/test/java/Testcases/BuyAndSellTest.java	(revision fbf75c8d306db284b1ebf702a4bf5461e53ee2e9)
++++ b/src/test/java/Testcases/BuyAndSellTest.java	(date 1741379540291)
+@@ -61,7 +61,7 @@
+         Buyandsell.vaild_Stepper3_ProjectFields_button();
+         test.pass("Create project mandatory field validation ");
+     }
+-    @Test(priority = 3,enabled = true)
++    @Test(priority = 4,enabled = true)
+     public void Accept_Project_In_Admin() throws InterruptedException, IOException {
+         ExtentTest test = extent.createTest("Create project mandatory field validation ");
+         homepage.homepage();
+@@ -71,7 +71,6 @@
+         Buyandsell.vaild_Stepper3_ProjectFields_button();
+         Thread.sleep(3000);
+         login.consumerLogout("Logout");
+-        marketadmin.marketAdminhomepage();
+         marketadmin.marketAdminLogin();
+         marketadmin.Admin_buyandSell_publish();
+ 
+Index: src/main/java/utils/utility.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package utils;\r\n\r\n\r\nimport baseClass.TestBase;\r\nimport org.apache.poi.ss.usermodel.Cell;\r\nimport org.apache.poi.ss.usermodel.Row;\r\nimport org.apache.poi.ss.usermodel.Sheet;\r\nimport org.apache.poi.ss.usermodel.Workbook;\r\nimport org.apache.poi.xssf.usermodel.XSSFWorkbook;\r\nimport org.openqa.selenium.By;\r\nimport org.openqa.selenium.JavascriptExecutor;\r\nimport org.openqa.selenium.WebElement;\r\nimport org.openqa.selenium.support.ui.ExpectedConditions;\r\nimport org.openqa.selenium.support.ui.WebDriverWait;\r\nimport org.testng.Assert;\r\nimport org.testng.annotations.DataProvider;\r\n\r\nimport java.io.FileInputStream;\r\nimport java.io.IOException;\r\nimport java.time.Duration;\r\nimport java.util.List;\r\nimport java.util.Properties;\r\nimport java.util.UUID;\r\n\r\npublic class utility extends TestBase {\r\n\r\n\r\n    public static Object property(String key)throws IOException {\r\n        FileInputStream file = new FileInputStream(\"src/resources/config.properties\");\r\n        Properties prop = new Properties();\r\n        prop.load(file);\r\n        return prop.get(key);\r\n    }\r\n    public static void click_javascript(By element){\r\n        JavascriptExecutor js = (JavascriptExecutor) driver;\r\n        js.executeScript(\"arguments[0].click();\", element);\r\n    }\r\n    public static void scrollToElement(By element){\r\n        JavascriptExecutor js = (JavascriptExecutor) driver;\r\n        js.executeScript(\"arguments[0].scrollIntoView(true);\",element);\r\n    }\r\n    public static void dropdown(By field_click, By textget, String TextToBeSelected ) throws InterruptedException {\r\n        driver.findElement(field_click).click();\r\n        Thread.sleep(1000);\r\n        List<WebElement> nationality = driver.findElements(textget);\r\n        for(WebElement element : nationality){\r\n            String text = element.getText();\r\n            System.out.println(\"The nationality list : \" + text );\r\n            if(text.equals(TextToBeSelected)){\r\n                driver.findElement(textget).click();\r\n            }\r\n            break;\r\n        }\r\n    }\r\n\r\n    public void Error_message(By element, String actucalmessage){\r\n        String invalidfirstnameMess = driver.findElement(element).getText();\r\n        Assert.assertEquals(actucalmessage,invalidfirstnameMess);\r\n    }\r\n    public void verify_text(By element, String actucalmessage){\r\n        String invalidfirstnameMess = driver.findElement(element).getText();\r\n        Assert.assertEquals(actucalmessage,invalidfirstnameMess);\r\n\r\n    }\r\n    public void Error_message_Empty_field(By element){\r\n        String invalidfirstnameMess = driver.findElement(element).getText();\r\n        Assert.assertEquals(\"Field is Required.\",invalidfirstnameMess);\r\n\r\n    }\r\n\r\n\r\n    public static void AssertTextBtn(By element,String text){\r\n        String btn = driver.findElement(element).getText();\r\n        System.out.println(\"button text is : \" + btn);\r\n        Assert.assertEquals(btn,text);\r\n    }\r\n    public static By waitForElement(By element) {\r\n        WebDriverWait w = new WebDriverWait(driver, Duration.ofSeconds(30));\r\n        w.until(ExpectedConditions.visibilityOfElementLocated((By) element));\r\n        return element;\r\n    }\r\n    @DataProvider(name = \"ValidLoginEmail\")\r\n    public static Object[][] LoginData() throws IOException {\r\n\r\n        FileInputStream fis = new FileInputStream(\"src/resources/ExcelFile.xlsx\");\r\n        Workbook workbook = new XSSFWorkbook(fis);\r\n        Sheet loginsheet = workbook.getSheet(\"ValidLoginsheet\");\r\n\r\n        int numberOfRows = loginsheet.getPhysicalNumberOfRows();\r\n        Object[][] testData = new Object[numberOfRows - 1][2]; // Adjust for header row if present\r\n\r\n        for (int i = 1; i < numberOfRows; i++) { // Start from 1 to skip header row\r\n            Row row = loginsheet.getRow(i);\r\n\r\n            if (row != null) {\r\n                Cell usernameEmail = row.getCell(0);\r\n                Cell password = row.getCell(1);\r\n\r\n                if (usernameEmail != null) {\r\n                    testData[i - 1][0] = getCellValue(usernameEmail);\r\n                } else {\r\n                    testData[i - 1][0] = \"\"; // Handle null cell\r\n                }\r\n\r\n                if (password != null) {\r\n                    testData[i - 1][1] = getCellValue(password);\r\n                } else {\r\n                    testData[i - 1][1] = \"\"; // Handle null cell\r\n                }\r\n\r\n                System.out.println(\"Username fetched value: \" + usernameEmail);\r\n                System.out.println(\"Password fetched value: \" + password);\r\n            }\r\n        }\r\n\r\n        workbook.close();\r\n        fis.close();\r\n\r\n        return testData;\r\n    }\r\n    @DataProvider(name = \"InvalidLoginEmail\")\r\n    public static Object[][] InvalidLoginEmail() throws IOException {\r\n\r\n        FileInputStream fis = new FileInputStream(\"src/resources/ExcelFile.xlsx\");\r\n        Workbook workbook = new XSSFWorkbook(fis);\r\n        Sheet loginsheet = workbook.getSheet(\"InvalidLoginEmail\");\r\n\r\n        int numberOfRows = loginsheet.getPhysicalNumberOfRows();\r\n        Object[][] testData = new Object[numberOfRows - 1][2]; // Adjust for header row if present\r\n\r\n        for (int i = 1; i < numberOfRows; i++) { // Start from 1 to skip header row\r\n            Row row = loginsheet.getRow(i);\r\n\r\n            if (row != null) {\r\n                Cell usernameEmail = row.getCell(0);\r\n                Cell password = row.getCell(1);\r\n\r\n                if (usernameEmail != null) {\r\n                    testData[i - 1][0] = getCellValue(usernameEmail);\r\n                } else {\r\n                    testData[i - 1][0] = \"\"; // Handle null cell\r\n                }\r\n\r\n                if (password != null) {\r\n                    testData[i - 1][1] = getCellValue(password);\r\n                } else {\r\n                    testData[i - 1][1] = \"\"; // Handle null cell\r\n                }\r\n\r\n                System.out.println(\"Username fetched value: \" + usernameEmail);\r\n                System.out.println(\"Password fetched value: \" + password);\r\n            }\r\n        }\r\n\r\n        workbook.close();\r\n        fis.close();\r\n\r\n        return testData;\r\n    }\r\n    private static String getCellValue(Cell cell) {\r\n        if (cell == null) {\r\n            return \"\";\r\n        }\r\n        switch (cell.getCellType()) {\r\n            case STRING:\r\n                return cell.getStringCellValue();\r\n            case NUMERIC:\r\n                return String.valueOf(cell.getNumericCellValue());\r\n            case BOOLEAN:\r\n                return String.valueOf(cell.getBooleanCellValue());\r\n            case FORMULA:\r\n                return cell.getCellFormula();\r\n            case BLANK:\r\n                return \"\";\r\n            default:\r\n                return \"\";\r\n        }\r\n    }\r\n\r\n\r\n\r\n        public static String randomEmailSignup() {\r\n            String randomEmail = \"aditya\" + UUID.randomUUID().toString().substring(0, 8) + \"@yopmail.com\";\r\n            System.out.println(\"Generated Email: \" + randomEmail);\r\n            return randomEmail;\r\n        }\r\n      public static void click(By element) {\r\n      driver.findElement(element).click();\r\n        }\r\n    }\r\n\r\n\r\n    /*<plugins>\r\n            <plugin>\r\n                <groupId>org.apache.maven.plugins</groupId>\r\n                <artifactId>maven-surefire-plugin</artifactId>\r\n                <version>3.0.0-M5</version> <!-- Or the latest version -->\r\n                <configuration>\r\n                    <suiteXmlFiles>\r\n                        <suiteXmlFile>testng_old.xml</suiteXmlFile>\r\n                    </suiteXmlFiles>\r\n                    <parallel>tests</parallel>\r\n                    <threadCount>3</threadCount> <!-- Number of threads for parallel execution -->\r\n                </configuration>\r\n            </plugin>\r\n        </plugins>*/\r\n\r\n\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/utils/utility.java b/src/main/java/utils/utility.java
+--- a/src/main/java/utils/utility.java	(revision fbf75c8d306db284b1ebf702a4bf5461e53ee2e9)
++++ b/src/main/java/utils/utility.java	(date 1741379540284)
+@@ -9,6 +9,7 @@
+ import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+ import org.openqa.selenium.By;
+ import org.openqa.selenium.JavascriptExecutor;
++import org.openqa.selenium.Keys;
+ import org.openqa.selenium.WebElement;
+ import org.openqa.selenium.support.ui.ExpectedConditions;
+ import org.openqa.selenium.support.ui.WebDriverWait;
+@@ -39,6 +40,10 @@
+         JavascriptExecutor js = (JavascriptExecutor) driver;
+         js.executeScript("arguments[0].scrollIntoView(true);",element);
+     }
++    public static void dropdownWithText(By xpathOfDropdown, String value){
++        driver.findElement(xpathOfDropdown).sendKeys(value);
++        driver.findElement(xpathOfDropdown).sendKeys(Keys.TAB);
++    }
+     public static void dropdown(By field_click, By textget, String TextToBeSelected ) throws InterruptedException {
+         driver.findElement(field_click).click();
+         Thread.sleep(1000);
+Index: test-output/GAED_Testcase_report.html
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>\r\n\r\n<!DOCTYPE html>\r\n<html>\r\n<head>\r\n<meta charset=\"UTF-8\">\r\n<meta name=\"viewport\" content=\"width=device-width, initial-scale=1, shrink-to-fit=no\">\r\n<title></title>\r\n<link rel=\"apple-touch-icon\" href=\"https://cdn.jsdelivr.net/gh/extent-framework/extent-github-cdn@b00a2d0486596e73dd7326beacf352c639623a0e/commons/img/logo.png\">\r\n<link rel=\"shortcut icon\" href=\"https://cdn.jsdelivr.net/gh/extent-framework/extent-github-cdn@b00a2d0486596e73dd7326beacf352c639623a0e/commons/img/logo.png\">\r\n<link href=\"https://cdn.jsdelivr.net/gh/extent-framework/extent-github-cdn@d6562a79075e061305ccfdb82f01e5e195e2d307/spark/css/spark-style.css\" rel=\"stylesheet\" />\r\n<link href=\"https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css\" rel=\"stylesheet\">\r\n<script src=\"https://cdn.jsdelivr.net/gh/extent-framework/extent-github-cdn@7cc78ce/spark/js/jsontree.js\"></script>\r\n<style type=\"text/css\"></style></head><body class=\"spa -report standard\">\r\n  <div class=\"app\">\r\n    <div class=\"layout\">\r\n<div class=\"header navbar\">\r\n<div class=\"vheader\">\r\n<div class=\"nav-logo\">\r\n<a href=\"#\">\r\n<div class=\"logo\" style=\"background-image: url('https://cdn.jsdelivr.net/gh/extent-framework/extent-github-cdn@b00a2d0486596e73dd7326beacf352c639623a0e/commons/img/logo.png')\"></div>\r\n</a>\r\n</div>\r\n<ul class=\"nav-left\">\r\n<li class=\"search-box\">\r\n<a class=\"search-toggle\" href=\"#\">\r\n<i class=\"search-icon fa fa-search\"></i>\r\n<i class=\"search-icon-close fa fa-close\"></i>\r\n</a>\r\n</li>\r\n<li class=\"search-input\"><input id=\"search-tests\" class=\"form-control\" type=\"text\" placeholder=\"Search...\"></li>\r\n</ul>\r\n<ul class=\"nav-right\">\r\n<li class=\"m-r-10\">\r\n<a href=\"#\"><span class=\"badge badge-primary\"></span></a>\r\n</li>\r\n<li class=\"m-r-10\">\r\n<a href=\"#\"><span class=\"badge badge-primary\">Jan 15, 2025 11:05:49 pm</span></a>\r\n</li>\r\n</ul>\r\n</div>\r\n</div><div class=\"side-nav\">\r\n<div class=\"side-nav-inner\">\r\n<ul class=\"side-nav-menu\">\r\n<li class=\"nav-item dropdown\" onclick=\"toggleView('test-view')\">\r\n<a id=\"nav-test\" class=\"dropdown-toggle\" href=\"#\">\r\n<span class=\"ico\"><i class=\"fa fa-list\"></i></span>\r\n</a>\r\n</li>\r\n<li class=\"nav-item dropdown\" onclick=\"toggleView('dashboard-view')\">\r\n<a id=\"nav-dashboard\" class=\"dropdown-toggle\" href=\"#\">\r\n<span class=\"ico\"><i class=\"fa fa-bar-chart\"></i></span>\r\n</a>\r\n</li>\r\n</ul>\r\n</div>\r\n</div>      <div class=\"vcontainer\">\r\n        <div class=\"main-content\">\r\n<div class=\"test-wrapper row view test-view\">\r\n  <div class=\"test-list\">\r\n    <div class=\"test-list-tools\">\r\n<ul class=\"tools pull-left\">\r\n<li><a href=\"#\"><span class=\"font-size-14\">Tests</span></a></li>\r\n</ul>\r\n<ul class=\"tools text-right\">\r\n<li class=\"dropdown\">\r\n<a href=\"#\" class=\"dropdown-toggle\" data-toggle=\"dropdown\"><i class=\"fa fa-exclamation-circle\"></i></a>\r\n<ul id=\"status-toggle\" class=\"dropdown-menu dropdown-md p-v-0\">\r\n<a class=\"dropdown-item\" status=\"pass\" href=\"#\"><span>Pass</span><span class=\"status success\"></span></a>\r\n<a class=\"dropdown-item\" status=\"fail\" href=\"#\"><span>Fail</span><span class=\"status danger\"></span></a>\r\n<div class=\"dropdown-divider\"></div>\r\n<a status=\"clear\" class=\"dropdown-item\" href=\"#\"><span>Clear</span><span class=\"pull-right\"><i class=\"fa fa-close\"></i></span></a>\r\n</ul>\r\n</li>\r\n</ul>\r\n</div>    <div class=\"test-list-wrapper scrollable\">\r\n      <ul class=\"test-list-item\">\r\n        <li class=\"test-item\"  status=\"pass\" test-id=\"1\"\r\n          author=\"\"\r\n          tag=\"\"\r\n          device=\"\">\r\n          <div class=\"test-detail\">\r\n            <p class=\"name\">To verify the invalid email</p>\r\n            <p class=\"text-sm\">\r\n              <span>11:06:00 pm</span> / <span>00:00:00:000</span>\r\n              <span class=\"badge pass-bg log float-right\">Pass</span>\r\n            </p>\r\n          </div>\r\n          <div class=\"test-contents d-none\">\r\n<div class=\"detail-head\">\r\n<div class=\"p-v-10\">\r\n<div class=\"info\">\r\n<h5 class=\"test-status text-pass\">To verify the invalid email</h5>\r\n<span class='badge badge-success'>01.15.2025 11:06:00 pm</span>\r\n<span class='badge badge-danger'>01.15.2025 11:06:00 pm</span>\r\n<span class='badge badge-default'>00:00:00:000</span>\r\n&middot; <span class='uri-anchor badge badge-default'>#test-id=1</span>\r\n<span class='badge badge-default pointer float-right ml-1 et'><i class=\"fa fa-chevron-down\"></i></span>\r\n<span class='badge badge-default pointer float-right ct'><i class=\"fa fa-chevron-up\"></i></span>\r\n</div>\r\n</div>\r\n</div>          </div>\r\n        </li>\r\n        <li class=\"test-item\"  status=\"fail\" test-id=\"2\"\r\n          author=\"\"\r\n          tag=\"\"\r\n          device=\"\">\r\n          <div class=\"test-detail\">\r\n            <p class=\"name\">Consumer_Sign_up - Test Case Failed</p>\r\n            <p class=\"text-sm\">\r\n              <span>11:07:15 pm</span> / <span>00:00:00:496</span>\r\n              <span class=\"badge fail-bg log float-right\">Fail</span>\r\n            </p>\r\n          </div>\r\n          <div class=\"test-contents d-none\">\r\n<div class=\"detail-head\">\r\n<div class=\"p-v-10\">\r\n<div class=\"info\">\r\n<h5 class=\"test-status text-fail\">Consumer_Sign_up - Test Case Failed</h5>\r\n<span class='badge badge-success'>01.15.2025 11:07:15 pm</span>\r\n<span class='badge badge-danger'>01.15.2025 11:07:15 pm</span>\r\n<span class='badge badge-default'>00:00:00:496</span>\r\n&middot; <span class='uri-anchor badge badge-default'>#test-id=2</span>\r\n<span class='badge badge-default pointer float-right ml-1 et'><i class=\"fa fa-chevron-down\"></i></span>\r\n<span class='badge badge-default pointer float-right ct'><i class=\"fa fa-chevron-up\"></i></span>\r\n</div>\r\n</div>\r\n</div>    <div class=\"row mb-3\"><div class=\"col-md-3\">\r\n<img data-featherlight='C:\\GAED/Screenshots/Consumer_Sign_up20250115110715.png' src=\"C:\\GAED/Screenshots/Consumer_Sign_up20250115110715.png\">\r\n    \r\n    </div></div>\r\n<div class=\"detail-body mt-4\">\r\n<table class=\"table table-sm\">\r\n  <thead><tr><th class=\"status-col\">Status</th><th class=\"timestamp-col\">Timestamp</th><th class=\"details-col\">Details</th></tr></thead>\r\n  <tbody>\r\n      <tr class=\"event-row\">\r\n        <td><span class=\"badge log fail-bg\">Fail</span></td>\r\n        <td>11:07:15 pm</td>\r\n        <td>\r\n          Consumer_Sign_up - Test Case Failed\r\n        </td>\r\n      </tr>\r\n      <tr class=\"event-row\">\r\n        <td><span class=\"badge log fail-bg\">Fail</span></td>\r\n        <td>11:07:15 pm</td>\r\n        <td>\r\n          org.openqa.selenium.ElementNotInteractableException: element not interactable\r\n  (Session info: chrome=131.0.6778.265)\r\nBuild info: version: '4.16.1', revision: '9b4c83354e'\r\nSystem info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '20.0.1'\r\nDriver info: org.openqa.selenium.chrome.ChromeDriver\r\nCommand: [79540debb756b38ff9dc1d7c80dd6d2d, sendKeysToElement {id=f.A68FEF30CCD7F86DD09DEBBFB1AC0792.d.4FE90629F91B4344085D4E1D1C2DBB3D.e.81, value=[Ljava.lang.CharSequence;@53ce2392}]\r\nCapabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 131.0.6778.265, chrome: {chromedriverVersion: 131.0.6778.264 (2d05e315153..., userDataDir: C:\\Users\\ADITYA~1\\AppData\\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:54261}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:54261/devtoo..., se:cdpVersion: 131.0.6778.265, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}\r\nElement: [[ChromeDriver: chrome on windows (79540debb756b38ff9dc1d7c80dd6d2d)] -> xpath: //*[@class='css-19bb58m']]\r\nSession ID: 79540debb756b38ff9dc1d7c80dd6d2d - Test Case Failed\r\n        </td>\r\n      </tr>\r\n      <tr class=\"event-row\">\r\n        <td><span class=\"badge log fail-bg\">Fail</span></td>\r\n        <td>11:07:15 pm</td>\r\n        <td>\r\n          Test Case Failed Snapshot is below com.aventstack.extentreports.ExtentTest@ebda593\r\n        </td>\r\n      </tr>\r\n  </tbody>\r\n</table>\r\n</div>\r\n          </div>\r\n        </li>\r\n      </ul>\r\n    </div>\r\n  </div>\r\n<div class=\"test-content scrollable\">\r\n<div class=\"test-content-tools\">\r\n<ul><li><a class=\"back-to-test\" href=\"#\"><i class=\"fa fa-arrow-left\"></i></a></li></ul>\r\n</div>\r\n<div class=\"test-content-detail\"><div class=\"detail-body\"></div></div>\r\n</div></div>\r\n<div class=\"container-fluid p-4 view dashboard-view\">\r\n<div class=\"row\">\r\n<div class=\"col-md-3\">\r\n<div class=\"card\"><div class=\"card-body\">\r\n<p class=\"m-b-0\">Started</p>\r\n<h3>Jan 15, 2025 11:05:49 pm</h3>\r\n</div></div>\r\n</div>\r\n<div class=\"col-md-3\">\r\n<div class=\"card\"><div class=\"card-body\">\r\n<p class=\"m-b-0\">Ended</p>\r\n<h3>Jan 15, 2025 11:07:18 pm</h3>\r\n</div></div>\r\n</div>\r\n<div class=\"col-md-3\">\r\n<div class=\"card\"><div class=\"card-body\">\r\n<p class=\"m-b-0 text-pass\">Tests Passed</p>\r\n<h3>1</h3>\r\n</div></div>\r\n</div>\r\n<div class=\"col-md-3\">\r\n<div class=\"card\"><div class=\"card-body\">\r\n<p class=\"m-b-0 text-fail\">Tests Failed</p>\r\n<h3>1</h3>\r\n</div></div>\r\n</div>\r\n</div>\r\n<div class=\"row\">\r\n<div class=\"col-md-6\">\r\n<div class=\"card\">\r\n<div class=\"card-header\">\r\n<h6 class=\"card-title\">Tests</h6>\r\n</div>\r\n<div class=\"card-body\">\r\n<div class=\"\">\r\n<canvas id='parent-analysis' width='115' height='90'></canvas>\r\n</div>\r\n</div>\r\n<div class=\"card-footer\">\r\n<div><small data-tooltip='50%'>\r\n<b>1</b> tests passed\r\n</small>\r\n</div>\r\n<div>\r\n<small data-tooltip='50%'><b>1</b> tests failed,\r\n<b>0</b> skipped, <b data-tooltip='0%'>0</b> others\r\n</small>\r\n</div>\r\n</div>\r\n</div>\r\n</div>\r\n<div class=\"col-md-6\">\r\n<div class=\"card\">\r\n<div class=\"card-header\">\r\n<h6 class=\"card-title\">Log events</h6>\r\n</div>\r\n<div class=\"card-body\">\r\n<div class=\"\">\r\n<canvas id='events-analysis' width='115' height='90'></canvas>\r\n</div>\r\n</div>\r\n<div class=\"card-footer\">\r\n<div><small data-tooltip='0%'><b>0</b> events passed</small></div>\r\n<div>\r\n<small data-tooltip='100%'><b>3</b> events failed,\r\n<b data-tooltip='%'>0</b> others\r\n</small>\r\n</div>\r\n</div>\r\n</div>\r\n</div>\r\n</div>\r\n<div class=\"row\"><div class=\"col-md-12\">\r\n<div class=\"card\"><div class=\"card-header\"><p>Timeline</p></div>\r\n<div class=\"card-body pt-0\"><div>\r\n<canvas id=\"timeline\" height=\"120\"></canvas>\r\n</div></div>\r\n</div>\r\n</div></div>\r\n<script>\r\nvar timeline = {\r\n\"To verify the invalid email\":0,\"Consumer_Sign_up - Test Case Failed\":0.496\r\n};\r\n</script>\r\n<div class=\"row\">\r\n</div>\r\n</div>\r\n<script>\r\nvar statusGroup = {\r\nparentCount: 5,\r\npassParent: 1,\r\nfailParent: 1,\r\nwarningParent: 0,\r\nskipParent: 0,\r\nchildCount: 5,\r\npassChild: 0,\r\nfailChild: 0,\r\nwarningChild: 0,\r\nskipChild: 0,\r\ninfoChild: 0,\r\ngrandChildCount: 5,\r\npassGrandChild: 0,\r\nfailGrandChild: 0,\r\nwarningGrandChild: 0,\r\nskipGrandChild: 0,\r\ninfoGrandChild: 0,\r\neventsCount: 5,\r\npassEvents: 0,\r\nfailEvents: 3,\r\nwarningEvents: 0,\r\nskipEvents: 0,\r\ninfoEvents: 0\r\n};\r\n</script>        </div>\r\n      </div>\r\n    </div>\r\n  </div>\r\n<script src=\"https://cdn.jsdelivr.net/gh/extent-framework/extent-github-cdn@d6562a79075e061305ccfdb82f01e5e195e2d307/spark/js/spark-script.js\"></script>\r\n<script type=\"text/javascript\"></script></body>\r\n</html>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/test-output/GAED_Testcase_report.html b/test-output/GAED_Testcase_report.html
+--- a/test-output/GAED_Testcase_report.html	(revision fbf75c8d306db284b1ebf702a4bf5461e53ee2e9)
++++ b/test-output/GAED_Testcase_report.html	(date 1741420868860)
+@@ -35,7 +35,11 @@
+ <a href="#"><span class="badge badge-primary"></span></a>
+ </li>
+ <li class="m-r-10">
++<<<<<<< HEAD
+ <a href="#"><span class="badge badge-primary">Jan 15, 2025 11:05:49 pm</span></a>
++=======
++<a href="#"><span class="badge badge-primary">Mar 8, 2025 01:54:15 am</span></a>
++>>>>>>> working
+ </li>
+ </ul>
+ </div>
+@@ -67,7 +71,6 @@
+ <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-exclamation-circle"></i></a>
+ <ul id="status-toggle" class="dropdown-menu dropdown-md p-v-0">
+ <a class="dropdown-item" status="pass" href="#"><span>Pass</span><span class="status success"></span></a>
+-<a class="dropdown-item" status="fail" href="#"><span>Fail</span><span class="status danger"></span></a>
+ <div class="dropdown-divider"></div>
+ <a status="clear" class="dropdown-item" href="#"><span>Clear</span><span class="pull-right"><i class="fa fa-close"></i></span></a>
+ </ul>
+@@ -82,7 +85,11 @@
+           <div class="test-detail">
+             <p class="name">To verify the invalid email</p>
+             <p class="text-sm">
++<<<<<<< HEAD
+               <span>11:06:00 pm</span> / <span>00:00:00:000</span>
++=======
++              <span>1:54:21 am</span> / <span>00:00:20:478</span>
++>>>>>>> working
+               <span class="badge pass-bg log float-right">Pass</span>
+             </p>
+           </div>
+@@ -90,16 +97,41 @@
+ <div class="detail-head">
+ <div class="p-v-10">
+ <div class="info">
++<<<<<<< HEAD
+ <h5 class="test-status text-pass">To verify the invalid email</h5>
+ <span class='badge badge-success'>01.15.2025 11:06:00 pm</span>
+ <span class='badge badge-danger'>01.15.2025 11:06:00 pm</span>
+ <span class='badge badge-default'>00:00:00:000</span>
++=======
++<h5 class="test-status text-pass">Create project mandatory field validation </h5>
++<span class='badge badge-success'>03.08.2025 1:54:21 am</span>
++<span class='badge badge-danger'>03.08.2025 1:54:41 am</span>
++<span class='badge badge-default'>00:00:20:478</span>
++>>>>>>> working
+ &middot; <span class='uri-anchor badge badge-default'>#test-id=1</span>
+ <span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+ <span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+ </div>
+ </div>
++<<<<<<< HEAD
+ </div>          </div>
++=======
++</div><div class="detail-body mt-4">
++<table class="table table-sm">
++  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
++  <tbody>
++      <tr class="event-row">
++        <td><span class="badge log pass-bg">Pass</span></td>
++        <td>1:54:41 am</td>
++        <td>
++          Create project mandatory field validated
++        </td>
++      </tr>
++  </tbody>
++</table>
++</div>
++          </div>
++>>>>>>> working
+         </li>
+         <li class="test-item"  status="fail" test-id="2"
+           author=""
+@@ -108,32 +140,209 @@
+           <div class="test-detail">
+             <p class="name">Consumer_Sign_up - Test Case Failed</p>
+             <p class="text-sm">
++<<<<<<< HEAD
+               <span>11:07:15 pm</span> / <span>00:00:00:496</span>
+               <span class="badge fail-bg log float-right">Fail</span>
++=======
++              <span>1:54:41 am</span> / <span>00:00:00:001</span>
++              <span class="badge pass-bg log float-right">Pass</span>
++>>>>>>> working
+             </p>
+           </div>
+           <div class="test-contents d-none">
+ <div class="detail-head">
+ <div class="p-v-10">
+ <div class="info">
++<<<<<<< HEAD
+ <h5 class="test-status text-fail">Consumer_Sign_up - Test Case Failed</h5>
+ <span class='badge badge-success'>01.15.2025 11:07:15 pm</span>
+ <span class='badge badge-danger'>01.15.2025 11:07:15 pm</span>
+ <span class='badge badge-default'>00:00:00:496</span>
++=======
++<h5 class="test-status text-pass">invalidate_SellProject_buttons - Test Case PASSED</h5>
++<span class='badge badge-success'>03.08.2025 1:54:41 am</span>
++<span class='badge badge-danger'>03.08.2025 1:54:41 am</span>
++<span class='badge badge-default'>00:00:00:001</span>
++>>>>>>> working
+ &middot; <span class='uri-anchor badge badge-default'>#test-id=2</span>
+ <span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+ <span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+ </div>
+ </div>
++<<<<<<< HEAD
+ </div>    <div class="row mb-3"><div class="col-md-3">
+ <img data-featherlight='C:\GAED/Screenshots/Consumer_Sign_up20250115110715.png' src="C:\GAED/Screenshots/Consumer_Sign_up20250115110715.png">
+     
+     </div></div>
+ <div class="detail-body mt-4">
++=======
++</div><div class="detail-body mt-4">
+ <table class="table table-sm">
+   <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+   <tbody>
+       <tr class="event-row">
++        <td><span class="badge log pass-bg">Pass</span></td>
++        <td>1:54:41 am</td>
++        <td>
++          invalidate_SellProject_buttons - Test Case PASSED
++        </td>
++      </tr>
++  </tbody>
++</table>
++</div>
++          </div>
++        </li>
++        <li class="test-item"  status="pass" test-id="3"
++          author=""
++          tag=""
++          device="">
++          <div class="test-detail">
++            <p class="name">Create project mandatory field validation </p>
++            <p class="text-sm">
++              <span>1:54:45 am</span> / <span>00:00:20:268</span>
++              <span class="badge pass-bg log float-right">Pass</span>
++            </p>
++          </div>
++          <div class="test-contents d-none">
++<div class="detail-head">
++<div class="p-v-10">
++<div class="info">
++<h5 class="test-status text-pass">Create project mandatory field validation </h5>
++<span class='badge badge-success'>03.08.2025 1:54:45 am</span>
++<span class='badge badge-danger'>03.08.2025 1:55:05 am</span>
++<span class='badge badge-default'>00:00:20:268</span>
++&middot; <span class='uri-anchor badge badge-default'>#test-id=3</span>
++<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
++<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
++</div>
++</div>
++</div><div class="detail-body mt-4">
++<table class="table table-sm">
++  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
++  <tbody>
++      <tr class="event-row">
++        <td><span class="badge log pass-bg">Pass</span></td>
++        <td>1:55:05 am</td>
++        <td>
++          Project field is validated 
++        </td>
++      </tr>
++  </tbody>
++</table>
++</div>
++          </div>
++        </li>
++        <li class="test-item"  status="pass" test-id="4"
++          author=""
++          tag=""
++          device="">
++          <div class="test-detail">
++            <p class="name">invalidat_sellProject_stepper_1_fields - Test Case PASSED</p>
++            <p class="text-sm">
++              <span>1:55:05 am</span> / <span>00:00:00:001</span>
++              <span class="badge pass-bg log float-right">Pass</span>
++            </p>
++          </div>
++          <div class="test-contents d-none">
++<div class="detail-head">
++<div class="p-v-10">
++<div class="info">
++<h5 class="test-status text-pass">invalidat_sellProject_stepper_1_fields - Test Case PASSED</h5>
++<span class='badge badge-success'>03.08.2025 1:55:05 am</span>
++<span class='badge badge-danger'>03.08.2025 1:55:05 am</span>
++<span class='badge badge-default'>00:00:00:001</span>
++&middot; <span class='uri-anchor badge badge-default'>#test-id=4</span>
++<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
++<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
++</div>
++</div>
++</div><div class="detail-body mt-4">
++<table class="table table-sm">
++  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
++  <tbody>
++      <tr class="event-row">
++        <td><span class="badge log pass-bg">Pass</span></td>
++        <td>1:55:05 am</td>
++        <td>
++          invalidat_sellProject_stepper_1_fields - Test Case PASSED
++        </td>
++      </tr>
++  </tbody>
++</table>
++</div>
++          </div>
++        </li>
++        <li class="test-item"  status="pass" test-id="5"
++          author=""
++          tag=""
++          device="">
++          <div class="test-detail">
++            <p class="name">Create project mandatory field validation </p>
++            <p class="text-sm">
++              <span>1:55:08 am</span> / <span>00:01:18:197</span>
++              <span class="badge pass-bg log float-right">Pass</span>
++            </p>
++          </div>
++          <div class="test-contents d-none">
++<div class="detail-head">
++<div class="p-v-10">
++<div class="info">
++<h5 class="test-status text-pass">Create project mandatory field validation </h5>
++<span class='badge badge-success'>03.08.2025 1:55:08 am</span>
++<span class='badge badge-danger'>03.08.2025 1:56:26 am</span>
++<span class='badge badge-default'>00:01:18:197</span>
++&middot; <span class='uri-anchor badge badge-default'>#test-id=5</span>
++<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
++<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
++</div>
++</div>
++</div><div class="detail-body mt-4">
++<table class="table table-sm">
++  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
++  <tbody>
++      <tr class="event-row">
++        <td><span class="badge log pass-bg">Pass</span></td>
++        <td>1:56:26 am</td>
++        <td>
++          Create project mandatory field validation 
++        </td>
++      </tr>
++  </tbody>
++</table>
++</div>
++          </div>
++        </li>
++        <li class="test-item"  status="pass" test-id="6"
++          author=""
++          tag=""
++          device="">
++          <div class="test-detail">
++            <p class="name">Create_Project - Test Case PASSED</p>
++            <p class="text-sm">
++              <span>1:56:26 am</span> / <span>00:00:00:001</span>
++              <span class="badge pass-bg log float-right">Pass</span>
++            </p>
++          </div>
++          <div class="test-contents d-none">
++<div class="detail-head">
++<div class="p-v-10">
++<div class="info">
++<h5 class="test-status text-pass">Create_Project - Test Case PASSED</h5>
++<span class='badge badge-success'>03.08.2025 1:56:26 am</span>
++<span class='badge badge-danger'>03.08.2025 1:56:26 am</span>
++<span class='badge badge-default'>00:00:00:001</span>
++&middot; <span class='uri-anchor badge badge-default'>#test-id=6</span>
++<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
++<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
++</div>
++</div>
++</div><div class="detail-body mt-4">
++>>>>>>> working
++<table class="table table-sm">
++  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
++  <tbody>
++      <tr class="event-row">
++<<<<<<< HEAD
+         <td><span class="badge log fail-bg">Fail</span></td>
+         <td>11:07:15 pm</td>
+         <td>
+@@ -160,6 +369,92 @@
+         <td>11:07:15 pm</td>
+         <td>
+           Test Case Failed Snapshot is below com.aventstack.extentreports.ExtentTest@ebda593
++=======
++        <td><span class="badge log pass-bg">Pass</span></td>
++        <td>1:56:26 am</td>
++        <td>
++          Create_Project - Test Case PASSED
++        </td>
++      </tr>
++  </tbody>
++</table>
++</div>
++          </div>
++        </li>
++        <li class="test-item"  status="pass" test-id="7"
++          author=""
++          tag=""
++          device="">
++          <div class="test-detail">
++            <p class="name">Create project mandatory field validation </p>
++            <p class="text-sm">
++              <span>1:56:30 am</span> / <span>00:01:55:315</span>
++              <span class="badge pass-bg log float-right">Pass</span>
++            </p>
++          </div>
++          <div class="test-contents d-none">
++<div class="detail-head">
++<div class="p-v-10">
++<div class="info">
++<h5 class="test-status text-pass">Create project mandatory field validation </h5>
++<span class='badge badge-success'>03.08.2025 1:56:30 am</span>
++<span class='badge badge-danger'>03.08.2025 1:58:25 am</span>
++<span class='badge badge-default'>00:01:55:315</span>
++&middot; <span class='uri-anchor badge badge-default'>#test-id=7</span>
++<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
++<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
++</div>
++</div>
++</div><div class="detail-body mt-4">
++<table class="table table-sm">
++  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
++  <tbody>
++      <tr class="event-row">
++        <td><span class="badge log pass-bg">Pass</span></td>
++        <td>1:58:25 am</td>
++        <td>
++          Create project mandatory field validation 
++        </td>
++      </tr>
++  </tbody>
++</table>
++</div>
++          </div>
++        </li>
++        <li class="test-item"  status="pass" test-id="8"
++          author=""
++          tag=""
++          device="">
++          <div class="test-detail">
++            <p class="name">Accept_Project_In_Admin - Test Case PASSED</p>
++            <p class="text-sm">
++              <span>1:58:26 am</span> / <span>00:00:00:001</span>
++              <span class="badge pass-bg log float-right">Pass</span>
++            </p>
++          </div>
++          <div class="test-contents d-none">
++<div class="detail-head">
++<div class="p-v-10">
++<div class="info">
++<h5 class="test-status text-pass">Accept_Project_In_Admin - Test Case PASSED</h5>
++<span class='badge badge-success'>03.08.2025 1:58:26 am</span>
++<span class='badge badge-danger'>03.08.2025 1:58:26 am</span>
++<span class='badge badge-default'>00:00:00:001</span>
++&middot; <span class='uri-anchor badge badge-default'>#test-id=8</span>
++<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
++<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
++</div>
++</div>
++</div><div class="detail-body mt-4">
++<table class="table table-sm">
++  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
++  <tbody>
++      <tr class="event-row">
++        <td><span class="badge log pass-bg">Pass</span></td>
++        <td>1:58:26 am</td>
++        <td>
++          Accept_Project_In_Admin - Test Case PASSED
++>>>>>>> working
+         </td>
+       </tr>
+   </tbody>
+@@ -181,25 +476,41 @@
+ <div class="col-md-3">
+ <div class="card"><div class="card-body">
+ <p class="m-b-0">Started</p>
++<<<<<<< HEAD
+ <h3>Jan 15, 2025 11:05:49 pm</h3>
++=======
++<h3>Mar 8, 2025 01:54:15 am</h3>
++>>>>>>> working
+ </div></div>
+ </div>
+ <div class="col-md-3">
+ <div class="card"><div class="card-body">
+ <p class="m-b-0">Ended</p>
++<<<<<<< HEAD
+ <h3>Jan 15, 2025 11:07:18 pm</h3>
++=======
++<h3>Mar 8, 2025 01:58:31 am</h3>
++>>>>>>> working
+ </div></div>
+ </div>
+ <div class="col-md-3">
+ <div class="card"><div class="card-body">
+ <p class="m-b-0 text-pass">Tests Passed</p>
++<<<<<<< HEAD
+ <h3>1</h3>
++=======
++<h3>8</h3>
++>>>>>>> working
+ </div></div>
+ </div>
+ <div class="col-md-3">
+ <div class="card"><div class="card-body">
+ <p class="m-b-0 text-fail">Tests Failed</p>
++<<<<<<< HEAD
+ <h3>1</h3>
++=======
++<h3>0</h3>
++>>>>>>> working
+ </div></div>
+ </div>
+ </div>
+@@ -215,12 +526,21 @@
+ </div>
+ </div>
+ <div class="card-footer">
++<<<<<<< HEAD
+ <div><small data-tooltip='50%'>
+ <b>1</b> tests passed
+ </small>
+ </div>
+ <div>
+ <small data-tooltip='50%'><b>1</b> tests failed,
++=======
++<div><small data-tooltip='100%'>
++<b>8</b> tests passed
++</small>
++</div>
++<div>
++<small data-tooltip='0%'><b>0</b> tests failed,
++>>>>>>> working
+ <b>0</b> skipped, <b data-tooltip='0%'>0</b> others
+ </small>
+ </div>
+@@ -238,9 +558,15 @@
+ </div>
+ </div>
+ <div class="card-footer">
++<<<<<<< HEAD
+ <div><small data-tooltip='0%'><b>0</b> events passed</small></div>
+ <div>
+ <small data-tooltip='100%'><b>3</b> events failed,
++=======
++<div><small data-tooltip='100%'><b>8</b> events passed</small></div>
++<div>
++<small data-tooltip='0%'><b>0</b> events failed,
++>>>>>>> working
+ <b data-tooltip='%'>0</b> others
+ </small>
+ </div>
+@@ -257,7 +583,11 @@
+ </div></div>
+ <script>
+ var timeline = {
++<<<<<<< HEAD
+ "To verify the invalid email":0,"Consumer_Sign_up - Test Case Failed":0.496
++=======
++"Create project mandatory field validation ":20.478,"invalidate_SellProject_buttons - Test Case PASSED":0.001,"Create project mandatory field validation ":20.268,"invalidat_sellProject_stepper_1_fields - Test Case PASSED":0.001,"Create project mandatory field validation ":78.197,"Create_Project - Test Case PASSED":0.001,"Create project mandatory field validation ":115.315,"Accept_Project_In_Admin - Test Case PASSED":0.001
++>>>>>>> working
+ };
+ </script>
+ <div class="row">
+@@ -266,8 +596,13 @@
+ <script>
+ var statusGroup = {
+ parentCount: 5,
++<<<<<<< HEAD
+ passParent: 1,
+ failParent: 1,
++=======
++passParent: 8,
++failParent: 0,
++>>>>>>> working
+ warningParent: 0,
+ skipParent: 0,
+ childCount: 5,
+@@ -283,8 +618,13 @@
+ skipGrandChild: 0,
+ infoGrandChild: 0,
+ eventsCount: 5,
++<<<<<<< HEAD
+ passEvents: 0,
+ failEvents: 3,
++=======
++passEvents: 8,
++failEvents: 0,
++>>>>>>> working
+ warningEvents: 0,
+ skipEvents: 0,
+ infoEvents: 0
+Index: src/main/java/baseClass/TestBase.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package baseClass;\r\n\r\nimport java.awt.*;\r\nimport java.io.*;\r\nimport java.net.URI;\r\nimport java.net.URISyntaxException;\r\nimport java.net.URL;\r\nimport java.text.SimpleDateFormat;\r\nimport java.time.Duration;\r\nimport java.util.*;\r\n\r\nimport ExtentReportListener.MyITestListener;\r\nimport com.aventstack.extentreports.ExtentReports;\r\nimport com.aventstack.extentreports.ExtentTest;\r\nimport com.aventstack.extentreports.Status;\r\nimport com.aventstack.extentreports.reporter.ExtentSparkReporter;\r\nimport io.github.bonigarcia.wdm.WebDriverManager;\r\nimport org.apache.commons.io.FileUtils;\r\nimport org.apache.commons.lang3.RandomStringUtils;\r\nimport org.apache.poi.ss.usermodel.*;\r\nimport org.apache.poi.xssf.usermodel.XSSFWorkbook;\r\nimport org.openqa.selenium.*;\r\nimport org.openqa.selenium.chrome.ChromeDriver;\r\nimport org.openqa.selenium.chrome.ChromeOptions;\r\nimport org.openqa.selenium.firefox.FirefoxDriver;\r\nimport org.openqa.selenium.firefox.FirefoxOptions;\r\nimport org.openqa.selenium.ie.InternetExplorerDriver;\r\nimport org.openqa.selenium.interactions.Actions;\r\nimport org.openqa.selenium.remote.RemoteWebDriver;\r\nimport org.openqa.selenium.support.ui.ExpectedConditions;\r\nimport org.openqa.selenium.support.ui.WebDriverWait;\r\nimport org.testng.ITestResult;\r\nimport org.testng.annotations.*;\r\nimport utils.utility;\r\n\r\n\r\n@Listeners(MyITestListener.class)\r\npublic class TestBase {\r\n\r\n    //public static AppiumDriver driver;\r\n    //public AppiumDriverLocalService service;\r\n    //public LandingPageAndroid LandingPage;\r\n    protected static WebDriver driver;\r\n    public static ExtentReports extent;\r\n\r\n    protected TestBase() {\r\n        // Private constructor to prevent instantiation\r\n    }\r\n    @Parameters(\"browserName\")\r\n    @BeforeMethod\r\n    public static WebDriver Setup() throws IOException, URISyntaxException {\r\n        if (driver == null) {\r\n            String browserName = utility.property(\"browserName\").toString();\r\n            System.out.println(\"The browser name is : \" + browserName);\r\n            String seleniumHubUrl = \"http://selenium-hub:4444/wd/hub\";\r\n\r\n            if (browserName.equalsIgnoreCase(\"chrome\")) {\r\n                ChromeOptions options = new ChromeOptions();\r\n                // Check if headless mode should be enabled\r\n                if (utility.property(\"headless\").equals(\"true\")) {\r\n                    options.addArguments(\"--start-maximized\");\r\n                    options.addArguments(\"--headless=new\");\r\n                    options.addArguments(\"--disable-gpu\");\r\n                    options.addArguments(\"--window-size=1920,1080\");\r\n                    options.addArguments(\"--force-device-scale-factor=1.25\");\r\n                    options.addArguments(\"--enable-features=NetworkService,NetworkServiceInProcess\");\r\n                    options.addArguments(\"--disable-dev-shm-usage\");\r\n                    options.addArguments(\"--no-sandbox\");\r\n                    options.addArguments(\"user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/110.0.5481.178 Safari/537.36\");\r\n\r\n                }\r\n                options.addArguments(\"--remote-allow-origins=*\");\r\n                if (utility.property(\"runRemote\").equals(\"true\")) {\r\n                    driver = new RemoteWebDriver(new URI(seleniumHubUrl).toURL(), options);\r\n                } else {\r\n                    WebDriverManager.chromedriver().setup();\r\n                    driver = new ChromeDriver(options);\r\n                }\r\n            } else if (browserName.equalsIgnoreCase(\"firefox\")) {\r\n                FirefoxOptions options = new FirefoxOptions();\r\n                // Check if headless mode should be enabled\r\n                if (utility.property(\"headless\").equals(\"true\")) {\r\n                    options.addArguments(\"--headless\");\r\n                }\r\n                if (utility.property(\"runRemote\").equals(\"true\")) {\r\n                    driver = new RemoteWebDriver(new URL(seleniumHubUrl), options);\r\n                } else {\r\n                    WebDriverManager.firefoxdriver().setup();\r\n                    driver = new FirefoxDriver();\r\n                }\r\n            }\r\n            driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));\r\n            driver.manage().window().maximize();\r\n        }\r\n        return driver;\r\n    }\r\n//    @BeforeMethod\r\n//    public static WebDriver Setup() throws IOException {\r\n//        if (driver == null) {\r\n//            String browserName = utility.property(\"browserName\").toString();\r\n//            if (browserName.equalsIgnoreCase(\"chrome\")) {\r\n//                WebDriverManager.chromedriver().setup();\r\n//                ChromeOptions options = new ChromeOptions();\r\n//                options.addArguments(\"--remote-allow-origins=*\");\r\n//                //options.addArguments(\"--headless\");\r\n//                driver = new ChromeDriver(options);\r\n//                // Implicitly wait\r\n//                driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));\r\n//                driver.manage().window().maximize();\r\n//            } else if (browserName.equalsIgnoreCase(\"firefox\")) {\r\n//                WebDriverManager.firefoxdriver().setup();\r\n//                driver = new FirefoxDriver();\r\n//            } else if (browserName.equalsIgnoreCase(\"IE\")) {\r\n//                WebDriverManager.iedriver().setup();\r\n//                driver = new InternetExplorerDriver();\r\n//            } else {\r\n//                WebDriverManager.chromedriver().setup();\r\n//                ChromeOptions options = new ChromeOptions();\r\n//                driver = new ChromeDriver(options);\r\n//                // Implicitly wait\r\n//                driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));\r\n//                driver.manage().window().maximize();\r\n//            }\r\n//        }\r\n//        return driver;\r\n//    }\r\n\r\n  /*    @Parameters(\"browser\")\r\n        @BeforeSuite\r\n\r\n            public void Setup(String browser){\r\n                if(browser.newdriver(\"chrome\")){\r\n                    System.setProperty(\"webdriver.chrome.driver\", \"Driver/chromedriver.exe\");\r\n                    ChromeOptions options = new ChromeOptions();\r\n                    driver = new ChromeDriver(options);\r\n                }\r\n                else if(browser.equalsIgnoreCase(\"firefox\")){\r\n                    driver = new FirefoxDriver();\r\n                }\r\n                else if (browser.equalsIgnoreCase(\"IE\")){\r\n                    driver = new InternetExplorerDriver();\r\n                }\r\n                else if (browser.equalsIgnoreCase(\"webdrivermanager\")){\r\n                    WebDriverManager.chromedriver().setup();\r\n                    ChromeOptions options = new ChromeOptions();\r\n                    driver = new ChromeDriver(options);\r\n\r\n                }\r\n            // appium driver\r\n           *//* System.out.println(\"Setup TestCase\");\r\n        CommonUtils utils = new CommonUtils();\r\n        utils.setup(AppConfigTags.ANDROID, AppConfigTags.MOTOROLA, Constants.ANDROID_URI);\r\n        driver = utils.driver;*//*\r\n    }*/\r\n\r\n    @BeforeTest\r\n    public void report(){\r\n\r\n        ExtentSparkReporter htmlReporter = new ExtentSparkReporter(System.getProperty(\"user.dir\") + \"/test-output/GAED_Testcase_report.html\");\r\n        extent = new ExtentReports();\r\n        extent.attachReporter(htmlReporter);\r\n    }\r\n\r\n    public void moveToElement(By locator){\r\n        JavascriptExecutor js = (JavascriptExecutor) driver;\r\n\r\n        // Find the element\r\n        WebElement element = driver.findElement(locator);\r\n\r\n        // Scroll to the element on the page\r\n        js.executeScript(\"arguments[0].scrollIntoView();\", element);\r\n    }\r\n\r\n    public String getTitle() {\r\n        return driver.getTitle();\r\n    }\r\n\r\n    public static Properties read_properties() throws IOException {\r\n        File file = new File(\"src/resources/config.properties\");\r\n        Properties prop = new Properties();\r\n        InputStreamReader is = new InputStreamReader(new FileInputStream(file));\r\n        prop.load(is);\r\n        return prop;\r\n    }\r\n\r\n    public static void main(String... args) throws IOException {\r\n        TestBase.read_properties();\r\n    }\r\n\r\n    //    @BeforeTest\r\n//    public void startapp() throws IOException {\r\n//    \tpageObjectConfig();\r\n//        System.out.println(\"Setup TestCase\");\r\n//\r\n//        CommonUtils utils = new CommonUtils();\r\n//\r\n//        utils.setup(AppConfigTags.ANDROID, AppConfigTags.MOTOROLA, Constants.ANDROID_URI);\r\n//        driver = utils.driver;\r\n//    }\r\n    @AfterMethod\r\n    public void getResult(ITestResult result) throws Exception{\r\n        ExtentTest test;\r\n        if(result.getStatus() == ITestResult.FAILURE) {\r\n            // Executed when a test method fails\r\n            test = extent.createTest(result.getName() + \" - Test Case Failed\");\r\n            test.log(Status.FAIL, result.getName() + \" - Test Case Failed\");\r\n            test.log(Status.FAIL, result.getThrowable() + \" - Test Case Failed\");\r\n\r\n            // Capture screenshot\r\n            String screenshotPath = getScreenShot(driver, result.getName());\r\n            test.fail(\"Test Case Failed Snapshot is below \" + test.addScreenCaptureFromPath(screenshotPath));\r\n\r\n        } else if(result.getStatus() == ITestResult.SKIP) {\r\n            // Executed when a test method is skipped\r\n            test = extent.createTest(result.getName() + \" - Test Case Skipped\");\r\n            test.log(Status.SKIP, result.getName() + \" - Test Case Skipped\");\r\n        } else if(result.getStatus() == ITestResult.SUCCESS) {\r\n            // Executed when a test method passes\r\n            test = extent.createTest(result.getName() + \" - Test Case PASSED\");\r\n            test.log(Status.PASS, result.getName() + \" - Test Case PASSED\");\r\n        }\r\n        if (driver != null) {\r\n            driver.quit();\r\n            driver = null;\r\n        }\r\n    }\r\n\r\n\r\n    @AfterSuite\r\n    public void tear(){\r\n        extent.flush();\r\n    }\r\n\r\n    @AfterTest\r\n    public void endReport() {\r\n        extent.flush();\r\n    }\r\n\r\n    public static By waitForElement(By element) {\r\n        WebDriverWait w = new WebDriverWait(driver, Duration.ofSeconds(30));\r\n        w.until(ExpectedConditions.visibilityOfElementLocated((By) element));\r\n        return element;\r\n    }\r\n    public static By waitForElementToBeClickable(By element) {\r\n        WebDriverWait w = new WebDriverWait(driver, Duration.ofSeconds(30));\r\n        w.until(ExpectedConditions.elementToBeClickable((By) element));\r\n        return element;\r\n    }\r\n\r\n\r\n    public static String randomEmail() {\r\n        String allowedChars = \"123456789\";\r\n        String nameChars = \"abcdefg\";\r\n        String email = \"adity\" + RandomStringUtils.random(2, nameChars) + RandomStringUtils.random(3, allowedChars) + \"@yopmail.com\";\r\n        return email;\r\n    }\r\n    public static String ProjectTileText() {\r\n        String nameChars = \"ABCD\";\r\n        String Text = \"Solar Project \" + RandomStringUtils.random(2, nameChars);\r\n        return Text;\r\n    }\r\n\r\n\r\n    public static String randomMobile() {\r\n        String allowedChars = \"1234567889\";\r\n        String MobileNumber = RandomStringUtils.random(8, allowedChars);\r\n        return MobileNumber;\r\n    }\r\n\r\n    public static int getLastRowNumInColumn(Sheet sheet, int columnIndex) {\r\n        int lastRowNum = sheet.getLastRowNum();\r\n        for (int i = lastRowNum; i >= 0; i--) {\r\n            Row row = sheet.getRow(i);\r\n            if (row != null) {\r\n                Cell cell = row.getCell(columnIndex);\r\n                if (cell != null && !cell.getStringCellValue().isEmpty()) {\r\n                    return i;\r\n                }\r\n            }\r\n        }\r\n        return -1; // If no data found in the column\r\n    }\r\n\r\n    public static void write_excel(Integer num,int Sheet,String saveString) {\r\n        String filePath = \"src/resources/Consumer_signup_ids.xlsx\";\r\n        try (FileInputStream fis = new FileInputStream(filePath);\r\n             Workbook workbook = fis.available() > 0 ? WorkbookFactory.create(fis) : new XSSFWorkbook()) {\r\n            Sheet sheet = workbook.getSheetAt(Sheet);\r\n            int lastRowNum = getLastRowNumInColumn(sheet, num);\r\n\r\n            // Generate random email\r\n\r\n\r\n            // Add data to the next row\r\n            Row row = sheet.createRow(lastRowNum + 1);\r\n            Cell cell = row.createCell(num);\r\n            cell.setCellValue(saveString);\r\n\r\n            // Write to file\r\n            try (FileOutputStream fos = new FileOutputStream(filePath)) {\r\n                workbook.write(fos);\r\n            }\r\n\r\n            System.out.println(\"Random Email written to Excel file successfully.\");\r\n        } catch (IOException e) {\r\n            e.printStackTrace();\r\n        }\r\n    }\r\n    public static void tab(By element){\r\n        driver.findElement(element).sendKeys(Keys.TAB);\r\n    }\r\n    public static void click(By element){\r\n        driver.findElement(element).click();\r\n    }\r\n\r\n\r\n    public String getTextVerify(By element) {\r\n        String actualText = driver.findElement(element).getText();\r\n        return actualText;\r\n    }\r\n    public static void moveMouseAround(WebDriver driver, WebElement element) {\r\n        // Get current location of the element\r\n        org.openqa.selenium.Point elementLocation = element.getLocation();\r\n\r\n        // Get current location of the mouse pointer\r\n        PointerInfo pointerInfo = MouseInfo.getPointerInfo();\r\n        java.awt.Point mouseLocation = pointerInfo.getLocation();\r\n\r\n        // Calculate the distance between the element and the mouse pointer\r\n        int dx = (int) (elementLocation.getX() - mouseLocation.getX());\r\n        int dy = (int) (elementLocation.getY() - mouseLocation.getY());\r\n\r\n        // Calculate the number of steps for the mouse to move\r\n        int steps = 20; // You can adjust the number of steps for smoother or more abrupt movement\r\n\r\n        // Calculate the step sizes for x and y directions\r\n        double stepX = (double) dx / steps;\r\n        double stepY = (double) dy / steps;\r\n\r\n        // Create Actions object\r\n        Actions actions = new Actions(driver);\r\n\r\n        // Move the mouse to the element's location\r\n        actions.moveToElement(element).perform();\r\n\r\n        // Simulate human-like movement by moving the mouse pointer in steps\r\n        Random random = new Random();\r\n        for (int i = 0; i < steps; i++) {\r\n            // Calculate the next position of the mouse pointer\r\n            int nextX = (int) (mouseLocation.getX() + stepX + random.nextGaussian() * 2); // Add some randomness\r\n            int nextY = (int) (mouseLocation.getY() + stepY + random.nextGaussian() * 2); // Add some randomness\r\n\r\n            // Move the mouse to the next position\r\n            try {\r\n                Robot robot = new Robot();\r\n                robot.mouseMove(nextX, nextY);\r\n            } catch (AWTException e) {\r\n                e.printStackTrace();\r\n            }\r\n\r\n            // Pause for a short time to simulate human-like movement\r\n            try {\r\n                Thread.sleep(30 + random.nextInt(50)); // Randomize pause duration between steps\r\n            } catch (InterruptedException e) {\r\n                e.printStackTrace();\r\n            }\r\n\r\n            // Update the current mouse location\r\n            mouseLocation.setLocation(nextX, nextY);\r\n        }\r\n\r\n        // Finally, move the mouse back to the element to ensure it stays focused\r\n        actions.moveToElement(element).perform();\r\n    }\r\n    public static void typeLikeAHuman(WebElement element, String text) {\r\n        // Iterate through each character in the text\r\n        for (int i = 0; i < text.length(); i++) {\r\n            // Get the current character\r\n            char c = text.charAt(i);\r\n\r\n            // Send the current character to the element\r\n\r\n            element.sendKeys(String.valueOf(c));\r\n\r\n            // Add a random delay between keystrokes to simulate human typing speed\r\n            try {\r\n                // Adjust the delay range as needed\r\n                Thread.sleep(50 + (int) (Math.random() * 50)); // Random delay between 50 to 100 milliseconds\r\n            } catch (InterruptedException e) {\r\n                e.printStackTrace();\r\n            }\r\n        }\r\n    }\r\n\r\n    public static void swipe(int startX, int startY, int endX, int endY) {\r\n        JavascriptExecutor js = (JavascriptExecutor) driver;\r\n        HashMap<String, Object> scrollObject = new HashMap<>();\r\n        scrollObject.put(\"direction\", \"down\"); // Optionally you can still provide a direction\r\n        scrollObject.put(\"startX\", startX);\r\n        scrollObject.put(\"startY\", startY);\r\n        scrollObject.put(\"endX\", endX);\r\n        scrollObject.put(\"endY\", endY);\r\n        js.executeScript(\"mobile: dragGesture\", scrollObject);\r\n        // Slide_touch_mobile(531, 51, 463, 1094);\r\n\r\n    }\r\n\r\n    public static void swipeUp(int startX, int startY, int endX, int endY) {\r\n        JavascriptExecutor js = (JavascriptExecutor) driver;\r\n        HashMap<String, Object> scrollObject = new HashMap<>();\r\n        scrollObject.put(\"direction\", \"up\"); // Optionally you can still provide a direction\r\n        scrollObject.put(\"startX\", startX);\r\n        scrollObject.put(\"startY\", startY);\r\n        scrollObject.put(\"endX\", endX);\r\n        scrollObject.put(\"endY\", endY);\r\n        js.executeScript(\"mobile: dragGesture\", scrollObject);\r\n        // Slide_touch_mobile(531, 51, 463, 1094);\r\n\r\n    }\r\n\r\n    public static void moveTo(int startX, int startY) {\r\n        JavascriptExecutor js = (JavascriptExecutor) driver;\r\n        HashMap<String, Object> swipeObject = new HashMap<>();\r\n        swipeObject.put(\"action\", \"moveTo\");\r\n        swipeObject.put(\"x\", startX); // ending x-coordinate\r\n        swipeObject.put(\"y\", startY); // ending y-coordinate\r\n        js.executeScript(\"mobile: touchAction\", swipeObject);\r\n    }\r\n\r\n    public static void release(int startX, int startY) {\r\n        JavascriptExecutor js = (JavascriptExecutor) driver;\r\n        HashMap<String, Object> releaseObject = new HashMap<>();\r\n        releaseObject.put(\"action\", \"release\");\r\n        js.executeScript(\"mobile: touchAction\", releaseObject);\r\n    }\r\n\r\n    public static String getScreenShot(WebDriver driver, String screenshotName) throws IOException {\r\n        String dateName = new SimpleDateFormat(\"yyyyMMddhhmmss\").format(new Date());\r\n        TakesScreenshot ts = (TakesScreenshot) driver;\r\n        File source = ts.getScreenshotAs(OutputType.FILE);\r\n        // after execution, you could see a folder \"FailedTestsScreenshots\" under src folder\r\n        String destination = System.getProperty(\"user.dir\") + \"/Screenshots/\" + screenshotName + dateName + \".png\";\r\n        File finalDestination = new File(destination);\r\n        FileUtils.copyFile(source, finalDestination);\r\n        return destination;\r\n    }\r\n\r\n    public void scroll_UIautomator() {\r\n        String scrollableList = \"new UiScrollable(new UiSelector().scrollable(true))\";\r\n        String scrollToText = \".scrollIntoView(new UiSelector().text(\\\"Your Element Text\\\"))\";\r\n        String scrollToEnd = \".scrollToEnd(1)\";\r\n        String command = scrollableList + scrollToText;\r\n        //driver.findElement(AppiumBy.androidUIAutomator(command));\r\n\r\n    }\r\n}\r\n\r\n/*    public static void Tap_screen (int startx, int starty)throws InterruptedException {\r\n        TouchAction action = new  TouchAction(driver);\r\n        action.tap(PointOption.point(startx, starty))\r\n                .release()\r\n                .perform();\r\n    }*/\r\n  /*  public static void Slide_touch (int startx, int starty, int endX, int endY ) throws InterruptedException {\r\n        // int startx = 568;\r\n        // int starty = 2140 ;\r\n        TouchAction action = new  TouchAction(driver);\r\n        action.press(PointOption.point(startx, starty))\r\n                .waitAction()\r\n                .moveTo(PointOption.point(endX, endY))\r\n                .release()\r\n                .perform();\r\n    }*/\r\n\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/baseClass/TestBase.java b/src/main/java/baseClass/TestBase.java
+--- a/src/main/java/baseClass/TestBase.java	(revision fbf75c8d306db284b1ebf702a4bf5461e53ee2e9)
++++ b/src/main/java/baseClass/TestBase.java	(date 1741379540280)
+@@ -59,11 +59,11 @@
+                 // Check if headless mode should be enabled
+                 if (utility.property("headless").equals("true")) {
+                     options.addArguments("--start-maximized");
+-                    options.addArguments("--headless=new");
++                    options.addArguments("--headless");  // Run in headless mode
++                    options.addArguments("--window-size=1920,1080");  // Set screen resolution
++                    options.addArguments("--force-device-scale-factor=1.25"); // Set scaling to 125%
++                    options.addArguments("--high-dpi-support=1.25"); // Improve rendering
+                     options.addArguments("--disable-gpu");
+-                    options.addArguments("--window-size=1920,1080");
+-                    options.addArguments("--force-device-scale-factor=1.25");
+-                    options.addArguments("--enable-features=NetworkService,NetworkServiceInProcess");
+                     options.addArguments("--disable-dev-shm-usage");
+                     options.addArguments("--no-sandbox");
+                     options.addArguments("user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/110.0.5481.178 Safari/537.36");
+Index: src/main/java/Pageobjects/Projects.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/Pageobjects/Projects.java b/src/main/java/Pageobjects/Projects.java
+new file mode 100644
+--- /dev/null	(date 1741379540251)
++++ b/src/main/java/Pageobjects/Projects.java	(date 1741379540251)
+@@ -0,0 +1,40 @@
++package Pageobjects;
++
++import baseClass.TestBase;
++import org.openqa.selenium.By;
++import org.openqa.selenium.Keys;
++import utils.utility;
++
++public class Projects extends TestBase {
++    SignUp signup = new SignUp();
++    By ProjectBtn = By.xpath("//ul[@class='hidden absolute top-1/2 left-20 transform -translate-y-1/2  lg:flex lg:mx-auto lg:items-center lg:w-auto lg:space-x-6'] //a[@href=\"/projects\"]");
++    By ProjectCreateNewButton = By.xpath("//button[@type='button'] //span[normalize-space()='Create New Project']");
++    By CreatePageTitle = By.xpath("//div[normalize-space()='Create New Project']");
++    By ProjectTitle = By.xpath("//input[@name='projectTitle']");
++    By Property_location = By.xpath("//input[@name='location']");
++    By Property_type = By.xpath("//input[@id='react-select-2-input']");
++
++
++
++    public void projectClick() throws InterruptedException {
++        waitForElement(ProjectBtn);
++        click(ProjectBtn);
++        waitForElement(ProjectCreateNewButton);
++    }
++
++    public void projectCreate() throws InterruptedException {
++        Thread.sleep(3000);
++        click(ProjectCreateNewButton);
++        waitForElement(CreatePageTitle);
++        String projectTile = ProjectTileText();
++        driver.findElement(ProjectTitle).sendKeys(projectTile);
++        Thread.sleep(2000);
++        utility.dropdownWithText(Property_type,"Land");
++        //driver.findElement(By.xpath("//input[@id='react-select-2-input']")).sendKeys("Land");
++        //driver.findElement(By.xpath("//input[@id='react-select-2-input']")).sendKeys(Keys.TAB);
++        signup.addressDropdown("chatra",Property_location);
++
++    }
++
++
++}
+Index: src/test/java/Testcases/ProjectsTest.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/test/java/Testcases/ProjectsTest.java b/src/test/java/Testcases/ProjectsTest.java
+new file mode 100644
+--- /dev/null	(date 1741379540298)
++++ b/src/test/java/Testcases/ProjectsTest.java	(date 1741379540298)
+@@ -0,0 +1,89 @@
++package Testcases;
++
++import Pageobjects.HomePage;
++import Pageobjects.LoginConsumer;
++import Pageobjects.Projects;
++import baseClass.TestBase;
++import com.aventstack.extentreports.ExtentTest;
++import com.google.gson.JsonObject;
++import com.google.gson.JsonParser;
++import org.openqa.selenium.By;
++import org.openqa.selenium.chrome.ChromeDriver;
++import org.openqa.selenium.chrome.ChromeOptions;
++import org.openqa.selenium.devtools.DevTools;
++import org.openqa.selenium.devtools.v132.network.Network;
++import org.openqa.selenium.devtools.v132.network.model.RequestId;
++import org.openqa.selenium.devtools.v132.network.model.Response;
++import org.testng.annotations.Test;
++
++import java.io.IOException;
++import java.util.Optional;
++
++public class ProjectsTest extends TestBase {
++
++    public ProjectsTest() throws IOException {
++
++    }
++    HomePage homepage = new HomePage();
++    LoginConsumer login = new LoginConsumer();
++    Projects project = new Projects();
++
++    @Test(priority = 3,enabled = true)
++    public void Create_Project() throws InterruptedException {
++        ExtentTest test = extent.createTest("Create project mandatory field validation ");
++        homepage.homepage();
++        login.LoginConsumerSuceessful();
++        project.projectClick();
++        project.projectCreate();
++        test.pass("Create project mandatory field validation ");
++    }
++    @Test(priority = 3,enabled = true)
++    public void otp() throws InterruptedException {
++        ExtentTest test = extent.createTest("Create project mandatory field validation ");
++        homepage.homepage();
++        login.LoginConsumerSuceessful();
++        // Get the DevTools session
++        // **Start DevTools in Parallel (Capture OTP)**
++        /*DevTools devTools = ((ChromeDriver) driver).getDevTools();
++        devTools.createSession();
++        devTools.send(Network.enable(Optional.empty(), Optional.empty(), Optional.empty()));
++
++        new Thread(() -> {
++            devTools.addListener(Network.responseReceived(), response -> {
++                RequestId requestId = response.getRequestId();
++                Response res = response.getResponse();
++
++                // **Filter the "Verify OTP" API Response**
++                if (res.getUrl().contains("https://qa.gaedkeeper.com/qa/api/v1/user/send-otp")) { // Adjust based on API URL
++                    System.out.println("Captured OTP Response from API: " + res.getUrl());
++
++                    // Fetch response body
++                    Optional<Network.GetResponseBodyResponse> responseBody =
++                            Optional.ofNullable(devTools.send(Network.getResponseBody(requestId)));
++
++                    if (responseBody.isPresent()) {
++                        String body = responseBody.get().getBody();
++                        System.out.println("Full Response: " + body);
++
++                        JsonObject jsonObject = JsonParser.parseString(body).getAsJsonObject();
++                        if (jsonObject.has("otp")) {
++                            String extractedOTP = jsonObject.get("data.code").getAsString();
++                            System.out.println("Extracted OTP: " + extractedOTP);
++
++                            // **Enter OTP in UI**
++
++                        }
++                    }
++                }
++            });
++        }).start(); // Run the thread in parallel
++
++        // **Wait for OTP Capture & Submission**
++        Thread.sleep(5000);*/
++
++    }
++
++
++
++
++}
+Index: src/main/java/Pageobjects/LoginConsumer.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package Pageobjects;\r\n\r\n\r\nimport baseClass.TestBase;\r\nimport org.openqa.selenium.*;\r\nimport org.openqa.selenium.interactions.Actions;\r\nimport org.testng.Assert;\r\n\r\nimport java.awt.*;\r\nimport java.awt.datatransfer.Clipboard;\r\nimport java.awt.datatransfer.StringSelection;\r\nimport java.io.IOException;\r\nimport java.util.List;\r\nimport java.util.Set;\r\nimport java.util.regex.Matcher;\r\nimport java.util.regex.Pattern;\r\nimport java.util.stream.Stream;\r\n\r\nimport static utils.utility.AssertTextBtn;\r\n\r\n\r\npublic class LoginConsumer extends TestBase {\r\n\r\n    static Set<Cookie> cookies;\r\n    static By loginBtn = By.xpath(\"//*[@class='cursor-pointer hidden lg:inline-block lg:ml-auto lg:mr-3 py-2 px-6 text-sm 3xl:text-lg text-white border border-transparent hover:border hover:border-white font-medium  rounded-full transition duration-200 group-hover:text-primary']\");\r\n    static By loginPageVerify = By.xpath(\"//h3[contains(@class,'py-2 xs:text-2xl xl:text-3xl 3xl:text-4xl text-gray-800 font-semibold xs:text-center xsm:text-left')]\");\r\n    static By Loginemailtitle = By.xpath(\"//label[@class='block tracking-wide text-black-100 text-xs font-normal mb-2']\");\r\n    static By LoginEmail = By.xpath(\"//input[contains(@name,'email')]\");\r\n    static By SentOtpBtn = By.xpath(\"//button[@type='submit']\");\r\n\r\n    // YOPmail\r\n    static By yopmailemail = By.xpath(\"//input[@id='login']\");\r\n    static By yopmailarrow = By.xpath(\"//i[@class='material-icons-outlined f36']\");\r\n    static By threeDot = By.xpath(\"//i[contains(text(),'\uE5D4')]\");\r\n   static By Deleteinbox = By.xpath(\"//i[contains(text(),'\uE16C')]\");\r\n   static By Message = By.xpath(\"//*[@id=\\\"mail\\\"]/div/div/table/tbody/tr[2]/td/p[1]\");\r\n    static By OTPfirstbox = By.xpath(\"//input[@aria-label='Please enter OTP character 1']\");\r\n    static By VerifyEmailbtn = By.xpath(\"//button[@type='button']\");\r\n   static By ConsumerpProfileBtn = By.xpath(\"//button[@class='MuiButtonBase-root MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButton-colorPrimary MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButton-colorPrimary flex items-center space-x-1 css-1ujsas3']\");\r\n   static By ViewConsumerProfile = By.xpath(\"(//*[@id=\\\"basic-menu\\\"]/div[3]/ul/li[1])[1]\");\r\n   static By VerifyConsumerEmail = By.xpath(\"//div[contains(text(),'\"+ HomePage.EMAIL +\"')]\");\r\n   static By InvalidemailLoginMes   = By.xpath(\"//span[@class='block my-2 text-xs font-normal text-red-500 ']\");\r\n   static By EmptyEmailMess = By.xpath(\"//span[@class='block my-2 text-xs font-normal text-red-500 ']\");\r\n   static By EmaiDoesNotexistlMess = By.xpath(\"//span[@class='block my-2 text-xs font-normal text-red-500 ']\");\r\n    static By InvalidOTPmessage = By.xpath(\"//span[@class='block my-2 text-sm font-normal text-red-500']\");\r\n\r\n  static By SignupLinkLogin = By.xpath(\"//span[@class='font-medium text-primary hover:underline cursor-pointer']\");\r\n  static By SignupTitleOfLink = By.xpath(\"//*[@id=\\\"root\\\"]/div/div[2]/div/div/div/div/div[2]/div/div/div/form/div[2]/div/p\");\r\n  //  static By SentOtpBtn = By.xpath(\"//span[@class='ml-3']\");\r\n  //  static By SentOtpBtn = By.xpath(\"//span[@class='ml-3']\");\r\n    //  static By SentOtpBtn = By.xpath(\"//span[@class='ml-3']\");\r\n    //  static By SentOtpBtn = By.xpath(\"//span[@class='ml-3']\");\r\n    //  static By SentOtpBtn = By.xpath(\"//span[@class='ml-3']\");\r\n    String Email;\r\n\r\n\r\n    public void Login_Btn_home(){\r\n\r\n        driver.findElement(loginBtn).click();\r\n    }\r\n    public void Verify_login_Page(){\r\n        AssertTextBtn(loginPageVerify,\"Welcome Back!\");\r\n    }\r\n    public void Login_Email(String email) throws IOException {\r\n        //Email = utility.property(\"email\").toString();\r\n        driver.findElement(LoginEmail).sendKeys(email);\r\n    }\r\n    public void invalid_validation(){\r\n        String element  = driver.findElement(InvalidemailLoginMes).getText();\r\n        Assert.assertEquals(\"This looks like an invalid email (eg: abc@xyz.com)\",element);\r\n    }\r\n    public void Empty_invalid_validation(){\r\n        String element  = driver.findElement(EmptyEmailMess).getText();\r\n        Assert.assertEquals(\"Field is Required.\",element);\r\n    }\r\n    public void invalidOTP_message(){\r\n        String element  = driver.findElement(InvalidOTPmessage).getText();\r\n        Assert.assertEquals(\"Invalid OTP. Please try again.\",element);\r\n    }\r\n    public void sentOTPbtn() {\r\n        driver.findElement(SentOtpBtn).click();\r\n    }\r\n\r\n    public static void Login_OTP_read(String emailforInbox) throws InterruptedException {\r\n        String previousTab = driver.getWindowHandle();\r\n\r\n        ((JavascriptExecutor) driver).executeScript(\"window.open()\");\r\n        Thread.sleep(2000);\r\n\r\n        // Switch to new tab (latest opened)\r\n        Set<String> windowHandles = driver.getWindowHandles();\r\n        for (String handle : windowHandles) {\r\n            if (!handle.equals(previousTab)) {\r\n                driver.switchTo().window(handle);\r\n                break;\r\n            }\r\n        }\r\n\r\n        // Simulate human-like interaction: Wait for a short duration\r\n        Thread.sleep(2000);\r\n        driver.get(\"https://yopmail.com/en/wm\");\r\n        Thread.sleep(3000);\r\n        driver.findElement(By.xpath(\"/html/body/div\")).click();\r\n        waitForElement(yopmailemail);\r\n        WebElement emailInput = driver.findElement(yopmailemail);\r\n        emailInput.clear();\r\n        typeLikeAHuman(emailInput, emailforInbox);\r\n        //driver.findElement(yopmailemail).sendKeys(emailforInbox);\r\n        driver.findElement(yopmailarrow).click();\r\n\r\n        // Simulate human-like interaction: Mouse movement after clicking\r\n        moveMouseAround(driver, driver.findElement(By.xpath(\"//i[contains(text(),'\\uE16C')]\")));\r\n\r\n        Thread.sleep(3000);\r\n        driver.switchTo().frame(\"ifmail\");\r\n        String messageBody = driver.findElement(By.xpath(\"//*[@id=\\\"mail\\\"]\")).getText();\r\n        System.out.println(messageBody);\r\n\r\n        String otpPattern = \"\\\\b\\\\d{6}\\\\b\"; // Regex pattern to match 6-digit numbers\r\n        Pattern pattern = Pattern.compile(otpPattern);\r\n        Matcher matcher = pattern.matcher(messageBody);\r\n\r\n        if (matcher.find()) {\r\n            String otp = matcher.group();\r\n            // Get the system clipboard\r\n            Clipboard clipboard = Toolkit.getDefaultToolkit().getSystemClipboard();\r\n            // Create a StringSelection object containing the OTP\r\n            StringSelection stringSelection = new StringSelection(otp);\r\n            // Set the StringSelection as the current contents of the clipboard\r\n            clipboard.setContents(stringSelection,null);\r\n            System.out.println(\"Extracted OTP: \" + otp);\r\n        } else {\r\n            System.out.println(\"No OTP found in the message.\");\r\n        }\r\n        driver.close();\r\n        driver.switchTo().window(previousTab);\r\n        Thread.sleep(2000);\r\n    }\r\n    public void enterOTP(){\r\n        driver.findElement(OTPfirstbox).click();\r\n        Actions actions = new Actions(driver);\r\n        // Use Actions class to perform keyboard shortcut (Ctrl + V) for paste\r\n        actions.keyDown(Keys.CONTROL).sendKeys(\"v\").keyUp(Keys.CONTROL).build().perform();\r\n    }\r\n    public void InvalidOTP(){\r\n        String randomOTP = \"123456\";\r\n        Clipboard clipboard = Toolkit.getDefaultToolkit().getSystemClipboard();\r\n        // Create a StringSelection object containing the OTP\r\n        StringSelection stringSelection = new StringSelection(randomOTP);\r\n        // Set the StringSelection as the current contents of the clipboard\r\n        clipboard.setContents(stringSelection,null);\r\n        System.out.println(\"Extracted OTP: \" + randomOTP);\r\n        driver.findElement(OTPfirstbox).click();\r\n        Actions actions = new Actions(driver);\r\n        // Use Actions class to perform keyboard shortcut (Ctrl + V) for paste\r\n        actions.keyDown(Keys.CONTROL).sendKeys(\"v\").keyUp(Keys.CONTROL).build().perform();\r\n    }\r\n    public void verifyEmailbtn() throws InterruptedException {\r\n        driver.findElement(VerifyEmailbtn).click();\r\n       /* Thread.sleep(6000);\r\n        WebElement element = driver.findElement(By.xpath(\"//*[@class='MuiButtonBase-root MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButton-colorPrimary MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButton-colorPrimary flex items-center space-x-1 css-iyey26']\"));\r\n        JavascriptExecutor js = (JavascriptExecutor) driver;\r\n        js.executeScript(\"arguments[0].click();\", element);*/\r\n        //driver.findElement(By.xpath(\"//*[@class='MuiButtonBase-root MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButton-colorPrimary MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButton-colorPrimary flex items-center space-x-1 css-iyey26']\")).click();\r\n    }\r\n    public static void Veriyconsumerprofile(String email) throws InterruptedException {\r\n       // waitForElement(ConsumerpProfileBtn);\r\n      //  driver.findElement(ConsumerpProfileBtn).click();\r\n        //Thread.sleep(8000);\r\n       // driver.findElement(By.xpath(\"//*[@class='mr-2 w-5 h-5']\")).click();\r\n        Thread.sleep(5000);\r\n\r\n        // Find all ul elements with the specified class\r\n        List<WebElement> ulElements = driver.findElements(By.xpath(\"//li[@class='MuiButtonBase-root MuiMenuItem-root MuiMenuItem-gutters MuiMenuItem-root MuiMenuItem-gutters !text-sm !font-normal !text-black-100 css-5dycmn']\"));\r\n\r\n        // Check how many elements were found\r\n        System.out.println(\"Number of ul elements found: \" + ulElements.size());\r\n\r\n        // Example: Interact with the first ul element\r\n        WebElement firstUl = ulElements.get(0);\r\n       // This is the same as using [1] in XPath\r\n        System.out.println(\"First ul element text: \" + firstUl.getText());\r\n        driver.findElement(By.xpath(\"/html/body/div[3]/div[3]/ul/li[1]\")).click();\r\n\r\n        // Example: Interact with the second ul element, if it exists\r\n       /* if (ulElements.size() > 1) {\r\n            WebElement secondUl = ulElements.get(1);  // This is the same as using [2] in XPath\r\n            System.out.println(\"Second ul element text: \" + secondUl.getText());\r\n\r\n        }*/\r\n\r\n        Thread.sleep(1000);\r\n\r\n        String GetConsumeremailFromProfile  = driver.findElement(By.xpath(\"//div[contains(text(),'\"+email+\"')]\")).getText();\r\n        Assert.assertEquals(email,GetConsumeremailFromProfile);\r\n    }\r\n\r\n\r\n\r\n /* public static void InvalidLoginInputs() throws InterruptedException {\r\n\r\n      String Loginbtntext =  driver.findElement(loginBtn).getText();\r\n      Assert.assertEquals(\"Login\",Loginbtntext);\r\n      driver.findElement(loginBtn).click();\r\n      String verifyLoginpage  = driver.findElement(loginPageVerify).getText();\r\n      Assert.assertEquals(\"Welcome Back!\",verifyLoginpage);\r\n      String LoginemailTitle  = driver.findElement(Loginemailtitle).getText();\r\n      Assert.assertEquals(\"Email Address*\",LoginemailTitle);\r\n      driver.findElement(LoginEmail).sendKeys(HomePage.INEMAIL);\r\n      String InvalidEmail  = driver.findElement(InvalidemailLoginMes).getText();\r\n      Assert.assertEquals(\"This looks like an invalid email (eg: abc@xyz.com)\",InvalidEmail);\r\n  }\r\n    public static void EmptyEmail() throws InterruptedException {\r\n\r\n        String Loginbtntext =  driver.findElement(loginBtn).getText();\r\n        Assert.assertEquals(\"Login\",Loginbtntext);\r\n        driver.findElement(loginBtn).click();\r\n        String verifyLoginpage  = driver.findElement(loginPageVerify).getText();\r\n        Assert.assertEquals(\"Welcome Back!\",verifyLoginpage);\r\n        String LoginemailTitle  = driver.findElement(Loginemailtitle).getText();\r\n        Assert.assertEquals(\"Email Address*\",LoginemailTitle);\r\n        driver.findElement(LoginEmail).sendKeys(\"\");\r\n        driver.findElement(SentOtpBtn).click();\r\n        String EmptyEmail  = driver.findElement(EmptyEmailMess).getText();\r\n        Assert.assertEquals(\"Field is Required.\",EmptyEmail);\r\n\r\n\r\n    }\r\n    public static void EmailDoesExist() throws InterruptedException {\r\n\r\n        String Loginbtntext =  driver.findElement(loginBtn).getText();\r\n        Assert.assertEquals(\"Login\",Loginbtntext);\r\n        driver.findElement(loginBtn).click();\r\n        String verifyLoginpage  = driver.findElement(loginPageVerify).getText();\r\n        Assert.assertEquals(\"Welcome Back!\",verifyLoginpage);\r\n        String LoginemailTitle  = driver.findElement(Loginemailtitle).getText();\r\n        Assert.assertEquals(\"Email Address*\",LoginemailTitle);\r\n        driver.findElement(LoginEmail).sendKeys(\"xyz@gmail.com\");\r\n        driver.findElement(SentOtpBtn).click();\r\n        String EmailDoesNotExist = driver.findElement(EmaiDoesNotexistlMess).getText();\r\n        Assert.assertEquals(\"This email is not signed up. Double-check or sign up for a new account.\",EmailDoesNotExist);\r\n    }*/\r\n    public static void SignupLinkOnLogin() throws InterruptedException {\r\n\r\n        driver.findElement(loginBtn).click();\r\n        String signupTitle_on_login = driver.findElement(SignupTitleOfLink).getText();\r\n        Assert.assertEquals(\"Here for the first time? Sign Up\",signupTitle_on_login);\r\n        driver.findElement(SignupLinkLogin).click();\r\n\r\n    }\r\n\r\n    static By Marketplace = By.xpath(\"//*[@class='absolute bottom-5 w-full text-center text-white text-2xl font-semibold  ']\");\r\n    public static void LoginConsumerSuceessful() throws InterruptedException {\r\n        String Loginbtntext =  driver.findElement(loginBtn).getText();\r\n        Assert.assertEquals(\"Login\",Loginbtntext);\r\n        driver.findElement(loginBtn).click();\r\n        String verifyLoginpage  = driver.findElement(loginPageVerify).getText();\r\n        Assert.assertEquals(\"Welcome Back!\",verifyLoginpage);\r\n        String LoginemailTitle  = driver.findElement(Loginemailtitle).getText();\r\n        Assert.assertEquals(\"Email Address*\",LoginemailTitle);\r\n        driver.findElement(LoginEmail).sendKeys(HomePage.EMAIL);\r\n        String SentOTPtitle  = driver.findElement(SentOtpBtn).getText();\r\n        Assert.assertEquals(\"Send OTP\",SentOTPtitle);\r\n        driver.findElement(SentOtpBtn).click();\r\n        Thread.sleep(5000);\r\n        Login_OTP_read(HomePage.EMAIL);\r\n        driver.findElement(OTPfirstbox).click();\r\n        Actions actions = new Actions(driver);\r\n        // Use Actions class to perform keyboard shortcut (Ctrl + V) for paste\r\n        actions.keyDown(Keys.CONTROL).sendKeys(\"v\").keyUp(Keys.CONTROL).build().perform();\r\n        driver.findElement(VerifyEmailbtn).click();\r\n        Thread.sleep(4000);\r\n        waitForElement(Marketplace);\r\n        click(Marketplace);\r\n    }\r\n    static By ProfileBtn = By.xpath(\"//*[@class='w-5 h-5 text-white group-hover:text-primary']\");\r\n    static By Logout = By.xpath(\"//*[@class='w-5 h-5 text-white group-hover:text-primary']\");\r\n\r\n    public static void consumerLogout(String option) throws InterruptedException {\r\n        Thread.sleep(2000);\r\n        click(ProfileBtn);\r\n        Thread.sleep(2000);\r\n        waitForElement(Logout);\r\n        List<WebElement> optionsList = driver.findElements(By.xpath(\"//ul[@class='MuiList-root MuiList-padding MuiMenu-list css-ubifyk']/li\"));\r\n        for (WebElement w : optionsList) {\r\n        // Trim and compare text\r\n            if (w.getText().trim().equals(option)) {\r\n                try {\r\n                    w.click();\r\n                } catch (Exception e) {\r\n                    // Use JavaScript Click as a fallback\r\n                    ((JavascriptExecutor) driver).executeScript(\"arguments[0].click();\", w);\r\n                }\r\n                break; // Stop looping after clicking \"Logout\"\r\n            }\r\n        }\r\n        driver.navigate().refresh();\r\n        //driver.switchTo().window(driver.getWindowHandles().toArray()[0].toString()).close();\r\n        Thread.sleep(2000);\r\n\r\n    }\r\n\r\n\r\n\r\n    public static void Veriy_consumer_profile(){\r\n        waitForElement(ConsumerpProfileBtn);\r\n        driver.findElement(ConsumerpProfileBtn).click();\r\n        driver.findElement(ViewConsumerProfile).click();\r\n        String GetConsumeremailFromProfile  = driver.findElement(VerifyConsumerEmail).getText();\r\n        Assert.assertEquals(HomePage.EMAIL,GetConsumeremailFromProfile);\r\n\r\n    }\r\n    public static void verify_LoginConsumerSuceessful() throws InterruptedException {\r\n\r\n\r\n    }\r\n\r\n\r\n\r\n\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/Pageobjects/LoginConsumer.java b/src/main/java/Pageobjects/LoginConsumer.java
+--- a/src/main/java/Pageobjects/LoginConsumer.java	(revision fbf75c8d306db284b1ebf702a4bf5461e53ee2e9)
++++ b/src/main/java/Pageobjects/LoginConsumer.java	(date 1741379540247)
+@@ -2,7 +2,14 @@
+ 
+ 
+ import baseClass.TestBase;
++import com.google.gson.JsonObject;
++import com.google.gson.JsonParser;
+ import org.openqa.selenium.*;
++import org.openqa.selenium.chrome.ChromeDriver;
++import org.openqa.selenium.devtools.DevTools;
++import org.openqa.selenium.devtools.v132.network.Network;
++import org.openqa.selenium.devtools.v132.network.model.RequestId;
++import org.openqa.selenium.devtools.v132.network.model.Response;
+ import org.openqa.selenium.interactions.Actions;
+ import org.testng.Assert;
+ 
+@@ -11,6 +18,7 @@
+ import java.awt.datatransfer.StringSelection;
+ import java.io.IOException;
+ import java.util.List;
++import java.util.Optional;
+ import java.util.Set;
+ import java.util.regex.Matcher;
+ import java.util.regex.Pattern;
+@@ -42,7 +50,7 @@
+    static By InvalidemailLoginMes   = By.xpath("//span[@class='block my-2 text-xs font-normal text-red-500 ']");
+    static By EmptyEmailMess = By.xpath("//span[@class='block my-2 text-xs font-normal text-red-500 ']");
+    static By EmaiDoesNotexistlMess = By.xpath("//span[@class='block my-2 text-xs font-normal text-red-500 ']");
+-    static By InvalidOTPmessage = By.xpath("//span[@class='block my-2 text-sm font-normal text-red-500']");
++    static By InvalidOTPmessage = By.xpath("//span[normalize-space()='Invalid OTP. Please try again.']");
+ 
+   static By SignupLinkLogin = By.xpath("//span[@class='font-medium text-primary hover:underline cursor-pointer']");
+   static By SignupTitleOfLink = By.xpath("//*[@id=\"root\"]/div/div[2]/div/div/div/div/div[2]/div/div/div/form/div[2]/div/p");
+@@ -79,6 +87,51 @@
+     }
+     public void sentOTPbtn() {
+         driver.findElement(SentOtpBtn).click();
++        DevTools devTools = ((ChromeDriver) driver).getDevTools();
++        devTools.createSession();
++        devTools.send(Network.enable(Optional.empty(), Optional.empty(), Optional.empty()));
++
++        // **Print All Network Responses (Debugging)**
++        devTools.addListener(Network.responseReceived(), response -> {
++            RequestId requestId = response.getRequestId();
++            Response res = response.getResponse();
++
++            // **Print ALL API responses**
++            System.out.println("Network Response URL: " + res.getUrl());
++
++            // **Check if the OTP API request is being captured**
++            if (res.getUrl().contains("/send-otp")) {  // Change URL based on actual API
++                System.out.println("Captured OTP API Response: " + res.getUrl());
++
++                Optional<Network.GetResponseBodyResponse> responseBody =
++                        Optional.ofNullable(devTools.send(Network.getResponseBody(requestId)));
++
++                if (responseBody.isPresent()) {
++                    String body = responseBody.get().getBody();
++                    System.out.println("Full Response: " + body);
++
++                    // **Parse JSON and extract OTP**
++                    JsonObject jsonObject = JsonParser.parseString(body).getAsJsonObject();
++                    if (jsonObject.has("data")) {
++                        JsonObject data = jsonObject.getAsJsonObject("data");
++                        if (data.has("code")) {
++                            String extractedOTP = data.get("code").getAsString();
++                            System.out.println("Extracted OTP: " + extractedOTP);
++                            Clipboard clipboard = Toolkit.getDefaultToolkit().getSystemClipboard();
++                            // Create a StringSelection object containing the OTP
++                            StringSelection stringSelection = new StringSelection(extractedOTP);
++                            // Set the StringSelection as the current contents of the clipboard
++                            clipboard.setContents(stringSelection,null);
++
++                        } else {
++                            System.out.println("OTP field 'code' not found in response!");
++                        }
++                    } else {
++                        System.out.println("Response does not contain 'data' object!");
++                    }
++                }
++            }
++        });
+     }
+ 
+     public static void Login_OTP_read(String emailforInbox) throws InterruptedException {
+@@ -250,7 +303,7 @@
+     }
+ 
+     static By Marketplace = By.xpath("//*[@class='absolute bottom-5 w-full text-center text-white text-2xl font-semibold  ']");
+-    public static void LoginConsumerSuceessful() throws InterruptedException {
++    /*public static void LoginConsumerSuceessful() throws InterruptedException {
+         String Loginbtntext =  driver.findElement(loginBtn).getText();
+         Assert.assertEquals("Login",Loginbtntext);
+         driver.findElement(loginBtn).click();
+@@ -269,9 +322,87 @@
+         // Use Actions class to perform keyboard shortcut (Ctrl + V) for paste
+         actions.keyDown(Keys.CONTROL).sendKeys("v").keyUp(Keys.CONTROL).build().perform();
+         driver.findElement(VerifyEmailbtn).click();
+-        Thread.sleep(4000);
++        Thread.sleep(3000);
++        waitForElement(Marketplace);
++        click(Marketplace);
++        Thread.sleep(3000);
++    }
++*/
++    public static void LoginConsumerSuceessful() throws InterruptedException {
++        String Loginbtntext =  driver.findElement(loginBtn).getText();
++        Assert.assertEquals("Login",Loginbtntext);
++        driver.findElement(loginBtn).click();
++        String verifyLoginpage  = driver.findElement(loginPageVerify).getText();
++        Assert.assertEquals("Welcome Back!",verifyLoginpage);
++        String LoginemailTitle  = driver.findElement(Loginemailtitle).getText();
++        Assert.assertEquals("Email Address*",LoginemailTitle);
++        driver.findElement(LoginEmail).sendKeys(HomePage.EMAIL);
++        String SentOTPtitle  = driver.findElement(SentOtpBtn).getText();
++        Assert.assertEquals("Send OTP",SentOTPtitle);
++
++
++        Thread.sleep(2000);
++        // **Start DevTools for Capturing OTP**
++        DevTools devTools = ((ChromeDriver) driver).getDevTools();
++        devTools.createSession();
++        devTools.send(Network.enable(Optional.empty(), Optional.empty(), Optional.empty()));
++
++        // **Print All Network Responses (Debugging)**
++        devTools.addListener(Network.responseReceived(), response -> {
++            RequestId requestId = response.getRequestId();
++            Response res = response.getResponse();
++
++            // **Print ALL API responses**
++            System.out.println("Network Response URL: " + res.getUrl());
++
++            // **Check if the OTP API request is being captured**
++            if (res.getUrl().contains("/send-otp")) {  // Change URL based on actual API
++                System.out.println("Captured OTP API Response: " + res.getUrl());
++
++                Optional<Network.GetResponseBodyResponse> responseBody =
++                        Optional.ofNullable(devTools.send(Network.getResponseBody(requestId)));
++
++                if (responseBody.isPresent()) {
++                    String body = responseBody.get().getBody();
++                    System.out.println("Full Response: " + body);
++
++                    // **Parse JSON and extract OTP**
++                    JsonObject jsonObject = JsonParser.parseString(body).getAsJsonObject();
++                    if (jsonObject.has("data")) {
++                        JsonObject data = jsonObject.getAsJsonObject("data");
++                        if (data.has("code")) {
++                            String extractedOTP = data.get("code").getAsString();
++                            System.out.println("Extracted OTP: " + extractedOTP);
++                            Clipboard clipboard = Toolkit.getDefaultToolkit().getSystemClipboard();
++                            // Create a StringSelection object containing the OTP
++                            StringSelection stringSelection = new StringSelection(extractedOTP);
++                            // Set the StringSelection as the current contents of the clipboard
++                            clipboard.setContents(stringSelection,null);
++
++                        } else {
++                            System.out.println("OTP field 'code' not found in response!");
++                        }
++                    } else {
++                        System.out.println("Response does not contain 'data' object!");
++                    }
++                }
++            }
++        });
++        driver.findElement(SentOtpBtn).click();
++        // **Wait for some time to allow capturing**
++        Thread.sleep(2000);
++        driver.findElement(OTPfirstbox).click();
++        Actions actions = new Actions(driver);
++        // Use Actions class to perform keyboard shortcut (Ctrl + V) for paste
++        actions.keyDown(Keys.CONTROL).sendKeys("v").keyUp(Keys.CONTROL).build().perform();
++        driver.findElement(VerifyEmailbtn).click();
++        Thread.sleep(2000);
+         waitForElement(Marketplace);
+         click(Marketplace);
++        Thread.sleep(3000);
++
++
++
+     }
+     static By ProfileBtn = By.xpath("//*[@class='w-5 h-5 text-white group-hover:text-primary']");
+     static By Logout = By.xpath("//*[@class='w-5 h-5 text-white group-hover:text-primary']");
+Index: src/main/java/Pageobjects/MarketPlaceAdmin.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package Pageobjects;\r\n\r\nimport baseClass.TestBase;\r\nimport org.openqa.selenium.By;\r\nimport org.openqa.selenium.Keys;\r\nimport org.openqa.selenium.WebElement;\r\nimport org.openqa.selenium.WindowType;\r\nimport org.openqa.selenium.interactions.Actions;\r\nimport org.testng.Assert;\r\nimport utils.utility;\r\n\r\nimport java.io.IOException;\r\n\r\nimport static Pageobjects.SignUp.signUp_OTP_read;\r\n\r\npublic class MarketPlaceAdmin extends TestBase {\r\n\r\n    static String AdminUrl = \"https://marketplace.qa.gaedkeeper.com/admin/login\";\r\n\r\n    BuyAndSell buyAndSell = new BuyAndSell();\r\n    static By Email = By.xpath(\"//input[@name='email']\");\r\n    static By Submitbtn = By.xpath(\"//span[@class='text-base font-medium text-white']\");\r\n    static By firstOtpBlock = By.xpath(\"//input[@aria-label='Please enter OTP character 1']\");\r\n\r\n    static By LoginBtn = By.xpath(\"//button[@type='button']\");\r\n\r\n    By BuySellBtn = By.xpath(\"(//*[normalize-space()='Buy/Sell'])[2]\");\r\n    By eyeBtn = By.xpath(\"(//span[@class='cursor-pointer hover:underline'])[1]\");\r\n    By Projectname = By.xpath(\"//h3[@class='font-medium xs:text-xl sm:text-2xl lg:text-3xl text-black-900']\");\r\n    By StatusDropdown = By.xpath(\"//input[@id='react-select-4-input']\");\r\n    By SubmitBtn = By.xpath(\"//button[@type='button' and normalize-space()='Submit']\");\r\n    By checkboxAssessment = By.xpath(\"(//input[@class='PrivateSwitchBase-input css-j8yymo'])[2]\");\r\n    By continueBtn = By.xpath(\"//*[@class='text-sm font-medium text-white']\");\r\n    By confirmBtn = By.xpath(\"//*[@class='text-sm font-medium text-white']\");\r\n    By OnHoldBtn = By.xpath(\"//span[normalize-space()='Put On Hold']\");\r\n    By OnHoldReasons = By.xpath(\"//textarea[@placeholder='Kindly specify the reason here']\");\r\n    By OnHoldReasonBtn = By.xpath(\"//button[normalize-space()='Submit']\");\r\n    //textarea[@placeholder='Kindly specify the reason here']\r\n    public void marketAdminhomepage() throws IOException {\r\n\r\n        driver.navigate().to(\"https://marketplace.qa.gaedkeeper.com/admin/login\");\r\n        driver.switchTo().window(driver.getWindowHandles().toArray()[1].toString()).close();\r\n        driver.switchTo().window(driver.getWindowHandles().toArray()[0].toString());\r\n    }\r\n    public void marketAdminLogin() throws InterruptedException {\r\n        driver.navigate().to(AdminUrl);\r\n        driver.navigate().refresh();\r\n        driver.findElement(Email).sendKeys(\"gabriel.sze@yopmail.com\");\r\n        click(Submitbtn);\r\n        signUp_OTP_read(\"gabriel.sze@yopmail.com\");\r\n        //  driver.switchTo().window(driver.getWindowHandles().toArray()[0].toString());\r\n        Thread.sleep(2000);\r\n        driver.findElement(firstOtpBlock).click();\r\n        Actions actions = new Actions(driver);\r\n        // Use Actions class to perform keyboard shortcut (Ctrl + V) for paste\r\n        actions.keyDown(Keys.CONTROL).sendKeys(\"v\").keyUp(Keys.CONTROL).build().perform();\r\n        Thread.sleep(5000);\r\n        click(LoginBtn);\r\n        Thread.sleep(1000);\r\n\r\n    }\r\n    public void Admin_buyandSell_publish() throws InterruptedException {\r\n        Thread.sleep(2000);\r\n        click(BuySellBtn);\r\n        Thread.sleep(1000);\r\n        click(eyeBtn);\r\n       /* WebElement pro = driver.findElement(Projectname);\r\n        String Projectname = pro.getText();\r\n        String created_project_name = buyAndSell.project_Name;*/\r\n//        System.out.println(\"Project name is which is created : \" + created_project_name);\r\n//        Assert.assertEquals(Projectname,created_project_name);\r\n        driver.findElement(StatusDropdown).sendKeys(\"Publish\" + Keys.TAB);\r\n\r\n       // utility.scrollToElement(SubmitBtn);\r\n        Thread.sleep(2000);\r\n        click(SubmitBtn);\r\n\r\n        }\r\n\r\n    }\r\n\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/Pageobjects/MarketPlaceAdmin.java b/src/main/java/Pageobjects/MarketPlaceAdmin.java
+--- a/src/main/java/Pageobjects/MarketPlaceAdmin.java	(revision fbf75c8d306db284b1ebf702a4bf5461e53ee2e9)
++++ b/src/main/java/Pageobjects/MarketPlaceAdmin.java	(date 1741379540250)
+@@ -1,15 +1,26 @@
+ package Pageobjects;
+ 
+ import baseClass.TestBase;
++import com.google.gson.JsonObject;
++import com.google.gson.JsonParser;
+ import org.openqa.selenium.By;
+ import org.openqa.selenium.Keys;
+ import org.openqa.selenium.WebElement;
+ import org.openqa.selenium.WindowType;
++import org.openqa.selenium.chrome.ChromeDriver;
++import org.openqa.selenium.devtools.DevTools;
++import org.openqa.selenium.devtools.v132.network.Network;
++import org.openqa.selenium.devtools.v132.network.model.RequestId;
++import org.openqa.selenium.devtools.v132.network.model.Response;
+ import org.openqa.selenium.interactions.Actions;
+ import org.testng.Assert;
+ import utils.utility;
+ 
++import java.awt.*;
++import java.awt.datatransfer.Clipboard;
++import java.awt.datatransfer.StringSelection;
+ import java.io.IOException;
++import java.util.Optional;
+ 
+ import static Pageobjects.SignUp.signUp_OTP_read;
+ 
+@@ -36,25 +47,70 @@
+     By OnHoldReasons = By.xpath("//textarea[@placeholder='Kindly specify the reason here']");
+     By OnHoldReasonBtn = By.xpath("//button[normalize-space()='Submit']");
+     //textarea[@placeholder='Kindly specify the reason here']
+-    public void marketAdminhomepage() throws IOException {
+-
++    public void marketAdminhomepage() throws IOException, InterruptedException {
++        Thread.sleep(2000);
+         driver.navigate().to("https://marketplace.qa.gaedkeeper.com/admin/login");
+         driver.switchTo().window(driver.getWindowHandles().toArray()[1].toString()).close();
+-        driver.switchTo().window(driver.getWindowHandles().toArray()[0].toString());
++      //  driver.switchTo().window(driver.getWindowHandles().toArray()[0].toString());
+     }
+     public void marketAdminLogin() throws InterruptedException {
+         driver.navigate().to(AdminUrl);
+         driver.navigate().refresh();
+         driver.findElement(Email).sendKeys("gabriel.sze@yopmail.com");
++
++        DevTools devTools = ((ChromeDriver) driver).getDevTools();
++        devTools.createSession();
++        devTools.send(Network.enable(Optional.empty(), Optional.empty(), Optional.empty()));
++
++        // **Print All Network Responses (Debugging)**
++        devTools.addListener(Network.responseReceived(), response -> {
++            RequestId requestId = response.getRequestId();
++            Response res = response.getResponse();
++
++            // **Print ALL API responses**
++            System.out.println("Network Response URL: " + res.getUrl());
++
++            // **Check if the OTP API request is being captured**
++            if (res.getUrl().contains("/send-otp")) {  // Change URL based on actual API
++                System.out.println("Captured OTP API Response: " + res.getUrl());
++
++                Optional<Network.GetResponseBodyResponse> responseBody =
++                        Optional.ofNullable(devTools.send(Network.getResponseBody(requestId)));
++
++                if (responseBody.isPresent()) {
++                    String body = responseBody.get().getBody();
++                    //System.out.println("Full Response: " + body);
++
++                    // **Parse JSON and extract OTP**
++                    JsonObject jsonObject = JsonParser.parseString(body).getAsJsonObject();
++                    if (jsonObject.has("data")) {
++                        JsonObject data = jsonObject.getAsJsonObject("data");
++                        if (data.has("code")) {
++                            String extractedOTP = data.get("code").getAsString();
++                            System.out.println("Extracted OTP: " + extractedOTP);
++                            Clipboard clipboard = Toolkit.getDefaultToolkit().getSystemClipboard();
++                            // Create a StringSelection object containing the OTP
++                            StringSelection stringSelection = new StringSelection(extractedOTP);
++                            // Set the StringSelection as the current contents of the clipboard
++                            clipboard.setContents(stringSelection,null);
++
++                        } else {
++                            System.out.println("OTP field 'code' not found in response!");
++                        }
++                    } else {
++                        System.out.println("Response does not contain 'data' object!");
++                    }
++                }
++            }
++        });
+         click(Submitbtn);
+-        signUp_OTP_read("gabriel.sze@yopmail.com");
+         //  driver.switchTo().window(driver.getWindowHandles().toArray()[0].toString());
+-        Thread.sleep(2000);
++        Thread.sleep(1000);
+         driver.findElement(firstOtpBlock).click();
+         Actions actions = new Actions(driver);
+         // Use Actions class to perform keyboard shortcut (Ctrl + V) for paste
+         actions.keyDown(Keys.CONTROL).sendKeys("v").keyUp(Keys.CONTROL).build().perform();
+-        Thread.sleep(5000);
++        Thread.sleep(1000);
+         click(LoginBtn);
+         Thread.sleep(1000);
+ 
+@@ -69,6 +125,7 @@
+         String created_project_name = buyAndSell.project_Name;*/
+ //        System.out.println("Project name is which is created : " + created_project_name);
+ //        Assert.assertEquals(Projectname,created_project_name);
++        Thread.sleep(2000);
+         driver.findElement(StatusDropdown).sendKeys("Publish" + Keys.TAB);
+ 
+        // utility.scrollToElement(SubmitBtn);
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"AutoImportSettings\">\r\n    <option name=\"autoReloadType\" value=\"SELECTIVE\" />\r\n  </component>\r\n  <component name=\"ChangeListManager\">\r\n    <list default=\"true\" id=\"fbed16bb-bade-4def-845d-b7f89224c886\" name=\"Changes\" comment=\" commited signup, login, homepage completed 04-09-2024\">\r\n      <change beforePath=\"$PROJECT_DIR$/logs/browserstack-plugin.log\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/logs/browserstack-plugin.log\" afterDir=\"false\" />\r\n    </list>\r\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\r\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\r\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\r\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\r\n  </component>\r\n  <component name=\"FileTemplateManagerImpl\">\r\n    <option name=\"RECENT_TEMPLATES\">\r\n      <list>\r\n        <option value=\"AnnotationType\" />\r\n        <option value=\"package-info\" />\r\n        <option value=\"Class\" />\r\n      </list>\r\n    </option>\r\n  </component>\r\n  <component name=\"Git.Settings\">\r\n    <option name=\"RECENT_BRANCH_BY_REPOSITORY\">\r\n      <map>\r\n        <entry key=\"$PROJECT_DIR$\" value=\"main\" />\r\n      </map>\r\n    </option>\r\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\r\n  </component>\r\n  <component name=\"MarkdownSettingsMigration\">\r\n    <option name=\"stateVersion\" value=\"1\" />\r\n  </component>\r\n  <component name=\"MavenImportPreferences\">\r\n    <option name=\"generalSettings\">\r\n      <MavenGeneralSettings>\r\n        <option name=\"useMavenConfig\" value=\"true\" />\r\n      </MavenGeneralSettings>\r\n    </option>\r\n  </component>\r\n  <component name=\"ProjectId\" id=\"2GJ08VZRbiIpIxmR77Xn26ofpcL\" />\r\n  <component name=\"ProjectLevelVcsManager\" settingsEditedManually=\"true\">\r\n    <ConfirmationsSetting value=\"2\" id=\"Add\" />\r\n  </component>\r\n  <component name=\"ProjectViewState\">\r\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\r\n    <option name=\"showLibraryContents\" value=\"true\" />\r\n  </component>\r\n  <component name=\"PropertiesComponent\">{\r\n  &quot;keyToString&quot;: {\r\n    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,\r\n    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,\r\n    &quot;last_opened_file_path&quot;: &quot;D:/GAED_branch&quot;,\r\n    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,\r\n    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,\r\n    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,\r\n    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;\r\n  }\r\n}</component>\r\n  <component name=\"RecentsManager\">\r\n    <key name=\"CreateClassDialog.RecentsKey\">\r\n      <recent name=\"Runner\" />\r\n    </key>\r\n    <key name=\"CopyFile.RECENT_KEYS\">\r\n      <recent name=\"C:\\Users\\HM\\IdeaProjects\\GAED\" />\r\n      <recent name=\"C:\\Users\\HM\\IdeaProjects\\GAED\\New folder\" />\r\n      <recent name=\"C:\\Users\\HM\\IdeaProjects\\GAED\\src\\resources\" />\r\n      <recent name=\"C:\\GAED\\src\\resources\" />\r\n      <recent name=\"C:\\Users\\HM\\IdeaProjects\\GAED\\Driver\" />\r\n    </key>\r\n    <key name=\"CopyClassDialog.RECENTS_KEY\">\r\n      <recent name=\"Runner\" />\r\n      <recent name=\"ExtentReportListener\" />\r\n      <recent name=\"\" />\r\n    </key>\r\n  </component>\r\n  <component name=\"RunManager\" selected=\"TestNG.SignUpTest.Consumer_Sign_up\">\r\n    <configuration name=\"Api_Call\" type=\"Application\" factoryName=\"Application\" temporary=\"true\" nameIsGenerated=\"true\">\r\n      <option name=\"MAIN_CLASS_NAME\" value=\"Testcases.Api_Call\" />\r\n      <module name=\"Selenium_Advanced\" />\r\n      <extension name=\"coverage\">\r\n        <pattern>\r\n          <option name=\"PATTERN\" value=\"Testcases.*\" />\r\n          <option name=\"ENABLED\" value=\"true\" />\r\n        </pattern>\r\n      </extension>\r\n      <method v=\"2\">\r\n        <option name=\"Make\" enabled=\"true\" />\r\n      </method>\r\n    </configuration>\r\n    <configuration default=\"true\" type=\"JetRunConfigurationType\">\r\n      <module name=\"GAED\" />\r\n      <method v=\"2\">\r\n        <option name=\"Make\" enabled=\"true\" />\r\n      </method>\r\n    </configuration>\r\n    <configuration default=\"true\" type=\"KotlinStandaloneScriptRunConfigurationType\">\r\n      <module name=\"GAED\" />\r\n      <option name=\"filePath\" />\r\n      <method v=\"2\">\r\n        <option name=\"Make\" enabled=\"true\" />\r\n      </method>\r\n    </configuration>\r\n    <configuration name=\"Classexecution\" type=\"TestNG\">\r\n      <module name=\"GAED\" />\r\n      <shortenClasspath name=\"NONE\" />\r\n      <useClassPathOnly />\r\n      <option name=\"SUITE_NAME\" value=\"\" />\r\n      <option name=\"PACKAGE_NAME\" value=\"testcases\" />\r\n      <option name=\"MAIN_CLASS_NAME\" value=\"testcases.HomepageTest\" />\r\n      <option name=\"METHOD_NAME\" value=\"\" />\r\n      <option name=\"GROUP_NAME\" value=\"\" />\r\n      <option name=\"TEST_OBJECT\" value=\"METHOD\" />\r\n      <option name=\"PARAMETERS\" value=\"\" />\r\n      <option name=\"OUTPUT_DIRECTORY\" value=\"\" />\r\n      <option name=\"TEST_SEARCH_SCOPE\">\r\n        <value defaultName=\"moduleWithDependencies\" />\r\n      </option>\r\n      <option name=\"PROPERTIES_FILE\" value=\"\" />\r\n      <properties />\r\n      <listeners />\r\n      <method v=\"2\">\r\n        <option name=\"Make\" enabled=\"true\" />\r\n      </method>\r\n    </configuration>\r\n    <configuration name=\"GalleryPageTest.Gallery_verify_image\" type=\"TestNG\" nameIsGenerated=\"true\">\r\n      <module name=\"GAED\" />\r\n      <shortenClasspath name=\"NONE\" />\r\n      <useClassPathOnly />\r\n      <extension name=\"coverage\">\r\n        <pattern>\r\n          <option name=\"PATTERN\" value=\"Testcases.*\" />\r\n          <option name=\"ENABLED\" value=\"true\" />\r\n        </pattern>\r\n      </extension>\r\n      <option name=\"SUITE_NAME\" value=\"\" />\r\n      <option name=\"PACKAGE_NAME\" value=\"testcases\" />\r\n      <option name=\"MAIN_CLASS_NAME\" value=\"Testcases.GalleryPageTest\" />\r\n      <option name=\"METHOD_NAME\" value=\"Gallery_verify_image\" />\r\n      <option name=\"GROUP_NAME\" value=\"\" />\r\n      <option name=\"TEST_OBJECT\" value=\"METHOD\" />\r\n      <option name=\"PARAMETERS\" value=\"\" />\r\n      <option name=\"OUTPUT_DIRECTORY\" value=\"\" />\r\n      <option name=\"TEST_SEARCH_SCOPE\">\r\n        <value defaultName=\"moduleWithDependencies\" />\r\n      </option>\r\n      <option name=\"PROPERTIES_FILE\" value=\"\" />\r\n      <properties />\r\n      <listeners />\r\n      <method v=\"2\">\r\n        <option name=\"Make\" enabled=\"true\" />\r\n      </method>\r\n    </configuration>\r\n    <configuration name=\"LoginUserTest\" type=\"TestNG\" temporary=\"true\" nameIsGenerated=\"true\">\r\n      <module name=\"Selenium_Advanced\" />\r\n      <shortenClasspath name=\"NONE\" />\r\n      <useClassPathOnly />\r\n      <extension name=\"coverage\">\r\n        <pattern>\r\n          <option name=\"PATTERN\" value=\"Testcases.*\" />\r\n          <option name=\"ENABLED\" value=\"true\" />\r\n        </pattern>\r\n      </extension>\r\n      <option name=\"SUITE_NAME\" value=\"\" />\r\n      <option name=\"PACKAGE_NAME\" value=\"Testcases\" />\r\n      <option name=\"MAIN_CLASS_NAME\" value=\"Testcases.LoginUserTest\" />\r\n      <option name=\"GROUP_NAME\" value=\"\" />\r\n      <option name=\"TEST_OBJECT\" value=\"CLASS\" />\r\n      <option name=\"PARAMETERS\" value=\"\" />\r\n      <option name=\"OUTPUT_DIRECTORY\" value=\"\" />\r\n      <option name=\"TEST_SEARCH_SCOPE\">\r\n        <value defaultName=\"moduleWithDependencies\" />\r\n      </option>\r\n      <option name=\"PROPERTIES_FILE\" value=\"\" />\r\n      <properties />\r\n      <listeners />\r\n      <method v=\"2\">\r\n        <option name=\"Make\" enabled=\"true\" />\r\n      </method>\r\n    </configuration>\r\n    <configuration name=\"LoginUserTest.Login_VerifyEmail\" type=\"TestNG\" temporary=\"true\" nameIsGenerated=\"true\">\r\n      <module name=\"Selenium_Advanced\" />\r\n      <shortenClasspath name=\"NONE\" />\r\n      <useClassPathOnly />\r\n      <extension name=\"coverage\">\r\n        <pattern>\r\n          <option name=\"PATTERN\" value=\"Testcases.*\" />\r\n          <option name=\"ENABLED\" value=\"true\" />\r\n        </pattern>\r\n      </extension>\r\n      <option name=\"SUITE_NAME\" value=\"\" />\r\n      <option name=\"PACKAGE_NAME\" value=\"Testcases\" />\r\n      <option name=\"MAIN_CLASS_NAME\" value=\"Testcases.LoginUserTest\" />\r\n      <option name=\"METHOD_NAME\" value=\"Login_VerifyEmail\" />\r\n      <option name=\"GROUP_NAME\" value=\"\" />\r\n      <option name=\"TEST_OBJECT\" value=\"METHOD\" />\r\n      <option name=\"PARAMETERS\" value=\"\" />\r\n      <option name=\"OUTPUT_DIRECTORY\" value=\"\" />\r\n      <option name=\"TEST_SEARCH_SCOPE\">\r\n        <value defaultName=\"moduleWithDependencies\" />\r\n      </option>\r\n      <option name=\"PROPERTIES_FILE\" value=\"\" />\r\n      <properties />\r\n      <listeners />\r\n      <method v=\"2\">\r\n        <option name=\"Make\" enabled=\"true\" />\r\n      </method>\r\n    </configuration>\r\n    <configuration name=\"SignUpTest.Consumer_Sign_up\" type=\"TestNG\" temporary=\"true\" nameIsGenerated=\"true\">\r\n      <module name=\"Selenium_Advanced\" />\r\n      <shortenClasspath name=\"NONE\" />\r\n      <useClassPathOnly />\r\n      <extension name=\"coverage\">\r\n        <pattern>\r\n          <option name=\"PATTERN\" value=\"Testcases.*\" />\r\n          <option name=\"ENABLED\" value=\"true\" />\r\n        </pattern>\r\n      </extension>\r\n      <option name=\"SUITE_NAME\" value=\"\" />\r\n      <option name=\"PACKAGE_NAME\" value=\"Testcases\" />\r\n      <option name=\"MAIN_CLASS_NAME\" value=\"Testcases.SignUpTest\" />\r\n      <option name=\"METHOD_NAME\" value=\"Consumer_Sign_up\" />\r\n      <option name=\"GROUP_NAME\" value=\"\" />\r\n      <option name=\"TEST_OBJECT\" value=\"METHOD\" />\r\n      <option name=\"PARAMETERS\" value=\"\" />\r\n      <option name=\"OUTPUT_DIRECTORY\" value=\"\" />\r\n      <option name=\"TEST_SEARCH_SCOPE\">\r\n        <value defaultName=\"moduleWithDependencies\" />\r\n      </option>\r\n      <option name=\"PROPERTIES_FILE\" value=\"\" />\r\n      <properties />\r\n      <listeners />\r\n      <method v=\"2\">\r\n        <option name=\"Make\" enabled=\"true\" />\r\n      </method>\r\n    </configuration>\r\n    <configuration name=\"SignUpTest.deleteuser\" type=\"TestNG\" temporary=\"true\" nameIsGenerated=\"true\">\r\n      <module name=\"Selenium_Advanced\" />\r\n      <shortenClasspath name=\"NONE\" />\r\n      <useClassPathOnly />\r\n      <extension name=\"coverage\">\r\n        <pattern>\r\n          <option name=\"PATTERN\" value=\"Testcases.*\" />\r\n          <option name=\"ENABLED\" value=\"true\" />\r\n        </pattern>\r\n      </extension>\r\n      <option name=\"SUITE_NAME\" value=\"\" />\r\n      <option name=\"PACKAGE_NAME\" value=\"Testcases\" />\r\n      <option name=\"MAIN_CLASS_NAME\" value=\"Testcases.SignUpTest\" />\r\n      <option name=\"METHOD_NAME\" value=\"deleteuser\" />\r\n      <option name=\"GROUP_NAME\" value=\"\" />\r\n      <option name=\"TEST_OBJECT\" value=\"METHOD\" />\r\n      <option name=\"PARAMETERS\" value=\"\" />\r\n      <option name=\"OUTPUT_DIRECTORY\" value=\"\" />\r\n      <option name=\"TEST_SEARCH_SCOPE\">\r\n        <value defaultName=\"moduleWithDependencies\" />\r\n      </option>\r\n      <option name=\"PROPERTIES_FILE\" value=\"\" />\r\n      <properties />\r\n      <listeners />\r\n      <method v=\"2\">\r\n        <option name=\"Make\" enabled=\"true\" />\r\n      </method>\r\n    </configuration>\r\n    <configuration name=\"TestSuite \" type=\"TestNG\">\r\n      <module name=\"GAED\" />\r\n      <shortenClasspath name=\"NONE\" />\r\n      <useClassPathOnly />\r\n      <option name=\"SUITE_NAME\" value=\"\" />\r\n      <option name=\"PACKAGE_NAME\" value=\"\" />\r\n      <option name=\"MAIN_CLASS_NAME\" value=\"\" />\r\n      <option name=\"METHOD_NAME\" value=\"\" />\r\n      <option name=\"GROUP_NAME\" value=\"\" />\r\n      <option name=\"TEST_OBJECT\" value=\"SUITE\" />\r\n      <option name=\"PARAMETERS\" value=\"\" />\r\n      <option name=\"OUTPUT_DIRECTORY\" value=\"\" />\r\n      <option name=\"TEST_SEARCH_SCOPE\">\r\n        <value defaultName=\"moduleWithDependencies\" />\r\n      </option>\r\n      <option name=\"PROPERTIES_FILE\" value=\"\" />\r\n      <properties />\r\n      <listeners />\r\n      <method v=\"2\">\r\n        <option name=\"Make\" enabled=\"true\" />\r\n      </method>\r\n    </configuration>\r\n    <configuration name=\"&lt;default&gt;\" type=\"TestNG\">\r\n      <module name=\"GAED\" />\r\n      <shortenClasspath name=\"NONE\" />\r\n      <useClassPathOnly />\r\n      <option name=\"SUITE_NAME\" value=\"\" />\r\n      <option name=\"PACKAGE_NAME\" value=\"\" />\r\n      <option name=\"MAIN_CLASS_NAME\" value=\"\" />\r\n      <option name=\"METHOD_NAME\" value=\"\" />\r\n      <option name=\"GROUP_NAME\" value=\"\" />\r\n      <option name=\"TEST_OBJECT\" value=\"PACKAGE\" />\r\n      <option name=\"PARAMETERS\" value=\"\" />\r\n      <option name=\"OUTPUT_DIRECTORY\" value=\"C:\\Users\\Aditya Pawar\\git\\HP_Sprocket\\HP_Sprocket\\src\\resources\" />\r\n      <option name=\"TEST_SEARCH_SCOPE\">\r\n        <value defaultName=\"moduleWithDependencies\" />\r\n      </option>\r\n      <option name=\"PROPERTIES_FILE\" value=\"\" />\r\n      <properties />\r\n      <listeners />\r\n      <method v=\"2\">\r\n        <option name=\"Make\" enabled=\"true\" />\r\n      </method>\r\n    </configuration>\r\n    <configuration default=\"true\" type=\"TestNG\">\r\n      <shortenClasspath name=\"NONE\" />\r\n      <useClassPathOnly />\r\n      <option name=\"SUITE_NAME\" value=\"\" />\r\n      <option name=\"PACKAGE_NAME\" value=\"\" />\r\n      <option name=\"MAIN_CLASS_NAME\" value=\"\" />\r\n      <option name=\"GROUP_NAME\" value=\"\" />\r\n      <option name=\"TEST_OBJECT\" value=\"CLASS\" />\r\n      <option name=\"PARAMETERS\" value=\"\" />\r\n      <option name=\"OUTPUT_DIRECTORY\" value=\"\" />\r\n      <option name=\"TEST_SEARCH_SCOPE\">\r\n        <value defaultName=\"moduleWithDependencies\" />\r\n      </option>\r\n      <option name=\"PROPERTIES_FILE\" value=\"\" />\r\n      <properties />\r\n      <listeners />\r\n      <method v=\"2\">\r\n        <option name=\"Make\" enabled=\"true\" />\r\n      </method>\r\n    </configuration>\r\n    <configuration name=\"testcases\" type=\"TestNG\" nameIsGenerated=\"true\">\r\n      <module name=\"GAED\" />\r\n      <shortenClasspath name=\"NONE\" />\r\n      <useClassPathOnly />\r\n      <extension name=\"coverage\">\r\n        <pattern>\r\n          <option name=\"PATTERN\" value=\"testcases.*\" />\r\n          <option name=\"ENABLED\" value=\"true\" />\r\n        </pattern>\r\n      </extension>\r\n      <option name=\"ALTERNATIVE_JRE_PATH_ENABLED\" value=\"true\" />\r\n      <option name=\"ALTERNATIVE_JRE_PATH\" value=\"JavaSE-1.8\" />\r\n      <option name=\"SUITE_NAME\" value=\"\" />\r\n      <option name=\"PACKAGE_NAME\" value=\"testcases\" />\r\n      <option name=\"MAIN_CLASS_NAME\" value=\"\" />\r\n      <option name=\"METHOD_NAME\" value=\"\" />\r\n      <option name=\"GROUP_NAME\" value=\"\" />\r\n      <option name=\"TEST_OBJECT\" value=\"PACKAGE\" />\r\n      <option name=\"PARAMETERS\" value=\"\" />\r\n      <option name=\"OUTPUT_DIRECTORY\" value=\"\" />\r\n      <option name=\"TEST_SEARCH_SCOPE\">\r\n        <value defaultName=\"moduleWithDependencies\" />\r\n      </option>\r\n      <option name=\"PROPERTIES_FILE\" value=\"\" />\r\n      <properties />\r\n      <listeners />\r\n      <method v=\"2\">\r\n        <option name=\"Make\" enabled=\"true\" />\r\n      </method>\r\n    </configuration>\r\n    <list>\r\n      <item itemvalue=\"Application.Api_Call\" />\r\n      <item itemvalue=\"TestNG.GalleryPageTest.Gallery_verify_image\" />\r\n      <item itemvalue=\"TestNG.TestSuite \" />\r\n      <item itemvalue=\"TestNG.testcases\" />\r\n      <item itemvalue=\"TestNG.&lt;default&gt;\" />\r\n      <item itemvalue=\"TestNG.Classexecution\" />\r\n      <item itemvalue=\"TestNG.SignUpTest.deleteuser\" />\r\n      <item itemvalue=\"TestNG.LoginUserTest.Login_VerifyEmail\" />\r\n      <item itemvalue=\"TestNG.LoginUserTest\" />\r\n      <item itemvalue=\"TestNG.SignUpTest.Consumer_Sign_up\" />\r\n    </list>\r\n    <recent_temporary>\r\n      <list>\r\n        <item itemvalue=\"TestNG.SignUpTest.Consumer_Sign_up\" />\r\n        <item itemvalue=\"Application.Api_Call\" />\r\n        <item itemvalue=\"TestNG.SignUpTest.deleteuser\" />\r\n        <item itemvalue=\"TestNG.LoginUserTest.Login_VerifyEmail\" />\r\n        <item itemvalue=\"TestNG.LoginUserTest\" />\r\n      </list>\r\n    </recent_temporary>\r\n  </component>\r\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\r\n  <component name=\"TaskManager\">\r\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\r\n      <changelist id=\"fbed16bb-bade-4def-845d-b7f89224c886\" name=\"Changes\" comment=\"\" />\r\n      <created>1666076051325</created>\r\n      <option name=\"number\" value=\"Default\" />\r\n      <option name=\"presentableId\" value=\"Default\" />\r\n      <updated>1666076051325</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00001\" summary=\"first commit\">\r\n      <created>1666076221252</created>\r\n      <option name=\"number\" value=\"00001\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00001\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1666076221252</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00002\" summary=\"Setup of project\">\r\n      <created>1666092880518</created>\r\n      <option name=\"number\" value=\"00002\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00002\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1666092880518</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00003\" summary=\"Signup module\">\r\n      <created>1666102106292</created>\r\n      <option name=\"number\" value=\"00003\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00003\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1666102106292</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00004\" summary=\"signup login completed\">\r\n      <created>1668949573850</created>\r\n      <option name=\"number\" value=\"00004\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00004\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1668949573850</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00005\" summary=\"22-12-2022 commit\">\r\n      <created>1671709413843</created>\r\n      <option name=\"number\" value=\"00005\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00005\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1671709413843</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00006\" summary=\"Gallery page commit\">\r\n      <created>1681222750493</created>\r\n      <option name=\"number\" value=\"00006\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00006\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1681222750493</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00007\" summary=\"Gallery page commit 24-04-2023\">\r\n      <created>1682339156474</created>\r\n      <option name=\"number\" value=\"00007\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00007\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1682339156474</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00008\" summary=\"arranged commit 23-05-2023\">\r\n      <created>1684850359340</created>\r\n      <option name=\"number\" value=\"00008\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00008\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1684850359340</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00009\" summary=\"arranged commit 23-05-2023\">\r\n      <created>1684850456303</created>\r\n      <option name=\"number\" value=\"00009\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00009\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1684850456303</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00010\" summary=\"Connectivity STA AP commit 05-06-2023\">\r\n      <created>1685949309485</created>\r\n      <option name=\"number\" value=\"00010\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00010\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1685949309485</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00011\" summary=\"appium setup 24-02-2024\">\r\n      <created>1708776899151</created>\r\n      <option name=\"number\" value=\"00011\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00011\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1708776899151</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00012\" summary=\"appium setup 04-04-2024\">\r\n      <created>1712230661506</created>\r\n      <option name=\"number\" value=\"00012\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00012\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1712230661508</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00013\" summary=\"appium setup 04-04-2024\">\r\n      <created>1712230770502</created>\r\n      <option name=\"number\" value=\"00013\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00013\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1712230770502</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00014\" summary=\"Framework and homepage\">\r\n      <created>1713702264636</created>\r\n      <option name=\"number\" value=\"00014\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00014\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1713702264636</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00015\" summary=\"Framework and homepage 22-04-2024\">\r\n      <created>1713762674496</created>\r\n      <option name=\"number\" value=\"00015\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00015\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1713762674496</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00016\" summary=\"Login Page Completed 27-04-2024\">\r\n      <created>1714214631417</created>\r\n      <option name=\"number\" value=\"00016\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00016\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1714214631417</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00017\" summary=\"Login Page Completed 27-04-2024\">\r\n      <created>1714214704100</created>\r\n      <option name=\"number\" value=\"00017\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00017\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1714214704100</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00018\" summary=\"Signup Page Completed 29-04-2024\">\r\n      <created>1714367682816</created>\r\n      <option name=\"number\" value=\"00018\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00018\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1714367682816</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00019\" summary=\"Signup Page Completed 10-05-2024\">\r\n      <created>1715284561592</created>\r\n      <option name=\"number\" value=\"00019\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00019\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1715284561592</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00020\" summary=\"Signup Page Completed 10-05-2024\">\r\n      <created>1715284588944</created>\r\n      <option name=\"number\" value=\"00020\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00020\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1715284588944</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00021\" summary=\"Signup Page Completed 10-05-2024\">\r\n      <created>1715332059412</created>\r\n      <option name=\"number\" value=\"00021\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00021\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1715332059412</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00022\" summary=\"Signup Page Completed 21-05-2024\">\r\n      <created>1716284242564</created>\r\n      <option name=\"number\" value=\"00022\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00022\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1716284242564</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00023\" summary=\"exact DATA DRIVEN ADDED\">\r\n      <created>1718655527702</created>\r\n      <option name=\"number\" value=\"00023\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00023\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1718655527703</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00024\" summary=\"Completed Login module with dataprivider 06-07-2024\">\r\n      <created>1720275181016</created>\r\n      <option name=\"number\" value=\"00024\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00024\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1720275181016</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00025\" summary=\"Completed signup module with dataprivider 07-07-2024\">\r\n      <created>1720348997724</created>\r\n      <option name=\"number\" value=\"00025\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00025\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1720348997724</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00026\" summary=\" commited signup, login, homepage completed 04-09-2024\">\r\n      <created>1725468229536</created>\r\n      <option name=\"number\" value=\"00026\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00026\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1725468229536</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00027\" summary=\" commited signup, login, homepage completed 04-09-2024\">\r\n      <created>1731848611955</created>\r\n      <option name=\"number\" value=\"00027\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00027\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1731848611955</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00028\" summary=\" commited signup, login, homepage completed 04-09-2024\">\r\n      <created>1736963997608</created>\r\n      <option name=\"number\" value=\"00028\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00028\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1736963997608</updated>\r\n    </task>\r\n    <option name=\"localTasksCounter\" value=\"29\" />\r\n    <servers />\r\n  </component>\r\n  <component name=\"Vcs.Log.Tabs.Properties\">\r\n    <option name=\"TAB_STATES\">\r\n      <map>\r\n        <entry key=\"MAIN\">\r\n          <value>\r\n            <State>\r\n              <option name=\"FILTERS\">\r\n                <map>\r\n                  <entry key=\"branch\">\r\n                    <value>\r\n                      <list>\r\n                        <option value=\"origin/workingBranch\" />\r\n                      </list>\r\n                    </value>\r\n                  </entry>\r\n                </map>\r\n              </option>\r\n            </State>\r\n          </value>\r\n        </entry>\r\n      </map>\r\n    </option>\r\n    <option name=\"RECENT_FILTERS\">\r\n      <map>\r\n        <entry key=\"Branch\">\r\n          <value>\r\n            <list>\r\n              <RecentGroup>\r\n                <option name=\"FILTER_VALUES\">\r\n                  <option value=\"master\" />\r\n                </option>\r\n              </RecentGroup>\r\n            </list>\r\n          </value>\r\n        </entry>\r\n      </map>\r\n    </option>\r\n  </component>\r\n  <component name=\"VcsManagerConfiguration\">\r\n    <option name=\"ADD_EXTERNAL_FILES_SILENTLY\" value=\"true\" />\r\n    <MESSAGE value=\"first commit\" />\r\n    <MESSAGE value=\"Setup of project\" />\r\n    <MESSAGE value=\"Signup module\" />\r\n    <MESSAGE value=\"signup loagin completed\" />\r\n    <MESSAGE value=\"signup login completed\" />\r\n    <MESSAGE value=\"22-12-2022 commit\" />\r\n    <MESSAGE value=\"Gallery page commit\" />\r\n    <MESSAGE value=\"Gallery page commit 24-04-2023\" />\r\n    <MESSAGE value=\"arranged commit 23-05-2023\" />\r\n    <MESSAGE value=\"Connectivity STA AP commit 05-06-2023\" />\r\n    <MESSAGE value=\"appium setup 24-02-2024\" />\r\n    <MESSAGE value=\"appium setup 04-04-2024\" />\r\n    <MESSAGE value=\"Framework and homepage\" />\r\n    <MESSAGE value=\"Framework and homepage 22-04-2024\" />\r\n    <MESSAGE value=\"Login Page Completed 27-04-2024\" />\r\n    <MESSAGE value=\"Signup Page Completed 29-04-2024\" />\r\n    <MESSAGE value=\"Signup Page Completed 10-05-2024\" />\r\n    <MESSAGE value=\"Signup Page Completed 11-05-2024\" />\r\n    <MESSAGE value=\"Signup Page Completed 21-05-2024\" />\r\n    <MESSAGE value=\"exact DATA DRIVEN ADDED\" />\r\n    <MESSAGE value=\"Completed Login module with dataprivider 06-07-2024\" />\r\n    <MESSAGE value=\"Completed signup module with dataprivider 07-07-2024\" />\r\n    <MESSAGE value=\" commited signup, login, homepage completed 04-09-2024\" />\r\n    <option name=\"LAST_COMMIT_MESSAGE\" value=\" commited signup, login, homepage completed 04-09-2024\" />\r\n  </component>\r\n  <component name=\"XDebuggerManager\">\r\n    <watches-manager>\r\n      <configuration name=\"TestNG\">\r\n        <watch expression=\"Connectivity\" language=\"JAVA\" />\r\n        <watch expression=\"this\" />\r\n      </configuration>\r\n    </watches-manager>\r\n  </component>\r\n  <component name=\"XSLT-Support.FileAssociations.UIState\">\r\n    <expand />\r\n    <select />\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	(revision fbf75c8d306db284b1ebf702a4bf5461e53ee2e9)
++++ b/.idea/workspace.xml	(date 1741420879000)
+@@ -47,6 +47,7 @@
+     <option name="hideEmptyMiddlePackages" value="true" />
+     <option name="showLibraryContents" value="true" />
+   </component>
++<<<<<<< HEAD
+   <component name="PropertiesComponent">{
+   &quot;keyToString&quot;: {
+     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+@@ -56,8 +57,20 @@
+     &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+     &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+     &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
++=======
++  <component name="PropertiesComponent"><![CDATA[{
++  "keyToString": {
++    "RunOnceActivity.OpenProjectViewOnStart": "true",
++    "RunOnceActivity.ShowReadmeOnStart": "true",
++    "last_opened_file_path": "C:/GAED/src/test/java/resourses",
++    "project.structure.last.edited": "Modules",
++    "project.structure.proportion": "0.15",
++    "project.structure.side.proportion": "0.2",
++    "run.code.analysis.last.selected.profile": "pProject Default",
++    "settings.editor.selected.configurable": "preferences.pluginManager"
++>>>>>>> working
+   }
+-}</component>
++}]]></component>
+   <component name="RecentsManager">
+     <key name="CreateClassDialog.RecentsKey">
+       <recent name="Runner" />
+@@ -102,6 +115,64 @@
+         <option name="Make" enabled="true" />
+       </method>
+     </configuration>
++<<<<<<< HEAD
++=======
++    <configuration name="BuyAndSellTest" type="TestNG" temporary="true" nameIsGenerated="true">
++      <module name="Selenium_Advanced" />
++      <shortenClasspath name="NONE" />
++      <useClassPathOnly />
++      <extension name="coverage">
++        <pattern>
++          <option name="PATTERN" value="Testcases.*" />
++          <option name="ENABLED" value="true" />
++        </pattern>
++      </extension>
++      <option name="SUITE_NAME" value="" />
++      <option name="PACKAGE_NAME" value="Testcases" />
++      <option name="MAIN_CLASS_NAME" value="Testcases.BuyAndSellTest" />
++      <option name="GROUP_NAME" value="" />
++      <option name="TEST_OBJECT" value="CLASS" />
++      <option name="PARAMETERS" value="" />
++      <option name="OUTPUT_DIRECTORY" value="" />
++      <option name="TEST_SEARCH_SCOPE">
++        <value defaultName="moduleWithDependencies" />
++      </option>
++      <option name="PROPERTIES_FILE" value="" />
++      <properties />
++      <listeners />
++      <method v="2">
++        <option name="Make" enabled="true" />
++      </method>
++    </configuration>
++    <configuration name="BuyAndSellTest.Accept_Project_In_Admin" type="TestNG" temporary="true" nameIsGenerated="true">
++      <module name="Selenium_Advanced" />
++      <shortenClasspath name="NONE" />
++      <useClassPathOnly />
++      <extension name="coverage">
++        <pattern>
++          <option name="PATTERN" value="Testcases.*" />
++          <option name="ENABLED" value="true" />
++        </pattern>
++      </extension>
++      <option name="SUITE_NAME" value="" />
++      <option name="PACKAGE_NAME" value="Testcases" />
++      <option name="MAIN_CLASS_NAME" value="Testcases.BuyAndSellTest" />
++      <option name="METHOD_NAME" value="Accept_Project_In_Admin" />
++      <option name="GROUP_NAME" value="" />
++      <option name="TEST_OBJECT" value="METHOD" />
++      <option name="PARAMETERS" value="" />
++      <option name="OUTPUT_DIRECTORY" value="" />
++      <option name="TEST_SEARCH_SCOPE">
++        <value defaultName="moduleWithDependencies" />
++      </option>
++      <option name="PROPERTIES_FILE" value="" />
++      <properties />
++      <listeners />
++      <method v="2">
++        <option name="Make" enabled="true" />
++      </method>
++    </configuration>
++>>>>>>> working
+     <configuration name="Classexecution" type="TestNG">
+       <module name="GAED" />
+       <shortenClasspath name="NONE" />
+@@ -152,6 +223,7 @@
+         <option name="Make" enabled="true" />
+       </method>
+     </configuration>
++<<<<<<< HEAD
+     <configuration name="LoginUserTest" type="TestNG" temporary="true" nameIsGenerated="true">
+       <module name="Selenium_Advanced" />
+       <shortenClasspath name="NONE" />
+@@ -208,6 +280,9 @@
+       </method>
+     </configuration>
+     <configuration name="SignUpTest.Consumer_Sign_up" type="TestNG" temporary="true" nameIsGenerated="true">
++=======
++    <configuration name="LoginUserTest (1)" type="TestNG" temporary="true" nameIsGenerated="true">
++>>>>>>> working
+       <module name="Selenium_Advanced" />
+       <shortenClasspath name="NONE" />
+       <useClassPathOnly />
+@@ -219,10 +294,16 @@
+       </extension>
+       <option name="SUITE_NAME" value="" />
+       <option name="PACKAGE_NAME" value="Testcases" />
++<<<<<<< HEAD
+       <option name="MAIN_CLASS_NAME" value="Testcases.SignUpTest" />
+       <option name="METHOD_NAME" value="Consumer_Sign_up" />
+       <option name="GROUP_NAME" value="" />
+       <option name="TEST_OBJECT" value="METHOD" />
++=======
++      <option name="MAIN_CLASS_NAME" value="Testcases.LoginUserTest" />
++      <option name="GROUP_NAME" value="" />
++      <option name="TEST_OBJECT" value="CLASS" />
++>>>>>>> working
+       <option name="PARAMETERS" value="" />
+       <option name="OUTPUT_DIRECTORY" value="" />
+       <option name="TEST_SEARCH_SCOPE">
+@@ -235,7 +316,11 @@
+         <option name="Make" enabled="true" />
+       </method>
+     </configuration>
++<<<<<<< HEAD
+     <configuration name="SignUpTest.deleteuser" type="TestNG" temporary="true" nameIsGenerated="true">
++=======
++    <configuration name="LoginUserTest" type="TestNG" temporary="true" nameIsGenerated="true">
++>>>>>>> working
+       <module name="Selenium_Advanced" />
+       <shortenClasspath name="NONE" />
+       <useClassPathOnly />
+@@ -247,8 +332,40 @@
+       </extension>
+       <option name="SUITE_NAME" value="" />
+       <option name="PACKAGE_NAME" value="Testcases" />
++<<<<<<< HEAD
+       <option name="MAIN_CLASS_NAME" value="Testcases.SignUpTest" />
+       <option name="METHOD_NAME" value="deleteuser" />
++=======
++      <option name="MAIN_CLASS_NAME" value="Testcases.LoginUserTest" />
++      <option name="GROUP_NAME" value="" />
++      <option name="TEST_OBJECT" value="CLASS" />
++      <option name="PARAMETERS" value="" />
++      <option name="OUTPUT_DIRECTORY" value="" />
++      <option name="TEST_SEARCH_SCOPE">
++        <value defaultName="moduleWithDependencies" />
++      </option>
++      <option name="PROPERTIES_FILE" value="" />
++      <properties />
++      <listeners />
++      <method v="2">
++        <option name="Make" enabled="true" />
++      </method>
++    </configuration>
++    <configuration name="LoginUserTest.InvalidOTP" type="TestNG" temporary="true" nameIsGenerated="true">
++      <module name="Selenium_Advanced" />
++      <shortenClasspath name="NONE" />
++      <useClassPathOnly />
++      <extension name="coverage">
++        <pattern>
++          <option name="PATTERN" value="Testcases.*" />
++          <option name="ENABLED" value="true" />
++        </pattern>
++      </extension>
++      <option name="SUITE_NAME" value="" />
++      <option name="PACKAGE_NAME" value="Testcases" />
++      <option name="MAIN_CLASS_NAME" value="Testcases.LoginUserTest" />
++      <option name="METHOD_NAME" value="InvalidOTP" />
++>>>>>>> working
+       <option name="GROUP_NAME" value="" />
+       <option name="TEST_OBJECT" value="METHOD" />
+       <option name="PARAMETERS" value="" />
+@@ -375,6 +492,20 @@
+         <item itemvalue="Application.Api_Call" />
+         <item itemvalue="TestNG.SignUpTest.deleteuser" />
+         <item itemvalue="TestNG.LoginUserTest.Login_VerifyEmail" />
++=======
++      <item itemvalue="TestNG.LoginUserTest" />
++      <item itemvalue="TestNG.LoginUserTest (1)" />
++      <item itemvalue="TestNG.LoginUserTest.InvalidOTP" />
++      <item itemvalue="TestNG.BuyAndSellTest" />
++      <item itemvalue="TestNG.BuyAndSellTest.Accept_Project_In_Admin" />
++    </list>
++    <recent_temporary>
++      <list>
++        <item itemvalue="TestNG.BuyAndSellTest" />
++        <item itemvalue="TestNG.BuyAndSellTest.Accept_Project_In_Admin" />
++        <item itemvalue="TestNG.LoginUserTest.InvalidOTP" />
++        <item itemvalue="TestNG.LoginUserTest (1)" />
++>>>>>>> working
+         <item itemvalue="TestNG.LoginUserTest" />
+       </list>
+     </recent_temporary>
+@@ -430,6 +561,8 @@
+       <option name="project" value="LOCAL" />
+       <updated>1681222750493</updated>
+     </task>
++=======
++>>>>>>> working
+     <task id="LOCAL-00007" summary="Gallery page commit 24-04-2023">
+       <created>1682339156474</created>
+       <option name="number" value="00007" />
+@@ -584,7 +717,200 @@
+       <option name="project" value="LOCAL" />
+       <updated>1736963997608</updated>
+     </task>
++<<<<<<< HEAD
+     <option name="localTasksCounter" value="29" />
++=======
++    <task id="LOCAL-00029" summary="docker and git yml edited pom edited">
++      <created>1736966506180</created>
++      <option name="number" value="00029" />
++      <option name="presentableId" value="LOCAL-00029" />
++      <option name="project" value="LOCAL" />
++      <updated>1736966506180</updated>
++    </task>
++    <task id="LOCAL-00030" summary="docker and git yml edited pom edited">
++      <created>1736966910765</created>
++      <option name="number" value="00030" />
++      <option name="presentableId" value="LOCAL-00030" />
++      <option name="project" value="LOCAL" />
++      <updated>1736966910765</updated>
++    </task>
++    <task id="LOCAL-00031" summary="docker and git yml edited pom edited">
++      <created>1737009913683</created>
++      <option name="number" value="00031" />
++      <option name="presentableId" value="LOCAL-00031" />
++      <option name="project" value="LOCAL" />
++      <updated>1737009913683</updated>
++    </task>
++    <task id="LOCAL-00032" summary="docker and git yml edited pom edited java folder moved">
++      <created>1737010454722</created>
++      <option name="number" value="00032" />
++      <option name="presentableId" value="LOCAL-00032" />
++      <option name="project" value="LOCAL" />
++      <updated>1737010454722</updated>
++    </task>
++    <task id="LOCAL-00033" summary="set up as per maven">
++      <created>1737011474925</created>
++      <option name="number" value="00033" />
++      <option name="presentableId" value="LOCAL-00033" />
++      <option name="project" value="LOCAL" />
++      <updated>1737011474925</updated>
++    </task>
++    <task id="LOCAL-00034" summary="set up as per maven">
++      <created>1737011732049</created>
++      <option name="number" value="00034" />
++      <option name="presentableId" value="LOCAL-00034" />
++      <option name="project" value="LOCAL" />
++      <updated>1737011732049</updated>
++    </task>
++    <task id="LOCAL-00035" summary="set up as per maven set all file">
++      <created>1737012396602</created>
++      <option name="number" value="00035" />
++      <option name="presentableId" value="LOCAL-00035" />
++      <option name="project" value="LOCAL" />
++      <updated>1737012396602</updated>
++    </task>
++    <task id="LOCAL-00036" summary="set up as per maven set all file">
++      <created>1737013465541</created>
++      <option name="number" value="00036" />
++      <option name="presentableId" value="LOCAL-00036" />
++      <option name="project" value="LOCAL" />
++      <updated>1737013465541</updated>
++    </task>
++    <task id="LOCAL-00037" summary="set up as per maven set all file">
++      <created>1737014019180</created>
++      <option name="number" value="00037" />
++      <option name="presentableId" value="LOCAL-00037" />
++      <option name="project" value="LOCAL" />
++      <updated>1737014019180</updated>
++    </task>
++    <task id="LOCAL-00038" summary="set up as per maven set all file">
++      <created>1737018896279</created>
++      <option name="number" value="00038" />
++      <option name="presentableId" value="LOCAL-00038" />
++      <option name="project" value="LOCAL" />
++      <updated>1737018896279</updated>
++    </task>
++    <task id="LOCAL-00039" summary="login signup and buyandsell running code">
++      <created>1737103519606</created>
++      <option name="number" value="00039" />
++      <option name="presentableId" value="LOCAL-00039" />
++      <option name="project" value="LOCAL" />
++      <updated>1737103519606</updated>
++    </task>
++    <task id="LOCAL-00040" summary="Fixed the issue for the scripts">
++      <created>1737128607697</created>
++      <option name="number" value="00040" />
++      <option name="presentableId" value="LOCAL-00040" />
++      <option name="project" value="LOCAL" />
++      <updated>1737128607697</updated>
++    </task>
++    <task id="LOCAL-00041" summary="Fixed the issue for the scripts">
++      <created>1737129167423</created>
++      <option name="number" value="00041" />
++      <option name="presentableId" value="LOCAL-00041" />
++      <option name="project" value="LOCAL" />
++      <updated>1737129167423</updated>
++    </task>
++    <task id="LOCAL-00042" summary="Fixed the issue for the scripts">
++      <created>1737129608806</created>
++      <option name="number" value="00042" />
++      <option name="presentableId" value="LOCAL-00042" />
++      <option name="project" value="LOCAL" />
++      <updated>1737129608806</updated>
++    </task>
++    <task id="LOCAL-00043" summary="Fixed the issue for the scripts">
++      <created>1737130099901</created>
++      <option name="number" value="00043" />
++      <option name="presentableId" value="LOCAL-00043" />
++      <option name="project" value="LOCAL" />
++      <updated>1737130099901</updated>
++    </task>
++    <task id="LOCAL-00044" summary="Fixed the issue for the scripts">
++      <created>1737130880931</created>
++      <option name="number" value="00044" />
++      <option name="presentableId" value="LOCAL-00044" />
++      <option name="project" value="LOCAL" />
++      <updated>1737130880931</updated>
++    </task>
++    <task id="LOCAL-00045" summary="Fixed the issue for the scripts">
++      <created>1737367206167</created>
++      <option name="number" value="00045" />
++      <option name="presentableId" value="LOCAL-00045" />
++      <option name="project" value="LOCAL" />
++      <updated>1737367206167</updated>
++    </task>
++    <task id="LOCAL-00046" summary="Fixed the issue for the scripts">
++      <created>1737367727257</created>
++      <option name="number" value="00046" />
++      <option name="presentableId" value="LOCAL-00046" />
++      <option name="project" value="LOCAL" />
++      <updated>1737367727257</updated>
++    </task>
++    <task id="LOCAL-00047" summary="Fixed the issue for the scripts">
++      <created>1737367894024</created>
++      <option name="number" value="00047" />
++      <option name="presentableId" value="LOCAL-00047" />
++      <option name="project" value="LOCAL" />
++      <updated>1737367894024</updated>
++    </task>
++    <task id="LOCAL-00048" summary="Fixed the issue for the scripts">
++      <created>1737368097709</created>
++      <option name="number" value="00048" />
++      <option name="presentableId" value="LOCAL-00048" />
++      <option name="project" value="LOCAL" />
++      <updated>1737368097709</updated>
++    </task>
++    <task id="LOCAL-00049" summary="Fixed the issue for the scripts">
++      <created>1737371063402</created>
++      <option name="number" value="00049" />
++      <option name="presentableId" value="LOCAL-00049" />
++      <option name="project" value="LOCAL" />
++      <updated>1737371063402</updated>
++    </task>
++    <task id="LOCAL-00050" summary="Fixed the issue for the scripts">
++      <created>1737375498541</created>
++      <option name="number" value="00050" />
++      <option name="presentableId" value="LOCAL-00050" />
++      <option name="project" value="LOCAL" />
++      <updated>1737375498544</updated>
++    </task>
++    <task id="LOCAL-00051" summary="Running chrome in non headless mode">
++      <created>1737375887261</created>
++      <option name="number" value="00051" />
++      <option name="presentableId" value="LOCAL-00051" />
++      <option name="project" value="LOCAL" />
++      <updated>1737375887261</updated>
++    </task>
++    <task id="LOCAL-00052" summary="Running chrome in non headless mode">
++      <created>1737394195139</created>
++      <option name="number" value="00052" />
++      <option name="presentableId" value="LOCAL-00052" />
++      <option name="project" value="LOCAL" />
++      <updated>1737394195139</updated>
++    </task>
++    <task id="LOCAL-00053" summary="Set all the file and testng.xml">
++      <created>1740823899019</created>
++      <option name="number" value="00053" />
++      <option name="presentableId" value="LOCAL-00053" />
++      <option name="project" value="LOCAL" />
++      <updated>1740823899021</updated>
++    </task>
++    <task id="LOCAL-00054" summary="Set all the file and testng.xml">
++      <created>1741332037698</created>
++      <option name="number" value="00054" />
++      <option name="presentableId" value="LOCAL-00054" />
++      <option name="project" value="LOCAL" />
++      <updated>1741332037699</updated>
++    </task>
++    <task id="LOCAL-00055" summary="Set all the file and testng.xml">
++      <created>1741341824460</created>
++      <option name="number" value="00055" />
++      <option name="presentableId" value="LOCAL-00055" />
++      <option name="project" value="LOCAL" />
++      <updated>1741341824460</updated>
++    </task>
++    <option name="localTasksCounter" value="56" />
++>>>>>>> working
+     <servers />
+   </component>
+   <component name="Vcs.Log.Tabs.Properties">
+@@ -598,7 +924,11 @@
+                   <entry key="branch">
+                     <value>
+                       <list>
++<<<<<<< HEAD
+                         <option value="origin/workingBranch" />
++=======
++                        <option value="workingBranch" />
++>>>>>>> working
+                       </list>
+                     </value>
+                   </entry>
+@@ -633,6 +963,8 @@
+     <MESSAGE value="signup loagin completed" />
+     <MESSAGE value="signup login completed" />
+     <MESSAGE value="22-12-2022 commit" />
++=======
++>>>>>>> working
+     <MESSAGE value="Gallery page commit" />
+     <MESSAGE value="Gallery page commit 24-04-2023" />
+     <MESSAGE value="arranged commit 23-05-2023" />
+Index: pom.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project xmlns=\"http://maven.apache.org/POM/4.0.0\"\r\n         xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\"\r\n         xsi:schemaLocation=\"http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd\">\r\n    <modelVersion>4.0.0</modelVersion>\r\n\r\n    <groupId>groupId</groupId>\r\n    <artifactId>Practice_programs</artifactId>\r\n    <version>1.0-SNAPSHOT</version>\r\n    <build>\r\n        <plugins>\r\n            <plugin>\r\n                <groupId>org.apache.maven.plugins</groupId>\r\n                <artifactId>maven-compiler-plugin</artifactId>\r\n                <version>3.10.1</version>\r\n                <configuration>\r\n                    <source>1.8</source>\r\n                    <target>1.8</target>\r\n                </configuration>\r\n            </plugin>\r\n\r\n            <!-- Maven Surefire Plugin for running TestNG tests yttghj-->\r\n            <plugin>\r\n                <groupId>org.apache.maven.plugins</groupId>\r\n                <artifactId>maven-surefire-plugin</artifactId>\r\n                <version>3.0.0-M5</version>\r\n                <configuration>\r\n                    <suiteXmlFiles>\r\n                        <suiteXmlFile>src/test/java/resourse/testng.xml</suiteXmlFile>\r\n                    </suiteXmlFiles>\r\n                </configuration>\r\n            </plugin>\r\n\r\n            <!-- Maven Compiler Plugin -->\r\n        </plugins>\r\n    </build>\r\n    <dependencies>\r\n        <!-- https://mvnrepository.com/artifact/org.apache.maven.plugins/maven-gpg-plugin -->\r\n        <dependency>\r\n            <groupId>org.apache.maven.plugins</groupId>\r\n            <artifactId>maven-gpg-plugin</artifactId>\r\n            <version>1.6</version>\r\n        </dependency>\r\n\r\n        <dependency>\r\n            <groupId>org.testng</groupId>\r\n            <artifactId>testng</artifactId>\r\n            <version>6.14.3</version>\r\n            <scope>test</scope>\r\n        </dependency>\r\n        <dependency>\r\n            <groupId>org.seleniumhq.selenium</groupId>\r\n            <artifactId>selenium-java</artifactId>\r\n            <version>4.16.1</version>\r\n        </dependency>\r\n        <dependency>\r\n            <groupId>io.github.bonigarcia</groupId>\r\n            <artifactId>webdrivermanager</artifactId>\r\n            <version>5.4.1</version>\r\n        </dependency>\r\n        <dependency>\r\n            <groupId>org.testng</groupId>\r\n            <artifactId>testng</artifactId>\r\n            <version>7.8.0</version>\r\n            <scope>compile</scope>\r\n        </dependency>\r\n        <!-- https://mvnrepository.com/artifact/com.aventstack/extentreports -->\r\n        <dependency>\r\n            <groupId>com.aventstack</groupId>\r\n            <artifactId>extentreports</artifactId>\r\n            <version>5.0.9</version>\r\n        </dependency>\r\n        <dependency>\r\n            <groupId>io.appium</groupId>\r\n            <artifactId>java-client</artifactId>\r\n            <version>6.1.0</version>\r\n        </dependency>\r\n        <dependency>\r\n            <groupId>io.cucumber</groupId>\r\n            <artifactId>cucumber-picocontainer</artifactId>\r\n            <version>4.3.0</version>\r\n            <scope>test</scope>\r\n        </dependency>\r\n        <dependency>\r\n            <groupId>io.cucumber</groupId>\r\n            <artifactId>datatable-dependencies</artifactId>\r\n            <version>1.1.12</version>\r\n        </dependency>\r\n        <dependency>\r\n            <groupId>io.cucumber</groupId>\r\n            <artifactId>datatable</artifactId>\r\n            <version>7.11.1</version>\r\n        </dependency>\r\n        <dependency>\r\n            <groupId>io.cucumber</groupId>\r\n            <artifactId>cucumber-testng</artifactId>\r\n            <version>7.13.0</version>\r\n        </dependency>\r\n        <dependency>\r\n            <groupId>io.cucumber</groupId>\r\n            <artifactId>cucumber-java</artifactId>\r\n            <version>7.11.1</version>\r\n        </dependency>\r\n        <dependency>\r\n            <groupId>org.apache.poi</groupId>\r\n            <artifactId>poi-ooxml</artifactId>\r\n            <version>5.2.2</version>\r\n        </dependency>\r\n        <dependency>\r\n            <groupId>commons-io</groupId>\r\n            <artifactId>commons-io</artifactId>\r\n            <version>2.11.0</version>\r\n        </dependency>\r\n        <dependency>\r\n            <groupId>junit</groupId>\r\n            <artifactId>junit</artifactId>\r\n            <version>4.13.2</version>\r\n            <scope>compile</scope>\r\n        </dependency>\r\n        <dependency>\r\n            <groupId>junit</groupId>\r\n            <artifactId>junit</artifactId>\r\n            <version>4.13.2</version>\r\n            <scope>compile</scope>\r\n        </dependency>\r\n        <!-- HttpClient for making HTTP requests -->\r\n        <dependency>\r\n            <groupId>org.apache.httpcomponents.client5</groupId>\r\n            <artifactId>httpclient5</artifactId>\r\n            <version>5.2.1</version>\r\n        </dependency>\r\n\r\n\r\n        <!-- Hamcrest for assertions -->\r\n        <dependency>\r\n            <groupId>org.hamcrest</groupId>\r\n            <artifactId>hamcrest</artifactId>\r\n            <version>2.2</version>\r\n            <scope>test</scope>\r\n        </dependency>\r\n\r\n        <!-- Gson for JSON parsing -->\r\n        <dependency>\r\n            <groupId>com.google.code.gson</groupId>\r\n            <artifactId>gson</artifactId>\r\n            <version>2.8.9</version>\r\n        </dependency>\r\n        <dependency>\r\n            <groupId>org.hamcrest</groupId>\r\n            <artifactId>hamcrest</artifactId>\r\n            <version>2.2</version>\r\n            <scope>compile</scope>\r\n        </dependency>\r\n        <dependency>\r\n            <groupId>io.rest-assured</groupId>\r\n            <artifactId>rest-assured</artifactId>\r\n            <version>4.4.0</version>\r\n        </dependency>\r\n        \r\n    </dependencies>\r\n\r\n\r\n    <properties>\r\n        <maven.compiler.source>20</maven.compiler.source>\r\n        <maven.compiler.target>20</maven.compiler.target>\r\n        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>\r\n    </properties>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/pom.xml b/pom.xml
+--- a/pom.xml	(revision fbf75c8d306db284b1ebf702a4bf5461e53ee2e9)
++++ b/pom.xml	(date 1741379540243)
+@@ -51,8 +51,16 @@
+         <dependency>
+             <groupId>org.seleniumhq.selenium</groupId>
+             <artifactId>selenium-java</artifactId>
+-            <version>4.16.1</version>
++            <version>4.29.0</version>
+         </dependency>
++        <!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-devtools-v132 -->
++        <dependency>
++            <groupId>org.seleniumhq.selenium</groupId>
++            <artifactId>selenium-devtools-v132</artifactId>
++            <version>4.29.0</version>
++        </dependency>
++
++        <!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-devtools-v122 -->
+         <dependency>
+             <groupId>io.github.bonigarcia</groupId>
+             <artifactId>webdrivermanager</artifactId>
+Index: src/main/java/Pageobjects/SSO_Admin.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package Pageobjects;\r\n\r\nimport baseClass.TestBase;\r\nimport org.openqa.selenium.By;\r\nimport org.openqa.selenium.Keys;\r\nimport org.openqa.selenium.interactions.Actions;\r\n\r\nimport java.io.IOException;\r\n\r\nimport static Pageobjects.SignUp.signUp_OTP_read;\r\n\r\npublic class SSO_Admin extends TestBase {\r\n\r\n\r\n    static String AdminUrl = \"https://qa.gaedkeeper.com/admin/login\";\r\n\r\n\r\n    static By Email = By.xpath(\"//input[@name='email']\");\r\n    static By Submitbtn = By.xpath(\"//span[@class='text-base font-medium text-white']\");\r\n    static By firstOtpBlock = By.xpath(\"//input[@aria-label='Please enter OTP character 1']\");\r\n\r\n    static By LoginBtn = By.xpath(\"//button[@type='button']\");\r\n\r\n    By Email23 = By.xpath(\"//input[@name='email']\");\r\n    By ViewBtn = By.xpath(\"//*[@class='cursor-pointer hover:underline']\");\r\n    By VerifyUserBtn = By.xpath(\"//span[normalize-space()='Verify User']\");\r\n    By checkboxMarkertplace = By.xpath(\"(//input[@class='PrivateSwitchBase-input css-j8yymo'])[1]\");\r\n    By checkboxAssessment = By.xpath(\"(//input[@class='PrivateSwitchBase-input css-j8yymo'])[2]\");\r\n    By continueBtn = By.xpath(\"//*[@class='text-sm font-medium text-white']\");\r\n    By confirmBtn = By.xpath(\"//*[@class='text-sm font-medium text-white']\");\r\n    By OnHoldBtn = By.xpath(\"//span[normalize-space()='Put On Hold']\");\r\n    By OnHoldReasons = By.xpath(\"//textarea[@placeholder='Kindly specify the reason here']\");\r\n    By OnHoldReasonBtn = By.xpath(\"//button[normalize-space()='Submit']\");\r\n\r\n    //textarea[@placeholder='Kindly specify the reason here']\r\n    public void AdminLogin() throws InterruptedException {\r\n        driver.navigate().to(AdminUrl);\r\n        driver.findElement(Email).sendKeys(\"gabriel.sze@yopmail.com\");\r\n        click(Submitbtn);\r\n        signUp_OTP_read(\"gabriel.sze@yopmail.com\");\r\n        //  driver.switchTo().window(driver.getWindowHandles().toArray()[0].toString());\r\n        Thread.sleep(2000);\r\n        driver.findElement(firstOtpBlock).click();\r\n        Actions actions = new Actions(driver);\r\n        // Use Actions class to perform keyboard shortcut (Ctrl + V) for paste\r\n        actions.keyDown(Keys.CONTROL).sendKeys(\"v\").keyUp(Keys.CONTROL).build().perform();\r\n        Thread.sleep(5000);\r\n        click(LoginBtn);\r\n        Thread.sleep(1000);\r\n\r\n    }\r\n    public void Adminhomepage() throws IOException {\r\n\r\n        driver.get(\"https://qa.gaedkeeper.com/admin/login\");\r\n    }\r\n    public void AdminLogin_with_validData() throws InterruptedException, IOException {\r\n\r\n        driver.findElement(Email).sendKeys(\"gabriel.sze@yopmail.com\");\r\n        click(Submitbtn);\r\n        signUp_OTP_read(\"gabriel.sze@yopmail.com\");\r\n        //  driver.switchTo().window(driver.getWindowHandles().toArray()[0].toString());\r\n        Thread.sleep(2000);\r\n        driver.findElement(firstOtpBlock).click();\r\n        Actions actions = new Actions(driver);\r\n        // Use Actions class to perform keyboard shortcut (Ctrl + V) for paste\r\n        actions.keyDown(Keys.CONTROL).sendKeys(\"v\").keyUp(Keys.CONTROL).build().perform();\r\n        Thread.sleep(5000);\r\n        click(LoginBtn);\r\n    }\r\n    public void AdminLogin_VerifyConsumer() throws InterruptedException {\r\n        driver.navigate().to(AdminUrl);\r\n        driver.findElement(Email).sendKeys(\"gabriel.sze@yopmail.com\");\r\n        click(Submitbtn);\r\n        signUp_OTP_read(\"gabriel.sze@yopmail.com\");\r\n      //  driver.switchTo().window(driver.getWindowHandles().toArray()[0].toString());\r\n        Thread.sleep(2000);\r\n        driver.findElement(firstOtpBlock).click();\r\n        Actions actions = new Actions(driver);\r\n        // Use Actions class to perform keyboard shortcut (Ctrl + V) for paste\r\n        actions.keyDown(Keys.CONTROL).sendKeys(\"v\").keyUp(Keys.CONTROL).build().perform();\r\n        Thread.sleep(5000);\r\n        click(LoginBtn);\r\n        Thread.sleep(1000);\r\n        click(ViewBtn);\r\n        //verify the user\r\n        click(VerifyUserBtn);\r\n        click(checkboxMarkertplace);\r\n        click(checkboxAssessment);\r\n        click(continueBtn);\r\n        Thread.sleep(2000);\r\n        click(confirmBtn);\r\n    }\r\n    public void AdminLogin_OnHoldConsumer() throws InterruptedException {\r\n        driver.navigate().to(AdminUrl);\r\n        driver.findElement(Email).sendKeys(\"gabriel.sze@yopmail.com\");\r\n        click(Submitbtn);\r\n        signUp_OTP_read(\"gabriel.sze@yopmail.com\");\r\n        //  driver.switchTo().window(driver.getWindowHandles().toArray()[0].toString());\r\n        Thread.sleep(2000);\r\n        driver.findElement(firstOtpBlock).click();\r\n        Actions actions = new Actions(driver);\r\n        // Use Actions class to perform keyboard shortcut (Ctrl + V) for paste\r\n        actions.keyDown(Keys.CONTROL).sendKeys(\"v\").keyUp(Keys.CONTROL).build().perform();\r\n        Thread.sleep(5000);\r\n        click(LoginBtn);\r\n        Thread.sleep(1000);\r\n        click(ViewBtn);\r\n        //verify the user\r\n        click(OnHoldBtn);\r\n        driver.findElement(OnHoldReasons).sendKeys(\"This is by automation\");\r\n        click(OnHoldReasonBtn);\r\n        Thread.sleep(2000);\r\n    }\r\n    public void BuySell_Accept() throws InterruptedException {\r\n\r\n    }\r\n\r\n\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/Pageobjects/SSO_Admin.java b/src/main/java/Pageobjects/SSO_Admin.java
+--- a/src/main/java/Pageobjects/SSO_Admin.java	(revision fbf75c8d306db284b1ebf702a4bf5461e53ee2e9)
++++ b/src/main/java/Pageobjects/SSO_Admin.java	(date 1741379540253)
+@@ -23,6 +23,7 @@
+ 
+     By Email23 = By.xpath("//input[@name='email']");
+     By ViewBtn = By.xpath("//*[@class='cursor-pointer hover:underline']");
++    //By ViewBtn = By.xpath("//*[@d='M0 0h24v24H0V0z']");
+     By VerifyUserBtn = By.xpath("//span[normalize-space()='Verify User']");
+     By checkboxMarkertplace = By.xpath("(//input[@class='PrivateSwitchBase-input css-j8yymo'])[1]");
+     By checkboxAssessment = By.xpath("(//input[@class='PrivateSwitchBase-input css-j8yymo'])[2]");
+@@ -80,7 +81,7 @@
+         actions.keyDown(Keys.CONTROL).sendKeys("v").keyUp(Keys.CONTROL).build().perform();
+         Thread.sleep(5000);
+         click(LoginBtn);
+-        Thread.sleep(1000);
++        Thread.sleep(5000);
+         click(ViewBtn);
+         //verify the user
+         click(VerifyUserBtn);
+Index: src/test/java/Testcases/LoginUserTest.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package Testcases;\r\n\r\n\r\n\r\nimport Pageobjects.HomePage;\r\nimport Pageobjects.LoginConsumer;\r\nimport baseClass.TestBase;\r\nimport com.aventstack.extentreports.ExtentTest;\r\nimport org.testng.annotations.Test;\r\nimport utils.Dataprovider;\r\n\r\n\r\nimport java.io.IOException;\r\n\r\npublic class LoginUserTest extends TestBase {\r\n    HomePage homePage = new HomePage();\r\n    LoginConsumer login = new LoginConsumer();\r\n\r\n    public LoginUserTest() throws IOException {\r\n    }\r\n  /*  @DataProvider(name = \"Loginuser\")\r\n    public static Object[][] LoginData() throws IOException {\r\n\r\n        FileInputStream fis = new FileInputStream(\"src/resources/ExcelFile.xlsx\");\r\n        Workbook workbook = new XSSFWorkbook(fis);\r\n        Sheet loginsheet = workbook.getSheet(\"Loginsheet\");\r\n\r\n        int numberOfRows = loginsheet.getPhysicalNumberOfRows();\r\n        Object[][] testData = new Object[numberOfRows - 1][2]; // Adjust for header row if present\r\n\r\n        for (int i = 1; i < numberOfRows; i++) { // Start from 1 to skip header row\r\n            Row row = loginsheet.getRow(i);\r\n\r\n            if (row != null) {\r\n                Cell usernameEmail = row.getCell(0);\r\n                Cell password = row.getCell(1);\r\n\r\n                if (usernameEmail != null) {\r\n                    testData[i - 1][0] = getCellValue(usernameEmail);\r\n                } else {\r\n                    testData[i - 1][0] = \"\"; // Handle null cell\r\n                }\r\n\r\n                if (password != null) {\r\n                    testData[i - 1][1] = getCellValue(password);\r\n                } else {\r\n                    testData[i - 1][1] = \"\"; // Handle null cell\r\n                }\r\n\r\n                System.out.println(\"Username fetched value: \" + usernameEmail);\r\n                System.out.println(\"Password fetched value: \" + password);\r\n            }\r\n        }\r\n\r\n        workbook.close();\r\n        fis.close();\r\n\r\n        return testData;\r\n    }\r\n    private static String getCellValue(Cell cell) {\r\n        if (cell == null) {\r\n            return \"\";\r\n        }\r\n        switch (cell.getCellType()) {\r\n            case STRING:\r\n                return cell.getStringCellValue();\r\n            case NUMERIC:\r\n                return String.valueOf(cell.getNumericCellValue());\r\n            case BOOLEAN:\r\n                return String.valueOf(cell.getBooleanCellValue());\r\n            case FORMULA:\r\n                return cell.getCellFormula();\r\n            case BLANK:\r\n                return \"\";\r\n            default:\r\n                return \"\";\r\n        }\r\n    }\r\n*/\r\n/*  @DataProvider(name = \"Loginuser\")\r\n  public static Object[][] LoginData() throws IOException {\r\n     utility.LoginData();\r\n  }*/\r\n\r\n      @Test(priority = 1, enabled = true, dataProvider = \"ValidLoginEmail\",dataProviderClass = Dataprovider.class)\r\n    public void Login_VerifyEmail(String usernameEmail, String password) throws IOException, InterruptedException {\r\n        ExtentTest test = extent.createTest(\"To verify the valid email\");\r\n        System.out.println(usernameEmail + \" \" + password);\r\n       homePage.homepage();\r\n        login.Login_Btn_home();\r\n        login.Verify_login_Page();\r\n        login.Login_Email(usernameEmail);\r\n        login.sentOTPbtn();\r\n        login.Login_OTP_read(usernameEmail);\r\n        login.enterOTP();\r\n        login.verifyEmailbtn();\r\n        test.pass(\"To verify the valid email passed successfully.\");\r\n    }\r\n    @Test(priority = 2, enabled = true, dataProvider = \"InvalidLoginEmail\",dataProviderClass = Dataprovider.class)\r\n    public void Login_VerifyInvalidEmail(String usernameEmail, String password) throws IOException {\r\n        ExtentTest test = extent.createTest(\"To verify the invalid email\");\r\n        System.out.println(usernameEmail);\r\n        homePage.homepage();\r\n        login.Login_Btn_home();\r\n        login.Verify_login_Page();\r\n        login.Login_Email(usernameEmail);\r\n        login.sentOTPbtn();\r\n        login.invalid_validation();\r\n        test.pass(\"To verify the invalid email passed successfully.\");\r\n    }\r\n    @Test(priority = 3, enabled = true)\r\n    public void Login_VerifyEmptyEmail() throws IOException {\r\n        ExtentTest test = extent.createTest(\"To verify the invalid email\");\r\n        homePage.homepage();\r\n        login.Login_Btn_home();\r\n        login.Verify_login_Page();\r\n        login.sentOTPbtn();\r\n        login.Empty_invalid_validation();\r\n        test.pass(\"To verify the Email passed successfully.\");\r\n    }\r\n    @Test(priority = 4, enabled = true, dataProvider = \"ValidLoginEmail\",dataProviderClass = Dataprovider.class)\r\n    public void InvalidOTP(String usernameEmail, String password) throws IOException, InterruptedException {\r\n        ExtentTest test = extent.createTest(\"To verify the Invalid OTP message\");\r\n        System.out.println(usernameEmail + \" \" + password);\r\n        homePage.homepage();\r\n        login.Login_Btn_home();\r\n        login.Verify_login_Page();\r\n        login.Login_Email(usernameEmail);\r\n        login.sentOTPbtn();\r\n        login.InvalidOTP();\r\n        login.verifyEmailbtn();\r\n        login.invalidOTP_message();\r\n    }\r\n\r\n\r\n    /* @Test(priority = 2,enabled = true)\r\n    public void VerifyEmptyEmail() throws InterruptedException {\r\n        ExtentTest test = extent.createTest(\"To verify the Empty email\");\r\n        homePage.homepage();\r\n        LoginConsumer.EmptyEmail();\r\n        test.pass(\"To verify the Empty email passed successfully.\");\r\n    }\r\n   @Test(priority = 3,enabled = true)\r\n    public void VerifyEmptyNotExist() throws InterruptedException {\r\n        ExtentTest test = extent.createTest(\"To verify the email is not signed up\");\r\n        homePage.homepage();\r\n        LoginConsumer.EmailDoesExist();\r\n        test.pass(\"To verify the email is not signed up passed successfully.\");\r\n    }\r\n    @Test(priority = 4,enabled = true)\r\n    public void Verify_SignUp_Link_ontheLogin() throws InterruptedException {\r\n        ExtentTest test = extent.createTest(\"To Verify the signup link on the login page\");\r\n        homePage.homepage();\r\n        LoginConsumer.SignupLinkOnLogin();\r\n        test.pass(\"To verify the signup link on the login page is clickable and navigate to singup page :  passed successfully.\");\r\n    }\r\n    @Test(priority = 5,enabled = true)\r\n    public void verifyLoginConsumer() throws InterruptedException {\r\n        homePage.homepage();\r\n        LoginConsumer.LoginConsumerSuceessful();\r\n        LoginConsumer.Veriy_consumer_profile();\r\n        //LoginUser.OTP_read();\r\n    }*/\r\n\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/test/java/Testcases/LoginUserTest.java b/src/test/java/Testcases/LoginUserTest.java
+--- a/src/test/java/Testcases/LoginUserTest.java	(revision fbf75c8d306db284b1ebf702a4bf5461e53ee2e9)
++++ b/src/test/java/Testcases/LoginUserTest.java	(date 1741379540295)
+@@ -91,7 +91,7 @@
+         login.Verify_login_Page();
+         login.Login_Email(usernameEmail);
+         login.sentOTPbtn();
+-        login.Login_OTP_read(usernameEmail);
++        //login.Login_OTP_read(usernameEmail);
+         login.enterOTP();
+         login.verifyEmailbtn();
+         test.pass("To verify the valid email passed successfully.");
+Index: testng.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<!DOCTYPE suite SYSTEM \"http://testng.org/testng-1.0.dtd\"><suite name=\"All Test Suite\"><test verbose=\"2\" preserve-order=\"true\" name=\"C:/GAED\"><classes><class name=\"ExtentReportListener.extend_report_example\"><methods><include name=\"get_title\"/><include name=\"image_present\"/></methods></class><class name=\"Testcases.BuyAndSellTest\"><methods><include name=\"Create_Project\"/></methods></class><class name=\"Testcases.GalleryPageTest\"><methods><include name=\"Gallery_verify_album\"/><include name=\"Verify_Select_Functionality\"/><include name=\"Verify_Select_Clear\"/><include name=\"Collage_Btn_functionality\"/><include name=\"Collage_Img_functionality\"/><include name=\"Collage_multi_Img_functionality\"/><include name=\"Verify_Collage_Multi_layoutswitch_Image\"/></methods></class><class name=\"Testcases.HomepageTest\"><methods><include name=\"Homepage\"/><include name=\"BuyandSellbuttonVerify\"/></methods></class><class name=\"Testcases.LoginAdminTest\"><methods><include name=\"AdminLogin_valid\"/></methods></class><class name=\"Testcases.LoginUserTest\"><methods><include name=\"Login_VerifyEmail\"/><include name=\"Login_VerifyInvalidEmail\"/><include name=\"Login_VerifyEmptyEmail\"/><include name=\"InvalidOTP\"/><include name=\"VerifyEmptyNotExist\"/><include name=\"Verify_SignUp_Link_ontheLogin\"/><include name=\"verifyLoginConsumer\"/></methods></class><class name=\"Testcases.SignUpTest\"><methods><include name=\"Signup_page_verify\"/><include name=\"Verify_Empty_signup_fields\"/><include name=\"Consumer_Sign_up_and_Verify_by_admin\"/><include name=\"Consumer_Sign_up_and_OnHold_by_admin\"/></methods></class></classes></test></suite>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/testng.xml b/testng.xml
+--- a/testng.xml	(revision fbf75c8d306db284b1ebf702a4bf5461e53ee2e9)
++++ b/testng.xml	(date 1741379540349)
+@@ -1,2 +1,47 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+-<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd"><suite name="All Test Suite"><test verbose="2" preserve-order="true" name="C:/GAED"><classes><class name="ExtentReportListener.extend_report_example"><methods><include name="get_title"/><include name="image_present"/></methods></class><class name="Testcases.BuyAndSellTest"><methods><include name="Create_Project"/></methods></class><class name="Testcases.GalleryPageTest"><methods><include name="Gallery_verify_album"/><include name="Verify_Select_Functionality"/><include name="Verify_Select_Clear"/><include name="Collage_Btn_functionality"/><include name="Collage_Img_functionality"/><include name="Collage_multi_Img_functionality"/><include name="Verify_Collage_Multi_layoutswitch_Image"/></methods></class><class name="Testcases.HomepageTest"><methods><include name="Homepage"/><include name="BuyandSellbuttonVerify"/></methods></class><class name="Testcases.LoginAdminTest"><methods><include name="AdminLogin_valid"/></methods></class><class name="Testcases.LoginUserTest"><methods><include name="Login_VerifyEmail"/><include name="Login_VerifyInvalidEmail"/><include name="Login_VerifyEmptyEmail"/><include name="InvalidOTP"/><include name="VerifyEmptyNotExist"/><include name="Verify_SignUp_Link_ontheLogin"/><include name="verifyLoginConsumer"/></methods></class><class name="Testcases.SignUpTest"><methods><include name="Signup_page_verify"/><include name="Verify_Empty_signup_fields"/><include name="Consumer_Sign_up_and_Verify_by_admin"/><include name="Consumer_Sign_up_and_OnHold_by_admin"/></methods></class></classes></test></suite>
+\ No newline at end of file
++<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
++<suite name="All Test Suite">
++    <test verbose="2" preserve-order="true" name="C:/GAED">
++        <parameter name="browserName" value="chrome"></parameter>
++        <classes>
++            <class name="Testcases.HomepageTest">
++                <methods>
++                    <include name="Homepage"/>
++                    <include name="BuyandSellbuttonVerify"/>
++                </methods>
++            </class>
++            <class name="Testcases.SignUpTest">
++                <methods>
++                    <include name="Signup_page_verify"/>
++                    <include name="Verify_Empty_signup_fields"/>
++                    <include name="Consumer_Sign_up_and_Verify_by_admin"/>
++                    <include name="Consumer_Sign_up_and_OnHold_by_admin"/>
++                </methods>
++            </class>
++            <class name="Testcases.BuyAndSellTest">
++                <methods>
++                    <include name="invalidate_SellProject_buttons"/>
++                    <include name="invalidat_sellProject_stepper_1_fields"/>
++                    <include name="Create_Project"/>
++                    <include name="Accept_Project_In_Admin"/>
++                </methods>
++            </class>
++            <class name="Testcases.LoginAdminTest">
++                <methods>
++                    <include name="AdminLogin_valid"/>
++                </methods>
++            </class>
++            <class name="Testcases.LoginUserTest">
++                <methods>
++                    <include name="Login_VerifyEmail"/>
++                    <include name="Login_VerifyInvalidEmail"/>
++                    <include name="Login_VerifyEmptyEmail"/>
++                    <include name="InvalidOTP"/>
++                    <include name="VerifyEmptyNotExist"/>
++                    <include name="Verify_SignUp_Link_ontheLogin"/>
++                    <include name="verifyLoginConsumer"/>
++                </methods>
++            </class>
++        </classes>
++    </test>
++</suite>
+\ No newline at end of file

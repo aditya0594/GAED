@@ -4,36 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="fbed16bb-bade-4def-845d-b7f89224c886" name="Changes" comment="Set all the file and testng.xml">
-      <change afterPath="$PROJECT_DIR$/Screenshots/Create_Project20250307082356.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Screenshots/Create_Project20250307082657.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Screenshots/Create_Project20250307083442.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Screenshots/Create_Project20250307083700.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Screenshots/Create_Project20250307083845.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Screenshots/Create_Project20250307084426.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Screenshots/Create_Project20250307084624.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Screenshots/Create_Project20250307085536.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Screenshots/InvalidOTP20250308014510.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Screenshots/InvalidOTP20250308121040.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Screenshots/otp20250307092651.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Screenshots/otp20250307093514.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Screenshots/otp20250308010503.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Screenshots/otp20250308010548.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Screenshots/otp20250308124216.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Screenshots/otp20250308124521.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Screenshots/otp20250308125107.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Screenshots/otp20250308125911.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Pageobjects/LoginConsumer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Pageobjects/LoginConsumer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Pageobjects/MarketPlaceAdmin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Pageobjects/MarketPlaceAdmin.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Pageobjects/Projects.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Pageobjects/Projects.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/utils/utility.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/utils/utility.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/Testcases/BuyAndSellTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Testcases/BuyAndSellTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/Testcases/LoginUserTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Testcases/LoginUserTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/Testcases/ProjectsTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Testcases/ProjectsTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test-output/GAED_Testcase_report.html" beforeDir="false" afterPath="$PROJECT_DIR$/test-output/GAED_Testcase_report.html" afterDir="false" />
-    </list>
+    <list default="true" id="fbed16bb-bade-4def-845d-b7f89224c886" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -74,18 +45,18 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "last_opened_file_path": "C:/GAED/src/test/java/resourses",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "run.code.analysis.last.selected.profile": "pProject Default",
-    "settings.editor.selected.configurable": "preferences.pluginManager"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/GAED/src/test/java/resourses&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
       <recent name="Runner" />
