@@ -7,7 +7,6 @@
     <list default="true" id="fbed16bb-bade-4def-845d-b7f89224c886" name="Changes" comment="setep devTool and testng xml and the container">
       <change beforePath="$PROJECT_DIR$/.gitlab-ci.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.gitlab-ci.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -420,13 +419,6 @@
       <option name="presentableId" value="Default" />
       <updated>1666076051325</updated>
     </task>
-    <task id="LOCAL-00010" summary="Connectivity STA AP commit 05-06-2023">
-      <created>1685949309485</created>
-      <option name="number" value="00010" />
-      <option name="presentableId" value="LOCAL-00010" />
-      <option name="project" value="LOCAL" />
-      <updated>1685949309485</updated>
-    </task>
     <task id="LOCAL-00011" summary="appium setup 24-02-2024">
       <created>1708776899151</created>
       <option name="number" value="00011" />
@@ -763,7 +755,14 @@
       <option name="project" value="LOCAL" />
       <updated>1741463443337</updated>
     </task>
-    <option name="localTasksCounter" value="59" />
+    <task id="LOCAL-00059" summary="setep devTool and testng xml and the container">
+      <created>1741464019123</created>
+      <option name="number" value="00059" />
+      <option name="presentableId" value="LOCAL-00059" />
+      <option name="project" value="LOCAL" />
+      <updated>1741464019123</updated>
+    </task>
+    <option name="localTasksCounter" value="60" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">

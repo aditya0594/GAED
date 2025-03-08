@@ -3,24 +3,32 @@ stages:
   - test
 
 variables:
-    SELENIUM_SERVER_URL: http://selenium:4444/wd/hub
-    RDP_PASSWORD: "P@ssword123"
+  SELENIUM_SERVER_URL: http://selenium:4444/wd/hub
+  RDP_PASSWORD: "P@ssword123"
 
 services:
   - docker:20.10.16-dind
 
+before_script:
+  - echo "Starting Docker Daemon..."
+  - dockerd-entrypoint.sh &
+  - sleep 20
+
 build:
   stage: build
   script:
-    - docker-compose up -d
+    - echo "Starting Windows Container with GUI..."
+    - docker run -d --name windows-container --rm -p 3389:3389 mcr.microsoft.com/windows/servercore:ltsc2022
+    - docker exec -i windows-container powershell -Command "Invoke-WebRequest -Uri https://dl.google.com/chrome/install/latest/chrome_installer.exe -OutFile C:\\chrome_installer.exe"
+    - docker exec -i windows-container powershell -Command "Start-Process -FilePath 'C:\\chrome_installer.exe' -Wait"
+    - echo "Chrome installed successfully in Windows container."
 
-run_tests:
+test:
   stage: test
   script:
-    - docker exec -i windows-container powershell -Command "Start-Process 'C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe'"
-    - docker exec -i selenium-chrome /bin/sh -c "java -jar selenium-server-standalone.jar"
+    - echo "Running Selenium Test Cases..."
     - docker exec -i windows-container powershell -Command "cd C:\\tests && mvn clean test"
-
-artifacts:
-  paths:
-    - test-output/
+    - echo "Test execution completed."
+  artifacts:
+    paths:
+      - C:/tests/target/surefire-reports/
