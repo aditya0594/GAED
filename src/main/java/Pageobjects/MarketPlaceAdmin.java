@@ -1,15 +1,26 @@
 package Pageobjects;
 
 import baseClass.TestBase;
+import com.google.gson.JsonObject;
+import com.google.gson.JsonParser;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.WindowType;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.devtools.DevTools;
+import org.openqa.selenium.devtools.v132.network.Network;
+import org.openqa.selenium.devtools.v132.network.model.RequestId;
+import org.openqa.selenium.devtools.v132.network.model.Response;
 import org.openqa.selenium.interactions.Actions;
 import org.testng.Assert;
 import utils.utility;
 
+import java.awt.*;
+import java.awt.datatransfer.Clipboard;
+import java.awt.datatransfer.StringSelection;
 import java.io.IOException;
+import java.util.Optional;
 
 import static Pageobjects.SignUp.signUp_OTP_read;
 
@@ -36,25 +47,70 @@ public class MarketPlaceAdmin extends TestBase {
     By OnHoldReasons = By.xpath("//textarea[@placeholder='Kindly specify the reason here']");
     By OnHoldReasonBtn = By.xpath("//button[normalize-space()='Submit']");
     //textarea[@placeholder='Kindly specify the reason here']
-    public void marketAdminhomepage() throws IOException {
-
+    public void marketAdminhomepage() throws IOException, InterruptedException {
+        Thread.sleep(2000);
         driver.navigate().to("https://marketplace.qa.gaedkeeper.com/admin/login");
         driver.switchTo().window(driver.getWindowHandles().toArray()[1].toString()).close();
-        driver.switchTo().window(driver.getWindowHandles().toArray()[0].toString());
+      //  driver.switchTo().window(driver.getWindowHandles().toArray()[0].toString());
     }
     public void marketAdminLogin() throws InterruptedException {
         driver.navigate().to(AdminUrl);
         driver.navigate().refresh();
         driver.findElement(Email).sendKeys("gabriel.sze@yopmail.com");
+
+        DevTools devTools = ((ChromeDriver) driver).getDevTools();
+        devTools.createSession();
+        devTools.send(Network.enable(Optional.empty(), Optional.empty(), Optional.empty()));
+
+        // **Print All Network Responses (Debugging)**
+        devTools.addListener(Network.responseReceived(), response -> {
+            RequestId requestId = response.getRequestId();
+            Response res = response.getResponse();
+
+            // **Print ALL API responses**
+            System.out.println("Network Response URL: " + res.getUrl());
+
+            // **Check if the OTP API request is being captured**
+            if (res.getUrl().contains("/send-otp")) {  // Change URL based on actual API
+                System.out.println("Captured OTP API Response: " + res.getUrl());
+
+                Optional<Network.GetResponseBodyResponse> responseBody =
+                        Optional.ofNullable(devTools.send(Network.getResponseBody(requestId)));
+
+                if (responseBody.isPresent()) {
+                    String body = responseBody.get().getBody();
+                    //System.out.println("Full Response: " + body);
+
+                    // **Parse JSON and extract OTP**
+                    JsonObject jsonObject = JsonParser.parseString(body).getAsJsonObject();
+                    if (jsonObject.has("data")) {
+                        JsonObject data = jsonObject.getAsJsonObject("data");
+                        if (data.has("code")) {
+                            String extractedOTP = data.get("code").getAsString();
+                            System.out.println("Extracted OTP: " + extractedOTP);
+                            Clipboard clipboard = Toolkit.getDefaultToolkit().getSystemClipboard();
+                            // Create a StringSelection object containing the OTP
+                            StringSelection stringSelection = new StringSelection(extractedOTP);
+                            // Set the StringSelection as the current contents of the clipboard
+                            clipboard.setContents(stringSelection,null);
+
+                        } else {
+                            System.out.println("OTP field 'code' not found in response!");
+                        }
+                    } else {
+                        System.out.println("Response does not contain 'data' object!");
+                    }
+                }
+            }
+        });
         click(Submitbtn);
-        signUp_OTP_read("gabriel.sze@yopmail.com");
         //  driver.switchTo().window(driver.getWindowHandles().toArray()[0].toString());
-        Thread.sleep(2000);
+        Thread.sleep(1000);
         driver.findElement(firstOtpBlock).click();
         Actions actions = new Actions(driver);
         // Use Actions class to perform keyboard shortcut (Ctrl + V) for paste
         actions.keyDown(Keys.CONTROL).sendKeys("v").keyUp(Keys.CONTROL).build().perform();
-        Thread.sleep(5000);
+        Thread.sleep(1000);
         click(LoginBtn);
         Thread.sleep(1000);
 
@@ -69,6 +125,7 @@ public class MarketPlaceAdmin extends TestBase {
         String created_project_name = buyAndSell.project_Name;*/
 //        System.out.println("Project name is which is created : " + created_project_name);
 //        Assert.assertEquals(Projectname,created_project_name);
+        Thread.sleep(2000);
         driver.findElement(StatusDropdown).sendKeys("Publish" + Keys.TAB);
 
        // utility.scrollToElement(SubmitBtn);

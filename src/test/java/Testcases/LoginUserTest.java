@@ -91,7 +91,7 @@ public class LoginUserTest extends TestBase {
         login.Verify_login_Page();
         login.Login_Email(usernameEmail);
         login.sentOTPbtn();
-        login.Login_OTP_read(usernameEmail);
+        //login.Login_OTP_read(usernameEmail);
         login.enterOTP();
         login.verifyEmailbtn();
         test.pass("To verify the valid email passed successfully.");

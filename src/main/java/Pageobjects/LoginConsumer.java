@@ -2,7 +2,14 @@ package Pageobjects;
 
 
 import baseClass.TestBase;
+import com.google.gson.JsonObject;
+import com.google.gson.JsonParser;
 import org.openqa.selenium.*;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.devtools.DevTools;
+import org.openqa.selenium.devtools.v132.network.Network;
+import org.openqa.selenium.devtools.v132.network.model.RequestId;
+import org.openqa.selenium.devtools.v132.network.model.Response;
 import org.openqa.selenium.interactions.Actions;
 import org.testng.Assert;
 
@@ -11,6 +18,7 @@ import java.awt.datatransfer.Clipboard;
 import java.awt.datatransfer.StringSelection;
 import java.io.IOException;
 import java.util.List;
+import java.util.Optional;
 import java.util.Set;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -42,7 +50,7 @@ public class LoginConsumer extends TestBase {
    static By InvalidemailLoginMes   = By.xpath("//span[@class='block my-2 text-xs font-normal text-red-500 ']");
    static By EmptyEmailMess = By.xpath("//span[@class='block my-2 text-xs font-normal text-red-500 ']");
    static By EmaiDoesNotexistlMess = By.xpath("//span[@class='block my-2 text-xs font-normal text-red-500 ']");
-    static By InvalidOTPmessage = By.xpath("//span[@class='block my-2 text-sm font-normal text-red-500']");
+    static By InvalidOTPmessage = By.xpath("//span[normalize-space()='Invalid OTP. Please try again.']");
 
   static By SignupLinkLogin = By.xpath("//span[@class='font-medium text-primary hover:underline cursor-pointer']");
   static By SignupTitleOfLink = By.xpath("//*[@id=\"root\"]/div/div[2]/div/div/div/div/div[2]/div/div/div/form/div[2]/div/p");
@@ -79,6 +87,51 @@ public class LoginConsumer extends TestBase {
     }
     public void sentOTPbtn() {
         driver.findElement(SentOtpBtn).click();
+        DevTools devTools = ((ChromeDriver) driver).getDevTools();
+        devTools.createSession();
+        devTools.send(Network.enable(Optional.empty(), Optional.empty(), Optional.empty()));
+
+        // **Print All Network Responses (Debugging)**
+        devTools.addListener(Network.responseReceived(), response -> {
+            RequestId requestId = response.getRequestId();
+            Response res = response.getResponse();
+
+            // **Print ALL API responses**
+            System.out.println("Network Response URL: " + res.getUrl());
+
+            // **Check if the OTP API request is being captured**
+            if (res.getUrl().contains("/send-otp")) {  // Change URL based on actual API
+                System.out.println("Captured OTP API Response: " + res.getUrl());
+
+                Optional<Network.GetResponseBodyResponse> responseBody =
+                        Optional.ofNullable(devTools.send(Network.getResponseBody(requestId)));
+
+                if (responseBody.isPresent()) {
+                    String body = responseBody.get().getBody();
+                    System.out.println("Full Response: " + body);
+
+                    // **Parse JSON and extract OTP**
+                    JsonObject jsonObject = JsonParser.parseString(body).getAsJsonObject();
+                    if (jsonObject.has("data")) {
+                        JsonObject data = jsonObject.getAsJsonObject("data");
+                        if (data.has("code")) {
+                            String extractedOTP = data.get("code").getAsString();
+                            System.out.println("Extracted OTP: " + extractedOTP);
+                            Clipboard clipboard = Toolkit.getDefaultToolkit().getSystemClipboard();
+                            // Create a StringSelection object containing the OTP
+                            StringSelection stringSelection = new StringSelection(extractedOTP);
+                            // Set the StringSelection as the current contents of the clipboard
+                            clipboard.setContents(stringSelection,null);
+
+                        } else {
+                            System.out.println("OTP field 'code' not found in response!");
+                        }
+                    } else {
+                        System.out.println("Response does not contain 'data' object!");
+                    }
+                }
+            }
+        });
     }
 
     public static void Login_OTP_read(String emailforInbox) throws InterruptedException {
@@ -250,7 +303,7 @@ public class LoginConsumer extends TestBase {
     }
 
     static By Marketplace = By.xpath("//*[@class='absolute bottom-5 w-full text-center text-white text-2xl font-semibold  ']");
-    public static void LoginConsumerSuceessful() throws InterruptedException {
+    /*public static void LoginConsumerSuceessful() throws InterruptedException {
         String Loginbtntext =  driver.findElement(loginBtn).getText();
         Assert.assertEquals("Login",Loginbtntext);
         driver.findElement(loginBtn).click();
@@ -269,9 +322,87 @@ public class LoginConsumer extends TestBase {
         // Use Actions class to perform keyboard shortcut (Ctrl + V) for paste
         actions.keyDown(Keys.CONTROL).sendKeys("v").keyUp(Keys.CONTROL).build().perform();
         driver.findElement(VerifyEmailbtn).click();
-        Thread.sleep(4000);
+        Thread.sleep(3000);
         waitForElement(Marketplace);
         click(Marketplace);
+        Thread.sleep(3000);
+    }
+*/
+    public static void LoginConsumerSuceessful() throws InterruptedException {
+        String Loginbtntext =  driver.findElement(loginBtn).getText();
+        Assert.assertEquals("Login",Loginbtntext);
+        driver.findElement(loginBtn).click();
+        String verifyLoginpage  = driver.findElement(loginPageVerify).getText();
+        Assert.assertEquals("Welcome Back!",verifyLoginpage);
+        String LoginemailTitle  = driver.findElement(Loginemailtitle).getText();
+        Assert.assertEquals("Email Address*",LoginemailTitle);
+        driver.findElement(LoginEmail).sendKeys(HomePage.EMAIL);
+        String SentOTPtitle  = driver.findElement(SentOtpBtn).getText();
+        Assert.assertEquals("Send OTP",SentOTPtitle);
+
+
+        Thread.sleep(2000);
+        // **Start DevTools for Capturing OTP**
+        DevTools devTools = ((ChromeDriver) driver).getDevTools();
+        devTools.createSession();
+        devTools.send(Network.enable(Optional.empty(), Optional.empty(), Optional.empty()));
+
+        // **Print All Network Responses (Debugging)**
+        devTools.addListener(Network.responseReceived(), response -> {
+            RequestId requestId = response.getRequestId();
+            Response res = response.getResponse();
+
+            // **Print ALL API responses**
+            System.out.println("Network Response URL: " + res.getUrl());
+
+            // **Check if the OTP API request is being captured**
+            if (res.getUrl().contains("/send-otp")) {  // Change URL based on actual API
+                System.out.println("Captured OTP API Response: " + res.getUrl());
+
+                Optional<Network.GetResponseBodyResponse> responseBody =
+                        Optional.ofNullable(devTools.send(Network.getResponseBody(requestId)));
+
+                if (responseBody.isPresent()) {
+                    String body = responseBody.get().getBody();
+                    System.out.println("Full Response: " + body);
+
+                    // **Parse JSON and extract OTP**
+                    JsonObject jsonObject = JsonParser.parseString(body).getAsJsonObject();
+                    if (jsonObject.has("data")) {
+                        JsonObject data = jsonObject.getAsJsonObject("data");
+                        if (data.has("code")) {
+                            String extractedOTP = data.get("code").getAsString();
+                            System.out.println("Extracted OTP: " + extractedOTP);
+                            Clipboard clipboard = Toolkit.getDefaultToolkit().getSystemClipboard();
+                            // Create a StringSelection object containing the OTP
+                            StringSelection stringSelection = new StringSelection(extractedOTP);
+                            // Set the StringSelection as the current contents of the clipboard
+                            clipboard.setContents(stringSelection,null);
+
+                        } else {
+                            System.out.println("OTP field 'code' not found in response!");
+                        }
+                    } else {
+                        System.out.println("Response does not contain 'data' object!");
+                    }
+                }
+            }
+        });
+        driver.findElement(SentOtpBtn).click();
+        // **Wait for some time to allow capturing**
+        Thread.sleep(2000);
+        driver.findElement(OTPfirstbox).click();
+        Actions actions = new Actions(driver);
+        // Use Actions class to perform keyboard shortcut (Ctrl + V) for paste
+        actions.keyDown(Keys.CONTROL).sendKeys("v").keyUp(Keys.CONTROL).build().perform();
+        driver.findElement(VerifyEmailbtn).click();
+        Thread.sleep(2000);
+        waitForElement(Marketplace);
+        click(Marketplace);
+        Thread.sleep(3000);
+
+
+
     }
     static By ProfileBtn = By.xpath("//*[@class='w-5 h-5 text-white group-hover:text-primary']");
     static By Logout = By.xpath("//*[@class='w-5 h-5 text-white group-hover:text-primary']");

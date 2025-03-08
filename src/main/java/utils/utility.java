@@ -9,6 +9,7 @@ import org.apache.poi.ss.usermodel.Workbook;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -38,6 +39,10 @@ public class utility extends TestBase {
     public static void scrollToElement(By element){
         JavascriptExecutor js = (JavascriptExecutor) driver;
         js.executeScript("arguments[0].scrollIntoView(true);",element);
+    }
+    public static void dropdownWithText(By xpathOfDropdown, String value){
+        driver.findElement(xpathOfDropdown).sendKeys(value);
+        driver.findElement(xpathOfDropdown).sendKeys(Keys.TAB);
     }
     public static void dropdown(By field_click, By textget, String TextToBeSelected ) throws InterruptedException {
         driver.findElement(field_click).click();
