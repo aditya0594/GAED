@@ -37,54 +37,12 @@ public class ProjectsTest extends TestBase {
         project.projectCreate();
         test.pass("Create project mandatory field validation ");
     }
-    @Test(priority = 3,enabled = true)
-    public void otp() throws InterruptedException {
-        ExtentTest test = extent.createTest("Create project mandatory field validation ");
-        homepage.homepage();
-        login.LoginConsumerSuceessful();
-        test.pass("Create project mandatory field validation ");
-        // Get the DevTools session
-        // **Start DevTools in Parallel (Capture OTP)**
-        /*DevTools devTools = ((ChromeDriver) driver).getDevTools();
-        devTools.createSession();
-        devTools.send(Network.enable(Optional.empty(), Optional.empty(), Optional.empty()));
-
-        new Thread(() -> {
-            devTools.addListener(Network.responseReceived(), response -> {
-                RequestId requestId = response.getRequestId();
-                Response res = response.getResponse();
-
-                // **Filter the "Verify OTP" API Response**
-                if (res.getUrl().contains("https://qa.gaedkeeper.com/qa/api/v1/user/send-otp")) { // Adjust based on API URL
-                    System.out.println("Captured OTP Response from API: " + res.getUrl());
-
-                    // Fetch response body
-                    Optional<Network.GetResponseBodyResponse> responseBody =
-                            Optional.ofNullable(devTools.send(Network.getResponseBody(requestId)));
-
-                    if (responseBody.isPresent()) {
-                        String body = responseBody.get().getBody();
-                        System.out.println("Full Response: " + body);
-
-                        JsonObject jsonObject = JsonParser.parseString(body).getAsJsonObject();
-                        if (jsonObject.has("otp")) {
-                            String extractedOTP = jsonObject.get("data.code").getAsString();
-                            System.out.println("Extracted OTP: " + extractedOTP);
-
-                            // **Enter OTP in UI**
-
-                        }
-                    }
-                }
-            });
-        }).start(); // Run the thread in parallel
-
-        // **Wait for OTP Capture & Submission**
-        Thread.sleep(5000);*/
+//    @Test(priority = 3,enabled = true)
+//    public void otp() throws InterruptedException {
+//        ExtentTest test = extent.createTest("Create project mandatory field validation ");
+//        homepage.homepage();
+//        login.LoginConsumerSuceessful();
+//        test.pass("Create project mandatory field validation ");
+//
 
     }
-
-
-
-
-}

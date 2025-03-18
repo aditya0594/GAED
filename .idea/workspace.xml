@@ -5,7 +5,37 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="fbed16bb-bade-4def-845d-b7f89224c886" name="Changes" comment="setep devTool and testng xml and the container">
-      <change beforePath="$PROJECT_DIR$/.gitlab-ci.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.gitlab-ci.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Screenshots/Accept_Project_In_Admin20250310055555.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Screenshots/invalidat_sellProject_stepper_1_fields20250310054847.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_08-03-2025_01_31_pm_[Changes]/Accept_Project_In_Admin20250306022734.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_08-03-2025_01_31_pm_[Changes]/Accept_Project_In_Admin20250306031242.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_08-03-2025_01_31_pm_[Changes]/Accept_Project_In_Admin20250306032326.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_08-03-2025_01_31_pm_[Changes]/Accept_Project_In_Admin20250308015025.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_08-03-2025_01_31_pm_[Changes]/Consumer_signup_ids.xlsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_08-03-2025_01_31_pm_[Changes]/Create_Project20250307082356.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_08-03-2025_01_31_pm_[Changes]/Create_Project20250307082657.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_08-03-2025_01_31_pm_[Changes]/Create_Project20250307083442.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_08-03-2025_01_31_pm_[Changes]/Create_Project20250307083700.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_08-03-2025_01_31_pm_[Changes]/Create_Project20250307083845.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_08-03-2025_01_31_pm_[Changes]/Create_Project20250307084426.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_08-03-2025_01_31_pm_[Changes]/Create_Project20250307084624.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_08-03-2025_01_31_pm_[Changes]/Create_Project20250307085536.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_08-03-2025_01_31_pm_[Changes]/InvalidOTP20250308014510.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_08-03-2025_01_31_pm_[Changes]/InvalidOTP20250308121040.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_08-03-2025_01_31_pm_[Changes]/otp20250307092651.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_08-03-2025_01_31_pm_[Changes]/otp20250307093514.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_08-03-2025_01_31_pm_[Changes]/otp20250308010503.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_08-03-2025_01_31_pm_[Changes]/otp20250308010548.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_08-03-2025_01_31_pm_[Changes]/otp20250308124216.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_08-03-2025_01_31_pm_[Changes]/otp20250308124521.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_08-03-2025_01_31_pm_[Changes]/otp20250308125107.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_08-03-2025_01_31_pm_[Changes]/otp20250308125911.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_08-03-2025_01_31_pm_[Changes]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_08-03-2025_01_31_pm__Changes_.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Pageobjects/Projects.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Pageobjects/Projects.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/resources/Consumer_signup_ids.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/resources/Consumer_signup_ids.xlsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/Testcases/ProjectsTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Testcases/ProjectsTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -22,6 +52,7 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="PUSH_AUTO_UPDATE" value="true" />
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
         <entry key="$PROJECT_DIR$" value="working" />
@@ -79,7 +110,7 @@
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="TestNG.BuyAndSellTest">
+  <component name="RunManager" selected="TestNG.BuyAndSellTest.invalidate_SellProject_buttons">
     <configuration default="true" type="JetRunConfigurationType">
       <module name="GAED" />
       <method v="2">
@@ -108,6 +139,34 @@
       <option name="MAIN_CLASS_NAME" value="Testcases.BuyAndSellTest" />
       <option name="GROUP_NAME" value="" />
       <option name="TEST_OBJECT" value="CLASS" />
+      <option name="PARAMETERS" value="" />
+      <option name="OUTPUT_DIRECTORY" value="" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="moduleWithDependencies" />
+      </option>
+      <option name="PROPERTIES_FILE" value="" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="BuyAndSellTest.invalidate_SellProject_buttons" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="Selenium_Advanced" />
+      <shortenClasspath name="NONE" />
+      <useClassPathOnly />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Testcases.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="SUITE_NAME" value="" />
+      <option name="PACKAGE_NAME" value="Testcases" />
+      <option name="MAIN_CLASS_NAME" value="Testcases.BuyAndSellTest" />
+      <option name="METHOD_NAME" value="invalidate_SellProject_buttons" />
+      <option name="GROUP_NAME" value="" />
+      <option name="TEST_OBJECT" value="METHOD" />
       <option name="PARAMETERS" value="" />
       <option name="OUTPUT_DIRECTORY" value="" />
       <option name="TEST_SEARCH_SCOPE">
@@ -206,34 +265,6 @@
       <option name="MAIN_CLASS_NAME" value="Testcases.HomepageTest" />
       <option name="GROUP_NAME" value="" />
       <option name="TEST_OBJECT" value="CLASS" />
-      <option name="PARAMETERS" value="" />
-      <option name="OUTPUT_DIRECTORY" value="" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="moduleWithDependencies" />
-      </option>
-      <option name="PROPERTIES_FILE" value="" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="SignUpTest.Consumer_Sign_up_and_Verify_by_admin" type="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="Selenium_Advanced" />
-      <shortenClasspath name="NONE" />
-      <useClassPathOnly />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="Testcases.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="SUITE_NAME" value="" />
-      <option name="PACKAGE_NAME" value="Testcases" />
-      <option name="MAIN_CLASS_NAME" value="Testcases.SignUpTest" />
-      <option name="METHOD_NAME" value="Consumer_Sign_up_and_Verify_by_admin" />
-      <option name="GROUP_NAME" value="" />
-      <option name="TEST_OBJECT" value="METHOD" />
       <option name="PARAMETERS" value="" />
       <option name="OUTPUT_DIRECTORY" value="" />
       <option name="TEST_SEARCH_SCOPE">
@@ -393,19 +424,19 @@
       <item itemvalue="TestNG.testcases" />
       <item itemvalue="TestNG.&lt;default&gt;" />
       <item itemvalue="TestNG.Classexecution" />
+      <item itemvalue="TestNG.BuyAndSellTest.invalidate_SellProject_buttons" />
       <item itemvalue="TestNG.HomepageTest" />
       <item itemvalue="TestNG.C:/GAED/testng.xml" />
-      <item itemvalue="TestNG.SignUpTest.Consumer_Sign_up_and_Verify_by_admin" />
       <item itemvalue="TestNG.extend_report_example." />
       <item itemvalue="TestNG.BuyAndSellTest" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="TestNG.BuyAndSellTest.invalidate_SellProject_buttons" />
         <item itemvalue="TestNG.BuyAndSellTest" />
         <item itemvalue="TestNG.C:/GAED/testng.xml" />
         <item itemvalue="TestNG.HomepageTest" />
         <item itemvalue="TestNG.extend_report_example." />
-        <item itemvalue="TestNG.SignUpTest.Consumer_Sign_up_and_Verify_by_admin" />
       </list>
     </recent_temporary>
   </component>
@@ -775,7 +806,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="workingBranch" />
+                        <option value="githubCICD/working" />
                       </list>
                     </value>
                   </entry>
