@@ -8,13 +8,11 @@ variables:
 cache:
   paths:
     - .m2/repository
-
 build:
   stage: build
   image: maven:3.8.1-openjdk-11
   script:
     - mvn install -DskipTests
-
 test:
   stage: test
   image: maven:3.8.1-openjdk-11
@@ -28,3 +26,4 @@ test:
       junit: target/surefire-reports/testng-results.xml
     paths:
       - target/surefire-reports/
+
