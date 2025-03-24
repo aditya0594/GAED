@@ -26,6 +26,7 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxOptions;
 import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -50,12 +51,22 @@ public class TestBase {
     @Parameters("browserName")
     @BeforeMethod
     public static WebDriver Setup() throws IOException, URISyntaxException {
+        String browserName = null;
         if (driver == null) {
-            String browserName = utility.property("browserName").toString();
+            browserName = utility.property("browserName").toString();
             System.out.println("The browser name is : " + browserName);
             String seleniumHubUrl = "http://selenium-hub:4444/wd/hub";
-
             if (browserName.equalsIgnoreCase("chrome")) {
+                ChromeOptions options = new ChromeOptions();
+                options.addArguments("--remote-allow-origins=*");
+                DesiredCapabilities capabilities = new DesiredCapabilities();
+                capabilities.setCapability(ChromeOptions.CAPABILITY, options);
+                driver = new RemoteWebDriver(new URL("http://selenium:4444/wd/hub"), capabilities);
+            }
+        } else {
+            throw new IllegalArgumentException("Unsupported browser: " + browserName);
+        }
+            /*if (browserName.equalsIgnoreCase("chrome")) {
                 ChromeOptions options = new ChromeOptions();
                 // Check if headless mode should be enabled
                 if (utility.property("headless").equals("true")) {
@@ -77,8 +88,8 @@ public class TestBase {
                 } else {
                     WebDriverManager.chromedriver().setup();
                     driver = new ChromeDriver(options);
-                }
-            } else if (browserName.equalsIgnoreCase("firefox")) {
+                }*/
+           /* } else if (browserName.equalsIgnoreCase("firefox")) {
                 FirefoxOptions options = new FirefoxOptions();
                 // Check if headless mode should be enabled
                 if (utility.property("headless").equals("true")) {
@@ -94,7 +105,7 @@ public class TestBase {
             }
             driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
             driver.manage().window().maximize();
-        }
+        }*/
         return driver;
     }
 //    @BeforeMethod
