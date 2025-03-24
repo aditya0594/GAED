@@ -23,7 +23,7 @@ test:
     - echo "Waiting for Selenium Grid to be ready..."
     - sleep 10  # Give some time for the Selenium container to start
     - curl -sSf http://selenium:4444/wd/hub/status || (echo "Selenium Grid is not reachable" && exit 1)
-    - mvn test -DsuiteXmlFile=testng.xml
+    - mvn test -Dsurefire.suiteXmlFiles=testng.xml
   artifacts:
     reports:
       junit: target/surefire-reports/testng-results.xml
