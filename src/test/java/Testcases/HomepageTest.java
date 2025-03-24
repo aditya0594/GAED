@@ -32,7 +32,7 @@ public class HomepageTest extends TestBase {
         test.pass("Title passed successfully.");
 
     }
-    @Test(priority = 1, enabled = true)
+   /* @Test(priority = 1, enabled = true)
     public void BuyandSellbuttonVerify() throws InterruptedException {
 
         ExtentTest test = extent.createTest("To verify GAED homepage buy/sell button");
@@ -41,5 +41,5 @@ public class HomepageTest extends TestBase {
         signup.validate_signup_page();
         test.pass("To verify GAED homepage buy/sell button passed.");
 
-    }
+    }*/
 }

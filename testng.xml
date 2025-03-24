@@ -10,6 +10,17 @@
                     <include name="BuyandSellbuttonVerify"/>
                 </methods>
             </class>
+            <class name="Testcases.LoginUserTest">
+                <methods>
+                    <include name="Login_VerifyEmail"/>
+                    <include name="Login_VerifyInvalidEmail"/>
+                    <include name="Login_VerifyEmptyEmail"/>
+                    <include name="InvalidOTP"/>
+                    <include name="VerifyEmptyNotExist"/>
+                    <include name="Verify_SignUp_Link_ontheLogin"/>
+                    <include name="verifyLoginConsumer"/>
+                </methods>
+            </class>
         </classes>
     </test>
 </suite>
