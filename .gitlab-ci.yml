@@ -1,29 +1,12 @@
-stages:
-  - build
-  - test
-
-variables:
-  MAVEN_OPTS: "-Dmaven.repo.local=$CI_PROJECT_DIR/.m2/repository"
-
-cache:
-  paths:
-    - .m2/repository
-
-build:
-  stage: build
-  image: maven:3.8.1-jdk-11
-  script:
-    - mvn install -DskipTests
-
 test:
   stage: test
   image: maven:3.8.1-jdk-11-selenium
   services:
     - selenium/standalone-chrome
   script:
-    - mvn test
+    - mvn test -DsuiteXmlFile=testng.xml
   artifacts:
     reports:
-      junit: target/surefire-reports/TEST-*.xml
+      junit: target/surefire-reports/testng-results.xml
     paths:
       - target/surefire-reports/
