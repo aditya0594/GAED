@@ -11,19 +11,20 @@ cache:
 
 build:
   stage: build
-  image: maven:3.8.1-jdk-11
+  image: maven:3.8.1-openjdk-11
   script:
     - mvn install -DskipTests
 
 test:
   stage: test
-  image: maven:3.8.1-jdk-11-selenium
+  image: maven:3.8.1-openjdk-11
   services:
-    - selenium/standalone-chrome
+    - name: selenium/standalone-chrome
+      alias: selenium
   script:
-    - mvn test
+    - mvn test -DsuiteXmlFile=testng.xml
   artifacts:
     reports:
-      junit: target/surefire-reports/TEST-*.xml
+      junit: target/surefire-reports/testng-results.xml
     paths:
       - target/surefire-reports/

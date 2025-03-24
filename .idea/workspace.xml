@@ -4,18 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="fbed16bb-bade-4def-845d-b7f89224c886" name="Changes" comment="setep devTool and testng xml and the container">
-      <change afterPath="$PROJECT_DIR$/Screenshots/Accept_Project_In_Admin20250318032638.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Screenshots/Accept_Project_In_Admin20250318032704.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Screenshots/Homepage20250324034130.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Screenshots/Homepage20250324034250.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/utils/RetryAnalysor.java" afterDir="false" />
+    <list default="true" id="fbed16bb-bade-4def-845d-b7f89224c886" name="Changes" comment="update the gitlab file">
       <change beforePath="$PROJECT_DIR$/.gitlab-ci.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.gitlab-ci.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resources/Consumer_signup_ids.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/resources/Consumer_signup_ids.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/Testcases/HomepageTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Testcases/HomepageTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test-output/GAED_Testcase_report.html" beforeDir="false" afterPath="$PROJECT_DIR$/test-output/GAED_Testcase_report.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -429,13 +420,6 @@
       <option name="presentableId" value="Default" />
       <updated>1666076051325</updated>
     </task>
-    <task id="LOCAL-00013" summary="appium setup 04-04-2024">
-      <created>1712230770502</created>
-      <option name="number" value="00013" />
-      <option name="presentableId" value="LOCAL-00013" />
-      <option name="project" value="LOCAL" />
-      <updated>1712230770502</updated>
-    </task>
     <task id="LOCAL-00014" summary="Framework and homepage">
       <created>1713702264636</created>
       <option name="number" value="00014" />
@@ -772,7 +756,14 @@
       <option name="project" value="LOCAL" />
       <updated>1742279478699</updated>
     </task>
-    <option name="localTasksCounter" value="62" />
+    <task id="LOCAL-00062" summary="update the gitlab file">
+      <created>1742812640251</created>
+      <option name="number" value="00062" />
+      <option name="presentableId" value="LOCAL-00062" />
+      <option name="project" value="LOCAL" />
+      <updated>1742812640254</updated>
+    </task>
+    <option name="localTasksCounter" value="63" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -815,7 +806,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="arranged commit 23-05-2023" />
     <MESSAGE value="Connectivity STA AP commit 05-06-2023" />
     <MESSAGE value="appium setup 24-02-2024" />
     <MESSAGE value="appium setup 04-04-2024" />
@@ -840,7 +830,8 @@
     <MESSAGE value="Set all the file and testng.xml" />
     <MESSAGE value="setup devTools for the OTP" />
     <MESSAGE value="setep devTool and testng xml and the container" />
-    <option name="LAST_COMMIT_MESSAGE" value="setep devTool and testng xml and the container" />
+    <MESSAGE value="update the gitlab file" />
+    <option name="LAST_COMMIT_MESSAGE" value="update the gitlab file" />
   </component>
   <component name="XDebuggerManager">
     <watches-manager>
