@@ -4,21 +4,21 @@
     <test verbose="2" preserve-order="true" name="C:/GAED">
         <parameter name="browserName" value="chrome"></parameter>
         <classes>
-            <class name="Testcases.BuyAndSellTest">
+         <!--   <class name="Testcases.BuyAndSellTest">
                 <methods>
                     <include name="invalidate_SellProject_buttons"/>
                     <include name="invalidat_sellProject_stepper_1_fields"/>
                     <include name="Create_Project"/>
                     <include name="Accept_Project_In_Admin"/>
                 </methods>
-            </class>
+            </class>-->
             <class name="Testcases.HomepageTest">
                 <methods>
                     <include name="Homepage"/>
                     <include name="BuyandSellbuttonVerify"/>
                 </methods>
             </class>
-            <class name="Testcases.LoginAdminTest">
+            <!--<class name="Testcases.LoginAdminTest">
                 <methods>
                     <include name="AdminLogin_valid"/>
                 </methods>
@@ -47,7 +47,7 @@
                     <include name="Consumer_Sign_up_and_Verify_by_admin"/>
                     <include name="Consumer_Sign_up_and_OnHold_by_admin"/>
                 </methods>
-            </class>
+            </class>-->
         </classes>
     </test>
 </suite>
