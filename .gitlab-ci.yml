@@ -3,38 +3,27 @@ stages:
   - test
 
 variables:
-  DOCKER_DRIVER: overlay2
-  RDP_PASSWORD: "P@ssword123"
+  MAVEN_OPTS: "-Dmaven.repo.local=$CI_PROJECT_DIR/.m2/repository"
 
-services:
-  - docker:20.10.16-dind
+cache:
+  paths:
+    - .m2/repository
 
 build:
   stage: build
+  image: maven:3.8.1-jdk-11
   script:
-    - echo "Starting Docker Daemon..."
-    - dockerd-entrypoint.sh &
-    - sleep 20
-    - echo "Starting Windows Container with GUI..."
-    - docker run -d --name windows-container --rm -p 3389:3389 mcr.microsoft.com/windows/servercore:ltsc2022
-    - sleep 30
-  tags:
-    - docker
-  artifacts:
-    paths:
-      - target/
+    - mvn install -DskipTests
 
 test:
   stage: test
+  image: maven:3.8.1-jdk-11-selenium
+  services:
+    - selenium/standalone-chrome
   script:
-    - echo "Installing Maven..."
-    - apt-get update && apt-get install -y maven
-    - echo "Running Selenium Test Cases..."
-    - mvn clean test
-  tags:
-    - docker
+    - mvn test
   artifacts:
+    reports:
+      junit: target/surefire-reports/TEST-*.xml
     paths:
       - target/surefire-reports/
-      - target/screenshots/
-  when: always
