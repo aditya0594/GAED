@@ -420,13 +420,6 @@
       <option name="presentableId" value="Default" />
       <updated>1666076051325</updated>
     </task>
-    <task id="LOCAL-00020" summary="Signup Page Completed 10-05-2024">
-      <created>1715284588944</created>
-      <option name="number" value="00020" />
-      <option name="presentableId" value="LOCAL-00020" />
-      <option name="project" value="LOCAL" />
-      <updated>1715284588944</updated>
-    </task>
     <task id="LOCAL-00021" summary="Signup Page Completed 10-05-2024">
       <created>1715332059412</created>
       <option name="number" value="00021" />
@@ -763,7 +756,14 @@
       <option name="project" value="LOCAL" />
       <updated>1742814619590</updated>
     </task>
-    <option name="localTasksCounter" value="69" />
+    <task id="LOCAL-00069" summary="update the gitlab file">
+      <created>1742814667668</created>
+      <option name="number" value="00069" />
+      <option name="presentableId" value="LOCAL-00069" />
+      <option name="project" value="LOCAL" />
+      <updated>1742814667668</updated>
+    </task>
+    <option name="localTasksCounter" value="70" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
