@@ -1,37 +1,29 @@
-image: maven:3.8.6-openjdk-11
-
-services:
-  - name: selenium/standalone-chrome:latest
-    alias: selenium-hub
-
-variables:
-  SELENIUM_HUB_URL: "http://selenium-hub:4444/wd/hub"
-
-before_script:
-  - apt-get update && apt-get install -y curl unzip xvfb libxi6 libgconf-2-4
-  - curl -sSL https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb -o chrome.deb
-  - dpkg -i chrome.deb || apt-get -f install -y
-  - export CHROMEDRIVER_VERSION=$(curl -sSL https://chromedriver.storage.googleapis.com/LATEST_RELEASE)
-  - curl -sSL "https://chromedriver.storage.googleapis.com/${CHROMEDRIVER_VERSION}/chromedriver_linux64.zip" -o chromedriver.zip
-  - unzip chromedriver.zip
-  - chmod +x chromedriver
-  - mv chromedriver /usr/local/bin/
-  - export PATH=$PATH:/usr/local/bin
-
 stages:
+  - build
   - test
 
-test-selenium:
-  stage: test
+variables:
+  MAVEN_OPTS: "-Dmaven.repo.local=$CI_PROJECT_DIR/.m2/repository"
+
+cache:
+  paths:
+    - .m2/repository
+build:
+  stage: build
+  image: maven:3.8.1-openjdk-11
   script:
-    - echo "Running Selenium tests..."
-    - mvn test -Dwebdriver.remote.url=$SELENIUM_HUB_URL
+    - mvn install -DskipTests
+test:
+  stage: test
+  image: maven:3.8.1-openjdk-11
+  services:
+    - name: selenium/standalone-chrome
+      alias: selenium
+  script:
+    - mvn test -DsuiteXmlFile=testng.xml
   artifacts:
-    when: always
+    reports:
+      junit: target/surefire-reports/testng-results.xml
     paths:
       - target/surefire-reports/
-      - target/cucumber-reports/
-    reports:
-      junit: target/surefire-reports/TEST-*.xml
-  only:
-    - main
+
