@@ -1,28 +1,25 @@
-### docker-compose.yml
-version: '3'
+mage: maven:3.8.1-openjdk-11
 
 services:
-  selenium:
-    image: selenium/standalone-chrome:latest
-    container_name: selenium-chrome
-    ports:
-      - "4444:4444"
-      - "5900:5900" # VNC port for GUI mode
-    environment:
-      - START_XVFB=false
-    shm_size: '2gb'
+  - name: selenium/standalone-chrome:118.0
+    alias: selenium
 
-  windows-container:
-    image: mcr.microsoft.com/windows/servercore:ltsc2022
-    container_name: windows-container
-    ports:
-      - "3389:3389" # RDP port
-    environment:
-      - ACCEPT_EULA=Y
-    tty: true
+stages:
+  - test
 
-networks:
-  default:
-    driver: bridge
-
-
+test:
+  stage: test
+  script:
+    - echo "Updating package lists..."
+    - apt-get update && apt-get install -y xvfb
+    - echo "Starting virtual display..."
+    - export DISPLAY=:99
+    - Xvfb :99 -screen 0 1920x1080x24 &
+    - sleep 10  # Wait for Selenium to start
+    - echo "Running Selenium tests..."
+    - mvn test -DsuiteXmlFile=testng.xml
+  artifacts:
+    reports:
+      junit: target/surefire-reports/testng-results.xml
+    paths:
+      - target/surefire-reports/
