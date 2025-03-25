@@ -7,7 +7,6 @@
             <class name="Testcases.HomepageTest">
                 <methods>
                     <include name="Homepage"/>
-                    <include name="BuyandSellbuttonVerify"/>
                 </methods>
             </class>
             <class name="Testcases.LoginUserTest">

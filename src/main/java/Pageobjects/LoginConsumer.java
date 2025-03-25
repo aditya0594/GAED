@@ -33,7 +33,7 @@ import static utils.utility.AssertTextBtn;
 public class LoginConsumer extends TestBase {
 
     static Set<Cookie> cookies;
-    static By loginBtn = By.xpath("//*[@class='cursor-pointer hidden lg:inline-block lg:ml-auto lg:mr-3 py-2 px-6 text-sm 3xl:text-lg text-white border border-transparent hover:border hover:border-white font-medium  rounded-full transition duration-200 group-hover:text-primary']");
+    static By loginBtn = By.xpath("(//span[text()='Login'])[1]");
     static By loginPageVerify = By.xpath("//h3[contains(@class,'py-2 xs:text-2xl xl:text-3xl 3xl:text-4xl text-gray-800 font-semibold xs:text-center xsm:text-left')]");
     static By Loginemailtitle = By.xpath("//label[@class='block tracking-wide text-black-100 text-xs font-normal mb-2']");
     static By LoginEmail = By.xpath("//input[contains(@name,'email')]");
