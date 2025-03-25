@@ -61,7 +61,7 @@ public class TestBase {
                 options.addArguments("--remote-allow-origins=*");
                 DesiredCapabilities capabilities = new DesiredCapabilities();
                 capabilities.setCapability(ChromeOptions.CAPABILITY, options);
-                driver = new RemoteWebDriver(new URL(seleniumHubUrl), capabilities);
+                driver = new RemoteWebDriver(new URL("http://selenium:4444/wd/hub"), capabilities);
             }
         }
 
