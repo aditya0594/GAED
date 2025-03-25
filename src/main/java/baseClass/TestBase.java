@@ -51,29 +51,45 @@ public class TestBase {
     @Parameters("browserName")
     @BeforeMethod
     public static WebDriver Setup() throws IOException, URISyntaxException {
-        if (driver == null) {
-            String browserName = utility.property("browserName").toString();
-            System.out.println("The browser name is: " + browserName);
-            String seleniumHubUrl = "http://selenium-hub:4444/wd/hub";
+        String browserName = utility.property("browserName").toString();
+        System.out.println("The browser name is : " + browserName);
 
+        if (driver == null) {
+            String seleniumHubUrl = "http://selenium-hub:4444/wd/hub";
             if (browserName.equalsIgnoreCase("chromeRemote")) {
                 ChromeOptions options = new ChromeOptions();
                 options.addArguments("--remote-allow-origins=*");
-                driver = new RemoteWebDriver(new URL(seleniumHubUrl), options);
-            } else if (browserName.equalsIgnoreCase("chrome")) {
-                WebDriverManager.chromedriver().setup();
-                ChromeOptions options = new ChromeOptions();
-                if (utility.property("headless").equals("true")) {
-                    options.addArguments("--headless", "--disable-gpu", "--window-size=1920,1080");
-                }
-                driver = new ChromeDriver(options);
+                DesiredCapabilities capabilities = new DesiredCapabilities();
+                capabilities.setCapability(ChromeOptions.CAPABILITY, options);
+                driver = new RemoteWebDriver(new URL(seleniumHubUrl), capabilities);
             }
-            driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
-            driver.manage().window().maximize();
         }
+
+        if (browserName.equalsIgnoreCase("chrome") && driver == null) {
+            ChromeOptions options = new ChromeOptions();
+            // Check if headless mode should be enabled
+            if (utility.property("headless").equals("true")) {
+                options.addArguments("--start-maximized");
+                options.addArguments("--headless");  // Run in headless mode
+                options.addArguments("--window-size=1920,1080");  // Set screen resolution
+                options.addArguments("--force-device-scale-factor=1.25"); // Set scaling to 125%
+                options.addArguments("--high-dpi-support=1.25"); // Improve rendering
+                options.addArguments("--disable-gpu");
+                options.addArguments("--disable-dev-shm-usage");
+                options.addArguments("--no-sandbox");
+                options.addArguments("user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/110.0.5481.178 Safari/537.36");
+                options.setExperimentalOption("excludeSwitches", new String[]{"enable-automation"});
+                options.setExperimentalOption("useAutomationExtension", false);
+            }
+            WebDriverManager.chromedriver().setup();
+            driver = new ChromeDriver(options);
+        }
+
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
+        driver.manage().window().maximize();
         return driver;
-    }
-        /*String browserName = null;
+
+       /* String browserName = null;
         if (driver == null) {
             browserName = utility.property("browserName").toString();
             System.out.println("The browser name is : " + browserName);
@@ -110,7 +126,6 @@ public class TestBase {
         driver.manage().window().maximize();
         return driver;*/
 
-
            /* } else if (browserName.equalsIgnoreCase("firefox")) {
                 FirefoxOptions options = new FirefoxOptions();
                 // Check if headless mode should be enabled
@@ -129,6 +144,7 @@ public class TestBase {
             driver.manage().window().maximize();
         }*/
 
+    }
 //    @BeforeMethod
 //    public static WebDriver Setup() throws IOException {
 //        if (driver == null) {
