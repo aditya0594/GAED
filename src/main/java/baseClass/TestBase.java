@@ -66,29 +66,6 @@ public class TestBase {
         } else {
             throw new IllegalArgumentException("Unsupported browser: " + browserName);
         }
-
-
-        if (browserName.equalsIgnoreCase("chrome") && driver == null) {
-            ChromeOptions options = new ChromeOptions();
-            // Check if headless mode should be enabled
-            if (utility.property("headless").equals("true")) {
-                options.addArguments("--start-maximized");
-                options.addArguments("--headless");  // Run in headless mode
-                options.addArguments("--window-size=1920,1080");  // Set screen resolution
-                options.addArguments("--force-device-scale-factor=1.25"); // Set scaling to 125%
-                options.addArguments("--high-dpi-support=1.25"); // Improve rendering
-                options.addArguments("--disable-gpu");
-                options.addArguments("--disable-dev-shm-usage");
-                options.addArguments("--no-sandbox");
-                options.addArguments("user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/110.0.5481.178 Safari/537.36");
-                options.setExperimentalOption("excludeSwitches", new String[]{"enable-automation"});
-                options.setExperimentalOption("useAutomationExtension", false);
-            }
-            WebDriverManager.chromedriver().setup();
-            driver = new ChromeDriver(options);
-        }
-
-
             /*if (browserName.equalsIgnoreCase("chrome")) {
                 ChromeOptions options = new ChromeOptions();
                 // Check if headless mode should be enabled
