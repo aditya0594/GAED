@@ -4,10 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="fbed16bb-bade-4def-845d-b7f89224c886" name="Changes" comment="update the gitlab file">
-      <change afterPath="$PROJECT_DIR$/testngcopy.xml" afterDir="false" />
+    <list default="true" id="fbed16bb-bade-4def-845d-b7f89224c886" name="Changes" comment="update login xpath">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Pageobjects/LoginConsumer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Pageobjects/LoginConsumer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Pageobjects/HomePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Pageobjects/HomePage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/baseClass/TestBase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/baseClass/TestBase.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/resources/config.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/resources/config.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test-output/GAED_Testcase_report.html" beforeDir="false" afterPath="$PROJECT_DIR$/test-output/GAED_Testcase_report.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/testng.xml" beforeDir="false" afterPath="$PROJECT_DIR$/testng.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -83,7 +85,7 @@
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="TestNG.HomepageTest.Homepage">
+  <component name="RunManager" selected="TestNG.C:/GAED/testng.xml">
     <configuration default="true" type="JetRunConfigurationType">
       <module name="GAED" />
       <method v="2">
@@ -405,11 +407,11 @@
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="TestNG.C:/GAED/testng.xml" />
         <item itemvalue="TestNG.HomepageTest.Homepage" />
         <item itemvalue="TestNG.BuyAndSellTest (1)" />
         <item itemvalue="TestNG.BuyAndSellTest.invalidate_SellProject_buttons" />
         <item itemvalue="TestNG.BuyAndSellTest" />
-        <item itemvalue="TestNG.C:/GAED/testng.xml" />
       </list>
     </recent_temporary>
   </component>
@@ -421,13 +423,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1666076051325</updated>
-    </task>
-    <task id="LOCAL-00028" summary="docker and git yml edited pom edited">
-      <created>1736966236899</created>
-      <option name="number" value="00028" />
-      <option name="presentableId" value="LOCAL-00028" />
-      <option name="project" value="LOCAL" />
-      <updated>1736966236899</updated>
     </task>
     <task id="LOCAL-00029" summary="docker and git yml edited pom edited">
       <created>1736966506180</created>
@@ -765,7 +760,14 @@
       <option name="project" value="LOCAL" />
       <updated>1742817909044</updated>
     </task>
-    <option name="localTasksCounter" value="77" />
+    <task id="LOCAL-00077" summary="update login xpath">
+      <created>1742873706695</created>
+      <option name="number" value="00077" />
+      <option name="presentableId" value="LOCAL-00077" />
+      <option name="project" value="LOCAL" />
+      <updated>1742873706695</updated>
+    </task>
+    <option name="localTasksCounter" value="78" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -808,7 +810,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Connectivity STA AP commit 05-06-2023" />
     <MESSAGE value="appium setup 24-02-2024" />
     <MESSAGE value="appium setup 04-04-2024" />
     <MESSAGE value="Framework and homepage" />
@@ -833,7 +834,8 @@
     <MESSAGE value="setup devTools for the OTP" />
     <MESSAGE value="setep devTool and testng xml and the container" />
     <MESSAGE value="update the gitlab file" />
-    <option name="LAST_COMMIT_MESSAGE" value="update the gitlab file" />
+    <MESSAGE value="update login xpath" />
+    <option name="LAST_COMMIT_MESSAGE" value="update login xpath" />
   </component>
   <component name="XDebuggerManager">
     <watches-manager>

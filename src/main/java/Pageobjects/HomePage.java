@@ -89,6 +89,7 @@ public class HomePage extends TestBase {
         }
     }
 
+
     public HomePage() throws IOException {
 
         URLS = utility.property("url").toString();
@@ -117,7 +118,6 @@ public class HomePage extends TestBase {
         // Navigate to the URL with the dynamic part
         String url = "https://www.mailinator.com/v4/public/inboxes.jsp?to=" + dynamicPart;
         driver.get(url);
-
 
     }
 
