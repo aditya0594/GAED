@@ -5,9 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="fbed16bb-bade-4def-845d-b7f89224c886" name="Changes" comment="update login xpath">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/baseClass/TestBase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/baseClass/TestBase.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/testng.xml" beforeDir="false" afterPath="$PROJECT_DIR$/testng.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test-output/GAED_Testcase_report.html" beforeDir="false" afterPath="$PROJECT_DIR$/test-output/GAED_Testcase_report.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -421,13 +419,6 @@
       <option name="presentableId" value="Default" />
       <updated>1666076051325</updated>
     </task>
-    <task id="LOCAL-00033" summary="set up as per maven">
-      <created>1737011474925</created>
-      <option name="number" value="00033" />
-      <option name="presentableId" value="LOCAL-00033" />
-      <option name="project" value="LOCAL" />
-      <updated>1737011474925</updated>
-    </task>
     <task id="LOCAL-00034" summary="set up as per maven">
       <created>1737011732049</created>
       <option name="number" value="00034" />
@@ -764,7 +755,14 @@
       <option name="project" value="LOCAL" />
       <updated>1742876360263</updated>
     </task>
-    <option name="localTasksCounter" value="82" />
+    <task id="LOCAL-00082" summary="update login xpath">
+      <created>1742876768386</created>
+      <option name="number" value="00082" />
+      <option name="presentableId" value="LOCAL-00082" />
+      <option name="project" value="LOCAL" />
+      <updated>1742876768386</updated>
+    </task>
+    <option name="localTasksCounter" value="83" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">

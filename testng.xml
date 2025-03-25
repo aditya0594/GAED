@@ -2,7 +2,7 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="All Test Suite">
     <test verbose="2" preserve-order="true" name="C:/GAED">
-        <parameter name="browserName" value="chrome"></parameter>
+        <parameter name="browserName" value="chromeRemote"></parameter>
         <classes>
             <class name="Testcases.HomepageTest">
                 <methods>
