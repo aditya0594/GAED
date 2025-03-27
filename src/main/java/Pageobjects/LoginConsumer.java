@@ -33,7 +33,7 @@ import static utils.utility.AssertTextBtn;
 public class LoginConsumer extends TestBase {
 
     static Set<Cookie> cookies;
-    static By loginBtn = By.xpath("(//span[text()='Login'])[1]");
+    static By loginBtn = By.xpath("//div[@class='hidden lg:flex']//span[text()='Login']");
     static By loginPageVerify = By.xpath("//h3[contains(@class,'py-2 xs:text-2xl xl:text-3xl 3xl:text-4xl text-gray-800 font-semibold xs:text-center xsm:text-left')]");
     static By Loginemailtitle = By.xpath("//label[@class='block tracking-wide text-black-100 text-xs font-normal mb-2']");
     static By LoginEmail = By.xpath("//input[contains(@name,'email')]");
@@ -380,18 +380,93 @@ public class LoginConsumer extends TestBase {
             Response res = response.getResponse();
 
             // **Print ALL API responses**
-            System.out.println("Network Response URL: " + res.getUrl());
+          //  System.out.println("Network Response URL: " + res.getUrl());
 
             // **Check if the OTP API request is being captured**
             if (res.getUrl().contains("/send-otp")) {  // Change URL based on actual API
-                System.out.println("Captured OTP API Response: " + res.getUrl());
+               // System.out.println("Captured OTP API Response: " + res.getUrl());
 
                 Optional<Network.GetResponseBodyResponse> responseBody =
                         Optional.ofNullable(devTools.send(Network.getResponseBody(requestId)));
 
                 if (responseBody.isPresent()) {
                     String body = responseBody.get().getBody();
-                    System.out.println("Full Response: " + body);
+                   // System.out.println("Full Response: " + body);
+
+                    // **Parse JSON and extract OTP**
+                    JsonObject jsonObject = JsonParser.parseString(body).getAsJsonObject();
+                    if (jsonObject.has("data")) {
+                        JsonObject data = jsonObject.getAsJsonObject("data");
+                        if (data.has("code")) {
+                            String extractedOTP = data.get("code").getAsString();
+                            System.out.println("Extracted OTP: " + extractedOTP);
+                            Clipboard clipboard = Toolkit.getDefaultToolkit().getSystemClipboard();
+                            // Create a StringSelection object containing the OTP
+                            StringSelection stringSelection = new StringSelection(extractedOTP);
+                            // Set the StringSelection as the current contents of the clipboard
+                            clipboard.setContents(stringSelection,null);
+
+                        } else {
+                            System.out.println("OTP field 'code' not found in response!");
+                        }
+                    } else {
+                        System.out.println("Response does not contain 'data' object!");
+                    }
+                }
+            }
+        });
+        driver.findElement(SentOtpBtn).click();
+        // **Wait for some time to allow capturing**
+        Thread.sleep(2000);
+        driver.findElement(OTPfirstbox).click();
+        Actions actions = new Actions(driver);
+        // Use Actions class to perform keyboard shortcut (Ctrl + V) for paste
+        actions.keyDown(Keys.CONTROL).sendKeys("v").keyUp(Keys.CONTROL).build().perform();
+        driver.findElement(VerifyEmailbtn).click();
+        Thread.sleep(2000);
+        waitForElement(Marketplace);
+        click(Marketplace);
+        Thread.sleep(3000);
+    }
+
+
+    public static void LoginVendor(String vendorEmail) throws InterruptedException {
+        String Loginbtntext =  driver.findElement(loginBtn).getText();
+        Assert.assertEquals("Login",Loginbtntext);
+        driver.findElement(loginBtn).click();
+        String verifyLoginpage  = driver.findElement(loginPageVerify).getText();
+        Assert.assertEquals("Welcome Back!",verifyLoginpage);
+        String LoginemailTitle  = driver.findElement(Loginemailtitle).getText();
+        Assert.assertEquals("Email Address*",LoginemailTitle);
+        driver.findElement(LoginEmail).sendKeys(vendorEmail);
+        String SentOTPtitle  = driver.findElement(SentOtpBtn).getText();
+        Assert.assertEquals("Send OTP",SentOTPtitle);
+
+
+        Thread.sleep(2000);
+        // **Start DevTools for Capturing OTP**
+        DevTools devTools = ((ChromeDriver) driver).getDevTools();
+        devTools.createSession();
+        devTools.send(Network.enable(Optional.empty(), Optional.empty(), Optional.empty()));
+
+        // **Print All Network Responses (Debugging)**
+        devTools.addListener(Network.responseReceived(), response -> {
+            RequestId requestId = response.getRequestId();
+            Response res = response.getResponse();
+
+            // **Print ALL API responses**
+            //System.out.println("Network Response URL: " + res.getUrl());
+
+            // **Check if the OTP API request is being captured**
+            if (res.getUrl().contains("/send-otp")) {  // Change URL based on actual API
+                //System.out.println("Captured OTP API Response: " + res.getUrl());
+
+                Optional<Network.GetResponseBodyResponse> responseBody =
+                        Optional.ofNullable(devTools.send(Network.getResponseBody(requestId)));
+
+                if (responseBody.isPresent()) {
+                    String body = responseBody.get().getBody();
+                   // System.out.println("Full Response: " + body);
 
                     // **Parse JSON and extract OTP**
                     JsonObject jsonObject = JsonParser.parseString(body).getAsJsonObject();

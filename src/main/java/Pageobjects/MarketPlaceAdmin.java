@@ -68,11 +68,11 @@ public class MarketPlaceAdmin extends TestBase {
             Response res = response.getResponse();
 
             // **Print ALL API responses**
-            System.out.println("Network Response URL: " + res.getUrl());
+         //   System.out.println("Network Response URL: " + res.getUrl());
 
             // **Check if the OTP API request is being captured**
             if (res.getUrl().contains("/send-otp")) {  // Change URL based on actual API
-                System.out.println("Captured OTP API Response: " + res.getUrl());
+              //  System.out.println("Captured OTP API Response: " + res.getUrl());
 
                 Optional<Network.GetResponseBodyResponse> responseBody =
                         Optional.ofNullable(devTools.send(Network.getResponseBody(requestId)));

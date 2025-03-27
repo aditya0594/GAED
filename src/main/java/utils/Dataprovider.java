@@ -92,6 +92,38 @@ public class Dataprovider extends TestBase {
 
         return testData;
     }
+
+    @org.testng.annotations.DataProvider(name = "vendorEmail")
+    public static Object[][] vendorEmail() throws IOException {
+
+        FileInputStream fis = new FileInputStream("src/resources/ExcelFile.xlsx");
+        Workbook workbook = new XSSFWorkbook(fis);
+        Sheet loginsheet = workbook.getSheet("VendorEmail");
+
+        int numberOfRows = loginsheet.getPhysicalNumberOfRows();
+        Object[][] testData = new Object[numberOfRows - 1][2]; // Adjust for header row if present
+
+        for (int i = 1; i < numberOfRows; i++) { // Start from 1 to skip header row
+            Row row = loginsheet.getRow(i);
+
+            if (row != null) {
+                Cell VendorEmail = row.getCell(0);
+
+                if (VendorEmail != null) {
+                    testData[i - 1][0] = getCellValue(VendorEmail);
+                } else {
+                    testData[i - 1][0] = ""; // Handle null cell
+                }
+
+                System.out.println("Username fetched value: " + VendorEmail);
+            }
+        }
+
+        workbook.close();
+        fis.close();
+
+        return testData;
+    }
     @org.testng.annotations.DataProvider(name = "Signupstep")
     public static Object[][] signupdata() throws IOException {
 

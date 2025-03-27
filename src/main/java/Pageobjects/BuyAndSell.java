@@ -95,7 +95,7 @@ public class BuyAndSell extends TestBase {
         Thread.sleep(3000);
         waitForElement(SellProjectButton);
         driver.findElement(SellProjectButton).click();
-         project_Name = ProjectTileText();
+        project_Name = ProjectTileText();
         write_excel(0,1,project_Name);
         System.out.println("Project Name " + project_Name);
         driver.findElement(ProjectTitleField).sendKeys(project_Name);

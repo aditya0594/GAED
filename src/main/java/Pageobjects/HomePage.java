@@ -102,11 +102,12 @@ public class HomePage extends TestBase {
         // Name= (String) Properties.get("name");
     }
 
-    public void homepage() {
+    public void homepage() throws InterruptedException {
         driver.get(URLS);
 
         String hometitle = driver.getTitle();
         Assert.assertEquals("GAED", hometitle);
+        Thread.sleep(2000);
     }
 
 
