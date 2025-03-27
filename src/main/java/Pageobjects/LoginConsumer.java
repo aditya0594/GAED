@@ -426,7 +426,7 @@ public class LoginConsumer extends TestBase {
         Thread.sleep(2000);
         waitForElement(Marketplace);
         click(Marketplace);
-        Thread.sleep(3000);
+
     }
 
 

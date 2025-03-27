@@ -2,6 +2,7 @@ package Testcases;
 
 import Pageobjects.HomePage;
 import Pageobjects.LoginConsumer;
+import Pageobjects.MarketPlaceAdmin;
 import Pageobjects.Projects;
 import baseClass.TestBase;
 import com.aventstack.extentreports.ExtentTest;
@@ -27,6 +28,7 @@ public class ProjectsTest extends TestBase {
     HomePage homepage = new HomePage();
     LoginConsumer login = new LoginConsumer();
     Projects project = new Projects();
+    MarketPlaceAdmin marketadmin = new MarketPlaceAdmin();
 
     @Test(priority = 3,enabled = true)
     public void Create_Project() throws InterruptedException {
@@ -35,14 +37,14 @@ public class ProjectsTest extends TestBase {
         login.LoginConsumerSuceessful();
         project.projectClick();
         project.projectCreate();
+        project.createdUnderAssessmentMessage();
         test.pass("Create project mandatory field validation ");
     }
-//    @Test(priority = 3,enabled = true)
-//    public void otp() throws InterruptedException {
-//        ExtentTest test = extent.createTest("Create project mandatory field validation ");
-//        homepage.homepage();
-//        login.LoginConsumerSuceessful();
-//        test.pass("Create project mandatory field validation ");
-//
-
+    @Test(priority = 4,enabled = true)
+    public void admin_VisitSchedule() throws InterruptedException {
+        ExtentTest test = extent.createTest("Create project mandatory field validation ");
+        marketadmin.marketAdminLogin();
+        marketadmin.Admin_buyandSell_publish();
+        test.pass("Create project mandatory field validation ");
+    }
     }

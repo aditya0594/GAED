@@ -16,8 +16,13 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.DataProvider;
 
+import java.awt.*;
+import java.awt.datatransfer.Clipboard;
+import java.awt.datatransfer.StringSelection;
 import java.io.FileInputStream;
 import java.io.IOException;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.time.Duration;
 import java.util.List;
 import java.util.Properties;
@@ -25,6 +30,26 @@ import java.util.UUID;
 
 public class utility extends TestBase {
 
+    public static void imageUpload(By xpath) throws InterruptedException {
+        Clipboard clipboard1 = Toolkit.getDefaultToolkit().getSystemClipboard();
+        String path = System.getProperty("user.dir");
+        String relativePath = path+"/src/resources/image1.jpg";
+        // Convert to Path object
+        Path convertedpath = Paths.get(relativePath);
+        String FinalPAth = convertedpath.toString();
+        // Create a StringSelection object containing the OTP
+        StringSelection stringSelection = new StringSelection(FinalPAth);
+        // Set the StringSelection as the current contents of the clipboard
+        clipboard1.setContents(stringSelection,null);
+//        click(image_upload);
+//        WebElement IDfileInput = driver.findElement(By.xpath("//input[@id='document1File']"));
+//        IDfileInput.sendKeys(FinalPAth);
+        for(int i=1; i<=4;i++){
+            WebElement project_image = driver.findElement(xpath);
+            project_image.sendKeys(FinalPAth);
+        }
+        Thread.sleep(2000);
+    }
 
     public static Object property(String key)throws IOException {
         FileInputStream file = new FileInputStream("src/resources/config.properties");

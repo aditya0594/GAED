@@ -39,6 +39,8 @@ public class MarketPlaceAdmin extends TestBase {
     By eyeBtn = By.xpath("(//span[@class='cursor-pointer hover:underline'])[1]");
     By Projectname = By.xpath("//h3[@class='font-medium xs:text-xl sm:text-2xl lg:text-3xl text-black-900']");
     By StatusDropdown = By.xpath("//input[@id='react-select-4-input']");
+    By SiteVisitStatusDropDown = By.xpath("//input[@id='react-select-8-input']");
+    By ProjectsBtn = By.xpath("(//*[normalize-space()='Buy/Sell'])[2]");
     By SubmitBtn = By.xpath("//button[@type='button' and normalize-space()='Submit']");
     By checkboxAssessment = By.xpath("(//input[@class='PrivateSwitchBase-input css-j8yymo'])[2]");
     By continueBtn = By.xpath("//*[@class='text-sm font-medium text-white']");
@@ -120,11 +122,6 @@ public class MarketPlaceAdmin extends TestBase {
         click(BuySellBtn);
         Thread.sleep(1000);
         click(eyeBtn);
-       /* WebElement pro = driver.findElement(Projectname);
-        String Projectname = pro.getText();
-        String created_project_name = buyAndSell.project_Name;*/
-//        System.out.println("Project name is which is created : " + created_project_name);
-//        Assert.assertEquals(Projectname,created_project_name);
         Thread.sleep(2000);
         driver.findElement(StatusDropdown).sendKeys("Publish");
         Thread.sleep(2000);
@@ -135,6 +132,23 @@ public class MarketPlaceAdmin extends TestBase {
         click(SubmitBtn);
 
         }
+    public void Admin_Projects_publish() throws InterruptedException {
+        Thread.sleep(2000);
+
+        click(ProjectsBtn);
+        Thread.sleep(1000);
+        click(eyeBtn);
+
+        Thread.sleep(2000);
+        driver.findElement(SiteVisitStatusDropDown).sendKeys("Visit Scheduled");
+        Thread.sleep(2000);
+        driver.findElement(StatusDropdown).sendKeys(Keys.TAB);
+
+        // utility.scrollToElement(SubmitBtn);
+        Thread.sleep(2000);
+        click(SubmitBtn);
+
+    }
 
     }
 

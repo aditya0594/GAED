@@ -4,64 +4,104 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="fbed16bb-bade-4def-845d-b7f89224c886" name="Changes" comment="update login xpath">
-      <change afterPath="$PROJECT_DIR$/Screenshots/Accept_Project_In_Admin20250325050626.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Screenshots/Accept_Project_In_Admin20250325050822.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Screenshots/Create_Project20250325050409.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Screenshots/InvalidOTP20250325034639.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Screenshots/InvalidOTP20250325044944.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Screenshots/Login_VerifyEmail20250325034543.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Screenshots/Login_VerifyEmail20250325044904.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Screenshots/Login_VerifyEmail20250325045241.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Screenshots/Login_VerifyEmail20250325045421.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Screenshots/Login_VerifyEmptyEmail20250325034624.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Screenshots/Login_VerifyEmptyEmail20250325044938.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Screenshots/Login_VerifyInvalidEmail20250325034555.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Screenshots/Login_VerifyInvalidEmail20250325034611.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Screenshots/Login_VerifyInvalidEmail20250325034615.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Screenshots/Login_VerifyInvalidEmail20250325034619.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Screenshots/Login_VerifyInvalidEmail20250325044908.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Screenshots/Login_VerifyInvalidEmail20250325044912.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Screenshots/Login_VerifyInvalidEmail20250325044918.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Screenshots/Login_VerifyInvalidEmail20250325044930.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Screenshots/Login_VerifyInvalidEmail20250325045253.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Screenshots/Login_VerifyInvalidEmail20250325045308.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Screenshots/Login_VerifyInvalidEmail20250325045325.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Screenshots/Login_VerifyInvalidEmail20250325045435.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Screenshots/VendorLogin20250325054736.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Screenshots/VendorLogin20250325060540.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Screenshots/VendorLogin20250325061249.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Screenshots/VendorLogin20250325085611.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Screenshots/VendorLogin20250325085922.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Screenshots/VendorLogin20250325090114.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Screenshots/VendorLogin20250325093036.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Screenshots/VendorLogin20250325114751.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Screenshots/VendorLogin20250325114951.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Screenshots/VendorLogin20250326042759.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Screenshots/VendorLogin20250326042923.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Screenshots/VendorLogin20250326043214.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Screenshots/VendorLogin20250326125934.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Screenshots/bidAccept20250326055543.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Screenshots/bidAccept20250326055855.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Screenshots/bidAccept20250326060228.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Screenshots/bidAccept20250327040719.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Screenshots/invalidate_SellProject_buttons20250325050240.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Pageobjects/BuyandSellBid.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/Testcases/BuySell_BidTest.java" afterDir="false" />
+    <list default="true" id="fbed16bb-bade-4def-845d-b7f89224c886" name="Changes" comment="buy and sell flow added">
+      <change afterPath="$PROJECT_DIR$/Screenshots/Create_Project20250327063841.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Screenshots/Create_Project20250327064146.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Screenshots/Create_Project20250327064509.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Screenshots/Create_Project20250327064658.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Screenshots/Create_Project20250327064833.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Screenshots/Create_Project20250327073053.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Screenshots/Create_Project20250327073508.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Screenshots/Create_Project20250328122235.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Screenshots/Create_Project20250328122509.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Screenshots/Create_Project20250328122620.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Screenshots/Create_Project20250328123206.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Screenshots/Create_Project20250328123621.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Screenshots/Create_Project20250328123729.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Screenshots/Create_Project20250328124054.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Screenshots/Create_Project20250328124242.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Screenshots/Create_Project20250328125734.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Pageobjects/BuyAndSell.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Pageobjects/BuyAndSell.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Pageobjects/HomePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Pageobjects/HomePage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Screenshots/Accept_Project_In_Admin20250308092112.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Screenshots/Accept_Project_In_Admin20250309125024.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Screenshots/Accept_Project_In_Admin20250310055555.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Screenshots/Accept_Project_In_Admin20250318032638.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Screenshots/Accept_Project_In_Admin20250318032704.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Screenshots/Accept_Project_In_Admin20250325050626.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Screenshots/Accept_Project_In_Admin20250325050822.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Screenshots/Consumer_Sign_up_and_OnHold_by_admin20250308092511.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Screenshots/Consumer_Sign_up_and_Verify_by_admin20250308042034.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Screenshots/Consumer_Sign_up_and_Verify_by_admin20250308042225.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Screenshots/Consumer_Sign_up_and_Verify_by_admin20250308043108.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Screenshots/Consumer_Sign_up_and_Verify_by_admin20250308043358.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Screenshots/Consumer_Sign_up_and_Verify_by_admin20250308043624.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Screenshots/Consumer_Sign_up_and_Verify_by_admin20250308044245.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Screenshots/Consumer_Sign_up_and_Verify_by_admin20250308044453.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Screenshots/Consumer_Sign_up_and_Verify_by_admin20250308050350.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Screenshots/Consumer_Sign_up_and_Verify_by_admin20250308050920.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Screenshots/Consumer_Sign_up_and_Verify_by_admin20250308054319.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Screenshots/Consumer_Sign_up_and_Verify_by_admin20250308054542.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Screenshots/Consumer_Sign_up_and_Verify_by_admin20250308090148.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Screenshots/Consumer_Sign_up_and_Verify_by_admin20250308090327.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Screenshots/Consumer_Sign_up_and_Verify_by_admin20250308092400.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Screenshots/Create_Project20250325050409.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Screenshots/Homepage20250324034130.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Screenshots/Homepage20250324034250.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Screenshots/InvalidOTP20250325034639.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Screenshots/InvalidOTP20250325044944.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Screenshots/InvalidOTP20250325095626.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Screenshots/Login_VerifyEmail20250325034543.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Screenshots/Login_VerifyEmail20250325044904.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Screenshots/Login_VerifyEmail20250325045241.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Screenshots/Login_VerifyEmail20250325045421.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Screenshots/Login_VerifyEmail20250325095550.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Screenshots/Login_VerifyEmptyEmail20250325034624.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Screenshots/Login_VerifyEmptyEmail20250325044938.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Screenshots/Login_VerifyEmptyEmail20250325095621.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Screenshots/Login_VerifyInvalidEmail20250325034555.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Screenshots/Login_VerifyInvalidEmail20250325034611.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Screenshots/Login_VerifyInvalidEmail20250325034615.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Screenshots/Login_VerifyInvalidEmail20250325034619.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Screenshots/Login_VerifyInvalidEmail20250325044908.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Screenshots/Login_VerifyInvalidEmail20250325044912.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Screenshots/Login_VerifyInvalidEmail20250325044918.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Screenshots/Login_VerifyInvalidEmail20250325044930.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Screenshots/Login_VerifyInvalidEmail20250325045253.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Screenshots/Login_VerifyInvalidEmail20250325045308.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Screenshots/Login_VerifyInvalidEmail20250325045325.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Screenshots/Login_VerifyInvalidEmail20250325045435.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Screenshots/Login_VerifyInvalidEmail20250325095555.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Screenshots/Login_VerifyInvalidEmail20250325095602.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Screenshots/Login_VerifyInvalidEmail20250325095607.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Screenshots/Login_VerifyInvalidEmail20250325095612.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Screenshots/VendorLogin20250325054736.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Screenshots/VendorLogin20250325060540.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Screenshots/VendorLogin20250325061249.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Screenshots/VendorLogin20250325085611.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Screenshots/VendorLogin20250325085922.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Screenshots/VendorLogin20250325090114.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Screenshots/VendorLogin20250325093036.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Screenshots/VendorLogin20250325114751.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Screenshots/VendorLogin20250325114951.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Screenshots/VendorLogin20250326042759.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Screenshots/VendorLogin20250326042923.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Screenshots/VendorLogin20250326043214.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Screenshots/VendorLogin20250326125934.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Screenshots/bidAccept20250326055543.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Screenshots/bidAccept20250326055855.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Screenshots/bidAccept20250326060228.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Screenshots/bidAccept20250327040719.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Screenshots/get_title20250308095826.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Screenshots/image_present20250308095830.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Screenshots/invalidat_sellProject_stepper_1_fields20250310054847.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Screenshots/invalidate_SellProject_buttons20250325050240.png" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Pageobjects/LoginConsumer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Pageobjects/LoginConsumer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Pageobjects/MarketPlaceAdmin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Pageobjects/MarketPlaceAdmin.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/baseClass/TestBase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/baseClass/TestBase.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/utils/Dataprovider.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/utils/Dataprovider.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resources/Consumer_signup_ids.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/resources/Consumer_signup_ids.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resources/ExcelFile.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/resources/ExcelFile.xlsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Pageobjects/Projects.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Pageobjects/Projects.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/utils/utility.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/utils/utility.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/resources/config.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/resources/config.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/Testcases/BuyAndSellTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Testcases/BuyAndSellTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/Testcases/LoginUserTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Testcases/LoginUserTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/Testcases/ProjectsTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Testcases/ProjectsTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/test-output/GAED_Testcase_report.html" beforeDir="false" afterPath="$PROJECT_DIR$/test-output/GAED_Testcase_report.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/testng.xml" beforeDir="false" afterPath="$PROJECT_DIR$/testng.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -136,7 +176,20 @@
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="TestNG.BuySell_BidTest">
+  <component name="RunManager" selected="TestNG.ProjectsTest.Create_Project">
+    <configuration name="Projects" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Pageobjects.Projects" />
+      <module name="Selenium_Advanced" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Pageobjects.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration default="true" type="JetRunConfigurationType">
       <module name="GAED" />
       <method v="2">
@@ -146,34 +199,6 @@
     <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
       <module name="GAED" />
       <option name="filePath" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="BuyAndSellTest.Accept_Project_In_Admin" type="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="Selenium_Advanced" />
-      <shortenClasspath name="NONE" />
-      <useClassPathOnly />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="Testcases.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="SUITE_NAME" value="" />
-      <option name="PACKAGE_NAME" value="Testcases" />
-      <option name="MAIN_CLASS_NAME" value="Testcases.BuyAndSellTest" />
-      <option name="METHOD_NAME" value="Accept_Project_In_Admin" />
-      <option name="GROUP_NAME" value="" />
-      <option name="TEST_OBJECT" value="METHOD" />
-      <option name="PARAMETERS" value="" />
-      <option name="OUTPUT_DIRECTORY" value="" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="moduleWithDependencies" />
-      </option>
-      <option name="PROPERTIES_FILE" value="" />
-      <properties />
-      <listeners />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -261,34 +286,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="BuySell_BidTest.invalidat_sellProject_stepper_1_fields" type="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="Selenium_Advanced" />
-      <shortenClasspath name="NONE" />
-      <useClassPathOnly />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="Testcases.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="SUITE_NAME" value="" />
-      <option name="PACKAGE_NAME" value="Testcases" />
-      <option name="MAIN_CLASS_NAME" value="Testcases.BuySell_BidTest" />
-      <option name="METHOD_NAME" value="invalidat_sellProject_stepper_1_fields" />
-      <option name="GROUP_NAME" value="" />
-      <option name="TEST_OBJECT" value="METHOD" />
-      <option name="PARAMETERS" value="" />
-      <option name="OUTPUT_DIRECTORY" value="" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="moduleWithDependencies" />
-      </option>
-      <option name="PROPERTIES_FILE" value="" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="Classexecution" type="TestNG">
       <shortenClasspath name="NONE" />
       <useClassPathOnly />
@@ -324,6 +321,34 @@
       <option name="PACKAGE_NAME" value="testcases" />
       <option name="MAIN_CLASS_NAME" value="Testcases.GalleryPageTest" />
       <option name="METHOD_NAME" value="Gallery_verify_image" />
+      <option name="GROUP_NAME" value="" />
+      <option name="TEST_OBJECT" value="METHOD" />
+      <option name="PARAMETERS" value="" />
+      <option name="OUTPUT_DIRECTORY" value="" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="moduleWithDependencies" />
+      </option>
+      <option name="PROPERTIES_FILE" value="" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ProjectsTest.Create_Project" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="Selenium_Advanced" />
+      <shortenClasspath name="NONE" />
+      <useClassPathOnly />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Testcases.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="SUITE_NAME" value="" />
+      <option name="PACKAGE_NAME" value="Testcases" />
+      <option name="MAIN_CLASS_NAME" value="Testcases.ProjectsTest" />
+      <option name="METHOD_NAME" value="Create_Project" />
       <option name="GROUP_NAME" value="" />
       <option name="TEST_OBJECT" value="METHOD" />
       <option name="PARAMETERS" value="" />
@@ -451,25 +476,25 @@
       </method>
     </configuration>
     <list>
+      <item itemvalue="Application.Projects" />
       <item itemvalue="TestNG.Unnamed" />
       <item itemvalue="TestNG.GalleryPageTest.Gallery_verify_image" />
       <item itemvalue="TestNG.TestSuite " />
       <item itemvalue="TestNG.testcases" />
       <item itemvalue="TestNG.&lt;default&gt;" />
       <item itemvalue="TestNG.Classexecution" />
-      <item itemvalue="TestNG.BuyAndSellTest.Accept_Project_In_Admin" />
       <item itemvalue="TestNG.BuySell_BidTest" />
       <item itemvalue="TestNG.BuySell_BidTest.VendorLogin" />
       <item itemvalue="TestNG.BuySell_BidTest.bidAccept" />
-      <item itemvalue="TestNG.BuySell_BidTest.invalidat_sellProject_stepper_1_fields" />
+      <item itemvalue="TestNG.ProjectsTest.Create_Project" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="TestNG.ProjectsTest.Create_Project" />
+        <item itemvalue="Application.Projects" />
         <item itemvalue="TestNG.BuySell_BidTest" />
         <item itemvalue="TestNG.BuySell_BidTest.bidAccept" />
         <item itemvalue="TestNG.BuySell_BidTest.VendorLogin" />
-        <item itemvalue="TestNG.BuyAndSellTest.Accept_Project_In_Admin" />
-        <item itemvalue="TestNG.BuySell_BidTest.invalidat_sellProject_stepper_1_fields" />
       </list>
     </recent_temporary>
   </component>
@@ -481,13 +506,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1666076051325</updated>
-    </task>
-    <task id="LOCAL-00036" summary="set up as per maven set all file">
-      <created>1737013465541</created>
-      <option name="number" value="00036" />
-      <option name="presentableId" value="LOCAL-00036" />
-      <option name="project" value="LOCAL" />
-      <updated>1737013465541</updated>
     </task>
     <task id="LOCAL-00037" summary="set up as per maven set all file">
       <created>1737014019180</created>
@@ -825,7 +843,14 @@
       <option name="project" value="LOCAL" />
       <updated>1742894021355</updated>
     </task>
-    <option name="localTasksCounter" value="85" />
+    <task id="LOCAL-00085" summary="buy and sell flow added">
+      <created>1743073447945</created>
+      <option name="number" value="00085" />
+      <option name="presentableId" value="LOCAL-00085" />
+      <option name="project" value="LOCAL" />
+      <updated>1743073447945</updated>
+    </task>
+    <option name="localTasksCounter" value="86" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -868,7 +893,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="appium setup 24-02-2024" />
     <MESSAGE value="appium setup 04-04-2024" />
     <MESSAGE value="Framework and homepage" />
     <MESSAGE value="Framework and homepage 22-04-2024" />
@@ -893,7 +917,8 @@
     <MESSAGE value="setep devTool and testng xml and the container" />
     <MESSAGE value="update the gitlab file" />
     <MESSAGE value="update login xpath" />
-    <option name="LAST_COMMIT_MESSAGE" value="update login xpath" />
+    <MESSAGE value="buy and sell flow added" />
+    <option name="LAST_COMMIT_MESSAGE" value="buy and sell flow added" />
   </component>
   <component name="XDebuggerManager">
     <watches-manager>
