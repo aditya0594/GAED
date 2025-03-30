@@ -15,6 +15,7 @@ import org.openqa.selenium.devtools.v132.network.model.Response;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.Assert;
 import utils.utility;
 
 import java.awt.*;
@@ -150,8 +151,8 @@ public class MarketPlaceAdmin extends TestBase {
     By ClockMin = By.xpath("//div[@class='MuiClock-wrapper css-1b5m8nj']//*[@class='MuiClockNumber-root css-vk8m51']");
     By ClockOKbtn = By.xpath("//button[@type='button' and normalize-space()='OK']");
      By TimeTo = By.xpath("//div[@class='MuiFormControl-root MuiTextField-root css-1b426h6']//input[@id=':re:']");
-    // By SubmitBtn = By.xpath("//button[@type='button' and normalize-space()='Submit']");
-    // By SubmitBtn = By.xpath("//button[@type='button' and normalize-space()='Submit']");
+     By VisitScheduleSubmitBtn = By.xpath("//button[@type='button' and normalize-space()='Submit']");
+     By ProjectnamelistAdmin = By.xpath("//td[@class='MuiTableCell-root MuiTableCell-body MuiTableCell-sizeMedium css-1plsf6o']");
     // By SubmitBtn = By.xpath("//button[@type='button' and normalize-space()='Submit']");
     // By SubmitBtn = By.xpath("//button[@type='button' and normalize-space()='Submit']");
 
@@ -241,9 +242,51 @@ public class MarketPlaceAdmin extends TestBase {
             }
         }
         click(ClockOKbtn);
+        waitForElement(SubmitBtn);
+        click(VisitScheduleSubmitBtn);
         Thread.sleep(7000);
 
     }
+
+    By siteVisiteScheduleText = By.xpath("//tr[@class='MuiTableRow-root MuiTableRow-hover css-1n0a3jb']/td[6]");
+    public void Verify_Project_visitSchedule_status() throws InterruptedException {
+        Thread.sleep(1000);
+        click(ProjectsBtn);
+        Thread.sleep(1000);
+        List<WebElement> projectnames = driver.findElements(ProjectnamelistAdmin);
+        String project_name_excel= readLastValue(0,"Project details");
+        for(WebElement pro : projectnames){
+            if(pro.getText().equals(project_name_excel)){
+               String status = driver.findElement(siteVisiteScheduleText).getText();
+                Assert.assertTrue(status.contains("Scheduled on "), "Status is verified and changed");
+                System.out.println("This is the status  : " + status);
+            }
+        }
+
+    }
+    static By ProfileBtn = By.xpath("//*[@class='w-5 h-5 text-white group-hover:text-primary']");
+    static By Logout = By.xpath("(//*[normalize-space()='Logout']/li)[1]");
+    public void AdminLogout(String option) throws InterruptedException {
+        Thread.sleep(2000);
+        click(ProfileBtn);
+        Thread.sleep(2000);
+      List<WebElement> optionsList = driver.findElements(By.xpath("//ul[@class='MuiList-root MuiList-padding MuiMenu-list css-ubifyk']/li"));
+        for (WebElement w : optionsList) {
+            // Trim and compare text
+            if (w.getText().trim().equals(option)) {
+                try {
+                    w.click();
+                } catch (Exception e) {
+                    // Use JavaScript Click as a fallback
+                    ((JavascriptExecutor) driver).executeScript("arguments[0].click();", w);
+                }
+                break; // Stop looping after clicking "Logout"
+            }
+        }
+        driver.navigate().refresh();
+        Thread.sleep(2000);
+    }
+
 }
 
 

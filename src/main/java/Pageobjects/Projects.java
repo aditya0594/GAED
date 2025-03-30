@@ -19,6 +19,8 @@ import java.awt.datatransfer.StringSelection;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.time.Duration;
+import java.util.List;
+import java.util.regex.Pattern;
 
 public class Projects extends TestBase {
     SignUp signup = new SignUp();
@@ -57,6 +59,9 @@ public class Projects extends TestBase {
         click(ProjectCreateNewButton);
         waitForElement(CreatePageTitle);
         String projectTile = ProjectTileText();
+        write_excel(0,1,projectTile); // writing the project name m=in sheet
+
+
         driver.findElement(ProjectTitle).sendKeys(projectTile);
         Thread.sleep(2000);
         utility.dropdownWithText(Property_type, "Land");
@@ -118,6 +123,66 @@ public class Projects extends TestBase {
         String getmessage_UnderAssessment  = driver.findElement(UnderAssessmentMess).getText();
         Assert.assertEquals(getmessage_UnderAssessment,"Great! Your project has been successfully created and is now under assessment.");
         click(OkayBtn);
+    }
+    By MyProjectTab_Project = By.xpath("//*[@class='flex items-center justify-center text-center h-full relative bg-transparent py-1 px-2 antialiased font-sans select-none cursor-pointer top-1 w-full sm:min-w-48 text-base font-normal text-black-100 pb-3']");
+    By TabProjectNames = By.xpath("//div[@class='flex items-center mb-3 justify-between']//h3[@class='font-semibold text-black-900 text-base truncate max-w-[70%]']");
+    By SiteVisitProjectDate = By.xpath("//div[@class='flex flex-col']//span[@class='text-black-900 text-sm font-medium']");
+    By navigationProject = By.xpath("//a[@class='text-sm 3xl:text-lg text-primary bg-white rounded-full py-2 p-4 active']");
+
+    public void consumerSiteVisitStatusCheck() throws InterruptedException {
+       // click(navigationProject);
+        Thread.sleep(2000);
+        waitForElement(MyProjectTab_Project);
+        WebElement projectTab = driver.findElement(MyProjectTab_Project);
+        try {
+            Actions action = new Actions(driver);
+            action.moveToElement(projectTab).pause(100).click().perform();
+            System.out.println("Clicked using Actions!");
+        } catch (Exception e) {
+            System.out.println("Actions click failed, using JavaScript...");
+
+            JavascriptExecutor js = (JavascriptExecutor) driver;
+            js.executeScript("arguments[0].scrollIntoView(true);", projectTab);
+            Thread.sleep(500);
+            js.executeScript("arguments[0].click();", projectTab);
+            System.out.println("Clicked using JavaScript!");
+        }
+
+        String project_name_excel= readLastValue(0,"Project details");
+        String targetProjectName = project_name_excel;
+        System.out.println("Project name is :  "+ targetProjectName);//ExcelPRojectname;  // Project to find
+        boolean projectFound = false;
+
+        // WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
+
+        while (!projectFound) {
+            List<WebElement> projectNames = driver.findElements(TabProjectNames);
+
+            for (WebElement ele : projectNames) {
+                if (ele.getText().trim().equals(targetProjectName)) {
+                    System.out.println("Project Found: " + targetProjectName);
+                    String date= driver.findElement(SiteVisitProjectDate).getText().trim();
+                    String datePattern = "\\d{2}/\\d{2}/\\d{4}"; // Example: 12/05/2025
+                    // Assert that the date is available and matches the format
+                    Assert.assertTrue(Pattern.matches(datePattern, date), "Date is not in the expected format!");
+                    System.out.println("Extracted Date: " + date);
+                    // Click on the project
+                    Thread.sleep(5000);
+                    projectFound = true;
+                    break;
+                }
+            }
+            if (!projectFound) {
+                System.out.println("Project not found. Scrolling horizontally...");
+                JavascriptExecutor js = (JavascriptExecutor) driver;
+                js.executeScript("document.querySelector('.your-scroll-container').scrollLeft += 300");
+                try {
+                    Thread.sleep(1000); // Wait for scrolling effect
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+            }
+        }
     }
 
 

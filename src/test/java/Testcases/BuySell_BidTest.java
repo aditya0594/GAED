@@ -47,7 +47,7 @@ public class BuySell_BidTest extends TestBase {
     public void AcceptBidConsumer() throws InterruptedException {
         homepage.homepage();
         login.LoginConsumerSuceessful();
-        Buysellbid.consumerMyProject();
+        Buysellbid.consumerMyProjectBuyAndSell();
         Buysellbid.viewProposal();
     }
 

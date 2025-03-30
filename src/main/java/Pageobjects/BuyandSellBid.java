@@ -75,7 +75,7 @@ public class BuyandSellBid extends TestBase {
 
     }
 
-    public void consumerMyProject() throws InterruptedException {
+    public void consumerMyProjectBuyAndSell() throws InterruptedException {
         Thread.sleep(2000);
         waitForElement(MyProjectTab);
         click(MyProjectTab);

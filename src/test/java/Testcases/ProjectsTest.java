@@ -22,15 +22,15 @@ import java.util.Optional;
 
 public class ProjectsTest extends TestBase {
 
-    public ProjectsTest() throws IOException {
-
-    }
     HomePage homepage = new HomePage();
     LoginConsumer login = new LoginConsumer();
     Projects project = new Projects();
     MarketPlaceAdmin marketadmin = new MarketPlaceAdmin();
+    public ProjectsTest() throws IOException {
 
-    @Test(priority = 3,enabled = true)
+    }
+
+    @Test(priority = 1, enabled = true)
     public void Create_Project() throws InterruptedException {
         ExtentTest test = extent.createTest("Create project mandatory field validation ");
         homepage.homepage();
@@ -40,11 +40,30 @@ public class ProjectsTest extends TestBase {
         project.createdUnderAssessmentMessage();
         test.pass("Create project mandatory field validation ");
     }
-    @Test(priority = 4,enabled = true)
+
+    @Test(priority = 2, enabled = true)
     public void admin_VisitSchedule() throws InterruptedException {
         ExtentTest test = extent.createTest("Create project mandatory field validation ");
         marketadmin.marketAdminLogin();
         marketadmin.Admin_Projects_publish();
+        marketadmin.Verify_Project_visitSchedule_status();
+        marketadmin.AdminLogout("Logout");
+        homepage.homepage();
+        login.LoginConsumerSuceessful();
+        project.projectClick();
+        project.consumerSiteVisitStatusCheck();
         test.pass("Create project mandatory field validation ");
     }
+    @Test(priority = 2, enabled = true)
+    public void admin_GenerationsReport() throws InterruptedException {
+        ExtentTest test = extent.createTest("Create project mandatory field validation ");
+        marketadmin.marketAdminLogin();
+        // marketadmin.Admin_Projects_publish();
+        marketadmin.Verify_Project_visitSchedule_status();
+       //marketadmin.AdminLogout("Logout");
+        marketadmin.ProjectGenerateReport();
+
+        test.pass("Create project mandatory field validation ");
     }
+
+}
