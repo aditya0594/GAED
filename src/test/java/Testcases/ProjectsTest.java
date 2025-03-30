@@ -44,7 +44,7 @@ public class ProjectsTest extends TestBase {
     public void admin_VisitSchedule() throws InterruptedException {
         ExtentTest test = extent.createTest("Create project mandatory field validation ");
         marketadmin.marketAdminLogin();
-        marketadmin.Admin_buyandSell_publish();
+        marketadmin.Admin_Projects_publish();
         test.pass("Create project mandatory field validation ");
     }
     }

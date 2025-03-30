@@ -61,7 +61,7 @@ public class BuyAndSellTest extends TestBase {
         Buyandsell.vaild_Stepper3_ProjectFields_button();
         test.pass("Create project mandatory field validation ");
     }
-    @Test(priority = 4,enabled = true, invocationCount = 0)
+    @Test(priority = 4,enabled = true)
     public void Accept_Project_In_Admin() throws InterruptedException, IOException {
         ExtentTest test = extent.createTest("Create project mandatory field validation ");
         homepage.homepage();
@@ -83,11 +83,12 @@ public class BuyAndSellTest extends TestBase {
     }
 
 
-   /* @Test(priority = 5,enabled = true)
-    public void validate_sellProject_btn() throws InterruptedException {
+    @Test(priority = 5,enabled = true)
+    public void adminVisitSchedule() throws InterruptedException {
         ExtentTest test = extent.createTest("Create project from the consumer login ");
-        Buyandsell.validate_SellProject_button();
+        marketadmin.marketAdminLogin();
+        marketadmin.Admin_Projects_publish();
         test.pass("Project is created");
 
-    }*/
+    }
 }

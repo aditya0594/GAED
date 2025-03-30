@@ -92,7 +92,7 @@ public class BuyAndSell extends TestBase {
     String project_Name;
 
     public void vaild_Stepper1_ProjectFields_button() throws InterruptedException {
-        Thread.sleep(3000);
+        Thread.sleep(000);
         waitForElement(SellProjectButton);
         driver.findElement(SellProjectButton).click();
         project_Name = ProjectTileText();
