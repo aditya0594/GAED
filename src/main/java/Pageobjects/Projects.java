@@ -35,7 +35,7 @@ public class Projects extends TestBase {
     By projectmodelLeasing = By.xpath("//div[@class='flex space-x-2 items-center']/input[@id='Leasing3']");
     By projectmodelPPA = By.xpath("//div[@class='flex space-x-2 items-center']/input[@id='PPA2']");
     By ProjectImage = By.xpath("//input[@id='dropzone-file']");
-    By drawtool = By.xpath("(//*[@class='w-5 h-5 rounded-full duration-200 bg-white hover:bg-[#DBE1FF]'])[3]");
+    By drawtool = By.xpath("//*[@class='w-5 h-5 rounded-full duration-200 bg-white hover:bg-[#DBE1FF] step-3']");
     By projectname = By.xpath("(//div[@class='rounded-3xl p-4 border border-gray-300 flex flex-col'])[1]");
 
     By canvasArealocator = By.xpath("//div[@class='gm-style']");
@@ -43,7 +43,7 @@ public class Projects extends TestBase {
     By SubmitBtn = By.xpath("//button[@type='submit']");
     By OkayBtn = By.xpath("//div[@class='absolute top-0 left-0 pb-10 flex items-center justify-end w-full h-full flex-col text-white ']//span[normalize-space()='Okay']");
     By UnderAssessmentMess = By.xpath("//div[@class='absolute top-0 left-0 pb-10 flex items-center justify-end w-full h-full flex-col text-white ']//h2[starts-with(normalize-space(), 'Great!')]");
-    //By OkayBtn = By.xpath("//div[@class='flex space-x-2 items-center']/input[@id='PPA2']");
+    By overlaySkipBtn = By.xpath("//button[@data-test-id='button-skip']");
     //By OkayBtn = By.xpath("//div[@class='flex space-x-2 items-center']/input[@id='PPA2']");
     //By OkayBtn = By.xpath("//div[@class='flex space-x-2 items-center']/input[@id='PPA2']");
     //By OkayBtn = By.xpath("//div[@class='flex space-x-2 items-center']/input[@id='PPA2']");
@@ -59,15 +59,19 @@ public class Projects extends TestBase {
         click(ProjectCreateNewButton);
         waitForElement(CreatePageTitle);
         String projectTile = ProjectTileText();
+        System.out.println("Created Project name :  " + projectTile);
         write_excel(0,1,projectTile); // writing the project name m=in sheet
 
 
         driver.findElement(ProjectTitle).sendKeys(projectTile);
         Thread.sleep(2000);
+        waitForElementToBeClickable(Property_type);
         utility.dropdownWithText(Property_type, "Land");
         //driver.findElement(By.xpath("//input[@id='react-select-2-input']")).sendKeys("Land");
         //driver.findElement(By.xpath("//input[@id='react-select-2-input']")).sendKeys(Keys.TAB);
         signup.addressDropdown("chatra", Property_location);
+        waitForElement(overlaySkipBtn);
+        click(overlaySkipBtn);
         click(projectmodelcapEX);
         waitForElement(projectmodelPPA);
         click(projectmodelPPA);
@@ -127,7 +131,7 @@ public class Projects extends TestBase {
     By MyProjectTab_Project = By.xpath("//*[@class='flex items-center justify-center text-center h-full relative bg-transparent py-1 px-2 antialiased font-sans select-none cursor-pointer top-1 w-full sm:min-w-48 text-base font-normal text-black-100 pb-3']");
     By TabProjectNames = By.xpath("//div[@class='flex items-center mb-3 justify-between']//h3[@class='font-semibold text-black-900 text-base truncate max-w-[70%]']");
     By SiteVisitProjectDate = By.xpath("//div[@class='flex flex-col']//span[@class='text-black-900 text-sm font-medium']");
-    By navigationProject = By.xpath("//a[@class='text-sm 3xl:text-lg text-primary bg-white rounded-full py-2 p-4 active']");
+    By GenerateReportStatus = By.xpath("//a[@class='text-sm 3xl:text-lg text-primary bg-white rounded-full py-2 p-4 active']");
 
     public void consumerSiteVisitStatusCheck() throws InterruptedException {
        // click(navigationProject);
@@ -183,6 +187,7 @@ public class Projects extends TestBase {
                 }
             }
         }
+
     }
 
 

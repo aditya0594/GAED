@@ -54,15 +54,11 @@ public class ProjectsTest extends TestBase {
         project.consumerSiteVisitStatusCheck();
         test.pass("Create project mandatory field validation ");
     }
-    @Test(priority = 2, enabled = true)
+    @Test(priority = 3, enabled = true)
     public void admin_GenerationsReport() throws InterruptedException {
         ExtentTest test = extent.createTest("Create project mandatory field validation ");
         marketadmin.marketAdminLogin();
-        // marketadmin.Admin_Projects_publish();
-        marketadmin.Verify_Project_visitSchedule_status();
-       //marketadmin.AdminLogout("Logout");
         marketadmin.ProjectGenerateReport();
-
         test.pass("Create project mandatory field validation ");
     }
 

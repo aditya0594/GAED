@@ -22,6 +22,8 @@ import java.awt.*;
 import java.awt.datatransfer.Clipboard;
 import java.awt.datatransfer.StringSelection;
 import java.io.IOException;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.time.Duration;
 import java.util.List;
 import java.util.Optional;
@@ -37,7 +39,7 @@ public class MarketPlaceAdmin extends TestBase {
     By BuySellBtn = By.xpath("(//*[normalize-space()='Buy/Sell'])[2]");
     By eyeBtn = By.xpath("(//span[@class='cursor-pointer hover:underline'])[1]");
     By Projectname = By.xpath("//h3[@class='font-medium xs:text-xl sm:text-2xl lg:text-3xl text-black-900']");
-    By StatusDropdown = By.xpath("//input[@id='react-select-4-input']");
+    By StatusDropdown = By.xzpath("//input[@id='react-select-4-input']");
     By SiteVisitStatusDropDownClick = By.xpath(" //div[@class='css-12oqyby-indicatorContainer']");
     By SiteVisitStatusDropDown = By.xpath("//input[@id='react-select-5-input']");
     By ProjectsBtn = By.xpath("(//*[normalize-space()='Projects'])[2]");
@@ -164,6 +166,7 @@ public class MarketPlaceAdmin extends TestBase {
         click(eyeBtn);
         waitForElement(SiteVisitStatusDropDownClick);
         click(SiteVisitStatusDropDownClick);
+        waitForElementToBeClickable(SiteVisitStatusDropDown);
         Thread.sleep(1000);
         driver.findElement(SiteVisitStatusDropDown).sendKeys("Visit Scheduled");
 
@@ -258,7 +261,7 @@ public class MarketPlaceAdmin extends TestBase {
         for(WebElement pro : projectnames){
             if(pro.getText().equals(project_name_excel)){
                String status = driver.findElement(siteVisiteScheduleText).getText();
-                Assert.assertTrue(status.contains("Scheduled on "), "Status is verified and changed");
+                Assert.assertTrue(status.contains("Scheduled on "), "Visit Schedule is verified and changed");
                 System.out.println("This is the status  : " + status);
             }
         }
@@ -286,7 +289,55 @@ public class MarketPlaceAdmin extends TestBase {
         driver.navigate().refresh();
         Thread.sleep(2000);
     }
+    By SubmitGeneratingReportBtn = By.xpath("//button[@type='button' and normalize-space()='Submit']");
+    By GenerateReportText = By.xpath("//tr[@class='MuiTableRow-root MuiTableRow-hover css-1n0a3jb']/td[6]");
 
+    public void ProjectGenerateReport() throws InterruptedException {
+        click(ProjectsBtn);
+        waitForElementToBeClickable(eyeBtn);
+        click(eyeBtn);
+        waitForElement(SiteVisitStatusDropDownClick);
+        click(SiteVisitStatusDropDownClick);
+        Thread.sleep(1000);
+        waitForElementToBeClickable(SiteVisitStatusDropDown);
+        driver.findElement(SiteVisitStatusDropDown).sendKeys("Generating Report");
+        click(SubmitGeneratingReportBtn);
+       // waitForElement(GenerateReportText);
+
+        List<WebElement> projectnames1 = driver.findElements(ProjectnamelistAdmin);
+        String project_name_excel1= readLastValue(0,"Project details");
+        for(WebElement pro : projectnames1){
+            if(pro.getText().equals(project_name_excel1)){
+                String status = driver.findElement(GenerateReportText).getText();
+                Assert.assertTrue(status.contains("Generating Report"), "Generating Report is verified and changed");
+                System.out.println("This is the status  : " + status);
+            }
+        }
+
+
+        /*
+        Clipboard clipboard1 = Toolkit.getDefaultToolkit().getSystemClipboard();
+        String path = System.getProperty("user.dir");
+        String relativePath = path+"src/resources/Admin_assessment.pdf";
+        // Convert to Path object
+        Path convertedpath = Paths.get(relativePath);
+        String FinalPAth = convertedpath.toString();
+        // Create a StringSelection object containing the OTP
+        StringSelection stringSelection = new StringSelection(FinalPAth);
+        // Set the StringSelection as the current contents of the clipboard
+        clipboard1.setContents(stringSelection,null);
+
+//        click(image_upload);
+//        WebElement IDfileInput = driver.findElement(By.xpath("//input[@id='document1File']"));
+//        IDfileInput.sendKeys(FinalPAth);
+        for(int i=1; i<=1;i++){
+            WebElement project_image = driver.findElement(By.xpath("//input[@id='dropzone-file']"));
+            project_image.sendKeys(FinalPAth);
+        }
+*/
+
+
+    }
 }
 
 

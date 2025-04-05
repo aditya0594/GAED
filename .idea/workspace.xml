@@ -4,18 +4,25 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="fbed16bb-bade-4def-845d-b7f89224c886" name="Changes" comment="calendor and clock automated">
-      <change afterPath="$PROJECT_DIR$/Screenshots/admin_VisitSchedule20250330043048.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Screenshots/admin_VisitSchedule20250330043315.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Screenshots/admin_VisitSchedule20250330044552.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Screenshots/admin_VisitSchedule20250330044706.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Screenshots/admin_VisitSchedule20250330044735.png" afterDir="false" />
+    <list default="true" id="fbed16bb-bade-4def-845d-b7f89224c886" name="Changes" comment="site visit schedule completed">
+      <change afterPath="$PROJECT_DIR$/Screenshots/Create_Project20250404070116.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Screenshots/Create_Project20250404070611.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Screenshots/Create_Project20250404070757.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Screenshots/Create_Project20250404074006.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Screenshots/admin_GenerationsReport20250330063026.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Screenshots/admin_GenerationsReport20250331010450.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Screenshots/admin_GenerationsReport20250331010701.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Screenshots/admin_GenerationsReport20250331123724.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Screenshots/admin_VisitSchedule20250404071646.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Screenshots/admin_VisitSchedule20250404071740.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Screenshots/admin_VisitSchedule20250404071949.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Screenshots/admin_VisitSchedule20250404074044.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Screenshots/admin_VisitSchedule_GenerateReport20250404075355.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/resources/Admin_assessment.pdf" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Pageobjects/BuyandSellBid.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Pageobjects/BuyandSellBid.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Pageobjects/MarketPlaceAdmin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Pageobjects/MarketPlaceAdmin.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Pageobjects/Projects.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Pageobjects/Projects.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/resources/Consumer_signup_ids.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/resources/Consumer_signup_ids.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/Testcases/BuySell_BidTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Testcases/BuySell_BidTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/Testcases/ProjectsTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Testcases/ProjectsTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/test-output/GAED_Testcase_report.html" beforeDir="false" afterPath="$PROJECT_DIR$/test-output/GAED_Testcase_report.html" afterDir="false" />
     </list>
@@ -64,7 +71,7 @@
   &quot;keyToString&quot;: {
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/GAED/src/test/java/resourses&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/GAED/src/resources&quot;,
     &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
     &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
@@ -77,11 +84,11 @@
       <recent name="Runner" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\GAED\src\resources" />
       <recent name="C:\GAED\src\test\java\resourses" />
       <recent name="C:\GAED\src\test\java" />
       <recent name="C:\Users\HM\IdeaProjects\GAED" />
       <recent name="C:\Users\HM\IdeaProjects\GAED\New folder" />
-      <recent name="C:\Users\HM\IdeaProjects\GAED\src\resources" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\GAED\src\test\java\resourses" />
@@ -92,20 +99,7 @@
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="TestNG.ProjectsTest.admin_VisitSchedule">
-    <configuration name="MarketPlaceAdmin" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Pageobjects.MarketPlaceAdmin" />
-      <module name="Selenium_Advanced" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="Pageobjects.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="TestNG.ProjectsTest (4)">
     <configuration default="true" type="JetRunConfigurationType">
       <module name="GAED" />
       <method v="2">
@@ -115,34 +109,6 @@
     <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
       <module name="GAED" />
       <option name="filePath" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="BuyAndSellTest.Accept_Project_In_Admin" type="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="Selenium_Advanced" />
-      <shortenClasspath name="NONE" />
-      <useClassPathOnly />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="Testcases.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="SUITE_NAME" value="" />
-      <option name="PACKAGE_NAME" value="Testcases" />
-      <option name="MAIN_CLASS_NAME" value="Testcases.BuyAndSellTest" />
-      <option name="METHOD_NAME" value="Accept_Project_In_Admin" />
-      <option name="GROUP_NAME" value="" />
-      <option name="TEST_OBJECT" value="METHOD" />
-      <option name="PARAMETERS" value="" />
-      <option name="OUTPUT_DIRECTORY" value="" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="moduleWithDependencies" />
-      </option>
-      <option name="PROPERTIES_FILE" value="" />
-      <properties />
-      <listeners />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -196,6 +162,33 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="ProjectsTest (4)" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="Selenium_Advanced" />
+      <shortenClasspath name="NONE" />
+      <useClassPathOnly />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Testcases.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="SUITE_NAME" value="" />
+      <option name="PACKAGE_NAME" value="Testcases" />
+      <option name="MAIN_CLASS_NAME" value="Testcases.ProjectsTest" />
+      <option name="GROUP_NAME" value="" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <option name="PARAMETERS" value="" />
+      <option name="OUTPUT_DIRECTORY" value="" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="moduleWithDependencies" />
+      </option>
+      <option name="PROPERTIES_FILE" value="" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="ProjectsTest" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="Selenium_Advanced" />
       <shortenClasspath name="NONE" />
@@ -237,6 +230,34 @@
       <option name="PACKAGE_NAME" value="Testcases" />
       <option name="MAIN_CLASS_NAME" value="Testcases.ProjectsTest" />
       <option name="METHOD_NAME" value="Create_Project" />
+      <option name="GROUP_NAME" value="" />
+      <option name="TEST_OBJECT" value="METHOD" />
+      <option name="PARAMETERS" value="" />
+      <option name="OUTPUT_DIRECTORY" value="" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="moduleWithDependencies" />
+      </option>
+      <option name="PROPERTIES_FILE" value="" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ProjectsTest.admin_GenerationsReport" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="Selenium_Advanced" />
+      <shortenClasspath name="NONE" />
+      <useClassPathOnly />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Testcases.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="SUITE_NAME" value="" />
+      <option name="PACKAGE_NAME" value="Testcases" />
+      <option name="MAIN_CLASS_NAME" value="Testcases.ProjectsTest" />
+      <option name="METHOD_NAME" value="admin_GenerationsReport" />
       <option name="GROUP_NAME" value="" />
       <option name="TEST_OBJECT" value="METHOD" />
       <option name="PARAMETERS" value="" />
@@ -392,25 +413,25 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="Application.MarketPlaceAdmin" />
       <item itemvalue="TestNG.Unnamed" />
       <item itemvalue="TestNG.GalleryPageTest.Gallery_verify_image" />
       <item itemvalue="TestNG.TestSuite " />
       <item itemvalue="TestNG.testcases" />
       <item itemvalue="TestNG.&lt;default&gt;" />
       <item itemvalue="TestNG.Classexecution" />
-      <item itemvalue="TestNG.ProjectsTest" />
-      <item itemvalue="TestNG.ProjectsTest.admin_VisitSchedule" />
-      <item itemvalue="TestNG.BuyAndSellTest.Accept_Project_In_Admin" />
+      <item itemvalue="TestNG.ProjectsTest (4)" />
       <item itemvalue="TestNG.ProjectsTest.Create_Project" />
+      <item itemvalue="TestNG.ProjectsTest" />
+      <item itemvalue="TestNG.ProjectsTest.admin_GenerationsReport" />
+      <item itemvalue="TestNG.ProjectsTest.admin_VisitSchedule" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="TestNG.ProjectsTest.admin_VisitSchedule" />
+        <item itemvalue="TestNG.ProjectsTest (4)" />
+        <item itemvalue="TestNG.ProjectsTest.admin_GenerationsReport" />
         <item itemvalue="TestNG.ProjectsTest" />
+        <item itemvalue="TestNG.ProjectsTest.admin_VisitSchedule" />
         <item itemvalue="TestNG.ProjectsTest.Create_Project" />
-        <item itemvalue="Application.MarketPlaceAdmin" />
-        <item itemvalue="TestNG.BuyAndSellTest.Accept_Project_In_Admin" />
       </list>
     </recent_temporary>
   </component>
@@ -422,13 +443,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1666076051325</updated>
-    </task>
-    <task id="LOCAL-00039" summary="login signup and buyandsell running code">
-      <created>1737103519606</created>
-      <option name="number" value="00039" />
-      <option name="presentableId" value="LOCAL-00039" />
-      <option name="project" value="LOCAL" />
-      <updated>1737103519606</updated>
     </task>
     <task id="LOCAL-00040" summary="Fixed the issue for the scripts">
       <created>1737128607697</created>
@@ -766,7 +780,14 @@
       <option name="project" value="LOCAL" />
       <updated>1743332538667</updated>
     </task>
-    <option name="localTasksCounter" value="88" />
+    <task id="LOCAL-00088" summary="site visit schedule completed">
+      <created>1743339018564</created>
+      <option name="number" value="00088" />
+      <option name="presentableId" value="LOCAL-00088" />
+      <option name="project" value="LOCAL" />
+      <updated>1743339018564</updated>
+    </task>
+    <option name="localTasksCounter" value="89" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -809,7 +830,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Framework and homepage 22-04-2024" />
     <MESSAGE value="Login Page Completed 27-04-2024" />
     <MESSAGE value="Signup Page Completed 29-04-2024" />
     <MESSAGE value="Signup Page Completed 10-05-2024" />
@@ -834,7 +854,8 @@
     <MESSAGE value="buy and sell flow added" />
     <MESSAGE value="project created completed" />
     <MESSAGE value="calendor and clock automated" />
-    <option name="LAST_COMMIT_MESSAGE" value="calendor and clock automated" />
+    <MESSAGE value="site visit schedule completed" />
+    <option name="LAST_COMMIT_MESSAGE" value="site visit schedule completed" />
   </component>
   <component name="XDebuggerManager">
     <watches-manager>
