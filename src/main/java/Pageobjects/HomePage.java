@@ -89,6 +89,7 @@ public class HomePage extends TestBase {
         }
     }
 
+
     public HomePage() throws IOException {
 
         URLS = utility.property("url").toString();
@@ -101,10 +102,12 @@ public class HomePage extends TestBase {
         // Name= (String) Properties.get("name");
     }
 
-    public void homepage() {
+    public void homepage() throws InterruptedException {
         driver.get(URLS);
+
         String hometitle = driver.getTitle();
         Assert.assertEquals("GAED", hometitle);
+        Thread.sleep(2000);
     }
 
 
@@ -116,7 +119,6 @@ public class HomePage extends TestBase {
         // Navigate to the URL with the dynamic part
         String url = "https://www.mailinator.com/v4/public/inboxes.jsp?to=" + dynamicPart;
         driver.get(url);
-
 
     }
 

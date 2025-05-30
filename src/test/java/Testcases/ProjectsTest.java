@@ -2,6 +2,7 @@ package Testcases;
 
 import Pageobjects.HomePage;
 import Pageobjects.LoginConsumer;
+import Pageobjects.MarketPlaceAdmin;
 import Pageobjects.Projects;
 import baseClass.TestBase;
 import com.aventstack.extentreports.ExtentTest;
@@ -21,69 +22,44 @@ import java.util.Optional;
 
 public class ProjectsTest extends TestBase {
 
-    public ProjectsTest() throws IOException {
-
-    }
     HomePage homepage = new HomePage();
     LoginConsumer login = new LoginConsumer();
     Projects project = new Projects();
+    MarketPlaceAdmin marketadmin = new MarketPlaceAdmin();
+    public ProjectsTest() throws IOException {
 
-    @Test(priority = 3,enabled = true)
+    }
+
+    @Test(priority = 1, enabled = true)
     public void Create_Project() throws InterruptedException {
         ExtentTest test = extent.createTest("Create project mandatory field validation ");
         homepage.homepage();
         login.LoginConsumerSuceessful();
         project.projectClick();
         project.projectCreate();
+        project.createdUnderAssessmentMessage();
         test.pass("Create project mandatory field validation ");
     }
-    @Test(priority = 3,enabled = true)
-    public void otp() throws InterruptedException {
+
+    @Test(priority = 2, enabled = true)
+    public void admin_VisitSchedule() throws InterruptedException {
         ExtentTest test = extent.createTest("Create project mandatory field validation ");
+        marketadmin.marketAdminLogin();
+        marketadmin.Admin_Projects_publish();
+        marketadmin.Verify_Project_visitSchedule_status();
+        marketadmin.AdminLogout("Logout");
         homepage.homepage();
         login.LoginConsumerSuceessful();
-        // Get the DevTools session
-        // **Start DevTools in Parallel (Capture OTP)**
-        /*DevTools devTools = ((ChromeDriver) driver).getDevTools();
-        devTools.createSession();
-        devTools.send(Network.enable(Optional.empty(), Optional.empty(), Optional.empty()));
-
-        new Thread(() -> {
-            devTools.addListener(Network.responseReceived(), response -> {
-                RequestId requestId = response.getRequestId();
-                Response res = response.getResponse();
-
-                // **Filter the "Verify OTP" API Response**
-                if (res.getUrl().contains("https://qa.gaedkeeper.com/qa/api/v1/user/send-otp")) { // Adjust based on API URL
-                    System.out.println("Captured OTP Response from API: " + res.getUrl());
-
-                    // Fetch response body
-                    Optional<Network.GetResponseBodyResponse> responseBody =
-                            Optional.ofNullable(devTools.send(Network.getResponseBody(requestId)));
-
-                    if (responseBody.isPresent()) {
-                        String body = responseBody.get().getBody();
-                        System.out.println("Full Response: " + body);
-
-                        JsonObject jsonObject = JsonParser.parseString(body).getAsJsonObject();
-                        if (jsonObject.has("otp")) {
-                            String extractedOTP = jsonObject.get("data.code").getAsString();
-                            System.out.println("Extracted OTP: " + extractedOTP);
-
-                            // **Enter OTP in UI**
-
-                        }
-                    }
-                }
-            });
-        }).start(); // Run the thread in parallel
-
-        // **Wait for OTP Capture & Submission**
-        Thread.sleep(5000);*/
-
+        project.projectClick();
+        project.consumerSiteVisitStatusCheck();
+        test.pass("Create project mandatory field validation ");
     }
-
-
-
+    @Test(priority = 3, enabled = true)
+    public void admin_GenerationsReport() throws InterruptedException {
+        ExtentTest test = extent.createTest("Create project mandatory field validation ");
+        marketadmin.marketAdminLogin();
+        marketadmin.ProjectGenerateReport();
+        test.pass("Create project mandatory field validation ");
+    }
 
 }

@@ -1,50 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="All Test Suite">
-    <test verbose="2" preserve-order="true" name="C:/Users/HM/IdeaProjects/GAED/src/main/Testcases">
+    <test verbose="2" preserve-order="true" name="C:/GAED">
+        <parameter name="browserName" value="chrome"></parameter>
         <classes>
-<!--            <class name="Testcases.HomepageTest">-->
-<!--                <methods>-->
-<!--                    <include name="Homepage"/>-->
-<!--                    <include name="BuyandSellbuttonVerify"/>-->
-<!--                </methods>-->
-<!--            </class>-->
-<!--            <class name="Testcases.SignUpTest">-->
-<!--                <methods>-->
-<!--                    <include name="Signup_page_verify"/>-->
-<!--                    <include name="Verify_Empty_signup_fields"/>-->
-<!--                    <include name="Consumer_Sign_up"/>-->
-<!--                </methods>-->
-<!--            </class>-->
+            <class name="Testcases.HomepageTest">
+                <methods>
+                    <include name="Homepage"/>
+                </methods>
+            </class>
             <class name="Testcases.LoginUserTest">
                 <methods>
                     <include name="Login_VerifyEmail"/>
                     <include name="Login_VerifyInvalidEmail"/>
                     <include name="Login_VerifyEmptyEmail"/>
-                    <include name="Collage_Btn_functionality"/>
-                    <include name="Collage_Img_functionality"/>
-                    <include name="Collage_multi_Img_functionality"/>
-                    <include name="Verify_Collage_Multi_layoutswitch_Image"/>
+                    <include name="InvalidOTP"/>
+                    <include name="VerifyEmptyNotExist"/>
+                    <include name="Verify_SignUp_Link_ontheLogin"/>
+                    <include name="verifyLoginConsumer"/>
                 </methods>
             </class>
-<!--            <class name="Testcases.LoginUserTest">-->
-<!--                <methods>-->
-<!--                    <include name="Login_VerifyEmail"/>-->
-<!--                    <include name="Login_VerifyInvalidEmail"/>-->
-<!--                    <include name="Login_VerifyEmptyEmail"/>-->
-<!--                    <include name="VerifyEmptyNotExist"/>-->
-<!--                    <include name="Verify_SignUp_Link_ontheLogin"/>-->
-<!--                    <include name="verifyLoginConsumer"/>-->
-<!--                </methods>-->
-<!--            </class>-->
-<!--            <class name="Testcases.SignUpTest">-->
-<!--                <methods>-->
-<!--                    <include name="Signup_page_verify"/>-->
-<!--                    <include name="Verify_Empty_signup_fields"/>-->
-<!--                    <include name="Consumer_Sign_up"/>-->
-<!--                    <include name="deleuser"/>-->
-<!--                </methods>-->
-<!--            </class>-->
+            <class name="Testcases.SignUpTest">
+                <methods>
+                    <include name="Signup_page_verify"/>
+                    <include name="Verify_Empty_signup_fields"/>
+                    <include name="Consumer_Sign_up_and_Verify_by_admin"/>
+                    <include name="Consumer_Sign_up_and_OnHold_by_admin"/>
+                </methods>
+            </class>
         </classes>
     </test>
 </suite>

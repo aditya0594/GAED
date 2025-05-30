@@ -86,7 +86,7 @@ public class LoginUserTest extends TestBase {
     public void Login_VerifyEmail(String usernameEmail, String password) throws IOException, InterruptedException {
         ExtentTest test = extent.createTest("To verify the valid email");
         System.out.println(usernameEmail + " " + password);
-       homePage.homepage();
+        homePage.homepage();
         login.Login_Btn_home();
         login.Verify_login_Page();
         login.Login_Email(usernameEmail);
@@ -97,7 +97,7 @@ public class LoginUserTest extends TestBase {
         test.pass("To verify the valid email passed successfully.");
     }
     @Test(priority = 2, enabled = true, dataProvider = "InvalidLoginEmail",dataProviderClass = Dataprovider.class)
-    public void Login_VerifyInvalidEmail(String usernameEmail, String password) throws IOException {
+    public void Login_VerifyInvalidEmail(String usernameEmail, String password) throws IOException, InterruptedException {
         ExtentTest test = extent.createTest("To verify the invalid email");
         System.out.println(usernameEmail);
         homePage.homepage();
@@ -109,7 +109,7 @@ public class LoginUserTest extends TestBase {
         test.pass("To verify the invalid email passed successfully.");
     }
     @Test(priority = 3, enabled = true)
-    public void Login_VerifyEmptyEmail() throws IOException {
+    public void Login_VerifyEmptyEmail() throws IOException, InterruptedException {
         ExtentTest test = extent.createTest("To verify the invalid email");
         homePage.homepage();
         login.Login_Btn_home();
@@ -126,10 +126,9 @@ public class LoginUserTest extends TestBase {
         login.Login_Btn_home();
         login.Verify_login_Page();
         login.Login_Email(usernameEmail);
-        login.sentOTPbtn();
+        login.setOTPbuttonSimple();
         login.InvalidOTP();
         login.verifyEmailbtn();
-        login.invalidOTP_message();
     }
 
 

@@ -83,11 +83,12 @@ public class BuyAndSellTest extends TestBase {
     }
 
 
-   /* @Test(priority = 5,enabled = true)
-    public void validate_sellProject_btn() throws InterruptedException {
+    @Test(priority = 5,enabled = true)
+    public void adminVisitSchedule() throws InterruptedException {
         ExtentTest test = extent.createTest("Create project from the consumer login ");
-        Buyandsell.validate_SellProject_button();
+        marketadmin.marketAdminLogin();
+        marketadmin.Admin_Projects_publish();
         test.pass("Project is created");
 
-    }*/
+    }
 }
