@@ -31,7 +31,7 @@ public class BuyandSellBid extends TestBase {
     //    By makeOrderBtn = By.xpath("//button[normalize-space()='Make Offer']");
     //    By makeOrderBtn = By.xpath("//button[normalize-space()='Make Offer']");
     //    By makeOrderBtn = By.xpath("//button[normalize-space()='Make Offer']");
-
+    By homeloader = By.xpath("//*[@class='inline w-14 h-14 text-gray-200 animate-spin dark:text-gray-600 fill-primary']");
     String ExcelPRojectname;
 
     public void ProjectToBid() throws InterruptedException {
@@ -48,9 +48,13 @@ public class BuyandSellBid extends TestBase {
             String projectSingleName = ele.getText();
             if (projectSingleName.equals(ExcelPRojectname)) {
                 System.out.println("Got the name : " + projectSingleName);
+
+                waitForLoaderToDisappear(homeloader);
                 driver.findElement(StartBidding).click();
+                waitForLoaderToDisappear(homeloader);
                 String name = driver.findElement(verifyProjectNameInDetails).getText();
                 Assert.assertEquals(name, ExcelPRojectname);
+
                 List<WebElement> bidButton = driver.findElements(bidNowBtn);
                 System.out.println("The bid button is size :" + bidButton);
                 try {
@@ -77,9 +81,10 @@ public class BuyandSellBid extends TestBase {
 
     public void consumerMyProjectBuyAndSell() throws InterruptedException {
         Thread.sleep(2000);
+        waitForLoaderToDisappear(homeloader);
         waitForElement(MyProjectTab);
         click(MyProjectTab);
-        String targetProjectName = ExcelPRojectname;
+        String targetProjectName = readLastValue(0, "Project details");;
         System.out.println("Project name is :  "+ targetProjectName);//ExcelPRojectname;  // Project to find
         boolean projectFound = false;
 
@@ -97,16 +102,17 @@ public class BuyandSellBid extends TestBase {
                     break;
                 }
             }
-            if (!projectFound) {
-                System.out.println("Project not found. Scrolling horizontally...");
-                JavascriptExecutor js = (JavascriptExecutor) driver;
-                js.executeScript("document.querySelector('.your-scroll-container').scrollLeft += 300");
-                try {
-                    Thread.sleep(1000); // Wait for scrolling effect
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
-                }
-            }
+//            if (!projectFound) {
+//                System.out.println("Project not found. Scrolling horizontally...");
+//                JavascriptExecutor js = (JavascriptExecutor) driver;
+//                js.executeScript("document.querySelector('.your-scroll-container').scrollLeft += 300");
+//                try {
+//                    Thread.sleep(1000); // Wait for scrolling effect
+//                } catch (InterruptedException e) {
+//                    e.printStackTrace();
+//                }
+//            }
+//        }
         }
     }
 

@@ -386,9 +386,10 @@ public class LoginConsumer extends TestBase {
 
 
     }
+    static By homeloader = By.xpath("//*[@class='inline w-14 h-14 text-gray-200 animate-spin dark:text-gray-600 fill-primary']");
 
     public static void consumerLogout(String option) throws InterruptedException {
-        Thread.sleep(2000);
+        waitForLoaderToDisappear(homeloader);
         click(ProfileBtn);
         Thread.sleep(2000);
         waitForElement(Logout);

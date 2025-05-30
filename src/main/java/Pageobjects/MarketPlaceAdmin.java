@@ -39,7 +39,7 @@ public class MarketPlaceAdmin extends TestBase {
     By BuySellBtn = By.xpath("(//*[normalize-space()='Buy/Sell'])[2]");
     By eyeBtn = By.xpath("(//span[@class='cursor-pointer hover:underline'])[1]");
     By Projectname = By.xpath("//h3[@class='font-medium xs:text-xl sm:text-2xl lg:text-3xl text-black-900']");
-    By StatusDropdown = By.xzpath("//input[@id='react-select-4-input']");
+    By StatusDropdown = By.xpath("//input[@id='react-select-4-input']");
     By SiteVisitStatusDropDownClick = By.xpath(" //div[@class='css-12oqyby-indicatorContainer']");
     By SiteVisitStatusDropDown = By.xpath("//input[@id='react-select-5-input']");
     By ProjectsBtn = By.xpath("(//*[normalize-space()='Projects'])[2]");
@@ -129,21 +129,26 @@ public class MarketPlaceAdmin extends TestBase {
         Thread.sleep(1000);
 
     }
+    By homeloader = By.xpath("//*[@class='inline w-14 h-14 text-gray-200 animate-spin dark:text-gray-600 fill-primary']");
 
+
+    By adminHomepage = By.xpath("//h2[text()='Pragmatyc Admin']");
     public void Admin_buyandSell_publish() throws InterruptedException {
         Thread.sleep(2000);
         click(BuySellBtn);
         Thread.sleep(1000);
         click(eyeBtn);
-        Thread.sleep(2000);
+        waitForLoaderToDisappear(homeloader);
         driver.findElement(StatusDropdown).sendKeys("Publish");
         Thread.sleep(2000);
         driver.findElement(StatusDropdown).sendKeys(Keys.TAB);
-
         //span[@class='MuiClockNumber-root css-vk8m51']
         // utility.scrollToElement(SubmitBtn);
         Thread.sleep(2000);
         click(SubmitBtn);
+        waitForLoaderToDisappear(homeloader);
+        waitForElement(adminHomepage);
+        driver.findElement(adminHomepage).click();
 
     }
     By TimeFrom = By.xpath("//div[@class='MuiFormControl-root MuiTextField-root css-1b426h6']//input[@id=':rb:']");

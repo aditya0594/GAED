@@ -15,9 +15,6 @@
                     <include name="Login_VerifyInvalidEmail"/>
                     <include name="Login_VerifyEmptyEmail"/>
                     <include name="InvalidOTP"/>
-                    <include name="VerifyEmptyNotExist"/>
-                    <include name="Verify_SignUp_Link_ontheLogin"/>
-                    <include name="verifyLoginConsumer"/>
                 </methods>
             </class>
             <class name="Testcases.SignUpTest">
@@ -26,6 +23,21 @@
                     <include name="Verify_Empty_signup_fields"/>
                     <include name="Consumer_Sign_up_and_Verify_by_admin"/>
                     <include name="Consumer_Sign_up_and_OnHold_by_admin"/>
+                </methods>
+            </class>
+            <class name="Testcases.BuyAndSellTest">
+                <methods>
+                    <include name="invalidate_SellProject_buttons"/>
+                    <include name="invalidat_sellProject_stepper_1_fields"/>
+                    <include name="Create_Project"/>
+                    <include name="Accept_Project_In_Admin"/>
+                </methods>
+            </class>
+            <class name="Testcases.BuySell_BidTest">
+                <methods>
+                    <include name="createProject"/>
+                    <include name="bidAccept"/>
+                    <include name="AcceptBidConsumer"/>
                 </methods>
             </class>
         </classes>
