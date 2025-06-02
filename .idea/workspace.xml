@@ -5,9 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="fbed16bb-bade-4def-845d-b7f89224c886" name="Changes" comment="buy an sell complete">
-      <change afterPath="$PROJECT_DIR$/Jenkinsfile" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Screenshots/Create_Project20250602122134.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Pageobjects/MarketPlaceAdmin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Pageobjects/MarketPlaceAdmin.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Pageobjects/Projects.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Pageobjects/Projects.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test-output/GAED_Testcase_report.html" beforeDir="false" afterPath="$PROJECT_DIR$/test-output/GAED_Testcase_report.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -82,7 +83,7 @@
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="TestNG.C:/GAED/testng.xml">
+  <component name="RunManager" selected="TestNG.ProjectsTest.Create_Project">
     <configuration default="true" type="JetRunConfigurationType">
       <module name="GAED" />
       <method v="2">
@@ -220,7 +221,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ProjectsTest.admin_GenerationsReport" type="TestNG" temporary="true" nameIsGenerated="true">
+    <configuration name="ProjectsTest.Create_Project" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="Selenium_Advanced" />
       <shortenClasspath name="NONE" />
       <useClassPathOnly />
@@ -233,7 +234,7 @@
       <option name="SUITE_NAME" value="" />
       <option name="PACKAGE_NAME" value="Testcases" />
       <option name="MAIN_CLASS_NAME" value="Testcases.ProjectsTest" />
-      <option name="METHOD_NAME" value="admin_GenerationsReport" />
+      <option name="METHOD_NAME" value="Create_Project" />
       <option name="GROUP_NAME" value="" />
       <option name="TEST_OBJECT" value="METHOD" />
       <option name="PARAMETERS" value="" />
@@ -248,7 +249,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ProjectsTest.admin_VisitSchedule" type="TestNG" temporary="true" nameIsGenerated="true">
+    <configuration name="ProjectsTest.admin_GenerationsReport" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="Selenium_Advanced" />
       <shortenClasspath name="NONE" />
       <useClassPathOnly />
@@ -261,7 +262,7 @@
       <option name="SUITE_NAME" value="" />
       <option name="PACKAGE_NAME" value="Testcases" />
       <option name="MAIN_CLASS_NAME" value="Testcases.ProjectsTest" />
-      <option name="METHOD_NAME" value="admin_VisitSchedule" />
+      <option name="METHOD_NAME" value="admin_GenerationsReport" />
       <option name="GROUP_NAME" value="" />
       <option name="TEST_OBJECT" value="METHOD" />
       <option name="PARAMETERS" value="" />
@@ -397,17 +398,17 @@
       <item itemvalue="TestNG.Classexecution" />
       <item itemvalue="TestNG.C:/GAED/testng.xml" />
       <item itemvalue="TestNG.ProjectsTest (4)" />
+      <item itemvalue="TestNG.ProjectsTest.Create_Project" />
       <item itemvalue="TestNG.ProjectsTest" />
       <item itemvalue="TestNG.ProjectsTest.admin_GenerationsReport" />
-      <item itemvalue="TestNG.ProjectsTest.admin_VisitSchedule" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="TestNG.ProjectsTest.Create_Project" />
         <item itemvalue="TestNG.C:/GAED/testng.xml" />
         <item itemvalue="TestNG.ProjectsTest (4)" />
         <item itemvalue="TestNG.ProjectsTest.admin_GenerationsReport" />
         <item itemvalue="TestNG.ProjectsTest" />
-        <item itemvalue="TestNG.ProjectsTest.admin_VisitSchedule" />
       </list>
     </recent_temporary>
   </component>
@@ -419,13 +420,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1666076051325</updated>
-    </task>
-    <task id="LOCAL-00042" summary="Fixed the issue for the scripts">
-      <created>1737129608806</created>
-      <option name="number" value="00042" />
-      <option name="presentableId" value="LOCAL-00042" />
-      <option name="project" value="LOCAL" />
-      <updated>1737129608806</updated>
     </task>
     <task id="LOCAL-00043" summary="Fixed the issue for the scripts">
       <created>1737130099901</created>
@@ -763,7 +757,14 @@
       <option name="project" value="LOCAL" />
       <updated>1748596489285</updated>
     </task>
-    <option name="localTasksCounter" value="91" />
+    <task id="LOCAL-00091" summary="buy an sell complete">
+      <created>1748847028472</created>
+      <option name="number" value="00091" />
+      <option name="presentableId" value="LOCAL-00091" />
+      <option name="project" value="LOCAL" />
+      <updated>1748847028472</updated>
+    </task>
+    <option name="localTasksCounter" value="92" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
