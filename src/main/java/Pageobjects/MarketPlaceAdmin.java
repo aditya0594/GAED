@@ -39,7 +39,7 @@ public class MarketPlaceAdmin extends TestBase {
     By BuySellBtn = By.xpath("(//*[normalize-space()='Buy/Sell'])[2]");
     By eyeBtn = By.xpath("(//span[@class='cursor-pointer hover:underline'])[1]");
     By Projectname = By.xpath("//h3[@class='font-medium xs:text-xl sm:text-2xl lg:text-3xl text-black-900']");
-    By StatusDropdown = By.xzpath("//input[@id='react-select-4-input']");
+    By StatusDropdown = By.xpath("//input[@id='react-select-4-input']");
     By SiteVisitStatusDropDownClick = By.xpath(" //div[@class='css-12oqyby-indicatorContainer']");
     By SiteVisitStatusDropDown = By.xpath("//input[@id='react-select-5-input']");
     By ProjectsBtn = By.xpath("(//*[normalize-space()='Projects'])[2]");
