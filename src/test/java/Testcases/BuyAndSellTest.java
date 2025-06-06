@@ -73,22 +73,7 @@ public class BuyAndSellTest extends TestBase {
         login.consumerLogout("Logout");
         marketadmin.marketAdminLogin();
         marketadmin.Admin_buyandSell_publish();
-
-//        homepage.homepage();
-//        login.LoginConsumerSuceessful();
-//        Buyandsell.vaild_Stepper1_ProjectFields_button();
-//        Buyandsell.vaild_Stepper2_ProjectFields_button();
-//        Buyandsell.vaild_Stepper3_ProjectFields_button();
         test.pass("Create project mandatory field validation ");
     }
 
-
-    @Test(priority = 5,enabled = true)
-    public void adminVisitSchedule() throws InterruptedException {
-        ExtentTest test = extent.createTest("Create project from the consumer login ");
-        marketadmin.marketAdminLogin();
-        marketadmin.Admin_Projects_publish();
-        test.pass("Project is created");
-
-    }
 }

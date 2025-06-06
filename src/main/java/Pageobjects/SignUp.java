@@ -6,6 +6,7 @@ import baseClass.TestBase;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
 import org.apache.commons.io.FileUtils;
+import org.checkerframework.checker.units.qual.C;
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.devtools.DevTools;
@@ -77,7 +78,8 @@ public class SignUp extends TestBase {
         // ConsumerSignUpEmail = properties.getProperty("SignupId");
         //adityapawarsignup@yopmail.com
         ConsumerSignUpEmail = utility.randomEmailSignup();
-        System.out.println(ConsumerSignUpEmail);
+        System.out.println("Created email id : " + ConsumerSignUpEmail);
+        write_excel(1,0, ConsumerSignUpEmail);
         driver.findElement(EmailField).sendKeys(ConsumerSignUpEmail);
         driver.findElement(agreementChk).click();
         Thread.sleep(2000);

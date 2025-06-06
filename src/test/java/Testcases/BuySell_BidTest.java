@@ -30,7 +30,7 @@ public class BuySell_BidTest extends TestBase {
         login.consumerLogout("Logout");
         marketadmin.marketAdminLogin();
         marketadmin.Admin_buyandSell_publish();
-        test.pass("Project created on the for the bid ");
+        test.pass("Project created on the for the bid");
     }
 
     @Test(priority =2,enabled = true,dataProvider = "vendorEmail",dataProviderClass = Dataprovider.class)

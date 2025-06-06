@@ -48,7 +48,6 @@ public class Projects extends TestBase {
     //By OkayBtn = By.xpath("//div[@class='flex space-x-2 items-center']/input[@id='PPA2']");
     //By OkayBtn = By.xpath("//div[@class='flex space-x-2 items-center']/input[@id='PPA2']");
     public void projectClick() throws InterruptedException {
-
         waitForElement(projectname);
         //waitForElement(ProjectBtn);
         click(ProjectBtn);

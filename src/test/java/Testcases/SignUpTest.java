@@ -44,10 +44,9 @@ public class SignUpTest extends TestBase {
     @Test(priority = 3,enabled = true, dataProvider = "Signupstep", dataProviderClass = Dataprovider.class)
     public void Consumer_Sign_up_and_Verify_by_admin(String fname, String lname,String ConsumerSignUpEmail ) throws InterruptedException, AWTException, IOException {
         ExtentTest test = extent.createTest("To verify the invalid email");
-        //api_call.deleteUser();
-     /* homePage.homepage();
+        homePage.homepage();
         signup.consumer_Sign_up_Step_One(fname,lname);
-        Thread.sleep(2000);*/
+        Thread.sleep(2000);
         adminlogin.AdminLogin_VerifyConsumer();
         test.pass("To verify the invalid email passed successfully.");
     }
@@ -62,4 +61,3 @@ public class SignUpTest extends TestBase {
         test.pass("To verify the invalid email passed successfully.");
     }
 }
-////body/div[@id='root']/div[@class='App']/div/div[@class='h-full']/div[@class='mx-auto']/div[@class='flex justify-center']/div[@class='w-full flex']/div[2]

@@ -90,10 +90,11 @@ public class BuyAndSell extends TestBase {
     By Bid_Validity = By.xpath("//input[@name='bidValidity']");
     By SendProjecttext = By.id("react-select-2-input");
     String project_Name;
-
+    By homeloader = By.xpath("//*[@class='inline w-14 h-14 text-gray-200 animate-spin dark:text-gray-600 fill-primary']");
     public void vaild_Stepper1_ProjectFields_button() throws InterruptedException {
-        Thread.sleep(000);
-        waitForElement(SellProjectButton);
+        waitForLoaderToDisappear(homeloader);
+        fluentWait(SellProjectButton);
+       // waitForElement(SellProjectButton);
         driver.findElement(SellProjectButton).click();
         project_Name = ProjectTileText();
         write_excel(0,1,project_Name);
@@ -155,7 +156,7 @@ public class BuyAndSell extends TestBase {
 
         Thread.sleep(1000);
         click(Capacity);
-        driver.findElement(Capacity).sendKeys("5000");
+        driver.findElement(Capacity).sendKeys("500");
         tab(Capacity);
 
         Thread.sleep(1000);
@@ -241,6 +242,8 @@ public class BuyAndSell extends TestBase {
     By image_upload= By.xpath("//div[@class='flex flex-col items-center justify-center pt-5 pb-6']");
     By BuysellProjectSuccessfully= By.xpath("//h2[normalize-space()='Form submitted successfully!']");
     By SuccessfullyOKayBtn= By.xpath("//span[normalize-space()='Okay']");
+
+    By imageupload = By.xpath("//input[@id='dropzone-file']");
     public void vaild_Stepper3_ProjectFields_button() throws InterruptedException {
 
         Thread.sleep(2000);
@@ -260,7 +263,7 @@ public class BuyAndSell extends TestBase {
 //        IDfileInput.sendKeys(FinalPAth);
 
 
-
+      //  waitForElement(imageupload);
         for(int i=1; i<=4;i++){
             WebElement project_image = driver.findElement(By.xpath("//input[@id='dropzone-file']"));
             project_image.sendKeys(FinalPAth);

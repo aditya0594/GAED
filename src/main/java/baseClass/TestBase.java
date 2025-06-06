@@ -2,7 +2,6 @@
     
     import java.awt.*;
     import java.io.*;
-    import java.net.URI;
     import java.net.URISyntaxException;
     import java.net.URL;
     import java.text.SimpleDateFormat;
@@ -20,15 +19,15 @@
     import org.apache.poi.ss.usermodel.*;
     import org.apache.poi.xssf.usermodel.XSSFWorkbook;
     import org.openqa.selenium.*;
+    import org.openqa.selenium.NoSuchElementException;
     import org.openqa.selenium.chrome.ChromeDriver;
     import org.openqa.selenium.chrome.ChromeOptions;
-    import org.openqa.selenium.firefox.FirefoxDriver;
-    import org.openqa.selenium.firefox.FirefoxOptions;
-    import org.openqa.selenium.ie.InternetExplorerDriver;
     import org.openqa.selenium.interactions.Actions;
     import org.openqa.selenium.remote.DesiredCapabilities;
     import org.openqa.selenium.remote.RemoteWebDriver;
     import org.openqa.selenium.support.ui.ExpectedConditions;
+    import org.openqa.selenium.support.ui.FluentWait;
+    import org.openqa.selenium.support.ui.Wait;
     import org.openqa.selenium.support.ui.WebDriverWait;
     import org.testng.ITestResult;
     import org.testng.annotations.*;
@@ -79,7 +78,9 @@
                         options.setExperimentalOption("useAutomationExtension", false);
                     }
                     WebDriverManager.chromedriver().setup();
+                    //options.addArguments("--headless","--window-size=1920x1080");
                     driver = new ChromeDriver(options);
+
                 } else {
                     throw new IllegalArgumentException("Unsupported browser: " + browserName);
                 }
@@ -88,81 +89,6 @@
             driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
             return driver;
         }
-               /* } else if (browserName.equalsIgnoreCase("firefox")) {
-                    FirefoxOptions options = new FirefoxOptions();
-                    // Check if headless mode should be enabled
-                    if (utility.property("headless").equals("true")) {
-                        options.addArguments("--headless");
-                        options.addArguments("--window-size=1920,1080");
-                    }
-                    if (utility.property("runRemote").equals("true")) {
-                        driver = new RemoteWebDriver(new URL(seleniumHubUrl), options);
-                    } else {
-                        WebDriverManager.firefoxdriver().setup();
-                        driver = new FirefoxDriver();
-                    }
-                }
-                driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
-                driver.manage().window().maximize();
-            }*/
-    //    @BeforeMethod
-    //    public static WebDriver Setup() throws IOException {
-    //        if (driver == null) {
-    //            String browserName = utility.property("browserName").toString();
-    //            if (browserName.equalsIgnoreCase("chrome")) {
-    //                WebDriverManager.chromedriver().setup();
-    //                ChromeOptions options = new ChromeOptions();
-    //                options.addArguments("--remote-allow-origins=*");
-    //                //options.addArguments("--headless");
-    //                driver = new ChromeDriver(options);
-    //                // Implicitly wait
-    //                driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
-    //                driver.manage().window().maximize();
-    //            } else if (browserName.equalsIgnoreCase("firefox")) {
-    //                WebDriverManager.firefoxdriver().setup();
-    //                driver = new FirefoxDriver();
-    //            } else if (browserName.equalsIgnoreCase("IE")) {
-    //                WebDriverManager.iedriver().setup();
-    //                driver = new InternetExplorerDriver();
-    //            } else {
-    //                WebDriverManager.chromedriver().setup();
-    //                ChromeOptions options = new ChromeOptions();
-    //                driver = new ChromeDriver(options);
-    //                // Implicitly wait
-    //                driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
-    //                driver.manage().window().maximize();
-    //            }
-    //        }
-    //        return driver;
-    //    }
-    
-      /*    @Parameters("browser")
-            @BeforeSuite
-    
-                public void Setup(String browser){
-                    if(browser.newdriver("chrome")){
-                        System.setProperty("webdriver.chrome.driver", "Driver/chromedriver.exe");
-                        ChromeOptions options = new ChromeOptions();
-                        driver = new ChromeDriver(options);
-                    }
-                    else if(browser.equalsIgnoreCase("firefox")){
-                        driver = new FirefoxDriver();
-                    }
-                    else if (browser.equalsIgnoreCase("IE")){
-                        driver = new InternetExplorerDriver();
-                    }
-                    else if (browser.equalsIgnoreCase("webdrivermanager")){
-                        WebDriverManager.chromedriver().setup();
-                        ChromeOptions options = new ChromeOptions();
-                        driver = new ChromeDriver(options);
-    
-                    }
-                // appium driver
-               *//* System.out.println("Setup TestCase");
-            CommonUtils utils = new CommonUtils();
-            utils.setup(AppConfigTags.ANDROID, AppConfigTags.MOTOROLA, Constants.ANDROID_URI);
-            driver = utils.driver;*//*
-        }*/
       @BeforeMethod
       public void createTestReport(ITestResult result) {
           test = extent.createTest(result.getMethod().getMethodName());
@@ -219,10 +145,6 @@
             return prop;
         }
     
-        public static void main(String... args) throws IOException {
-            TestBase.read_properties();
-        }
-    
     
         /*public void getResult(ITestResult result) throws Exception{
             ExtentTest test;
@@ -263,9 +185,24 @@
         }*/
     
         public static By waitForElement(By element) {
-            WebDriverWait w = new WebDriverWait(driver, Duration.ofSeconds(30));
+            WebDriverWait w = new WebDriverWait(driver, Duration.ofSeconds(40));
             w.until(ExpectedConditions.visibilityOfElementLocated((By) element));
             return element;
+        }
+        public void fluentWait(By locator) {
+            Wait<WebDriver> fluentWait = new FluentWait<>(driver)
+                    .withTimeout(Duration.ofSeconds(60))
+                    .pollingEvery(Duration.ofMillis(500))
+                    .ignoring(NoSuchElementException.class)
+                    .ignoring(ElementClickInterceptedException.class)
+                    .ignoring(ElementNotInteractableException.class);
+
+            WebElement element = fluentWait.until(driver -> driver.findElement(locator));
+            // or any action you want to perform
+        }
+        public static void waitForLoaderToDisappear(By loaderLocator) {
+            new WebDriverWait(driver, Duration.ofSeconds(30))
+                    .until(ExpectedConditions.invisibilityOfElementLocated(loaderLocator));
         }
         public static By waitForElementToBeClickable(By element) {
             WebDriverWait w = new WebDriverWait(driver, Duration.ofSeconds(30));
@@ -307,15 +244,15 @@
             return -1; // If no data found in the column
         }
     
-        public static void write_excel(Integer num,int Sheet,String saveString) {
+        public static void write_excel(Integer Row,int Sheet,String saveString) {
             String filePath = "src/resources/Consumer_signup_ids.xlsx";
             try (FileInputStream fis = new FileInputStream(filePath);
                  Workbook workbook = fis.available() > 0 ? WorkbookFactory.create(fis) : new XSSFWorkbook()) {
                 Sheet sheet = workbook.getSheetAt(Sheet);
-                int lastRowNum = getLastRowNumInColumn(sheet, num);
+                int lastRowNum = getLastRowNumInColumn(sheet, Row);
                 // Add data to the next row
                 Row row = sheet.createRow(lastRowNum + 1);
-                Cell cell = row.createCell(num);
+                Cell cell = row.createCell(Row);
                 cell.setCellValue(saveString);
                 // Write to file
                 try (FileOutputStream fos = new FileOutputStream(filePath)) {

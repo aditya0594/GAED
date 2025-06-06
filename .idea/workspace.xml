@@ -5,8 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="fbed16bb-bade-4def-845d-b7f89224c886" name="Changes" comment="ci.yml added 02-06-2025">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Screenshots/Accept_Project_In_Admin20250606024001.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Pageobjects/BuyAndSell.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Pageobjects/BuyAndSell.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -53,7 +53,7 @@
   &quot;keyToString&quot;: {
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/GAED/.github/workflows&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/GAED/src/resources&quot;,
     &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
     &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
@@ -66,11 +66,11 @@
       <recent name="Runner" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\GAED\.github\workflows" />
-      <recent name="C:\GAED" />
       <recent name="C:\GAED\src\resources" />
       <recent name="C:\GAED\src\test\java\resourses" />
       <recent name="C:\GAED\src\test\java" />
+      <recent name="C:\Users\HM\IdeaProjects\GAED" />
+      <recent name="C:\Users\HM\IdeaProjects\GAED\New folder" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\GAED\src\test\java\resourses" />
@@ -81,7 +81,7 @@
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="TestNG.ProjectsTest.Create_Project">
+  <component name="RunManager" selected="TestNG.C:/GAED/testng.xml">
     <configuration default="true" type="JetRunConfigurationType">
       <module name="GAED" />
       <method v="2">
@@ -91,6 +91,118 @@
     <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
       <module name="GAED" />
       <option name="filePath" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="BuyAndSellTest.Accept_Project_In_Admin" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="Selenium_Advanced" />
+      <shortenClasspath name="NONE" />
+      <useClassPathOnly />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Testcases.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="SUITE_NAME" value="" />
+      <option name="PACKAGE_NAME" value="Testcases" />
+      <option name="MAIN_CLASS_NAME" value="Testcases.BuyAndSellTest" />
+      <option name="METHOD_NAME" value="Accept_Project_In_Admin" />
+      <option name="GROUP_NAME" value="" />
+      <option name="TEST_OBJECT" value="METHOD" />
+      <option name="PARAMETERS" value="" />
+      <option name="OUTPUT_DIRECTORY" value="" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="moduleWithDependencies" />
+      </option>
+      <option name="PROPERTIES_FILE" value="" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="BuySell_BidTest.AcceptBidConsumer" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="Selenium_Advanced" />
+      <shortenClasspath name="NONE" />
+      <useClassPathOnly />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Testcases.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="SUITE_NAME" value="" />
+      <option name="PACKAGE_NAME" value="Testcases" />
+      <option name="MAIN_CLASS_NAME" value="Testcases.BuySell_BidTest" />
+      <option name="METHOD_NAME" value="AcceptBidConsumer" />
+      <option name="GROUP_NAME" value="" />
+      <option name="TEST_OBJECT" value="METHOD" />
+      <option name="PARAMETERS" value="" />
+      <option name="OUTPUT_DIRECTORY" value="" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="moduleWithDependencies" />
+      </option>
+      <option name="PROPERTIES_FILE" value="" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="BuySell_BidTest.bidAccept" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="Selenium_Advanced" />
+      <shortenClasspath name="NONE" />
+      <useClassPathOnly />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Testcases.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="SUITE_NAME" value="" />
+      <option name="PACKAGE_NAME" value="Testcases" />
+      <option name="MAIN_CLASS_NAME" value="Testcases.BuySell_BidTest" />
+      <option name="METHOD_NAME" value="bidAccept" />
+      <option name="GROUP_NAME" value="" />
+      <option name="TEST_OBJECT" value="METHOD" />
+      <option name="PARAMETERS" value="" />
+      <option name="OUTPUT_DIRECTORY" value="" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="moduleWithDependencies" />
+      </option>
+      <option name="PROPERTIES_FILE" value="" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="BuySell_BidTest.createProject" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="Selenium_Advanced" />
+      <shortenClasspath name="NONE" />
+      <useClassPathOnly />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Testcases.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="SUITE_NAME" value="" />
+      <option name="PACKAGE_NAME" value="Testcases" />
+      <option name="MAIN_CLASS_NAME" value="Testcases.BuySell_BidTest" />
+      <option name="METHOD_NAME" value="createProject" />
+      <option name="GROUP_NAME" value="" />
+      <option name="TEST_OBJECT" value="METHOD" />
+      <option name="PARAMETERS" value="" />
+      <option name="OUTPUT_DIRECTORY" value="" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="moduleWithDependencies" />
+      </option>
+      <option name="PROPERTIES_FILE" value="" />
+      <properties />
+      <listeners />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -151,116 +263,6 @@
       <option name="PACKAGE_NAME" value="testcases" />
       <option name="MAIN_CLASS_NAME" value="Testcases.GalleryPageTest" />
       <option name="METHOD_NAME" value="Gallery_verify_image" />
-      <option name="GROUP_NAME" value="" />
-      <option name="TEST_OBJECT" value="METHOD" />
-      <option name="PARAMETERS" value="" />
-      <option name="OUTPUT_DIRECTORY" value="" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="moduleWithDependencies" />
-      </option>
-      <option name="PROPERTIES_FILE" value="" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="ProjectsTest (4)" type="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="Selenium_Advanced" />
-      <shortenClasspath name="NONE" />
-      <useClassPathOnly />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="Testcases.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="SUITE_NAME" value="" />
-      <option name="PACKAGE_NAME" value="Testcases" />
-      <option name="MAIN_CLASS_NAME" value="Testcases.ProjectsTest" />
-      <option name="GROUP_NAME" value="" />
-      <option name="TEST_OBJECT" value="CLASS" />
-      <option name="PARAMETERS" value="" />
-      <option name="OUTPUT_DIRECTORY" value="" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="moduleWithDependencies" />
-      </option>
-      <option name="PROPERTIES_FILE" value="" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="ProjectsTest" type="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="Selenium_Advanced" />
-      <shortenClasspath name="NONE" />
-      <useClassPathOnly />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="Testcases.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="SUITE_NAME" value="" />
-      <option name="PACKAGE_NAME" value="Testcases" />
-      <option name="MAIN_CLASS_NAME" value="Testcases.ProjectsTest" />
-      <option name="GROUP_NAME" value="" />
-      <option name="TEST_OBJECT" value="CLASS" />
-      <option name="PARAMETERS" value="" />
-      <option name="OUTPUT_DIRECTORY" value="" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="moduleWithDependencies" />
-      </option>
-      <option name="PROPERTIES_FILE" value="" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="ProjectsTest.Create_Project" type="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="Selenium_Advanced" />
-      <shortenClasspath name="NONE" />
-      <useClassPathOnly />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="Testcases.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="SUITE_NAME" value="" />
-      <option name="PACKAGE_NAME" value="Testcases" />
-      <option name="MAIN_CLASS_NAME" value="Testcases.ProjectsTest" />
-      <option name="METHOD_NAME" value="Create_Project" />
-      <option name="GROUP_NAME" value="" />
-      <option name="TEST_OBJECT" value="METHOD" />
-      <option name="PARAMETERS" value="" />
-      <option name="OUTPUT_DIRECTORY" value="" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="moduleWithDependencies" />
-      </option>
-      <option name="PROPERTIES_FILE" value="" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="ProjectsTest.admin_GenerationsReport" type="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="Selenium_Advanced" />
-      <shortenClasspath name="NONE" />
-      <useClassPathOnly />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="Testcases.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="SUITE_NAME" value="" />
-      <option name="PACKAGE_NAME" value="Testcases" />
-      <option name="MAIN_CLASS_NAME" value="Testcases.ProjectsTest" />
-      <option name="METHOD_NAME" value="admin_GenerationsReport" />
       <option name="GROUP_NAME" value="" />
       <option name="TEST_OBJECT" value="METHOD" />
       <option name="PARAMETERS" value="" />
@@ -394,19 +396,19 @@
       <item itemvalue="TestNG.testcases" />
       <item itemvalue="TestNG.&lt;default&gt;" />
       <item itemvalue="TestNG.Classexecution" />
+      <item itemvalue="TestNG.BuyAndSellTest.Accept_Project_In_Admin" />
+      <item itemvalue="TestNG.BuySell_BidTest.AcceptBidConsumer" />
+      <item itemvalue="TestNG.BuySell_BidTest.bidAccept" />
+      <item itemvalue="TestNG.BuySell_BidTest.createProject" />
       <item itemvalue="TestNG.C:/GAED/testng.xml" />
-      <item itemvalue="TestNG.ProjectsTest (4)" />
-      <item itemvalue="TestNG.ProjectsTest.Create_Project" />
-      <item itemvalue="TestNG.ProjectsTest" />
-      <item itemvalue="TestNG.ProjectsTest.admin_GenerationsReport" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="TestNG.ProjectsTest.Create_Project" />
         <item itemvalue="TestNG.C:/GAED/testng.xml" />
-        <item itemvalue="TestNG.ProjectsTest (4)" />
-        <item itemvalue="TestNG.ProjectsTest.admin_GenerationsReport" />
-        <item itemvalue="TestNG.ProjectsTest" />
+        <item itemvalue="TestNG.BuySell_BidTest.createProject" />
+        <item itemvalue="TestNG.BuySell_BidTest.bidAccept" />
+        <item itemvalue="TestNG.BuySell_BidTest.AcceptBidConsumer" />
+        <item itemvalue="TestNG.BuyAndSellTest.Accept_Project_In_Admin" />
       </list>
     </recent_temporary>
   </component>
@@ -418,6 +420,34 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1666076051325</updated>
+    </task>
+    <task id="LOCAL-00041" summary="Fixed the issue for the scripts">
+      <created>1737129167423</created>
+      <option name="number" value="00041" />
+      <option name="presentableId" value="LOCAL-00041" />
+      <option name="project" value="LOCAL" />
+      <updated>1737129167423</updated>
+    </task>
+    <task id="LOCAL-00042" summary="Fixed the issue for the scripts">
+      <created>1737129608806</created>
+      <option name="number" value="00042" />
+      <option name="presentableId" value="LOCAL-00042" />
+      <option name="project" value="LOCAL" />
+      <updated>1737129608806</updated>
+    </task>
+    <task id="LOCAL-00043" summary="Fixed the issue for the scripts">
+      <created>1737130099901</created>
+      <option name="number" value="00043" />
+      <option name="presentableId" value="LOCAL-00043" />
+      <option name="project" value="LOCAL" />
+      <updated>1737130099901</updated>
+    </task>
+    <task id="LOCAL-00044" summary="Fixed the issue for the scripts">
+      <created>1737130880931</created>
+      <option name="number" value="00044" />
+      <option name="presentableId" value="LOCAL-00044" />
+      <option name="project" value="LOCAL" />
+      <updated>1737130880931</updated>
     </task>
     <task id="LOCAL-00045" summary="Fixed the issue for the scripts">
       <created>1737367206167</created>
@@ -727,42 +757,14 @@
       <option name="project" value="LOCAL" />
       <updated>1743339018564</updated>
     </task>
-    <task id="LOCAL-00089" summary="buy an sell complete">
-      <created>1748596113342</created>
+    <task id="LOCAL-00089" summary="Generate report completed">
+      <created>1743830877899</created>
       <option name="number" value="00089" />
       <option name="presentableId" value="LOCAL-00089" />
       <option name="project" value="LOCAL" />
-      <updated>1748596113342</updated>
+      <updated>1743830877900</updated>
     </task>
-    <task id="LOCAL-00090" summary="buy an sell complete">
-      <created>1748596489285</created>
-      <option name="number" value="00090" />
-      <option name="presentableId" value="LOCAL-00090" />
-      <option name="project" value="LOCAL" />
-      <updated>1748596489285</updated>
-    </task>
-    <task id="LOCAL-00091" summary="buy an sell complete">
-      <created>1748847028472</created>
-      <option name="number" value="00091" />
-      <option name="presentableId" value="LOCAL-00091" />
-      <option name="project" value="LOCAL" />
-      <updated>1748847028472</updated>
-    </task>
-    <task id="LOCAL-00092" summary="ci.yml added 02-06-2025">
-      <created>1748851031071</created>
-      <option name="number" value="00092" />
-      <option name="presentableId" value="LOCAL-00092" />
-      <option name="project" value="LOCAL" />
-      <updated>1748851031072</updated>
-    </task>
-    <task id="LOCAL-00093" summary="ci.yml added 02-06-2025">
-      <created>1748851289781</created>
-      <option name="number" value="00093" />
-      <option name="presentableId" value="LOCAL-00093" />
-      <option name="project" value="LOCAL" />
-      <updated>1748851289781</updated>
-    </task>
-    <option name="localTasksCounter" value="94" />
+    <option name="localTasksCounter" value="90" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -776,7 +778,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="githubCICD/working" />
+                        <option value="origin/main" />
                       </list>
                     </value>
                   </entry>
@@ -828,9 +830,9 @@
     <MESSAGE value="project created completed" />
     <MESSAGE value="calendor and clock automated" />
     <MESSAGE value="site visit schedule completed" />
-    <MESSAGE value="buy an sell complete" />
-    <MESSAGE value="ci.yml added 02-06-2025" />
-    <option name="LAST_COMMIT_MESSAGE" value="ci.yml added 02-06-2025" />
+    <MESSAGE value="Generate report completed" />
+    <MESSAGE value="complated the buy and sell" />
+    <option name="LAST_COMMIT_MESSAGE" value="complated the buy and sell" />
   </component>
   <component name="XDebuggerManager">
     <watches-manager>

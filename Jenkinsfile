@@ -9,7 +9,7 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                git 'https://github.com/aditya0594/GAED.git'
+                git 'https://github.com/aditya0594/java_con.git'
             }
         }
 

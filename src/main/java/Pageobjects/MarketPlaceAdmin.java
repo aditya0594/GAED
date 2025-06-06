@@ -129,21 +129,26 @@ public class MarketPlaceAdmin extends TestBase {
         Thread.sleep(1000);
 
     }
+    By homeloader = By.xpath("//*[@class='inline w-14 h-14 text-gray-200 animate-spin dark:text-gray-600 fill-primary']");
 
+
+    By adminHomepage = By.xpath("//h2[text()='Pragmatyc Admin']");
     public void Admin_buyandSell_publish() throws InterruptedException {
         Thread.sleep(2000);
         click(BuySellBtn);
         Thread.sleep(1000);
         click(eyeBtn);
-        Thread.sleep(2000);
+        waitForLoaderToDisappear(homeloader);
         driver.findElement(StatusDropdown).sendKeys("Publish");
         Thread.sleep(2000);
         driver.findElement(StatusDropdown).sendKeys(Keys.TAB);
-
         //span[@class='MuiClockNumber-root css-vk8m51']
         // utility.scrollToElement(SubmitBtn);
         Thread.sleep(2000);
         click(SubmitBtn);
+        waitForLoaderToDisappear(homeloader);
+        waitForElement(adminHomepage);
+        driver.findElement(adminHomepage).click();
 
     }
     By TimeFrom = By.xpath("//div[@class='MuiFormControl-root MuiTextField-root css-1b426h6']//input[@id=':rb:']");
