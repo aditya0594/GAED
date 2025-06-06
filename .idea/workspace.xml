@@ -4,69 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="fbed16bb-bade-4def-845d-b7f89224c886" name="Changes" comment="complated the buy and sell">
-      <change afterPath="$PROJECT_DIR$/Screenshots/Accept_Project_In_Admin20250529032939.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Screenshots/Accept_Project_In_Admin20250529033819.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Screenshots/Accept_Project_In_Admin20250529033943.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Screenshots/Accept_Project_In_Admin20250529034547.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Screenshots/Accept_Project_In_Admin20250529035931.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Screenshots/Accept_Project_In_Admin20250529040342.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Screenshots/Consumer_Sign_up_and_OnHold_by_admin20250513013953.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Screenshots/Consumer_Sign_up_and_OnHold_by_admin20250513014052.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Screenshots/Consumer_Sign_up_and_OnHold_by_admin20250513023650.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Screenshots/Consumer_Sign_up_and_OnHold_by_admin20250513023817.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Screenshots/Consumer_Sign_up_and_OnHold_by_admin20250513024201.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Screenshots/Consumer_Sign_up_and_OnHold_by_admin20250513024455.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Screenshots/Consumer_Sign_up_and_OnHold_by_admin20250513024904.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Screenshots/Consumer_Sign_up_and_OnHold_by_admin20250513025045.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Screenshots/Consumer_Sign_up_and_OnHold_by_admin20250513025242.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Screenshots/Consumer_Sign_up_and_OnHold_by_admin20250513031941.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Screenshots/Consumer_Sign_up_and_OnHold_by_admin20250513032556.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Screenshots/Consumer_Sign_up_and_OnHold_by_admin20250513032911.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Screenshots/Consumer_Sign_up_and_OnHold_by_admin20250513033054.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Screenshots/Consumer_Sign_up_and_OnHold_by_admin20250513033456.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Screenshots/Consumer_Sign_up_and_OnHold_by_admin20250513033814.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Screenshots/Consumer_Sign_up_and_OnHold_by_admin20250513034356.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Screenshots/Consumer_Sign_up_and_OnHold_by_admin20250513034724.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Screenshots/Consumer_Sign_up_and_OnHold_by_admin20250513035131.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Screenshots/Consumer_Sign_up_and_OnHold_by_admin20250513035623.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Screenshots/Consumer_Sign_up_and_OnHold_by_admin20250513040118.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Screenshots/Consumer_Sign_up_and_OnHold_by_admin20250513040331.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Screenshots/Consumer_Sign_up_and_OnHold_by_admin20250517114246.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Screenshots/Consumer_Sign_up_and_OnHold_by_admin20250517115302.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Screenshots/Consumer_Sign_up_and_OnHold_by_admin20250517115522.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Screenshots/Consumer_Sign_up_and_OnHold_by_admin20250519043838.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Screenshots/Consumer_Sign_up_and_OnHold_by_admin20250519044003.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Screenshots/Consumer_Sign_up_and_OnHold_by_admin20250529013513.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Screenshots/Consumer_Sign_up_and_OnHold_by_admin20250529013718.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Screenshots/Consumer_Sign_up_and_OnHold_by_admin20250529015122.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Screenshots/Consumer_Sign_up_and_OnHold_by_admin20250529015532.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Screenshots/Consumer_Sign_up_and_OnHold_by_admin20250529121200.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Screenshots/Consumer_Sign_up_and_OnHold_by_admin20250529121510.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Screenshots/Consumer_Sign_up_and_Verify_by_admin20250513011734.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Screenshots/Consumer_Sign_up_and_Verify_by_admin20250528052723.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Screenshots/Consumer_Sign_up_and_Verify_by_admin20250528052941.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Screenshots/Consumer_Sign_up_and_Verify_by_admin20250528053120.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Screenshots/Consumer_Sign_up_and_Verify_by_admin20250528053629.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Screenshots/Consumer_Sign_up_and_Verify_by_admin20250528053859.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Screenshots/Consumer_Sign_up_and_Verify_by_admin20250528054213.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Screenshots/Consumer_Sign_up_and_Verify_by_admin20250528054506.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Screenshots/admin_VisitSchedule_GenerateReport20250404075749.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Screenshots/invalidate_SellProject_buttons20250529032632.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="fbed16bb-bade-4def-845d-b7f89224c886" name="Changes" comment="ci.yml added 02-06-2025">
+      <change afterPath="$PROJECT_DIR$/Screenshots/Accept_Project_In_Admin20250606024001.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Pageobjects/BuyAndSell.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Pageobjects/BuyAndSell.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Pageobjects/BuyandSellBid.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Pageobjects/BuyandSellBid.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Pageobjects/LoginConsumer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Pageobjects/LoginConsumer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Pageobjects/MarketPlaceAdmin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Pageobjects/MarketPlaceAdmin.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Pageobjects/SSO_Admin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Pageobjects/SSO_Admin.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Pageobjects/SignUp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Pageobjects/SignUp.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/baseClass/TestBase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/baseClass/TestBase.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resources/Consumer_signup_ids.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/resources/Consumer_signup_ids.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/Testcases/BuyAndSellTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Testcases/BuyAndSellTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/Testcases/BuySell_BidTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Testcases/BuySell_BidTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/Testcases/SignUpTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Testcases/SignUpTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test-output/GAED_Testcase_report.html" beforeDir="false" afterPath="$PROJECT_DIR$/test-output/GAED_Testcase_report.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/testng.xml" beforeDir="false" afterPath="$PROJECT_DIR$/testng.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -86,7 +26,7 @@
     <option name="PUSH_AUTO_UPDATE" value="true" />
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="working" />
+        <entry key="$PROJECT_DIR$" value="main" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -466,8 +406,8 @@
       <list>
         <item itemvalue="TestNG.C:/GAED/testng.xml" />
         <item itemvalue="TestNG.BuySell_BidTest.createProject" />
-        <item itemvalue="TestNG.BuySell_BidTest.AcceptBidConsumer" />
         <item itemvalue="TestNG.BuySell_BidTest.bidAccept" />
+        <item itemvalue="TestNG.BuySell_BidTest.AcceptBidConsumer" />
         <item itemvalue="TestNG.BuyAndSellTest.Accept_Project_In_Admin" />
       </list>
     </recent_temporary>
@@ -838,7 +778,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="githubCICD/working" />
+                        <option value="origin/main" />
                       </list>
                     </value>
                   </entry>

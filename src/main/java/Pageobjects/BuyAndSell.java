@@ -92,7 +92,6 @@ public class BuyAndSell extends TestBase {
     String project_Name;
     By homeloader = By.xpath("//*[@class='inline w-14 h-14 text-gray-200 animate-spin dark:text-gray-600 fill-primary']");
     public void vaild_Stepper1_ProjectFields_button() throws InterruptedException {
-        Thread.sleep(000);
         waitForLoaderToDisappear(homeloader);
         fluentWait(SellProjectButton);
        // waitForElement(SellProjectButton);
